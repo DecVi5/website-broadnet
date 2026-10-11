@@ -3,7 +3,7 @@
 Official web application for **Broadnet Internet Services** (Est. 2014) — Chennai and Avadi's leading CCTV surveillance, ELV security integrator, and fiber broadband provider.
 
 **Address:** 1093 Fire Station Road, TNHB, Avadi, Chennai 600054  
-**Primary Contact:** [+91 98843 44075](tel:+919884344075) / [+91 86818 88111](tel:+918681888111)  
+**Primary Contact:** [+91 86818 88111](tel:+918681888111)  
 **Email:** admin@broadnet.in  
 **Website:** [https://www.broadnet.in](https://www.broadnet.in)
 

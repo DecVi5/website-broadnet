@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import EnquirySection from "@/components/EnquirySection";
 import MilestonesSection from "@/components/MilestonesSection";
 import BrandPartnersSection from "@/components/BrandPartnersSection";
+import PartnerLogo from "@/components/PartnerLogo";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import {
   Users,
@@ -167,6 +168,7 @@ const CERTIFICATE_SLOTS = [
     title: "CP PLUS CSE Certification",
     credential: "Certified Surveillance Engineer",
     partner: "CP PLUS India",
+    brand: "CP PLUS",
     desc: "Official factory-certified engineer authorization covering HD/IP cameras, NVRs, and AI video analytics.",
     imageSrc: "/assets/about/cert-cpplus.jpg",
   },
@@ -174,6 +176,7 @@ const CERTIFICATE_SLOTS = [
     title: "Hikvision HCSA Partner Certification",
     credential: "Certified Security Associate",
     partner: "Hikvision Global / Prama",
+    brand: "Hikvision",
     desc: "Certified partner authorization for ColorVu 24/7 color night vision, AcuSense human/vehicle detection, and perimeter defense.",
     imageSrc: "/assets/about/cert-hikvision.jpg",
   },
@@ -181,6 +184,7 @@ const CERTIFICATE_SLOTS = [
     title: "eSSL Authorized Partner",
     credential: "Enterprise Biometric Systems",
     partner: "eSSL Security Solutions",
+    brand: "eSSL",
     desc: "Direct partner authorization for contactless facial recognition, fingerprint readers, and cloud payroll software.",
     imageSrc: "/assets/about/cert-essl.jpg",
   },
@@ -188,6 +192,7 @@ const CERTIFICATE_SLOTS = [
     title: "RailWire Telecom Partner",
     credential: "Authorized Telecom Franchise",
     partner: "RailTel Corporation of India",
+    brand: "RailWire",
     desc: "Official Tier-1 telecom broadband franchise provider delivering high-speed gigabit FTTH internet in Avadi.",
     imageSrc: "/assets/about/cert-railwire.jpg",
   },
@@ -267,7 +272,7 @@ export default function AboutPage() {
                   </div>
                   <div className="flex items-center gap-2 bg-[#F8F9FD] border border-[#16143E]/10 px-3.5 py-2 rounded-xl">
                     <PhoneCall size={16} className="text-[#4E0DBA] flex-shrink-0" />
-                    <span>Direct Dispatch: +91 98843 44075</span>
+                    <span>Direct Dispatch: +91 86818 88111</span>
                   </div>
                 </div>
 
@@ -277,7 +282,7 @@ export default function AboutPage() {
                     <ArrowRight size={14} />
                   </a>
                   <a
-                    href="https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20services%20and%20schedule%20a%20site%20visit."
+                    href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20services%20and%20schedule%20a%20site%20visit."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-6 py-3 rounded-full border border-[#16143E]/20 hover:border-[#16143E] text-[#16143E] font-bold text-xs sm:text-sm transition-all"
@@ -508,16 +513,18 @@ export default function AboutPage() {
                   className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 flex flex-col justify-between hover:border-[#00C2FF]/50 hover:bg-white/[0.07] transition-all group"
                 >
                   <div>
-                    {/* Certificate Photo Frame / Drop-in Slot */}
-                    <div className="relative aspect-[4/3] rounded-xl bg-black/40 border border-white/10 overflow-hidden mb-4 flex flex-col items-center justify-center p-3 text-center">
-                      <FileCheck2 size={28} className="text-[#00C2FF] mb-2 group-hover:scale-110 transition-transform" />
+                    {/* Certificate Official Brand & Credential Frame */}
+                    <div className="relative aspect-[4/3] rounded-xl bg-gradient-to-b from-white/[0.08] to-black/50 border border-white/12 overflow-hidden mb-4 flex flex-col items-center justify-center p-4 text-center group-hover:border-[#00C2FF]/40 transition-colors">
+                      <div className="mb-2.5 p-2 rounded-lg bg-black/40 border border-white/10 shadow-xs flex items-center justify-center">
+                        <PartnerLogo brand={cert.brand} variant="white" className="h-6 w-auto max-w-[130px]" />
+                      </div>
                       <span className="text-xs font-bold text-white font-display leading-tight">
                         {cert.credential}
                       </span>
-                      <span className="text-[10px] text-white/50 mt-0.5">{cert.partner}</span>
+                      <span className="text-[10px] text-white/60 mt-1">{cert.partner}</span>
 
-                      <div className="absolute bottom-1.5 px-2 py-0.5 rounded bg-black/60 text-[8px] font-mono text-white/40">
-                        {cert.imageSrc}
+                      <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-emerald-500/20 text-[9px] font-bold text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+                        <BadgeCheck size={10} /> Verified
                       </div>
                     </div>
 

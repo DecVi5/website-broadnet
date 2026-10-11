@@ -15,7 +15,7 @@ export default function MobileStickyBar() {
       <div className="max-w-md mx-auto grid grid-cols-3 gap-2">
         {/* 1. Direct Call (min-h-[48px] tap target) */}
         <a
-          href="tel:+919884344075"
+          href="tel:+918681888111"
           onClick={() => trackEvent("call_click", { category: "MobileStickyBar" })}
           className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#16143E]/5 hover:bg-[#16143E]/10 border border-[#16143E]/10 text-[#16143E] active:scale-95 transition-all text-center"
           aria-label="Call Broadnet support directly"
@@ -28,7 +28,7 @@ export default function MobileStickyBar() {
 
         {/* 2. WhatsApp (min-h-[48px] tap target) */}
         <a
-          href="https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20enquire%20about%20your%20services%20and%20get%20a%20free%20site%20visit."
+          href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20enquire%20about%20your%20services%20and%20get%20a%20free%20site%20visit."
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackEvent("whatsapp_click", { category: "MobileStickyBar" })}

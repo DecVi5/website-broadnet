@@ -439,16 +439,16 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
             {/* Desktop Quick Actions */}
             <div className="hidden sm:flex items-center gap-2.5">
               <a
-                href="tel:+919884344075"
+                href="tel:+918681888111"
                 className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-[#16143E] hover:text-[#EF1313] hover:bg-[#16143E]/5 transition-colors"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
                 <Phone size={14} className="text-[#EF1313]" />
-                <span>98843 44075</span>
+                <span>86818 88111</span>
               </a>
 
               <a
-                href="https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
+                href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#25D366] flex items-center justify-center transition-colors"
@@ -668,10 +668,10 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
               {/* Mobile CTA Strip */}
               <div className="pt-4 mt-4 border-t border-[#16143E]/10 flex flex-col gap-2">
                 <a
-                  href="tel:+919884344075"
+                  href="tel:+918681888111"
                   className="w-full py-2.5 rounded-xl bg-[#16143E] text-white text-xs font-bold flex items-center justify-center gap-2"
                 >
-                  <Phone size={14} className="text-[#EF1313]" /> Call 98843 44075 / 86818 88111
+                  <Phone size={14} className="text-[#EF1313]" /> Call 86818 88111
                 </a>
                 <Link
                   href="/contact#enquiry"

@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "Structured Cabling & Network Infrastructure Chennai | Tactine Firewall Partner",
   description:
-    "End-to-end LAN/WAN engineering, Cat6 structured cabling, server rack management, optical fiber fusion splicing, and Tactine UTM firewalls across Chennai & Avadi. Call 98843 44075.",
+    "End-to-end LAN/WAN engineering, Cat6 structured cabling, server rack management, optical fiber fusion splicing, and Tactine UTM firewalls across Chennai & Avadi. Call 86818 88111.",
   keywords: [
     "Structured cabling Avadi",
     "Network infrastructure Chennai",
@@ -67,7 +67,7 @@ export default function NetworkingPage() {
                   Request Network Consultation
                 </a>
                 <a
-                  href="https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20need%20a%20quote%20for%20Structured%20Cabling%20and%20Network%20Infrastructure."
+                  href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20need%20a%20quote%20for%20Structured%20Cabling%20and%20Network%20Infrastructure."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-2.5 rounded-full bg-[#25D366]/10 text-[#16143E] hover:bg-[#25D366]/20 text-xs sm:text-sm font-bold flex items-center gap-2 transition-colors min-h-[46px]"

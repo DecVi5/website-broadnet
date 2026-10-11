@@ -157,7 +157,7 @@ export async function POST(req: Request) {
     const phoneValid = /^(?:\+?91|0)?[6-9]\d{9}$/.test(cleanPhone);
     if (!phoneValid) {
       return NextResponse.json(
-        { error: "Please provide a valid 10-digit Indian phone number (e.g. 9884344075)." },
+        { error: "Please provide a valid 10-digit Indian phone number (e.g. 8681888111)." },
         { status: 400 }
       );
     }

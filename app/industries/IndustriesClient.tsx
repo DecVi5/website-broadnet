@@ -143,13 +143,13 @@ export default function IndustriesClient() {
                   <ArrowRight size={16} />
                 </button>
                 <a
-                  href="tel:+919884344075"
+                  href="tel:+918681888111"
                   className="px-6 py-2.5 rounded-full border border-[#16143E]/20 hover:border-[#16143E] text-[#16143E] text-xs sm:text-sm font-bold flex items-center gap-2 transition-colors min-h-[50px] bg-white shadow-xs"
                 >
-                  <Phone size={16} className="text-[#EF1313]" /> Call 98843 44075
+                  <Phone size={16} className="text-[#EF1313]" /> Call 86818 88111
                 </a>
                 <a
-                  href="https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20am%20looking%20for%20an%20industry-specific%20security%20solution."
+                  href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20am%20looking%20for%20an%20industry-specific%20security%20solution."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-2.5 rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#15803d] text-xs sm:text-sm font-bold flex items-center gap-2 transition-colors min-h-[50px]"

@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "Wi-Fi Access Points & Enterprise Wi-Fi Chennai | Grandstream Certified Partner",
   description:
-    "Grandstream Certified Network Specialists installing enterprise Wi-Fi 6 access points, seamless multi-floor mesh, guest captive portals, and cloud management across Chennai & Avadi. Call 98843 44075.",
+    "Grandstream Certified Network Specialists installing enterprise Wi-Fi 6 access points, seamless multi-floor mesh, guest captive portals, and cloud management across Chennai & Avadi. Call 86818 88111.",
   keywords: [
     "Enterprise Wi-Fi installation Chennai",
     "Grandstream access points Avadi",
@@ -67,7 +67,7 @@ export default function EnterpriseWifiPage() {
                   Request Wi-Fi Heatmap Survey
                 </a>
                 <a
-                  href="https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20enquire%20about%20Enterprise%20Wi-Fi%20installation."
+                  href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20enquire%20about%20Enterprise%20Wi-Fi%20installation."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-2.5 rounded-full bg-[#25D366]/10 text-[#16143E] hover:bg-[#25D366]/20 text-xs sm:text-sm font-bold flex items-center gap-2 transition-colors min-h-[46px]"

@@ -71,16 +71,16 @@ export const SITE_CONFIG: ContactInfo = {
     full: "1093 Fire Station Road, TNHB, Avadi, Chennai 600054",
   },
   phones: {
-    primary: "98843 44075",
+    primary: "86818 88111",
     secondary: "86818 88111",
-    primaryFormatted: "+91 98843 44075",
+    primaryFormatted: "+91 86818 88111",
     secondaryFormatted: "+91 86818 88111",
-    primaryTel: "tel:+919884344075",
+    primaryTel: "tel:+918681888111",
     secondaryTel: "tel:+918681888111",
   },
   whatsapp: {
-    number: "+919884344075",
-    cleanNumber: "919884344075",
+    number: "+918681888111",
+    cleanNumber: "918681888111",
     defaultMessage: "Hello Broadnet, I would like to get a free quote and schedule a site visit.",
   },
   email: "admin@broadnet.in",
@@ -446,7 +446,7 @@ export function normalizeTel(phone: string): string {
   if (digits.length === 12 && digits.startsWith("91")) {
     return `tel:+${digits}`;
   }
-  return `tel:+919884344075`;
+  return `tel:+918681888111`;
 }
 
 /**

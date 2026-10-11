@@ -17,7 +17,7 @@ const DICTIONARY: Record<Language, Record<string, string>> = {
     "util.raiseTicket": "Raise a Ticket",
     "util.speedTest": "Speed Test",
     "util.sla": "< 2h Technician Response",
-    "util.call": "Call: 98843 44075",
+    "util.call": "Call: 86818 88111",
 
     // Navigation
     "nav.home": "Home",
@@ -37,7 +37,7 @@ const DICTIONARY: Record<Language, Record<string, string>> = {
     "hero.desc":
       "BroadNet has been connecting and securing homes, businesses, and communities across Avadi & Chennai since 2014 with certified technology infrastructure.",
     "hero.primaryCta": "Get Free Quote & Site Visit",
-    "hero.callCta": "Call 98843 44075",
+    "hero.callCta": "Call 86818 88111",
     "hero.whatsappCta": "WhatsApp Tech Desk",
     "hero.hudLabel": "Interactive Security Illustration",
 
@@ -63,7 +63,7 @@ const DICTIONARY: Record<Language, Record<string, string>> = {
     "util.raiseTicket": "புகார் பதிவு",
     "util.speedTest": "வேக சோதனை",
     "util.sla": "< 2 மணிநேர விரைவு சேவை",
-    "util.call": "அழைக்க: 98843 44075",
+    "util.call": "அழைக்க: 86818 88111",
 
     // Navigation
     "nav.home": "முகப்பு",
@@ -83,7 +83,7 @@ const DICTIONARY: Record<Language, Record<string, string>> = {
     "hero.desc":
       "2014 முதல் ஆவடி மற்றும் சென்னை முழுவதும் நம்பகமான சிசிடிவி கண்காணிப்பு மற்றும் ஃபைபர் உள்கட்டமைப்பு சேவைகளை வழங்கி வருகிறோம்.",
     "hero.primaryCta": "இலவச ஆய்வு & மதிப்பீடு பெறுக",
-    "hero.callCta": "அழைக்க: 98843 44075",
+    "hero.callCta": "அழைக்க: 86818 88111",
     "hero.whatsappCta": "வாட்ஸ்அப் செய்தி",
     "hero.hudLabel": "பாதுகாப்பு மாதிரி விளக்கம்",
 

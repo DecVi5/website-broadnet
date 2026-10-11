@@ -168,7 +168,7 @@ export default function HomeFaqSection() {
             <strong>Have a specific property question?</strong> Chat directly with our technical team in Avadi.
           </div>
           <a
-            href="https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20have%20a%20question%20about%20your%20services."
+            href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20have%20a%20question%20about%20your%20services."
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2.5 rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#15803d] text-xs font-bold flex items-center gap-1.5 transition-colors whitespace-nowrap"

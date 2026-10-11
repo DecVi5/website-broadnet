@@ -485,7 +485,7 @@ export default function SecurityFinder() {
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
-                  href={`https://wa.me/919884344075?text=${encodeURIComponent(rec.waText)}`}
+                  href={`https://wa.me/918681888111?text=${encodeURIComponent(rec.waText)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto min-h-[48px] px-6 py-3 rounded-xl bg-[#22c55e] hover:bg-[#16a34a] text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors"

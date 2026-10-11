@@ -242,18 +242,20 @@ export const SERVICES_LIST: ServiceDetail[] = [
 ];
 
 export const BRAND_PARTNERS = [
-  { name: "Hikvision", tag: "CCTV & Intrusion Alarms", cert: "HCSA Certified Partner" },
-  { name: "CP PLUS", tag: "HD/IP Surveillance", cert: "Certified Surveillance Engineers" },
-  { name: "Grandstream", tag: "Enterprise Wi-Fi & VoIP", cert: "Certified Network Specialists" },
-  { name: "eSSL", tag: "Biometrics & Access Control", cert: "Authorised Partner" },
-  { name: "Tactine", tag: "UTM Hardware Firewalls", cert: "Authorised Dealer" },
+  { name: "Hikvision", tag: "CCTV & Intrusion Alarms", cert: "HCSA Certified Partner", category: "cctv", accent: "#ED1C24" },
+  { name: "CP PLUS", tag: "HD/IP Surveillance", cert: "Certified Surveillance Engineers", category: "cctv", accent: "#D71920" },
+  { name: "Grandstream", tag: "Enterprise Wi-Fi & VoIP", cert: "Certified Network Specialists", category: "network", accent: "#004899" },
+  { name: "eSSL", tag: "Biometrics & Access Control", cert: "Authorised Partner", category: "access", accent: "#0054A6" },
+  { name: "Tactine", tag: "UTM Hardware Firewalls", cert: "Authorised Dealer", category: "network", accent: "#FF6A00" },
   // TODO: Proof needed for Dahua partner level certification tier [CONFIRM]
-  { name: "Dahua", tag: "Smart Surveillance & AI", cert: "Installation Partner" },
-  { name: "CCL", tag: "Intercom & Video Phones", cert: "Certified Dealer" },
+  { name: "Dahua", tag: "Smart Surveillance & AI", cert: "Installation Partner", category: "cctv", accent: "#E50012" },
+  { name: "CCL", tag: "Intercom & Video Phones", cert: "Certified Dealer", category: "access", accent: "#1E3A8A" },
   // TODO: Proof needed for HiFocus integration partner certification tier [CONFIRM]
-  { name: "HiFocus", tag: "CCTV Solutions", cert: "Integration Partner" },
+  { name: "HiFocus", tag: "CCTV Solutions", cert: "Integration Partner", category: "cctv", accent: "#0052CC" },
   // TODO: Proof needed for Prama channel partner certification tier [CONFIRM]
-  { name: "Prama", tag: "Make in India Surveillance", cert: "Channel Partner" },
+  { name: "Prama", tag: "Make in India Surveillance", cert: "Channel Partner", category: "cctv", accent: "#FF671F" },
+  { name: "BSNL", tag: "Bharat Fibre FTTH", cert: "Strategic Telecom Partner", category: "telecom", accent: "#003399" },
+  { name: "RailWire", tag: "High-Speed FTTH & OTT", cert: "Official Franchise Partner", category: "telecom", accent: "#0C2340" },
 ];
 
 export const COMPANY_NUMBERS = [
@@ -324,10 +326,10 @@ export const CONTACT_INFO = {
   companyName: "Broadnet Internet Services",
   slogan: "Connecting People. Securing Places. Managing Access.",
   cctvTagline: "We Secure What Matters Most",
-  phones: ["98843 44075", "8681888111"],
-  primaryPhone: "98843 44075",
-  secondaryPhone: "8681888111",
-  primaryPhoneClean: "9884344075",
+  phones: ["86818 88111"],
+  primaryPhone: "86818 88111",
+  secondaryPhone: "86818 88111",
+  primaryPhoneClean: "8681888111",
   secondaryPhoneClean: "8681888111",
   emails: ["admin@broadnet.in", "support@broadnet.in"],
   primaryEmail: "admin@broadnet.in",

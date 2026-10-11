@@ -248,7 +248,7 @@ export default function EnquirySection({ initialService, initialType }: EnquiryS
         // Match Indian phone format: 10 digits starting with 6-9, with optional +91 or 0 prefix
         const phoneRegex = /^(?:\+?91|0)?[6-9]\d{9}$/;
         if (!phoneRegex.test(cleaned)) {
-          return "Please enter a valid 10-digit Indian mobile number (e.g. 98843 44075).";
+          return "Please enter a valid 10-digit Indian mobile number (e.g. 86818 88111).";
         }
         return undefined;
       }
@@ -469,7 +469,7 @@ export default function EnquirySection({ initialService, initialType }: EnquiryS
     if (form.phone && form.phone.trim()) {
       parts.push(`Phone: ${form.phone.trim()}.`);
     }
-    return `https://wa.me/919884344075?text=${encodeURIComponent(parts.join(" "))}`;
+    return `https://wa.me/918681888111?text=${encodeURIComponent(parts.join(" "))}`;
   })();
 
   return (
@@ -708,7 +708,7 @@ export default function EnquirySection({ initialService, initialType }: EnquiryS
                       onChange={handleChange}
                       onBlur={handleBlur}
                       maxLength={15}
-                      placeholder="e.g. 98843 44075"
+                      placeholder="e.g. 86818 88111"
                       aria-invalid={!!errors.phone}
                       aria-describedby={errors.phone ? "enquiry-phone-error" : undefined}
                       className={`input-field input-field-icon input-field-compact min-h-[40px] ${
@@ -1005,11 +1005,11 @@ export default function EnquirySection({ initialService, initialType }: EnquiryS
                 </a>
 
                 <a
-                  href="tel:+919884344075"
+                  href="tel:+918681888111"
                   onClick={() => trackEvent("call_click", { location: "enquiry_form" })}
                   className="min-h-[44px] inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold text-[#16143E]/70 hover:text-[#16143E] border border-[#16143E]/12 hover:border-[#16143E]/25 bg-transparent transition-all w-full sm:w-auto"
                 >
-                  <Phone size={13} className="text-[#EF1313]" /> Call 98843 44075
+                  <Phone size={13} className="text-[#EF1313]" /> Call 86818 88111
                 </a>
 
                 <div className="w-full sm:w-auto sm:ml-auto flex items-center justify-center sm:justify-end gap-2 text-[11px] text-[#16143E]/60 pt-1 sm:pt-0">

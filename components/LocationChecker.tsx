@@ -233,10 +233,10 @@ export default function LocationChecker() {
         });
       } else {
         const d = await res.json();
-        setLeadError(d.error || "Failed to submit. Please call 98843 44075 directly.");
+        setLeadError(d.error || "Failed to submit. Please call 86818 88111 directly.");
       }
     } catch {
-      setLeadError("Network error. Please WhatsApp us directly at 98843 44075.");
+      setLeadError("Network error. Please WhatsApp us directly at 86818 88111.");
     } finally {
       setLeadSubmitting(false);
     }

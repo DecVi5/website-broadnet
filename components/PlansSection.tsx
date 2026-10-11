@@ -358,7 +358,7 @@ export default function PlansSection() {
               const displayPrice = isAnnual ? `₹${discounted.toLocaleString()}` : plan.price;
               const annualTotal = (discounted * 12).toLocaleString();
 
-              const waHref = `https://wa.me/919884344075?text=${encodeURIComponent(
+              const waHref = `https://wa.me/918681888111?text=${encodeURIComponent(
                 `${plan.whatsappText} [Billing: ${isAnnual ? `Annual (₹${annualTotal}/yr)` : "Monthly"}]`
               )}`;
 
@@ -510,7 +510,7 @@ export default function PlansSection() {
                 </div>
               </div>
               <a
-                href="https://wa.me/919884344075?text=Hi%20Broadnet%2C%20I%20am%20interested%20in%20the%20Broadnet%20FTTH%20plan%20with%20Free%20Installation%20and%20Free%20ONT."
+                href="https://wa.me/918681888111?text=Hi%20Broadnet%2C%20I%20am%20interested%20in%20the%20Broadnet%20FTTH%20plan%20with%20Free%20Installation%20and%20Free%20ONT."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#EF1313] hover:bg-[#d00e0e] text-white text-xs font-bold whitespace-nowrap transition-all shadow-md shadow-[#EF1313]/30 active:scale-95 flex items-center justify-center gap-1.5"
@@ -546,7 +546,7 @@ export default function PlansSection() {
                 </div>
               </div>
               <a
-                href="https://wa.me/919884344075?text=Hi%20Broadnet%2C%20I%20want%20to%20order%20the%20Railwire%20FTTH%20OTT%20bundle%20with%20Amazon%20Prime."
+                href="https://wa.me/918681888111?text=Hi%20Broadnet%2C%20I%20want%20to%20order%20the%20Railwire%20FTTH%20OTT%20bundle%20with%20Amazon%20Prime."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#4E0DBA] hover:bg-[#3d0999] text-white text-xs font-bold whitespace-nowrap transition-all shadow-md shadow-[#4E0DBA]/30 active:scale-95 flex items-center justify-center gap-1.5"
@@ -608,7 +608,7 @@ export default function PlansSection() {
                     Enquire Now
                   </a>
                   <a
-                    href={`https://wa.me/919884344075?text=${encodeURIComponent(item.waText)}`}
+                    href={`https://wa.me/918681888111?text=${encodeURIComponent(item.waText)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 min-h-[44px] py-2.5 px-3 rounded-lg bg-[#22c55e] hover:bg-[#16a34a] text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors"

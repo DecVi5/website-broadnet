@@ -17,7 +17,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Broadnet | CCTV Camera Installation & Security Systems in Chennai & Avadi",
   description:
-    "Broadnet Internet Services (Est. 2014): Official Hikvision & CP PLUS CCTV camera installation, eSSL biometric attendance, video door phones, and enterprise networking across Chennai. Free site visit. Call 98843 44075.",
+    "Broadnet Internet Services (Est. 2014): Official Hikvision & CP PLUS CCTV camera installation, eSSL biometric attendance, video door phones, and enterprise networking across Chennai. Free site visit. Call 86818 88111.",
   alternates: {
     canonical: "https://www.broadnet.in",
   },

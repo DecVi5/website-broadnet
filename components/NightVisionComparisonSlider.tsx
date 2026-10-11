@@ -396,7 +396,7 @@ export default function NightVisionComparisonSlider({
               <ArrowRight size={15} />
             </button>
             <a
-              href="https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20saw%20the%20ColorVu%20Night%20Vision%20comparison%20slider%20on%20your%20website%20and%20want%20a%20quote%20for%20a%20ColorVu%20CCTV%20setup."
+              href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20saw%20the%20ColorVu%20Night%20Vision%20comparison%20slider%20on%20your%20website%20and%20want%20a%20quote%20for%20a%20ColorVu%20CCTV%20setup."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto py-3 px-5 rounded-full border border-emerald-400/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all"

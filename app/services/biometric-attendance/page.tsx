@@ -33,7 +33,7 @@ import {
 export const metadata: Metadata = {
   title: "Biometric Time Attendance Systems in Chennai & Avadi | eSSL Authorised Partner",
   description:
-    "Authorised eSSL biometric time attendance installations across Chennai and Avadi. Facial recognition, fingerprint readers, cloud attendance software, and automated payroll integration. Call 98843 44075.",
+    "Authorised eSSL biometric time attendance installations across Chennai and Avadi. Facial recognition, fingerprint readers, cloud attendance software, and automated payroll integration. Call 86818 88111.",
   keywords: [
     "Biometric attendance system Avadi",
     "eSSL biometric Chennai",
@@ -267,18 +267,19 @@ export default function BiometricAttendancePage() {
     <>
       <Header activePage="Services" />
       <main>
-        {/* 1. Hero Section (Heading + Details on Left, Image + Use Case on Right) */}
-        <section className="relative pt-32 pb-20 sm:pb-28 bg-[#0B091E] text-white overflow-hidden">
+        {/* 1. Hero Section (Heading + Details on Left, Placeholder + Use Case on Right) */}
+        <section className="relative pt-32 pb-20 sm:pb-28 bg-white text-[#16143E] overflow-hidden border-b border-[#16143E]/5">
+          {/* Subtle ambient glow & grid pattern */}
           <div className="absolute inset-0 pointer-events-none">
             <div
-              className="absolute inset-0 opacity-10"
+              className="absolute inset-0 opacity-[0.035]"
               style={{
-                backgroundImage: "radial-gradient(circle, #4E0DBA 1px, transparent 1px)",
-                backgroundSize: "40px 40px",
+                backgroundImage: "radial-gradient(circle, #4E0DBA 1.5px, transparent 1.5px)",
+                backgroundSize: "36px 36px",
               }}
             />
-            <div className="absolute top-1/4 -right-20 w-[600px] h-[500px] bg-[#4E0DBA]/25 blur-[160px] rounded-full" />
-            <div className="absolute bottom-10 left-10 w-[500px] h-[400px] bg-[#EF1313]/15 blur-[150px] rounded-full" />
+            <div className="absolute top-1/4 -right-20 w-[550px] h-[450px] bg-purple-100/40 blur-[140px] rounded-full" />
+            <div className="absolute bottom-10 left-10 w-[500px] h-[400px] bg-red-100/50 blur-[150px] rounded-full" />
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
@@ -289,7 +290,7 @@ export default function BiometricAttendancePage() {
                   { label: "Services", href: "/#services" },
                   { label: "Biometric Time Attendance" },
                 ]}
-                variant="dark"
+                variant="light"
               />
             </div>
 
@@ -297,24 +298,27 @@ export default function BiometricAttendancePage() {
               {/* Left Column: Copy & Value Proposition */}
               <div className="lg:col-span-7">
                 <div className="flex flex-wrap items-center gap-2.5 mb-6">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-[#4E0DBA]/25 text-[#A78BFA] border border-[#4E0DBA]/40">
-                    <BadgeCheck size={14} className="text-[#A78BFA]" />
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#4E0DBA]/10 text-[#4E0DBA] border border-[#4E0DBA]/25 shadow-2xs">
+                    <BadgeCheck size={14} className="text-[#4E0DBA]" />
                     Official eSSL Authorised Partner
                   </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-white/10 text-white/90 border border-white/15">
-                    <Clock size={13} className="text-emerald-400" />
-                    2-Hour On-Site Technician Dispatch in Avadi
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100/90 text-[#16143E]/80 border border-slate-200/80 shadow-2xs">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                    </span>
+                    &lt; 2-Hour On-Site Technician Dispatch in Avadi
                   </span>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight font-display mb-6">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#16143E] leading-[1.12] font-display tracking-tight mb-6">
                   Frictionless Attendance.
                   <br />
-                  <span className="text-gradient">Biometric Time Attendance & Face Scan.</span>
+                  <span className="text-gradient">Biometric Time Attendance &amp; Face Scan.</span>
                 </h1>
 
-                <p className="text-white/70 text-base sm:text-lg md:text-xl leading-relaxed mb-8 max-w-2xl font-body">
-                  Eliminate proxy attendance, automate multi-shift payroll hours, and secure restricted zones with certified eSSL facial recognition, optical fingerprint readers, and cloud management software across Avadi & Chennai.
+                <p className="text-[#16143E]/70 text-base sm:text-lg md:text-xl leading-relaxed mb-8 max-w-2xl font-body">
+                  Eliminate proxy attendance, automate multi-shift payroll hours, and secure restricted zones with certified eSSL facial recognition, optical fingerprint readers, and cloud management software across Avadi &amp; Chennai.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-3 mb-8">
@@ -324,8 +328,11 @@ export default function BiometricAttendancePage() {
                     "Battery Backup for Power Outages",
                     "Multi-Branch Cloud Sync Support",
                   ].map((feat) => (
-                    <div key={feat} className="flex items-center gap-2 text-sm text-white/85">
-                      <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0" />
+                    <div
+                      key={feat}
+                      className="flex items-center gap-2.5 text-sm font-medium text-[#16143E]/85 bg-slate-50/80 border border-slate-200/70 rounded-xl px-3.5 py-2.5 shadow-2xs hover:border-[#4E0DBA]/30 hover:bg-white transition-all"
+                    >
+                      <CheckCircle2 size={16} className="text-emerald-500 flex-shrink-0" />
                       <span>{feat}</span>
                     </div>
                   ))}
@@ -334,88 +341,110 @@ export default function BiometricAttendancePage() {
                 <div className="flex flex-wrap items-center gap-4">
                   <a
                     href="#packages"
-                    className="btn-crimson flex items-center gap-2 text-sm font-bold shadow-lg shadow-[#EF1313]/30"
+                    className="btn-crimson flex items-center gap-2 text-sm font-bold shadow-lg shadow-[#EF1313]/25 hover:shadow-xl hover:shadow-[#EF1313]/35 transition-all"
                   >
                     <span>View Attendance Packages</span>
                     <ArrowRight size={16} />
                   </a>
                   <a
-                    href="https://wa.me/919884344075?text=Hi%20Broadnet,%20I%20am%20interested%20in%20Biometric%20Time%20Attendance%20systems%20in%20Avadi.%20Please%20share%20pricing."
+                    href="https://wa.me/918681888111?text=Hi%20Broadnet,%20I%20am%20interested%20in%20Biometric%20Time%20Attendance%20systems%20in%20Avadi.%20Please%20share%20pricing."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#22c55e] hover:bg-[#16a34a] text-white font-bold text-sm transition-colors shadow-md"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#22c55e] hover:bg-[#16a34a] text-white font-bold text-sm transition-all shadow-md shadow-emerald-500/20 hover:shadow-lg"
                   >
                     <MessageCircle size={16} className="fill-white" />
                     <span>WhatsApp Quote</span>
                   </a>
                   <a
-                    href="tel:+919884344075"
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-colors border border-white/15"
+                    href="tel:+918681888111"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-50 hover:bg-slate-100 text-[#16143E] font-semibold text-sm transition-all border border-slate-200 shadow-2xs hover:border-slate-300"
                   >
-                    <Phone size={15} />
-                    <span>Call: 98843 44075</span>
+                    <Phone size={15} className="text-[#EF1313]" />
+                    <span>Call: 86818 88111</span>
                   </a>
                 </div>
               </div>
 
-              {/* Right Column: Visual Showcase + Use Case Badge */}
+              {/* Right Column: Visual Showcase + Hardware Placeholder */}
               <div className="lg:col-span-5 flex justify-center">
                 <div className="relative w-full max-w-md">
-                  <div className="relative bg-[#16143E] border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-[#16143E]/60 overflow-hidden">
-                    <div className="absolute top-0 right-0 w-36 h-36 bg-[#4E0DBA]/30 blur-[80px] rounded-full pointer-events-none" />
+                  <div className="relative bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(22,20,62,0.08)] overflow-hidden ring-1 ring-slate-900/[0.04]">
+                    <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-[#4E0DBA]/10 to-[#EF1313]/10 blur-3xl rounded-full pointer-events-none" />
 
                     <div className="relative z-10">
                       <div className="flex items-center justify-between mb-4">
                         <span className="text-xs font-bold uppercase tracking-wider text-[#A78BFA]">
-                          Time & Attendance
+                          Time &amp; Attendance
                         </span>
-                        <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                        <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200/80 inline-flex items-center gap-1.5 shadow-2xs">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                           eSSL Certified Tech
                         </span>
                       </div>
 
-                      <div className="h-56 sm:h-64 w-full flex flex-col items-center justify-center my-2 bg-gradient-to-br from-white/[0.04] to-white/[0.01] rounded-2xl border border-white/10 p-6 text-center">
-                        <div className="w-16 h-16 rounded-2xl bg-[#EF1313]/20 border border-[#EF1313]/35 flex items-center justify-center text-[#EF1313] mb-4 shadow-lg shadow-[#EF1313]/20">
-                          <Fingerprint size={34} />
+                      {/* Hardware Asset Placeholder */}
+                      <div className="relative h-56 sm:h-64 w-full flex flex-col items-center justify-center my-3 bg-gradient-to-b from-slate-50/90 to-slate-100/60 rounded-2xl border-2 border-dashed border-slate-200/90 p-6 text-center group transition-all duration-300 hover:border-[#4E0DBA]/40 hover:bg-slate-50">
+                        {/* Technical Corner Brackets / Reticle */}
+                        <div className="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-slate-300 group-hover:border-[#4E0DBA]/60 transition-colors pointer-events-none" />
+                        <div className="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-slate-300 group-hover:border-[#4E0DBA]/60 transition-colors pointer-events-none" />
+                        <div className="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-slate-300 group-hover:border-[#4E0DBA]/60 transition-colors pointer-events-none" />
+                        <div className="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-slate-300 group-hover:border-[#4E0DBA]/60 transition-colors pointer-events-none" />
+
+                        <div className="relative mb-3.5">
+                          <div className="w-16 h-16 rounded-2xl bg-white border border-slate-200/80 shadow-md shadow-slate-200/60 flex items-center justify-center text-[#4E0DBA] group-hover:scale-105 group-hover:shadow-lg transition-transform">
+                            <Fingerprint size={30} strokeWidth={1.8} className="text-[#4E0DBA]" />
+                          </div>
+                          <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75" />
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-[#4E0DBA]" />
+                          </span>
                         </div>
-                        <h3 className="text-white font-bold text-lg font-display">eSSL Attendance Console</h3>
-                        <p className="text-xs text-white/55 mt-1 max-w-xs">
+
+                        <div className="text-sm font-bold text-[#16143E] font-display">
+                          eSSL Attendance Console
+                        </div>
+                        <p className="text-xs text-[#16143E]/55 mt-1 font-medium max-w-[240px]">
                           High-speed optical fingerprint and contactless facial recognition with automated cloud payroll sync
                         </p>
+
+                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200/90 text-[11px] font-mono text-[#16143E]/70 mt-3 shadow-2xs">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#4E0DBA]" />
+                          Time &amp; Attendance Placeholder
+                        </div>
                       </div>
 
-                      <div className="pt-4 border-t border-white/10 mb-4">
+                      <div className="pt-4 border-t border-slate-100 mb-4">
                         <div className="flex items-center justify-between">
                           <div>
-                            <div className="text-white font-bold text-base">eSSL Series</div>
-                            <p className="text-xs text-white/55">Standalone & Multi-Branch Systems</p>
+                            <h2 className="text-[#16143E] font-bold text-lg">eSSL Series</h2>
+                            <p className="text-xs text-[#16143E]/55">Standalone &amp; Multi-Branch Systems</p>
                           </div>
-                          <span className="text-sm font-bold text-[#EF1313] bg-[#EF1313]/10 border border-[#EF1313]/25 px-3 py-1.5 rounded-lg">
+                          <span className="text-sm font-bold text-[#EF1313] bg-red-50 border border-red-200/90 px-3 py-1.5 rounded-lg shadow-2xs">
                             Starts ₹4,500
                           </span>
                         </div>
                       </div>
 
                       {/* Prominent Use Case Tag */}
-                      <div className="pt-3 border-t border-white/10 flex items-center justify-between">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-white/50">
+                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#16143E]/50">
                           Primary Use Case
                         </span>
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#EF1313]/20 text-[#EF1313] border border-[#EF1313]/40 shadow-sm">
-                          <Building size={12} />
-                          Offices, Factories & Clinics
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-[#16143E] border border-slate-200/80 shadow-2xs">
+                          <Building size={12} className="text-[#4E0DBA]" />
+                          Offices, Factories &amp; Clinics
                         </span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="absolute -bottom-5 -left-4 sm:-left-6 bg-[#120F2E] border border-white/15 rounded-2xl px-4 py-3 shadow-xl flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                  <div className="absolute -bottom-5 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl px-4 py-3 shadow-[0_12px_30px_rgba(22,20,62,0.12)] flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 flex-shrink-0">
                       <FileSpreadsheet size={20} />
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-white">Automated Reports</div>
-                      <div className="text-[11px] text-white/50">One-click monthly payroll sync</div>
+                      <div className="text-xs font-bold text-[#16143E]">Automated Reports</div>
+                      <div className="text-[11px] text-[#16143E]/55">One-click monthly payroll sync</div>
                     </div>
                   </div>
                 </div>
@@ -579,7 +608,7 @@ export default function BiometricAttendancePage() {
 
                   <div>
                     <a
-                      href={`https://wa.me/919884344075?text=${encodeURIComponent(
+                      href={`https://wa.me/918681888111?text=${encodeURIComponent(
                         `Hi Broadnet, I am interested in the ${pkg.name} (${pkg.price}) for Biometric Attendance in Avadi. Please share details.`
                       )}`}
                       target="_blank"

@@ -80,10 +80,10 @@ export default function ProjectsPage() {
                   Schedule Your Free Site Visit
                 </a>
                 <a
-                  href="tel:+919884344075"
+                  href="tel:+918681888111"
                   className="px-5 py-2.5 rounded-full border border-[#16143E]/20 text-[#16143E] text-xs sm:text-sm font-bold flex items-center gap-2 transition-colors min-h-[46px] hover:bg-white"
                 >
-                  <Phone size={14} className="text-[#EF1313]" /> Call 98843 44075
+                  <Phone size={14} className="text-[#EF1313]" /> Call 86818 88111
                 </a>
               </div>
             </div>

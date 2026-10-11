@@ -201,7 +201,7 @@ export default function HeroSection() {
 
           {/* Secondary CTA */}
           <a
-            href="https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20get%20a%20free%20quote%20and%20schedule%20a%20site%20visit."
+            href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20get%20a%20free%20quote%20and%20schedule%20a%20site%20visit."
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent("whatsapp_click", { category: "Hero", label: "SecondaryCTA" })}
@@ -209,7 +209,7 @@ export default function HeroSection() {
             style={{ fontFamily: "Syne, sans-serif" }}
           >
             <WhatsAppIcon size={18} className="text-[#25D366]" />
-            <span>{t("hero.whatsappCta")} · 98843 44075</span>
+            <span>{t("hero.whatsappCta")} · 86818 88111</span>
           </a>
         </motion.div>
 

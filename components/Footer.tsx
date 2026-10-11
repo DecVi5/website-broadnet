@@ -151,10 +151,7 @@ export default function Footer() {
                   <Phone size={14} />
                 </div>
                 <div>
-                  <a href="tel:+919884344075" className="hover:text-white font-bold block text-white">
-                    98843 44075
-                  </a>
-                  <a href="tel:+918681888111" className="hover:text-white font-bold block text-white/80">
+                  <a href="tel:+918681888111" className="hover:text-white font-bold block text-white">
                     86818 88111
                   </a>
                 </div>

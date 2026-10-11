@@ -57,7 +57,7 @@ const REVIEWS = [
     name: "Venkatesh Prasad",
     location: "Pattabiram",
     comment:
-      "They gave a free site visit within 2 hours of calling 9884344075. Very transparent quote with no surprise charges. Excellent support whenever we need DVR assistance.",
+      "They gave a free site visit within 2 hours of calling 8681888111. Very transparent quote with no surprise charges. Excellent support whenever we need DVR assistance.",
     stars: 5,
     tag: "Quick Dispatch & AMC",
   },
@@ -173,7 +173,7 @@ export default function CCTVLandingClient() {
         setErrorMsg(data.error || "Failed to submit enquiry. Please call us directly.");
       }
     } catch {
-      setErrorMsg("Something went wrong. Please call us at 98843 44075.");
+      setErrorMsg("Something went wrong. Please call us at 86818 88111.");
     } finally {
       setIsSubmitting(false);
     }
@@ -242,16 +242,16 @@ export default function CCTVLandingClient() {
                 </button>
 
                 <a
-                  href="tel:+919884344075"
+                  href="tel:+918681888111"
                   className="min-h-[52px] px-6 rounded-full border-2 border-[#16143E]/15 hover:border-[#16143E] text-sm sm:text-base font-bold text-[#16143E] bg-white flex items-center justify-center gap-2 transition-all shadow-xs hover:shadow-md"
                   style={{ fontFamily: "Syne, sans-serif" }}
                 >
                   <Phone size={17} className="text-[#EF1313]" />
-                  <span>Call 98843 44075</span>
+                  <span>Call 86818 88111</span>
                 </a>
 
                 <a
-                  href="https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20get%20a%20free%20CCTV%20quote%20and%20schedule%20a%20site%20visit."
+                  href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20get%20a%20free%20CCTV%20quote%20and%20schedule%20a%20site%20visit."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="min-h-[52px] px-5 rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#15803d] text-sm font-bold flex items-center justify-center gap-2 transition-all shadow-xs"
@@ -306,7 +306,7 @@ export default function CCTVLandingClient() {
                       <strong>{form.phone}</strong> within 15 minutes to confirm your site visit.
                     </p>
                     <a
-                      href="https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20just%20submitted%20the%20CCTV%20quote%20request."
+                      href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20just%20submitted%20the%20CCTV%20quote%20request."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] text-white text-xs font-bold shadow-md shadow-[#25D366]/30"
@@ -344,7 +344,7 @@ export default function CCTVLandingClient() {
                       <input
                         type="tel"
                         required
-                        placeholder="e.g. 98843 44075"
+                        placeholder="e.g. 86818 88111"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         className="w-full px-4 py-2.5 rounded-xl border border-[#16143E]/15 focus:border-[#EF1313] focus:ring-2 focus:ring-[#EF1313]/10 text-sm outline-none transition-all"
@@ -616,7 +616,7 @@ export default function CCTVLandingClient() {
                   </button>
 
                   <a
-                    href={`https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20am%20interested%20in%20the%20${calcCamCount}-camera%20${calcTech}%20CCTV%20setup%20estimated%20at%20${getEstimatedPrice()}.`}
+                    href={`https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20am%20interested%20in%20the%20${calcCamCount}-camera%20${calcTech}%20CCTV%20setup%20estimated%20at%20${getEstimatedPrice()}.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full py-2.5 rounded-xl bg-[#25D366]/20 hover:bg-[#25D366]/30 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors border border-[#25D366]/40"
@@ -732,13 +732,13 @@ export default function CCTVLandingClient() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
-                href="tel:+919884344075"
+                href="tel:+918681888111"
                 className="btn-crimson min-h-[48px] px-8 text-sm justify-center cursor-pointer glow-btn-crimson"
               >
-                <Phone size={16} /> Call 98843 44075
+                <Phone size={16} /> Call 86818 88111
               </a>
               <a
-                href="https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20would%20like%20a%20free%20CCTV%20site%20visit."
+                href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20a%20free%20CCTV%20site%20visit."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-bold flex items-center gap-2 min-h-[48px] transition-colors"

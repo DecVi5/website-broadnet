@@ -206,7 +206,7 @@ export default function ServicesSection() {
                     </button>
 
                     <a
-                      href="https://wa.me/919884344075?text=Hello%20Broadnet%2C%20I%20need%20a%20quotation%20for%20CCTV%20Surveillance%20installation."
+                      href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20need%20a%20quotation%20for%20CCTV%20Surveillance%20installation."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-5 py-2.5 rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#15803d] text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all min-h-[48px]"
@@ -254,8 +254,8 @@ export default function ServicesSection() {
                   <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
                     <div>
                       <div className="text-[11px] text-white/60">Lead Division Hotline:</div>
-                      <a href="tel:+919884344075" className="text-sm font-bold text-white hover:text-[#EF1313] transition-colors">
-                        98843 44075 / 86818 88111
+                      <a href="tel:+918681888111" className="text-sm font-bold text-white hover:text-[#EF1313] transition-colors">
+                        86818 88111
                       </a>
                     </div>
                     <Link
