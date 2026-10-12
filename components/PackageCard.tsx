@@ -10,6 +10,9 @@ import {
   Sparkles,
   X,
   ExternalLink,
+  Camera,
+  HardDrive,
+  Cpu,
 } from "lucide-react";
 import { CCTVPackage, buildWhatsAppLink } from "@/data/site";
 import { scrollToWithPhysics } from "@/lib/scrollPhysics";
@@ -192,31 +195,34 @@ export default function PackageCard({
           {/* Few Key Points (Specs Pills) */}
           <div className="flex flex-wrap gap-1.5 mb-5 text-[11px] font-semibold">
             <span
-              className={`px-2.5 py-1 rounded-lg border ${
+              className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border ${
                 isDark
                   ? "bg-white/5 border-white/10 text-white/85"
                   : "bg-[#16143E]/5 border-[#16143E]/8 text-[#16143E]/80"
               }`}
             >
-              📹 {pkg.resolution}
+              <Camera size={13} className="text-[#EF1313] flex-shrink-0" />
+              <span>{pkg.resolution}</span>
             </span>
             <span
-              className={`px-2.5 py-1 rounded-lg border ${
+              className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border ${
                 isDark
                   ? "bg-white/5 border-white/10 text-white/85"
                   : "bg-[#16143E]/5 border-[#16143E]/8 text-[#16143E]/80"
               }`}
             >
-              💾 {pkg.storage}
+              <HardDrive size={13} className="text-[#4E0DBA] flex-shrink-0" />
+              <span>{pkg.storage}</span>
             </span>
             <span
-              className={`px-2.5 py-1 rounded-lg border ${
+              className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border ${
                 isDark
                   ? "bg-white/5 border-white/10 text-white/85"
                   : "bg-[#16143E]/5 border-[#16143E]/8 text-[#16143E]/80"
               }`}
             >
-              ⚡ {pkg.dvrChannels}
+              <Cpu size={13} className="text-amber-500 flex-shrink-0" />
+              <span>{pkg.dvrChannels}</span>
             </span>
           </div>
         </div>
@@ -351,14 +357,17 @@ export default function PackageCard({
 
                   {/* Core Specs Pills */}
                   <div className="flex flex-wrap gap-1.5 mb-5 text-[11px] font-semibold text-white/85">
-                    <span className="px-2.5 py-1 rounded-lg border bg-white/5 border-white/10">
-                      📹 {pkg.resolution}
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-white/5 border-white/10">
+                      <Camera size={13} className="text-[#EF1313] flex-shrink-0" />
+                      <span>{pkg.resolution}</span>
                     </span>
-                    <span className="px-2.5 py-1 rounded-lg border bg-white/5 border-white/10">
-                      💾 {pkg.storage}
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-white/5 border-white/10">
+                      <HardDrive size={13} className="text-purple-400 flex-shrink-0" />
+                      <span>{pkg.storage}</span>
                     </span>
-                    <span className="px-2.5 py-1 rounded-lg border bg-white/5 border-white/10">
-                      ⚡ {pkg.dvrChannels}
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-white/5 border-white/10">
+                      <Cpu size={13} className="text-amber-400 flex-shrink-0" />
+                      <span>{pkg.dvrChannels}</span>
                     </span>
                   </div>
 

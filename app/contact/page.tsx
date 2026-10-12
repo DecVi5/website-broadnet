@@ -132,8 +132,9 @@ export default function ContactPage() {
               />
             </div>
             <div className="mt-4 flex flex-wrap items-center justify-between text-xs text-[#16143E]/60 gap-2">
-              <span className="font-semibold text-[#16143E]">
-                📍 1093, Fire Station Road, TNHB, Avadi, Chennai – 600 054
+              <span className="font-semibold text-[#16143E] inline-flex items-center gap-1.5">
+                <MapPin size={14} className="text-[#EF1313] flex-shrink-0" />
+                <span>1093, Fire Station Road, TNHB, Avadi, Chennai – 600 054</span>
               </span>
               <a
                 href="https://www.google.com/maps/dir/?api=1&destination=1093,+Fire+Station+Road,+TNHB,+Avadi,+Chennai,+Tamil+Nadu+600054"

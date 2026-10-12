@@ -30,6 +30,7 @@ import {
   Moon,
   Calculator,
   User,
+  Lock,
 } from "lucide-react";
 import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 import PackageCard from "@/components/PackageCard";
@@ -408,8 +409,9 @@ export default function CCTVLandingClient() {
                       {isSubmitting ? "Sending Request..." : "Request On-Site Inspection"}
                     </button>
 
-                    <p className="text-[11px] text-[#16143E]/50 text-center pt-1">
-                      🔒 No spam. Sent directly to <span className="font-semibold">admin@broadnet.in</span>.
+                    <p className="text-[11px] text-[#16143E]/50 text-center pt-1 inline-flex items-center justify-center gap-1 w-full">
+                      <Lock size={12} className="text-slate-400" />
+                      <span>No spam. Sent directly to <span className="font-semibold">admin@broadnet.in</span>.</span>
                     </p>
                   </form>
                 )}

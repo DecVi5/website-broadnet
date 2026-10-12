@@ -15,6 +15,7 @@ import {
   MessageCircle,
   Layers,
   Maximize2,
+  Moon,
 } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import { scrollToWithPhysics } from "@/lib/scrollPhysics";
@@ -250,35 +251,38 @@ export default function NightVisionComparisonSlider({
             <button
               type="button"
               onClick={() => setPreset(10, "show_colorvu")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer inline-flex items-center gap-1.5 ${
                 sliderPosition < 25
                   ? "bg-[#EF1313] text-white border-[#EF1313] shadow-md shadow-[#EF1313]/30"
                   : "bg-white/5 hover:bg-white/10 text-white/80 border-white/10"
               }`}
             >
-              ✨ 100% ColorVu View
+              <Sparkles size={13} className="text-amber-300" />
+              <span>100% ColorVu View</span>
             </button>
             <button
               type="button"
               onClick={() => setPreset(50, "split_view")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer inline-flex items-center gap-1.5 ${
                 sliderPosition >= 40 && sliderPosition <= 60
                   ? "bg-[#4E0DBA] text-white border-[#8B5CF6] shadow-md shadow-[#4E0DBA]/40"
                   : "bg-white/5 hover:bg-white/10 text-white/80 border-white/10"
               }`}
             >
-              ⚖️ 50/50 Split Comparison
+              <SlidersHorizontal size={13} className="text-purple-300" />
+              <span>50/50 Split Comparison</span>
             </button>
             <button
               type="button"
               onClick={() => setPreset(90, "show_ir")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer inline-flex items-center gap-1.5 ${
                 sliderPosition > 75
                   ? "bg-zinc-700 text-white border-zinc-500 shadow-md"
                   : "bg-white/5 hover:bg-white/10 text-white/80 border-white/10"
               }`}
             >
-              🌑 Old IR Night Vision
+              <Moon size={13} className="text-zinc-400" />
+              <span>Old IR Night Vision</span>
             </button>
           </div>
         </div>
