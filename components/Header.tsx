@@ -144,7 +144,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
         }`}
         style={{ overflow: "visible" }}
       >
-        {/* Top Dismissible Under Development Notification Banner */}
+        {/* Top Persistent Under Development Notification Banner */}
         <UnderDevelopmentBanner />
 
         {/* Main Clean Header Bar */}
