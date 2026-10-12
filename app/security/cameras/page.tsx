@@ -290,65 +290,57 @@ export default function CamerasPage() {
                   <span className="text-gradient">24/7 Ultra-HD & 4K CCTV Surveillance.</span>
                 </h1>
 
-                <p className="text-[#16143E]/70 text-base sm:text-lg md:text-xl leading-relaxed mb-8 max-w-2xl font-body">
+                <p className="text-[#16143E]/70 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-7 max-w-2xl font-body">
                   High-definition surveillance engineered for independent villas, gated apartment communities, retail shops, and commercial factories across Avadi &amp; Chennai. Full-color night vision, concealed conduit wiring, and live smartphone monitoring.
                 </p>
 
                 {/* 4 Key Points: Square Boxed In Line */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#EF1313]/30 hover:shadow-md transition-all flex flex-col justify-between aspect-square group">
-                    <div className="w-9 h-9 rounded-xl bg-[#EF1313]/10 text-[#EF1313] flex items-center justify-center group-hover:scale-105 transition-transform">
-                      <Eye size={18} />
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-3.5 mb-7 sm:mb-8">
+                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#EF1313]/30 hover:shadow-md transition-all flex flex-col items-start group">
+                    <div className="w-10 h-10 rounded-xl bg-[#EF1313]/10 text-[#EF1313] flex items-center justify-center mb-2.5 group-hover:scale-105 transition-transform">
+                      <Eye size={19} />
                     </div>
-                    <div>
-                      <div className="text-xs sm:text-sm font-bold text-[#16143E] font-display leading-tight">
-                        1080p to 4K
-                      </div>
-                      <div className="text-[11px] text-[#16143E]/60 mt-0.5 leading-tight font-body">
-                        ColorVu Night Vision
-                      </div>
+                    <div className="text-xs sm:text-[13px] font-bold text-[#16143E] font-display leading-tight truncate w-full">
+                      1080p to 4K
+                    </div>
+                    <div className="text-[11px] sm:text-xs text-[#16143E]/60 mt-1 leading-tight font-body truncate w-full">
+                      ColorVu Night Vision
                     </div>
                   </div>
 
-                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#4E0DBA]/30 hover:shadow-md transition-all flex flex-col justify-between aspect-square group">
-                    <div className="w-9 h-9 rounded-xl bg-[#4E0DBA]/10 text-[#4E0DBA] flex items-center justify-center group-hover:scale-105 transition-transform">
-                      <HardDrive size={18} />
+                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#4E0DBA]/30 hover:shadow-md transition-all flex flex-col items-start group">
+                    <div className="w-10 h-10 rounded-xl bg-[#4E0DBA]/10 text-[#4E0DBA] flex items-center justify-center mb-2.5 group-hover:scale-105 transition-transform">
+                      <HardDrive size={19} />
                     </div>
-                    <div>
-                      <div className="text-xs sm:text-sm font-bold text-[#16143E] font-display leading-tight">
-                        24/7 HDD
-                      </div>
-                      <div className="text-[11px] text-[#16143E]/60 mt-0.5 leading-tight font-body">
-                        Surveillance Storage
-                      </div>
+                    <div className="text-xs sm:text-[13px] font-bold text-[#16143E] font-display leading-tight truncate w-full">
+                      24/7 HDD
+                    </div>
+                    <div className="text-[11px] sm:text-xs text-[#16143E]/60 mt-1 leading-tight font-body truncate w-full">
+                      Surveillance Storage
                     </div>
                   </div>
 
-                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-emerald-500/30 hover:shadow-md transition-all flex flex-col justify-between aspect-square group">
-                    <div className="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center group-hover:scale-105 transition-transform">
-                      <Layers size={18} />
+                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-emerald-500/30 hover:shadow-md transition-all flex flex-col items-start group">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-2.5 group-hover:scale-105 transition-transform">
+                      <Layers size={19} />
                     </div>
-                    <div>
-                      <div className="text-xs sm:text-sm font-bold text-[#16143E] font-display leading-tight">
-                        100% Concealed
-                      </div>
-                      <div className="text-[11px] text-[#16143E]/60 mt-0.5 leading-tight font-body">
-                        Conduit Cabling
-                      </div>
+                    <div className="text-xs sm:text-[13px] font-bold text-[#16143E] font-display leading-tight truncate w-full">
+                      100% Concealed
+                    </div>
+                    <div className="text-[11px] sm:text-xs text-[#16143E]/60 mt-1 leading-tight font-body truncate w-full">
+                      Conduit Cabling
                     </div>
                   </div>
 
-                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-blue-500/30 hover:shadow-md transition-all flex flex-col justify-between aspect-square group">
-                    <div className="w-9 h-9 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center group-hover:scale-105 transition-transform">
-                      <Shield size={18} />
+                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-blue-500/30 hover:shadow-md transition-all flex flex-col items-start group">
+                    <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center mb-2.5 group-hover:scale-105 transition-transform">
+                      <Shield size={19} />
                     </div>
-                    <div>
-                      <div className="text-xs sm:text-sm font-bold text-[#16143E] font-display leading-tight">
-                        2-Year Warranty
-                      </div>
-                      <div className="text-[11px] text-[#16143E]/60 mt-0.5 leading-tight font-body">
-                        On-Site Hardware
-                      </div>
+                    <div className="text-xs sm:text-[13px] font-bold text-[#16143E] font-display leading-tight truncate w-full">
+                      2-Year Warranty
+                    </div>
+                    <div className="text-[11px] sm:text-xs text-[#16143E]/60 mt-1 leading-tight font-body truncate w-full">
+                      On-Site Hardware
                     </div>
                   </div>
                 </div>
