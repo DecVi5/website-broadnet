@@ -284,21 +284,6 @@ export default function CamerasPage() {
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               {/* Left Column: Heading & Details */}
               <div className="lg:col-span-7">
-                {/* Trust Badges */}
-                <div className="flex flex-wrap items-center gap-2.5 mb-6">
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#EF1313]/10 text-[#EF1313] border border-[#EF1313]/25 shadow-2xs">
-                    <BadgeCheck size={14} className="text-[#EF1313]" />
-                    Official CP PLUS & Hikvision Partner
-                  </span>
-                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100/90 text-[#16143E]/80 border border-slate-200/80 shadow-2xs">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                    </span>
-                    &lt; 2-Hour Technician Dispatch in Avadi
-                  </span>
-                </div>
-
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#16143E] leading-[1.12] font-display tracking-tight mb-6">
                   Ensure Security.
                   <br />
@@ -306,25 +291,66 @@ export default function CamerasPage() {
                 </h1>
 
                 <p className="text-[#16143E]/70 text-base sm:text-lg md:text-xl leading-relaxed mb-8 max-w-2xl font-body">
-                  High-definition surveillance engineered for independent villas, gated apartment communities, retail shops, and commercial factories across Avadi & Chennai. Full-color night vision, concealed conduit wiring, and live smartphone monitoring.
+                  High-definition surveillance engineered for independent villas, gated apartment communities, retail shops, and commercial factories across Avadi &amp; Chennai. Full-color night vision, concealed conduit wiring, and live smartphone monitoring.
                 </p>
 
-                {/* Key Bullet Highlights */}
-                <div className="grid sm:grid-cols-2 gap-3 mb-8">
-                  {[
-                    "1080p to 4K ColorVu Night Vision",
-                    "Surveillance-grade 24/7 HDD storage",
-                    "100% Concealed conduit cabling",
-                    "2-Year on-site hardware warranty",
-                  ].map((feat) => (
-                    <div
-                      key={feat}
-                      className="flex items-center gap-2.5 text-sm font-medium text-[#16143E]/85 bg-slate-50/80 border border-slate-200/70 rounded-xl px-3.5 py-2.5 shadow-2xs hover:border-[#EF1313]/30 hover:bg-white transition-all"
-                    >
-                      <CheckCircle2 size={16} className="text-emerald-500 flex-shrink-0" />
-                      <span>{feat}</span>
+                {/* 4 Key Points: Square Boxed In Line */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#EF1313]/30 hover:shadow-md transition-all flex flex-col justify-between aspect-square group">
+                    <div className="w-9 h-9 rounded-xl bg-[#EF1313]/10 text-[#EF1313] flex items-center justify-center group-hover:scale-105 transition-transform">
+                      <Eye size={18} />
                     </div>
-                  ))}
+                    <div>
+                      <div className="text-xs sm:text-sm font-bold text-[#16143E] font-display leading-tight">
+                        1080p to 4K
+                      </div>
+                      <div className="text-[11px] text-[#16143E]/60 mt-0.5 leading-tight font-body">
+                        ColorVu Night Vision
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#4E0DBA]/30 hover:shadow-md transition-all flex flex-col justify-between aspect-square group">
+                    <div className="w-9 h-9 rounded-xl bg-[#4E0DBA]/10 text-[#4E0DBA] flex items-center justify-center group-hover:scale-105 transition-transform">
+                      <HardDrive size={18} />
+                    </div>
+                    <div>
+                      <div className="text-xs sm:text-sm font-bold text-[#16143E] font-display leading-tight">
+                        24/7 HDD
+                      </div>
+                      <div className="text-[11px] text-[#16143E]/60 mt-0.5 leading-tight font-body">
+                        Surveillance Storage
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-emerald-500/30 hover:shadow-md transition-all flex flex-col justify-between aspect-square group">
+                    <div className="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                      <Layers size={18} />
+                    </div>
+                    <div>
+                      <div className="text-xs sm:text-sm font-bold text-[#16143E] font-display leading-tight">
+                        100% Concealed
+                      </div>
+                      <div className="text-[11px] text-[#16143E]/60 mt-0.5 leading-tight font-body">
+                        Conduit Cabling
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-blue-500/30 hover:shadow-md transition-all flex flex-col justify-between aspect-square group">
+                    <div className="w-9 h-9 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                      <Shield size={18} />
+                    </div>
+                    <div>
+                      <div className="text-xs sm:text-sm font-bold text-[#16143E] font-display leading-tight">
+                        2-Year Warranty
+                      </div>
+                      <div className="text-[11px] text-[#16143E]/60 mt-0.5 leading-tight font-body">
+                        On-Site Hardware
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* CTAs */}
@@ -345,104 +371,27 @@ export default function CamerasPage() {
                     <MessageCircle size={16} className="fill-white" />
                     <span>WhatsApp Quote</span>
                   </a>
-                  <a
-                    href="tel:+918681888111"
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-50 hover:bg-slate-100 text-[#16143E] font-semibold text-sm transition-all border border-slate-200 shadow-2xs hover:border-slate-300"
-                  >
-                    <Phone size={15} className="text-[#EF1313]" />
-                    <span>Call: 86818 88111</span>
-                  </a>
                 </div>
               </div>
 
-              {/* Right Column: Visual Showcase + Hardware Placeholder */}
+              {/* Right Column: Clean CCTV Hardware Showcase */}
               <div className="lg:col-span-5 flex justify-center">
-                <div className="relative w-full max-w-md">
-                  {/* Decorative Card Frame */}
-                  <div className="relative bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(22,20,62,0.08)] overflow-hidden ring-1 ring-slate-900/[0.04]">
-                    {/* Subtle corner aura */}
-                    <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-[#EF1313]/10 to-[#4E0DBA]/10 blur-3xl rounded-full pointer-events-none" />
+                <div className="relative w-full max-w-sm sm:max-w-md">
+                  {/* Decorative Frame */}
+                  <div className="relative bg-gradient-to-b from-white via-slate-50/50 to-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(22,20,62,0.06)] overflow-hidden flex flex-col items-center justify-center">
+                    {/* Ambient Aura Glow */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-[#EF1313]/15 via-[#4E0DBA]/10 to-transparent blur-3xl rounded-full pointer-events-none" />
 
-                    <div className="relative z-10">
-                      {/* Card Header */}
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-xs font-bold uppercase tracking-wider text-[#EF1313]">
-                          Surveillance Hardware
-                        </span>
-                        <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200/80 inline-flex items-center gap-1.5 shadow-2xs">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                          Active Stock in Avadi
-                        </span>
-                      </div>
-
-                      {/* Hardware Asset Placeholder instead of cam */}
-                      <div className="relative h-56 sm:h-64 w-full flex flex-col items-center justify-center my-3 bg-gradient-to-b from-slate-50/90 to-slate-100/60 rounded-2xl border-2 border-dashed border-slate-200/90 p-6 text-center group transition-all duration-300 hover:border-[#EF1313]/40 hover:bg-slate-50">
-                        {/* Technical Corner Brackets / Reticle */}
-                        <div className="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-slate-300 group-hover:border-[#EF1313]/60 transition-colors pointer-events-none" />
-                        <div className="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-slate-300 group-hover:border-[#EF1313]/60 transition-colors pointer-events-none" />
-                        <div className="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-slate-300 group-hover:border-[#EF1313]/60 transition-colors pointer-events-none" />
-                        <div className="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-slate-300 group-hover:border-[#EF1313]/60 transition-colors pointer-events-none" />
-
-                        {/* Icon Circle */}
-                        <div className="relative mb-3.5">
-                          <div className="w-16 h-16 rounded-2xl bg-white border border-slate-200/80 shadow-md shadow-slate-200/60 flex items-center justify-center text-[#EF1313] group-hover:scale-105 group-hover:shadow-lg transition-transform">
-                            <Camera size={30} strokeWidth={1.8} className="text-[#EF1313]" />
-                          </div>
-                          <span className="absolute -top-1 -right-1 flex h-3 w-3">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
-                            <span className="relative inline-flex rounded-full h-3 w-3 bg-[#EF1313]" />
-                          </span>
-                        </div>
-
-                        {/* Placeholder Labels */}
-                        <div className="text-sm font-bold text-[#16143E] font-display">
-                          Camera Hardware Visual
-                        </div>
-                        <p className="text-xs text-[#16143E]/55 mt-1 font-medium max-w-[240px]">
-                          Dome & Bullet Optical Units (4K Ultra-HD / ColorVu)
-                        </p>
-
-                        {/* Spec Tag */}
-                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200/90 text-[11px] font-mono text-[#16143E]/70 mt-3 shadow-2xs">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#EF1313]" />
-                          Hardware Asset Placeholder
-                        </div>
-                      </div>
-
-                      {/* Hardware Specs & Pricing */}
-                      <div className="pt-4 border-t border-slate-100 mb-4">
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <h2 className="text-[#16143E] font-bold text-lg">CP PLUS & Hikvision Pro</h2>
-                            <p className="text-xs text-[#16143E]/55">Smart AI Bullet & Dome Cameras</p>
-                          </div>
-                          <span className="text-sm font-bold text-[#EF1313] bg-red-50 border border-red-200/90 px-3 py-1.5 rounded-lg shadow-2xs">
-                            Starts ₹1,399
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Prominent Use Case Tag */}
-                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#16143E]/50">
-                          Primary Use Case
-                        </span>
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-[#16143E] border border-slate-200/80 shadow-2xs">
-                          <Home size={12} className="text-[#EF1313]" />
-                          Villas, Flats & Commercial
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Trust Float Badge */}
-                  <div className="absolute -bottom-5 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl px-4 py-3 shadow-[0_12px_30px_rgba(22,20,62,0.12)] flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#EF1313]/10 border border-[#EF1313]/20 flex items-center justify-center text-[#EF1313] flex-shrink-0">
-                      <Shield size={20} />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-[#16143E]">2,500+ Installed</div>
-                      <div className="text-[11px] text-[#16143E]/55">Homes & Corporates in Avadi</div>
+                    {/* Genuine Camera Hardware Image */}
+                    <div className="relative z-10 w-full flex items-center justify-center py-4">
+                      <Image
+                        src="/assets/realistic_cctv.png"
+                        alt="Ultra-HD 4K CCTV Camera Hardware"
+                        width={320}
+                        height={320}
+                        className="object-contain drop-shadow-[0_20px_35px_rgba(22,20,62,0.18)] hover:scale-105 transition-transform duration-500 max-h-[300px] w-auto"
+                        priority
+                      />
                     </div>
                   </div>
                 </div>
