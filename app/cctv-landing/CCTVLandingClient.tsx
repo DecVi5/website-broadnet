@@ -57,7 +57,7 @@ const REVIEWS = [
     name: "Venkatesh Prasad",
     location: "Pattabiram",
     comment:
-      "They gave a free site visit within 2 hours of calling 8681888111. Very transparent quote with no surprise charges. Excellent support whenever we need DVR assistance.",
+      "They gave a quick quotation within 2 hours of calling 8681888111. Very transparent quote with no surprise charges. Excellent support whenever we need DVR assistance.",
     stars: 5,
     tag: "Quick Dispatch & AMC",
   },
@@ -65,8 +65,8 @@ const REVIEWS = [
 
 const FAQS = [
   {
-    q: "What is included in the Free Site Visit?",
-    a: "Our certified CCTV engineer visits your premises anywhere in Chennai (with priority in Avadi, Pattabiram, Thirumullaivoyal, Ambattur, Poonamallee, etc.) to assess coverage angles, identify blind spots, calculate necessary cable footage, and provide an exact, itemized quotation with zero obligation.",
+    q: "How do I get an exact CCTV installation quote?",
+    a: "Our certified CCTV specialists review your premises layout and requirements (with priority in Avadi, Pattabiram, Thirumullaivoyal, Ambattur, Poonamallee, etc.) to assess coverage angles, identify blind spots, calculate necessary cable footage, and provide an exact, itemized quotation.",
   },
   {
     q: "Can I view the cameras live on my mobile phone when away?",
@@ -237,7 +237,7 @@ export default function CCTVLandingClient() {
                   onClick={() => scrollToWithPhysics("cctv-quote-form")}
                   className="btn-crimson min-h-[52px] px-8 text-sm sm:text-base font-bold justify-center shadow-xl shadow-[#EF1313]/25 hover:shadow-[#EF1313]/40 cursor-pointer glow-btn-crimson"
                 >
-                  <span>Get Free Site Visit & Quote</span>
+                  <span>Get Free Quotation</span>
                   <ArrowRight size={17} />
                 </button>
 
@@ -251,7 +251,7 @@ export default function CCTVLandingClient() {
                 </a>
 
                 <a
-                  href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20get%20a%20free%20CCTV%20quote%20and%20schedule%20a%20site%20visit."
+                  href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20get%20a%20free%20CCTV%20quotation."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="min-h-[52px] px-5 rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#15803d] text-sm font-bold flex items-center justify-center gap-2 transition-all shadow-xs"
@@ -266,7 +266,7 @@ export default function CCTVLandingClient() {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-6 border-t border-[#16143E]/10 max-w-xl mx-auto lg:mx-0">
                 <div className="flex items-center gap-2 text-xs font-semibold text-[#16143E]/85">
                   <CheckCircle2 size={16} className="text-[#EF1313] flex-shrink-0" />
-                  <span>Free Site Visit in 2 Hrs</span>
+                  <span>2-Hour Fast Response</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-semibold text-[#16143E]/85">
                   <CheckCircle2 size={16} className="text-[#EF1313] flex-shrink-0" />
@@ -303,7 +303,7 @@ export default function CCTVLandingClient() {
                     </h4>
                     <p className="text-xs text-emerald-700 mb-4 leading-relaxed">
                       Thank you, {form.name}! Our senior CCTV technician will call you at{" "}
-                      <strong>{form.phone}</strong> within 15 minutes to confirm your site visit.
+                      <strong>{form.phone}</strong> within 15 minutes to discuss your requirement &amp; provide an estimate.
                     </p>
                     <a
                       href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20just%20submitted%20the%20CCTV%20quote%20request."
@@ -611,7 +611,7 @@ export default function CCTVLandingClient() {
                     onClick={handleApplyEstimate}
                     className="w-full btn-crimson justify-center py-3 text-sm font-bold shadow-lg shadow-[#EF1313]/30 cursor-pointer glow-btn-crimson"
                   >
-                    <span>Book This Setup With Free Site Visit</span>
+                    <span>Book This Setup &amp; Get Quote</span>
                     <ArrowRight size={15} />
                   </button>
 
@@ -722,10 +722,10 @@ export default function CCTVLandingClient() {
             ))}
           </div>
 
-          {/* Bottom Free Site Visit Reminder CTA */}
+          {/* Bottom Reminder CTA */}
           <div className="p-8 rounded-3xl bg-[#16143E] text-white text-center max-w-4xl mx-auto shadow-xl border border-white/10">
             <h3 className="text-2xl sm:text-3xl font-bold mb-2" style={{ fontFamily: "Syne, sans-serif" }}>
-              Ready to Secure Your Property with a Free Site Visit?
+              Ready to Secure Your Property with 24/7 CCTV?
             </h3>
             <p className="text-white/70 text-sm max-w-xl mx-auto mb-6">
               Call our technicians directly or request a callback. 2-hour dispatch guaranteed in Avadi and surrounding localities.
@@ -738,7 +738,7 @@ export default function CCTVLandingClient() {
                 <Phone size={16} /> Call 86818 88111
               </a>
               <a
-                href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20a%20free%20CCTV%20site%20visit."
+                href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20a%20CCTV%20quotation."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-bold flex items-center gap-2 min-h-[48px] transition-colors"

@@ -825,7 +825,7 @@ export default function LocationChecker() {
                 Local Avadi Technician SLA
               </h5>
               <p className="text-white/50 text-xs leading-relaxed">
-                Technician response within 2 hours; site visits scheduled at your convenience.
+                Technician response within 2 hours; priority installation scheduled at your convenience.
               </p>
             </div>
           </div>

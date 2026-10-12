@@ -276,7 +276,7 @@ export const MILESTONES = [
 
 export const PROCESS_STEPS = [
   { step: "01", name: "Enquiry", desc: "Connect with us via WhatsApp, call, or web form with your requirements." },
-  { step: "02", name: "Site Visit", desc: "FREE on-site survey by our certified engineer to assess angles, cabling, and blind spots." },
+  { step: "02", name: "Assessment", desc: "Detailed technical evaluation by certified engineers to assess layout, cabling, and coverage." },
   { step: "03", name: "Quotation", desc: "Transparent itemized estimate with genuine manufacturer hardware & warranty." },
   { step: "04", name: "Installation", desc: "Clean conduit wiring, precision camera mounting, and tamper-proof terminations." },
   { step: "05", name: "Testing", desc: "Full camera focusing, mobile app configuration, remote view check, and client handover." },

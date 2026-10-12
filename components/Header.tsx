@@ -482,7 +482,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                 onClick={handleEnquiryClick}
                 className="btn-crimson text-xs py-2 px-4 shadow-sm glow-btn-crimson font-bold rounded-full"
               >
-                Free Site Visit
+                Get a Quote
               </Link>
             </div>
 
@@ -712,7 +712,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                   onClick={handleEnquiryClick}
                   className="w-full btn-crimson text-xs py-2.5 justify-center rounded-full"
                 >
-                  Claim Free Site Visit
+                  Get a Quote
                 </Link>
               </div>
             </motion.div>

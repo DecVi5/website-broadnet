@@ -30,12 +30,12 @@ const STEPS = [
   },
   {
     step: "02",
-    title: "Site Visit",
-    short: "100% FREE in-person assessment across Chennai to inspect angles & cable paths.",
+    title: "Engineering Assessment",
+    short: "Comprehensive technical review across Chennai to inspect angles & cable paths.",
     details: "Senior engineer maps blind spots, measures cable runs, assesses lighting for ColorVu vs IR, and checks backup points.",
     turnaround: "Same-Day / 24h",
     icon: MapPin,
-    badge: "100% FREE Survey",
+    badge: "Technical Review",
     highlight: true,
   },
   {
@@ -186,10 +186,10 @@ export default function ProcessSection() {
               className="text-lg sm:text-xl font-bold"
               style={{ fontFamily: "Syne, sans-serif" }}
             >
-              Ready to begin with Step 02 (Free Site Visit)?
+              Ready to Plan Your Security & Network Setup?
             </h4>
             <p className="text-xs sm:text-sm text-white/70 mt-1">
-              Zero obligation survey anywhere across Avadi & Chennai. Same-day scheduling available.
+              Connect with our certified specialists in Avadi &amp; Chennai for an itemized proposal.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
@@ -201,7 +201,7 @@ export default function ProcessSection() {
               }}
               className="btn-crimson text-xs sm:text-sm font-bold glow-btn-crimson cursor-pointer"
             >
-              <span>Schedule Free Site Survey</span>
+              <span>Request Detailed Quote</span>
               <ArrowRight size={14} />
             </button>
             <a

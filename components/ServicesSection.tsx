@@ -202,7 +202,7 @@ export default function ServicesSection() {
                       className="px-6 py-2.5 rounded-full border border-[#16143E]/20 hover:border-[#4E0DBA] text-xs sm:text-sm font-semibold text-[#16143E] hover:text-[#4E0DBA] transition-colors min-h-[48px] cursor-pointer bg-white"
                       style={{ fontFamily: "Syne, sans-serif" }}
                     >
-                      Request Free Site Visit
+                      Request a Quote
                     </button>
 
                     <a

@@ -46,7 +46,7 @@ export interface ContactInfo {
   };
   sla: {
     technicianResponse: string;
-    siteVisitScheduling: string;
+    serviceScheduling: string;
   };
   maxBroadbandSpeed: string;
   warranty: {
@@ -81,7 +81,7 @@ export const SITE_CONFIG: ContactInfo = {
   whatsapp: {
     number: "+918681888111",
     cleanNumber: "918681888111",
-    defaultMessage: "Hello Broadnet, I would like to get a free quote and schedule a site visit.",
+    defaultMessage: "Hello Broadnet, I would like to enquire about your services and get a quote.",
   },
   email: "admin@broadnet.in",
   // Business operating hours
@@ -95,9 +95,9 @@ export const SITE_CONFIG: ContactInfo = {
     fiberNetworkKm: "100+ km",
   },
   sla: {
-    // Separation of immediate technician response from site visit scheduling
+    // Priority technician response and service scheduling
     technicianResponse: "< 2-Hour Technician Response in Avadi & Chennai",
-    siteVisitScheduling: "Free On-Site Survey (Same-Day / Next-Day Scheduling)",
+    serviceScheduling: "Prompt Service & Installation (Same-Day / Next-Day Scheduling)",
   },
   maxBroadbandSpeed: "300 Mbps",
   warranty: {
@@ -473,7 +473,7 @@ export function buildWhatsAppLink(options?: {
   if (options?.service) {
     parts.push(`I would like to enquire about ${options.service}.`);
   } else {
-    parts.push("I would like to enquire about your services and schedule a free site visit.");
+    parts.push("I would like to enquire about your services and get an estimate.");
   }
 
   if (options?.estimatePrice) {

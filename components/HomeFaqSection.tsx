@@ -23,8 +23,8 @@ function WhatsAppIcon({ size = 15, className = "" }: { size?: number; className?
 
 export const HOME_FAQS = [
   {
-    q: "Do you offer free on-site inspections for CCTV in Avadi and Chennai?",
-    a: "Yes, 100% free with zero obligation. Our certified security engineer visits your property (villa, apartment, factory, or shop) to assess viewing angles, eliminate blind spots, calculate conduit cabling runs, and provide a transparent itemized quotation.",
+    q: "How can I get an accurate quotation for CCTV installation in Chennai?",
+    a: "Share your property type, coverage requirements, and location with us via WhatsApp or phone. Our certified security engineers will review your layout, recommend camera models (ColorVu vs IR, Dome vs Bullet), calculate cable runs, and provide a transparent, itemized quotation.",
   },
   {
     q: "How fast is your technician dispatch SLA if an issue occurs?",
@@ -70,7 +70,7 @@ export default function HomeFaqSection() {
             Frequently Asked Questions
           </h2>
           <p className="text-[#16143E]/70 text-sm sm:text-base mt-2">
-            Clear answers about our site visits, pricing, warranties, and technician response times.
+            Clear answers about our security installations, pricing, warranties, and technician response times.
           </p>
         </div>
 

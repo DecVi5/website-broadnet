@@ -36,7 +36,7 @@ const DICTIONARY: Record<Language, Record<string, string>> = {
     "hero.title2": "Intelligent Security Systems.",
     "hero.desc":
       "BroadNet has been connecting and securing homes, businesses, and communities across Avadi & Chennai since 2014 with certified technology infrastructure.",
-    "hero.primaryCta": "Get Free Quote & Site Visit",
+    "hero.primaryCta": "Get Free Quote",
     "hero.callCta": "Call 86818 88111",
     "hero.whatsappCta": "WhatsApp Tech Desk",
     "hero.hudLabel": "Interactive Security Illustration",
@@ -44,7 +44,7 @@ const DICTIONARY: Record<Language, Record<string, string>> = {
     // Trust Bar
     "trust.experience": "12+ Years Established in Avadi",
     "trust.sla": "< 2-Hour Local Technician Response",
-    "trust.survey": "100% Free On-Site Inspection",
+    "trust.survey": "All Chennai Coverage & Fast Dispatch",
     "trust.genuine": "Authorized Hikvision & CP PLUS Partner",
     "trust.reviews": "4.9/5 Rating (500+ Google Reviews)",
 
@@ -82,7 +82,7 @@ const DICTIONARY: Record<Language, Record<string, string>> = {
     "hero.title2": "பாதுகாப்பு அமைப்புகள்.",
     "hero.desc":
       "2014 முதல் ஆவடி மற்றும் சென்னை முழுவதும் நம்பகமான சிசிடிவி கண்காணிப்பு மற்றும் ஃபைபர் உள்கட்டமைப்பு சேவைகளை வழங்கி வருகிறோம்.",
-    "hero.primaryCta": "இலவச ஆய்வு & மதிப்பீடு பெறுக",
+    "hero.primaryCta": "இலவச மதிப்பீடு பெறுக",
     "hero.callCta": "அழைக்க: 86818 88111",
     "hero.whatsappCta": "வாட்ஸ்அப் செய்தி",
     "hero.hudLabel": "பாதுகாப்பு மாதிரி விளக்கம்",
@@ -90,7 +90,7 @@ const DICTIONARY: Record<Language, Record<string, string>> = {
     // Trust Bar
     "trust.experience": "ஆவடியில் 12+ ஆண்டுகள் அனுபவம்",
     "trust.sla": "< 2 மணிநேர உள்ளூர் சேவை",
-    "trust.survey": "100% இலவச நேரடி ஆய்வு",
+    "trust.survey": "சென்னை முழுவதும் விரைவான சேவை",
     "trust.genuine": "அங்கீகரிக்கப்பட்ட ஹிக்விஷன் & சிபி பிளஸ் பார்ட்னர்",
     "trust.reviews": "4.9/5 மதிப்பீடு (500+ கூகுள் விமர்சனங்கள்)",
 

@@ -22,8 +22,8 @@ export default function TrustBar() {
     },
     {
       icon: MapPin,
-      title: "100% Free Survey",
-      subtitle: "Zero Obligation Site Visit",
+      title: "All Chennai Coverage",
+      subtitle: "Avadi HQ & Fast Dispatch",
       highlight: false,
     },
     {

@@ -28,7 +28,7 @@ export default function MobileStickyBar() {
 
         {/* 2. WhatsApp (min-h-[48px] tap target) */}
         <a
-          href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20enquire%20about%20your%20services%20and%20get%20a%20free%20site%20visit."
+          href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20enquire%20about%20your%20services%20and%20get%20a%20quote."
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackEvent("whatsapp_click", { category: "MobileStickyBar" })}
@@ -42,7 +42,7 @@ export default function MobileStickyBar() {
           </span>
         </a>
 
-        {/* 3. Free Quote / Site Visit (min-h-[48px] tap target) */}
+        {/* 3. Get Quote (min-h-[48px] tap target) */}
         <button
           type="button"
           onClick={() => {
@@ -56,7 +56,7 @@ export default function MobileStickyBar() {
             }
           }}
           className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#EF1313] hover:bg-[#d81010] text-white shadow-md shadow-[#EF1313]/30 active:scale-95 transition-all text-center cursor-pointer glow-btn-crimson"
-          aria-label="Request a free site visit and quotation"
+          aria-label="Request a quotation"
         >
           <Send size={15} className="text-white mb-0.5" />
           <span className="text-[11px] font-bold" style={{ fontFamily: "Syne, sans-serif" }}>

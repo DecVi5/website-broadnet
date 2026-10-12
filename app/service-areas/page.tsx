@@ -54,7 +54,7 @@ export default function ServiceAreasPage() {
         {/* Client Interactive Checker & Locality Directory */}
         <ServiceAreaCoverageClient />
 
-        <EnquirySection initialService="Service Area Site Visit" initialType="security" />
+        <EnquirySection initialService="Service Area Enquiry" initialType="security" />
       </main>
       <Footer />
     </>

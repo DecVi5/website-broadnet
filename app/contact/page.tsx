@@ -85,7 +85,7 @@ export default function ContactPage() {
               <span className="text-gradient">Extraordinary Together.</span>
             </h1>
             <p className="text-[#16143E]/55 text-base sm:text-lg md:text-xl max-w-xl mx-auto">
-              Our engineers respond within 2 hours. On-site visits typically scheduled within 24 hours.
+              Our engineers respond within 2 hours with priority local support and fast dispatch.
             </p>
           </div>
         </section>

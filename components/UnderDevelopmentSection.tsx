@@ -459,14 +459,14 @@ export default function UnderDevelopmentSection() {
                 <span>Chat on WhatsApp</span>
               </a>
 
-              {/* Free Site Visit Form Link */}
+              {/* Quote Form Link */}
               <a
                 href="#enquiry"
                 onClick={handleEnquiryClick}
                 className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/15 text-white border border-white/20 font-bold text-xs sm:text-sm flex items-center gap-1.5 transition-all duration-200 cursor-pointer"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
-                <span>Book Free Site Survey</span>
+                <span>Request Quick Quotation</span>
                 <ArrowRight size={14} />
               </a>
             </div>

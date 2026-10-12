@@ -201,7 +201,7 @@ export default function HeroSection() {
 
           {/* Secondary CTA */}
           <a
-            href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20get%20a%20free%20quote%20and%20schedule%20a%20site%20visit."
+            href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20enquire%20about%20your%20services%20and%20get%20a%20quote."
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent("whatsapp_click", { category: "Hero", label: "SecondaryCTA" })}

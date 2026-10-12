@@ -813,7 +813,6 @@ export default function EnquirySection({ initialService, initialType }: EnquiryS
                     >
                       Building Type
                     </label>
-                    <span className="text-[10px] text-[#EF1313] font-bold">Free Visit</span>
                   </div>
                   <div className="relative">
                     <Building2
