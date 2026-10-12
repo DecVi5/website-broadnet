@@ -111,14 +111,14 @@ export default function IndustriesClient() {
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 bg-gradient-to-b from-[#F7F5FC] via-white to-white border-b border-[#16143E]/8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="mb-6">
+            <div className="flex justify-center mb-6">
               <Breadcrumbs
                 items={[{ label: "Industries & Solutions" }]}
                 variant="light"
               />
             </div>
 
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EF1313]/10 text-[#EF1313] text-xs font-bold uppercase tracking-wider mb-4 border border-[#EF1313]/20">
                 <Sparkles size={13} />
                 <span>Sector-Specific Security Engineering</span>
@@ -129,11 +129,11 @@ export default function IndustriesClient() {
               >
                 Tailored Security & Network Architecture for Every Facility
               </h1>
-              <p className="text-base sm:text-lg text-[#16143E]/75 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg text-[#16143E]/75 leading-relaxed mb-8 max-w-2xl mx-auto">
                 No two facilities are identical. From a private villa needing zero-grain night vision to a 200-flat society demanding automated vehicle boom barriers and an IT park requiring contactless facial attendance, we engineer fit-for-purpose systems.
               </p>
 
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center justify-center gap-3">
                 <button
                   type="button"
                   onClick={() => scrollToWithPhysics("enquiry")}

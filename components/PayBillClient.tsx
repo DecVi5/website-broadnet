@@ -182,15 +182,15 @@ export default function PayBillClient() {
         <div className="absolute top-1/2 left-10 w-[400px] h-[250px] bg-[#EF1313]/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="mb-6">
+          <div className="flex justify-center mb-6">
             <Breadcrumbs items={[{ label: "Pay Internet Bill" }]} variant="light" />
           </div>
 
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
             {/* Eyebrow */}
             <motion.div
-              initial={{ opacity: 0, x: -16 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4E0DBA]/10 border border-[#4E0DBA]/20 text-[#4E0DBA] text-xs font-bold uppercase tracking-wider mb-4"
               style={{ fontFamily: "Syne, sans-serif" }}
@@ -215,7 +215,7 @@ export default function PayBillClient() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.16 }}
-              className="text-base sm:text-lg text-[#16143E]/70 leading-relaxed mb-6 font-body"
+              className="text-base sm:text-lg text-[#16143E]/70 leading-relaxed mb-6 max-w-2xl mx-auto font-body"
             >
               Broadnet operates and services three premier high-speed broadband networks across Avadi and Chennai:{" "}
               <strong className="text-[#4E0DBA]">Broadnet Private Fiber</strong>,{" "}
@@ -228,7 +228,7 @@ export default function PayBillClient() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.24 }}
-              className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-semibold text-[#16143E]/80"
+              className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-semibold text-[#16143E]/80"
             >
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#16143E]/10 shadow-xs">
                 <ShieldCheck size={14} className="text-emerald-600" />

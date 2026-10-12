@@ -33,8 +33,8 @@ export default function EnterpriseWifiPage() {
       <Header activePage="Services" />
       <main className="bg-white text-[#16143E]">
         <section className="relative pt-32 pb-20 bg-gradient-to-b from-[#F7F5FC] via-white to-white border-b border-[#16143E]/8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="mb-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+            <div className="flex justify-center mb-6">
               <Breadcrumbs
                 items={[
                   { label: "Services", href: "/#services" },
@@ -44,22 +44,22 @@ export default function EnterpriseWifiPage() {
               />
             </div>
 
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto flex flex-col items-center">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4E0DBA]/10 text-[#4E0DBA] text-xs font-bold uppercase tracking-wider mb-4">
                 <Sparkles size={13} />
                 <span>Grandstream Certified Network Specialists</span>
               </div>
               <h1
-                className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#16143E] tracking-tight mb-4"
+                className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#16143E] tracking-tight mb-4 text-center"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
-                Enterprise Wi-Fi & High-Density Access Points
+                Enterprise Wi-Fi &amp; High-Density Access Points
               </h1>
-              <p className="text-base sm:text-lg text-[#16143E]/75 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg text-[#16143E]/75 leading-relaxed mb-8 max-w-2xl mx-auto text-center">
                 Eliminate dead zones, dropped WhatsApp video calls, and buffer delays across large villas, multi-floor corporate offices, hotels, and schools. We design high-throughput Wi-Fi 6 deployments with zero-handoff roaming and centralized cloud dashboards.
               </p>
 
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center justify-center gap-3">
                 <a
                   href="#enquiry"
                   className="btn-crimson min-h-[46px] px-7 text-sm justify-center"

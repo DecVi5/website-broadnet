@@ -1,72 +1,137 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { scrollToWithPhysics } from "@/lib/scrollPhysics";
+import { trackEvent } from "@/lib/analytics";
 
 export default function InternetHero() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section className="relative pt-32 pb-20 bg-white overflow-hidden">
       <div
-        className="absolute inset-0 opacity-[0.015] pointer-events-none"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
-          backgroundImage: "radial-gradient(circle, #4E0DBA 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
+          backgroundImage: "radial-gradient(circle, #4E0DBA 1.2px, transparent 1.2px)",
+          backgroundSize: "44px 44px",
         }}
+        aria-hidden="true"
       />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center">
         {/* Breadcrumb Navigation */}
-        <div className="mb-6">
+        <div className="flex justify-center mb-6">
           <Breadcrumbs
             items={[{ label: "Fiber Internet" }]}
             variant="light"
           />
         </div>
 
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto flex flex-col items-center">
           {/* Eyebrow */}
           <motion.div
-            initial={{ opacity: 0, x: -16 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#4E0DBA] mb-4"
+            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: shouldReduceMotion ? 0.2 : 0.45,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-[#4E0DBA] mb-3 sm:mb-4"
           >
-            <span className="w-4 h-px bg-[#4E0DBA]" /> ICT Infrastructure
+            <span>ICT Infrastructure</span>
           </motion.div>
 
           {/* Heading */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#16143E] leading-tight mb-4 sm:mb-6 font-display"
+            transition={{
+              duration: shouldReduceMotion ? 0.2 : 0.55,
+              delay: shouldReduceMotion ? 0 : 0.06,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#16143E] leading-[1.14] mb-4 sm:mb-6 font-display tracking-tight text-center"
           >
-            100+ km of Your
-            <br />
-            <span className="text-gradient">Own Fibre Network.</span>
+            100+ km of Your{" "}
+            <span className="text-gradient">Own Fibre Network</span>
           </motion.h1>
 
           {/* Paragraph */}
           <motion.p
-            initial={{ opacity: 0, y: 18 }}
+            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[#16143E]/60 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 max-w-2xl font-body"
+            transition={{
+              duration: shouldReduceMotion ? 0.2 : 0.55,
+              delay: shouldReduceMotion ? 0 : 0.12,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="text-[#16143E]/75 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto font-body text-center"
           >
-            Broadnet operates its own optical fibre backbone across Avadi — delivering symmetric, dedicated high-speed internet to homes and enterprises with reliable fiber continuity.
+            Broadnet operates its own optical fibre backbone across Avadi — delivering symmetric, dedicated high-speed internet to homes and enterprises with reliable fibre continuity.
           </motion.p>
+
+          {/* Action CTAs */}
+          <motion.div
+            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: shouldReduceMotion ? 0.2 : 0.5,
+              delay: shouldReduceMotion ? 0 : 0.18,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8"
+          >
+            <button
+              type="button"
+              onClick={() => {
+                trackEvent("coverage_check", { category: "InternetHero", label: "CheckAvailability" });
+                scrollToWithPhysics("enquiry");
+              }}
+              className="btn-crimson min-h-[48px] px-6 sm:px-7 text-sm sm:text-base font-bold justify-center shadow-md hover:shadow-lg transition-all cursor-pointer"
+            >
+              <span>Check Fibre Availability</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </button>
+
+            <a
+              href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20enquire%20about%20Broadnet%20Fibre%20Internet%20plans."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("whatsapp_click", { category: "InternetHero", label: "WhatsAppQuery" })}
+              className="min-h-[48px] px-5 sm:px-6 rounded-full bg-[#16143E]/[0.04] hover:bg-[#16143E]/[0.08] border border-[#16143E]/12 text-[#16143E]/80 hover:text-[#16143E] text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 transition-all cursor-pointer"
+            >
+              <span>Chat on WhatsApp</span>
+            </a>
+          </motion.div>
 
           {/* Stats / Status */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap items-center gap-3 sm:gap-6"
+            transition={{
+              duration: shouldReduceMotion ? 0.2 : 0.5,
+              delay: shouldReduceMotion ? 0 : 0.24,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 pt-1"
           >
-            <div className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-xs sm:text-sm font-semibold text-[#16143E]/80">Network Operational</span>
+            <div
+              role="status"
+              aria-label="Network status: Operational"
+              className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20"
+            >
+              <span
+                className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse motion-reduce:animate-none"
+                aria-hidden="true"
+              />
+              <span className="text-xs sm:text-sm font-semibold text-[#16143E]/90">
+                Network Operational
+              </span>
             </div>
-            <div className="text-xs sm:text-sm font-medium text-[#16143E]/50">2,500+ active subscribers</div>
+            <div className="text-xs sm:text-sm font-medium text-[#16143E]/75">
+              2,500+ active subscribers
+            </div>
           </motion.div>
         </div>
       </div>

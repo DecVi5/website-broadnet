@@ -49,30 +49,30 @@ export default function ProjectsPage() {
       <Header activePage="Projects" />
       <main className="bg-white text-[#16143E]">
         <section className="relative pt-32 pb-16 bg-gradient-to-b from-[#F7F5FC] via-white to-white border-b border-[#16143E]/8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="mb-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+            <div className="flex justify-center mb-6">
               <Breadcrumbs
                 items={[{ label: "Projects & Gallery" }]}
                 variant="light"
               />
             </div>
 
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto flex flex-col items-center">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4E0DBA]/10 text-[#4E0DBA] text-xs font-bold uppercase tracking-wider mb-4">
                 <Sparkles size={13} />
                 <span>2,500+ Deployments Completed Since 2014</span>
               </div>
               <h1
-                className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#16143E] tracking-tight mb-4"
+                className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#16143E] tracking-tight mb-4 text-center"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
                 Our Installation Showcase
               </h1>
-              <p className="text-base sm:text-lg text-[#16143E]/75 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg text-[#16143E]/75 leading-relaxed mb-8 max-w-2xl mx-auto text-center">
                 Explore real projects engineered by our in-house certified technicians. Filter by project category or click any project to view complete cabling scope, deployed hardware, and outcomes.
               </p>
 
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center justify-center gap-3">
                 <a
                   href="#enquiry"
                   className="btn-crimson min-h-[46px] px-7 text-sm justify-center glow-btn-crimson"

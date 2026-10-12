@@ -34,6 +34,11 @@ export default function NightVisionComparisonSlider({
   const [isDragging, setIsDragging] = useState(false);
   const [currentTime, setCurrentTime] = useState("23:14:56");
   const containerRef = useRef<HTMLDivElement>(null);
+  const sliderPositionRef = useRef(50);
+  sliderPositionRef.current = sliderPosition;
+  const animationRef = useRef<number | null>(null);
+  const pointerStartRef = useRef<{ x: number; time: number } | null>(null);
+  const hasMovedRef = useRef(false);
 
   // Keep timestamp alive for realism
   useEffect(() => {
@@ -46,59 +51,149 @@ export default function NightVisionComparisonSlider({
     return () => clearInterval(timer);
   }, []);
 
-  const handleMove = useCallback((clientX: number) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = clientX - rect.left;
-    let percentage = (x / rect.width) * 100;
-    if (percentage < 2) percentage = 2;
-    if (percentage > 98) percentage = 98;
-    setSliderPosition(percentage);
+  // Cancel any running glide animation
+  const cancelAnimation = useCallback(() => {
+    if (animationRef.current !== null) {
+      cancelAnimationFrame(animationRef.current);
+      animationRef.current = null;
+    }
   }, []);
 
-  const handleTouchMove = useCallback(
-    (e: TouchEvent) => {
-      if (!isDragging) return;
-      handleMove(e.touches[0].clientX);
-    },
-    [isDragging, handleMove]
-  );
+  // Smooth animation function with quintic deceleration curve
+  const animateToPosition = useCallback(
+    (target: number, durationMs = 520) => {
+      cancelAnimation();
+      const clampedTarget = Math.max(2, Math.min(98, target));
+      const start = sliderPositionRef.current;
+      const distance = clampedTarget - start;
 
-  const handleMouseMove = useCallback(
-    (e: MouseEvent) => {
-      if (!isDragging) return;
-      handleMove(e.clientX);
-    },
-    [isDragging, handleMove]
-  );
+      if (Math.abs(distance) < 0.2) {
+        setSliderPosition(clampedTarget);
+        return;
+      }
 
-  const handleInteractionEnd = useCallback(() => {
-    setIsDragging(false);
-  }, []);
+      const startTime = performance.now();
+      // Quintic ease-out: luxurious, physics-inspired deceleration
+      const easeOutQuint = (t: number) => 1 - Math.pow(1 - t, 5);
+
+      const frame = (now: number) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / durationMs, 1);
+        const current = start + distance * easeOutQuint(progress);
+
+        setSliderPosition(current);
+
+        if (progress < 1) {
+          animationRef.current = requestAnimationFrame(frame);
+        } else {
+          setSliderPosition(clampedTarget);
+          animationRef.current = null;
+        }
+      };
+
+      animationRef.current = requestAnimationFrame(frame);
+    },
+    [cancelAnimation]
+  );
 
   useEffect(() => {
-    if (isDragging) {
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseup", handleInteractionEnd);
-      window.addEventListener("touchmove", handleTouchMove, { passive: false });
-      window.addEventListener("touchend", handleInteractionEnd);
-    }
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", handleInteractionEnd);
-      window.removeEventListener("touchmove", handleTouchMove);
-      window.removeEventListener("touchend", handleInteractionEnd);
+      cancelAnimation();
     };
-  }, [isDragging, handleMouseMove, handleTouchMove, handleInteractionEnd]);
+  }, [cancelAnimation]);
 
-  const handleContainerClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    handleMove(e.clientX);
-    trackEvent("comparison_slider_interact", { category: "NightVisionSlider" });
+  const getPercentageFromClientX = useCallback((clientX: number) => {
+    if (!containerRef.current) return 50;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const percentage = (x / rect.width) * 100;
+    return Math.max(2, Math.min(98, percentage));
+  }, []);
+
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    // Only primary mouse button or touch
+    if (e.button !== 0 && e.pointerType === "mouse") return;
+
+    cancelAnimation();
+    pointerStartRef.current = { x: e.clientX, time: performance.now() };
+    hasMovedRef.current = false;
+
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch {
+      // Fallback
+    }
+
+    setIsDragging(true);
+  };
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!pointerStartRef.current) return;
+
+    const deltaX = Math.abs(e.clientX - pointerStartRef.current.x);
+    if (deltaX > 2) {
+      hasMovedRef.current = true;
+    }
+
+    const newPos = getPercentageFromClientX(e.clientX);
+    setSliderPosition(newPos);
+  };
+
+  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!pointerStartRef.current) return;
+
+    try {
+      if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+        e.currentTarget.releasePointerCapture(e.pointerId);
+      }
+    } catch {
+      // Ignore
+    }
+
+    // If tap/click without dragging, glide smoothly to clicked point
+    if (!hasMovedRef.current) {
+      const clickPos = getPercentageFromClientX(e.clientX);
+      animateToPosition(clickPos, 380);
+      trackEvent("comparison_slider_interact", { category: "NightVisionSlider", mode: "click" });
+    } else {
+      trackEvent("comparison_slider_interact", { category: "NightVisionSlider", mode: "drag" });
+    }
+
+    pointerStartRef.current = null;
+    setIsDragging(false);
+  };
+
+  const handlePointerCancel = (e: React.PointerEvent<HTMLDivElement>) => {
+    try {
+      if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+        e.currentTarget.releasePointerCapture(e.pointerId);
+      }
+    } catch {
+      // Ignore
+    }
+    pointerStartRef.current = null;
+    setIsDragging(false);
   };
 
   const setPreset = (pos: number, name: string) => {
-    setSliderPosition(pos);
+    animateToPosition(pos, 600);
     trackEvent("comparison_preset_click", { preset: name });
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      animateToPosition(Math.max(2, sliderPositionRef.current - 5), 200);
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      animateToPosition(Math.min(98, sliderPositionRef.current + 5), 200);
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      animateToPosition(10, 500);
+    } else if (e.key === "End") {
+      e.preventDefault();
+      animateToPosition(90, 500);
+    }
   };
 
   const handleBookClick = () => {
@@ -192,13 +287,16 @@ export default function NightVisionComparisonSlider({
         <div className="relative max-w-5xl mx-auto rounded-3xl p-2 sm:p-3 bg-gradient-to-b from-white/15 via-white/5 to-transparent border border-white/15 shadow-[0_25px_80px_-15px_rgba(0,0,0,0.9)]">
           <div
             ref={containerRef}
-            onClick={handleContainerClick}
-            onMouseDown={() => setIsDragging(true)}
-            onTouchStart={() => setIsDragging(true)}
-            className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden cursor-ew-resize select-none bg-black"
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerCancel}
+            className={`relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden select-none bg-black touch-none ${
+              isDragging ? "cursor-grabbing" : "cursor-ew-resize"
+            }`}
           >
             {/* 1. Base Layer (Right / Behind): ColorVu Full Color Vision */}
-            <div className="absolute inset-0 w-full h-full">
+            <div className="absolute inset-0 w-full h-full pointer-events-none">
               <Image
                 src="/assets/colorvu-night-vision.jpg"
                 alt="BroadNet 4K ColorVu Full Color Night Vision Surveillance Feed"
@@ -209,7 +307,7 @@ export default function NightVisionComparisonSlider({
               />
 
               {/* ColorVu Side Badge (Top Right) */}
-              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 flex flex-col items-end gap-1.5 pointer-events-none">
+              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 flex flex-col items-end gap-1.5 pointer-events-none select-none">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#00C2FF]/20 border border-[#00C2FF]/60 text-white backdrop-blur-md shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-ping" />
                   <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-cyan-200">
@@ -224,9 +322,10 @@ export default function NightVisionComparisonSlider({
 
             {/* 2. Top Layer (Left / Clipped): Traditional IR Black & White */}
             <div
-              className="absolute inset-0 w-full h-full overflow-hidden will-change-[clip-path]"
+              className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none will-change-[clip-path]"
               style={{
                 clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`,
+                transform: "translateZ(0)",
               }}
             >
               <Image
@@ -239,7 +338,7 @@ export default function NightVisionComparisonSlider({
               />
 
               {/* IR Side Badge (Top Left) */}
-              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 flex flex-col items-start gap-1.5 pointer-events-none">
+              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 flex flex-col items-start gap-1.5 pointer-events-none select-none">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/70 border border-white/20 text-white backdrop-blur-md shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-red-500" />
                   <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-zinc-300">
@@ -253,32 +352,51 @@ export default function NightVisionComparisonSlider({
             </div>
 
             {/* 3. Real-time Surveillance HUD Stamp (Bottom Left & Right) */}
-            <div className="absolute bottom-3 left-4 sm:bottom-4 sm:left-6 z-20 pointer-events-none font-mono text-[10px] sm:text-xs text-white/90 bg-black/60 px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/10 flex items-center gap-2">
+            <div className="absolute bottom-3 left-4 sm:bottom-4 sm:left-6 z-20 pointer-events-none font-mono text-[10px] sm:text-xs text-white/90 bg-black/60 px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/10 flex items-center gap-2 select-none">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
               <span>LIVE • CAM 01: VILLA ENTRANCE DRIVEWAY</span>
             </div>
-            <div className="absolute bottom-3 right-4 sm:bottom-4 sm:right-6 z-20 pointer-events-none font-mono text-[10px] sm:text-xs text-white/90 bg-black/60 px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/10 hidden sm:block">
+            <div className="absolute bottom-3 right-4 sm:bottom-4 sm:right-6 z-20 pointer-events-none font-mono text-[10px] sm:text-xs text-white/90 bg-black/60 px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/10 hidden sm:block select-none">
               <span>{currentTime} IST • 30 FPS • H.265+</span>
             </div>
 
             {/* 4. DRAGGABLE SPLIT HANDLE & GLOW LINE */}
             <div
-              className="absolute top-0 bottom-0 z-30 pointer-events-none will-change-transform"
+              className="absolute top-0 bottom-0 z-30 pointer-events-none will-change-[left,transform]"
               style={{
                 left: `${sliderPosition}%`,
-                transform: "translateX(-50%)",
+                transform: "translate3d(-50%, 0, 0)",
               }}
             >
               {/* Vertical Glowing Divider Line */}
               <div className="w-[3px] h-full bg-gradient-to-b from-[#EF1313] via-white to-[#4E0DBA] shadow-[0_0_15px_#EF1313,0_0_25px_#4E0DBA]" />
 
               {/* Center Handle Knob */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white text-[#16143E] shadow-[0_0_25px_rgba(239,19,19,0.8),0_4px_15px_rgba(0,0,0,0.5)] border-2 border-[#EF1313] flex items-center justify-center pointer-events-auto cursor-ew-resize transition-transform hover:scale-110 active:scale-95">
+              <div
+                role="slider"
+                tabIndex={0}
+                aria-label="Night vision visual comparison slider"
+                aria-valuenow={Math.round(sliderPosition)}
+                aria-valuemin={2}
+                aria-valuemax={98}
+                onKeyDown={handleKeyDown}
+                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white text-[#16143E] shadow-[0_0_25px_rgba(239,19,19,0.8),0_4px_15px_rgba(0,0,0,0.5)] border-2 border-[#EF1313] flex items-center justify-center pointer-events-auto cursor-ew-resize transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-[#EF1313]/60 ${
+                  isDragging
+                    ? "scale-110 shadow-[0_0_35px_rgba(239,19,19,1),0_6px_25px_rgba(0,0,0,0.6)] ring-4 ring-[#EF1313]/40 cursor-grabbing"
+                    : "hover:scale-110 active:scale-95"
+                }`}
+              >
                 <SlidersHorizontal size={18} className="text-[#EF1313]" />
               </div>
 
               {/* Drag Prompt Tooltip */}
-              <div className="absolute bottom-16 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/25 text-[10px] font-bold text-white uppercase tracking-wider whitespace-nowrap hidden sm:block shadow-xl">
+              <div
+                className={`absolute bottom-16 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/25 text-[10px] font-bold text-white uppercase tracking-wider whitespace-nowrap hidden sm:block shadow-xl select-none transition-all duration-300 ${
+                  isDragging
+                    ? "opacity-0 scale-90 translate-y-1 pointer-events-none"
+                    : "opacity-100 scale-100 translate-y-0"
+                }`}
+              >
                 ⇄ Drag to Compare
               </div>
             </div>

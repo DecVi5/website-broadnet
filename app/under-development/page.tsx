@@ -53,7 +53,7 @@ export default function UnderDevelopmentPage() {
       <main>
         <UnderDevelopmentClient />
         <div id="enquiry">
-          <EnquirySection initialService="General Inquiry & Support" initialType="general" />
+          <EnquirySection initialService="General Inquiry & Support" initialType="security" />
         </div>
       </main>
       <Footer />

@@ -96,26 +96,26 @@ export default function BlogPage() {
       <Header activePage="Blog" />
       <main className="bg-white text-[#16143E]">
         <section className="relative pt-32 pb-20 bg-gradient-to-b from-[#F7F5FC] via-white to-white border-b border-[#16143E]/8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="mb-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+            <div className="flex justify-center mb-6">
               <Breadcrumbs
                 items={[{ label: "Blog & Security Guides" }]}
                 variant="light"
               />
             </div>
 
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto flex flex-col items-center">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EF1313]/10 text-[#EF1313] text-xs font-bold uppercase tracking-wider mb-4">
                 <Sparkles size={13} />
-                <span>Knowledge Base & Local Security Advice</span>
+                <span>Knowledge Base &amp; Local Security Advice</span>
               </div>
               <h1
-                className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#16143E] tracking-tight mb-4"
+                className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#16143E] tracking-tight mb-4 text-center"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
-                Security & Technology Insights
+                Security &amp; Technology Insights
               </h1>
-              <p className="text-base sm:text-lg text-[#16143E]/75 leading-relaxed">
+              <p className="text-base sm:text-lg text-[#16143E]/75 leading-relaxed max-w-2xl mx-auto text-center">
                 Practical guides written by our certified engineers on camera selection, biometric compliance, enterprise Wi-Fi design, and network infrastructure across Avadi and Chennai.
               </p>
             </div>

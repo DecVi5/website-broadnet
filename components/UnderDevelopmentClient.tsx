@@ -166,11 +166,11 @@ export default function UnderDevelopmentClient() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           {/* Breadcrumbs */}
-          <div className="mb-6">
+          <div className="flex justify-center mb-6">
             <Breadcrumbs items={[{ label: "Website Under Active Development" }]} variant="dark" />
           </div>
 
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
             {/* Status Badge */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -206,7 +206,7 @@ export default function UnderDevelopmentClient() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.16 }}
-              className="text-base sm:text-lg text-white/70 leading-relaxed font-body mb-8 max-w-2xl"
+              className="text-base sm:text-lg text-white/70 leading-relaxed font-body mb-8 max-w-2xl mx-auto"
             >
               We are engineering a modern self-service platform with instant CCTV simulations, fiber diagnostics, and online bill payments. While we roll out these digital features, our on-ground operations are{" "}
               <span className="text-emerald-400 font-semibold underline decoration-emerald-500/50 underline-offset-4">
@@ -220,7 +220,7 @@ export default function UnderDevelopmentClient() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.24 }}
-              className="flex flex-wrap items-center gap-3 sm:gap-4"
+              className="flex flex-wrap items-center justify-center gap-3 sm:gap-4"
             >
               <a
                 href={SITE_CONFIG.phones.primaryTel}

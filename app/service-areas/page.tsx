@@ -26,17 +26,17 @@ export default function ServiceAreasPage() {
       <Header activePage="Service Areas" />
       <main className="bg-white text-[#16143E]">
         <section className="relative pt-32 pb-16 bg-gradient-to-b from-[#F7F5FC] via-white to-white border-b border-[#16143E]/8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="mb-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+            <div className="flex justify-center mb-6">
               <Breadcrumbs
                 items={[{ label: "Service Areas & Coverage" }]}
                 variant="light"
               />
             </div>
 
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <span className="text-xs font-bold uppercase tracking-wider text-[#EF1313] block mb-2">
-                Rapid Local Dispatch & Coverage Map
+                Rapid Local Dispatch &amp; Coverage Map
               </span>
               <h1
                 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#16143E] tracking-tight mb-4"
@@ -44,7 +44,7 @@ export default function ServiceAreasPage() {
               >
                 Where We Serve
               </h1>
-              <p className="text-base sm:text-lg text-[#16143E]/75 leading-relaxed">
+              <p className="text-base sm:text-lg text-[#16143E]/75 leading-relaxed max-w-2xl mx-auto">
                 We provide certified CCTV and security solutions across <strong>all of Chennai</strong>, with guaranteed <span className="text-[#EF1313] font-bold">&lt; 2-hour technician response</span> in the Avadi region. Our dedicated optical fiber internet operates exclusively within Avadi.
               </p>
             </div>
