@@ -32,7 +32,7 @@ const POSTS = [
     slug: "cctv-installation-in-avadi-guide",
     title: "CCTV Installation in Avadi: The Complete 2026 Buying & Setup Guide",
     excerpt:
-      "Planning to secure your house or store in Avadi? Learn the key differences between IP vs HD cameras, storage calculation, conduit cable routing, and how to get a 100% free site survey.",
+      "Planning to secure your house or store in Avadi? Learn the key differences between IP vs HD cameras, storage calculation, conduit cable routing, and how to plan an expert on-site survey.",
     date: "March 2026",
     readTime: "5 min read",
     category: "CCTV & Surveillance",

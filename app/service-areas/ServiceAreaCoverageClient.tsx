@@ -29,7 +29,7 @@ const LOCALITIES: LocalityItem[] = [
     zone: "Avadi Core",
     cctvStatus: "Active — <2 Hr Dispatch",
     internetStatus: "Available (Broadnet Fiber)",
-    highlights: "Broadnet HQ Backbone Feeder · Free On-Site Inspection within 2 hours",
+    highlights: "Broadnet HQ Backbone Feeder · Rapid On-Site Inspection within 2 hours",
   },
   {
     name: "Pattabiram & Thandurai",
@@ -147,7 +147,7 @@ export default function ServiceAreaCoverageClient() {
               <strong>All of Chennai covered!</strong> Core rapid focus on Avadi, Pattabiram, Thiruverkadu, Paruthipattu, Ayapakkam, Thirumullaivoyal, Kovilpadagai, Thirunindravur, and Ambattur with guaranteed &lt;2-hour on-site technician dispatch.
             </p>
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
-              <CheckCircle2 size={13} /> Free On-Site Survey Across Chennai
+              <CheckCircle2 size={13} /> Rapid On-Site Survey Across Chennai
             </div>
           </div>
 

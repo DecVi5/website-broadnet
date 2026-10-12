@@ -33,7 +33,7 @@ import {
 export const metadata: Metadata = {
   title: "Perimeter Alarms & Intrusion Detection in Avadi, Chennai | Hikvision Certified",
   description:
-    "Active perimeter defense with laser trip sensors, boundary wall alarms, 110dB loud sirens, and GSM auto-dialer mobile alerts in Avadi. Complete kits from ₹6,999. Free site survey.",
+    "Active perimeter defense with laser trip sensors, boundary wall alarms, 110dB loud sirens, and GSM auto-dialer mobile alerts in Avadi. Complete kits from ₹6,999. Professional site assessment.",
   keywords: [
     "intrusion alarm system Avadi",
     "perimeter beam sensor Chennai",

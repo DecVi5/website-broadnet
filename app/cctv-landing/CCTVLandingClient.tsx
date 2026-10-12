@@ -283,7 +283,7 @@ export default function CCTVLandingClient() {
             <div id="cctv-quote-form" className="lg:col-span-5 scroll-mt-28">
               <div className="rounded-3xl bg-white border-2 border-[#EF1313]/35 p-7 sm:p-8 shadow-2xl relative">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EF1313]/10 text-[#EF1313] text-xs font-bold uppercase tracking-wider mb-2">
-                  <Sparkles size={12} /> Free Site Survey Offer
+                  <Sparkles size={12} /> On-Site Survey Booking
                 </div>
                 <h3
                   className="text-2xl font-bold text-[#16143E] mb-1"
@@ -405,7 +405,7 @@ export default function CCTVLandingClient() {
                       disabled={isSubmitting}
                       className="w-full btn-crimson justify-center py-3 text-sm font-bold shadow-lg shadow-[#EF1313]/25 mt-2 cursor-pointer disabled:opacity-60 glow-btn-crimson"
                     >
-                      {isSubmitting ? "Sending Request..." : "Request Free On-Site Inspection"}
+                      {isSubmitting ? "Sending Request..." : "Request On-Site Inspection"}
                     </button>
 
                     <p className="text-[11px] text-[#16143E]/50 text-center pt-1">
@@ -575,7 +575,7 @@ export default function CCTVLandingClient() {
                     {getEstimatedPrice()}
                   </div>
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/30 text-[11px] font-bold uppercase tracking-wider mb-3">
-                    <span>Estimate · Final quote after free site survey</span>
+                    <span>Estimate · Final quote after site survey</span>
                   </div>
                   <div className="text-xs text-white/60 mb-5">
                     All-inclusive turnkey price · No hidden installation charges
@@ -600,7 +600,7 @@ export default function CCTVLandingClient() {
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-white/60">Site Survey:</span>
-                      <span className="font-bold text-[#EF1313]">100% Free On-Site Inspection</span>
+                      <span className="font-bold text-white">Professional On-Site Inspection</span>
                     </div>
                   </div>
                 </div>

@@ -122,5 +122,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.85,
     },
+    {
+      url: `${baseUrl}/under-development`,
+      lastModified: releaseDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
   ];
 }

@@ -260,7 +260,7 @@ export default function IndustriesClient() {
                           onClick={() => scrollToWithPhysics("enquiry")}
                           className="inline-flex items-center gap-1.5 text-xs font-bold text-[#4E0DBA] group-hover:text-[#EF1313] transition-colors cursor-pointer"
                         >
-                          <span>Get Free Audit</span>
+                          <span>Get On-Site Audit</span>
                           <ArrowRight size={13} />
                         </button>
                       </div>

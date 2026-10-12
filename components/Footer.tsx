@@ -22,6 +22,7 @@ const QUICK_LINKS = [
   { label: "About Us (12 Years / 10+ Staff)", href: "/about" },
   { label: "Fiber Internet Plans", href: "/internet" },
   { label: "Pay Internet Bill (3 Portals)", href: "/pay-bill" },
+  { label: "Website Status & Roadmap", href: "/under-development" },
 ];
 
 export default function Footer() {

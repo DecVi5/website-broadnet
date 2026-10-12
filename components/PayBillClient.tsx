@@ -484,68 +484,7 @@ export default function PayBillClient() {
         </div>
       </section>
 
-      {/* 4. "Not Sure Which Provider?" Helper Box */}
-      <section className="py-10 bg-white border-y border-[#16143E]/8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="rounded-3xl p-6 sm:p-10 bg-gradient-to-br from-[#16143E] via-[#201B52] to-[#16143E] text-white shadow-2xl relative overflow-hidden">
-            {/* Ambient Background Glow */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-[#EF1313]/15 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-              <div className="max-w-2xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-bold mb-3">
-                  <HelpCircle size={13} />
-                  <span>Not Sure Which Company Your Connection Belongs To?</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 font-display">
-                  We&apos;ll Identify Your Account In 30 Seconds.
-                </h3>
-                <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4 font-body">
-                  If you have a fiber Wi-Fi connection installed in Avadi or Chennai by Broadnet but don&apos;t remember whether your line is direct Broadnet, BSNL Bharat Fibre, or Railwire, check your router sticker or simply WhatsApp us your name and address.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-white/80">
-                  <div className="p-3 rounded-xl bg-white/[0.05] border border-white/10">
-                    <strong className="block text-white mb-1">Check Wi-Fi Name:</strong>
-                    <span>Broadnet_5G / BSNL_FTTH / Railwire SSID</span>
-                  </div>
-                  <div className="p-3 rounded-xl bg-white/[0.05] border border-white/10">
-                    <strong className="block text-white mb-1">Check Monthly SMS:</strong>
-                    <span>Sender headers: BRDNET, BSNL-FTTH, or RLWIRE</span>
-                  </div>
-                  <div className="p-3 rounded-xl bg-white/[0.05] border border-white/10">
-                    <strong className="block text-white mb-1">Call Our Billing Team:</strong>
-                    <span>We look up your connection instantly by phone number</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row lg:flex-col gap-3 flex-shrink-0 w-full sm:w-auto">
-                <a
-                  href={`https://wa.me/${SITE_CONFIG.whatsapp.cleanNumber}?text=Hi%20Broadnet,%20I%20want%20to%20pay%20my%20internet%20bill.%20Can%20you%20help%20me%20find%20my%20provider%20and%20account%20ID?`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl hover:scale-[1.02] transition-all cursor-pointer"
-                  style={{ fontFamily: "Syne, sans-serif" }}
-                >
-                  <WhatsAppIcon size={16} />
-                  <span>WhatsApp Account Lookup</span>
-                </a>
-
-                <a
-                  href={SITE_CONFIG.phones.primaryTel}
-                  className="px-6 py-3.5 rounded-full bg-white text-[#16143E] hover:bg-white/90 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl hover:scale-[1.02] transition-all cursor-pointer"
-                  style={{ fontFamily: "Syne, sans-serif" }}
-                >
-                  <Phone size={15} className="text-[#EF1313]" />
-                  <span>Call {SITE_CONFIG.phones.primary}</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 5. In-Person Billing & Avadi Office Walk-In */}
       <section className="py-12 bg-[#FAF9FF]">

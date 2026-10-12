@@ -497,7 +497,7 @@ export default function EnquirySection({ initialService, initialType }: EnquiryS
             Quick Enquiry & Site Feasibility
           </h2>
           <p className="text-xs text-[#16143E]/65 max-w-lg mx-auto">
-            Get a same-day quotation and free on-site survey scheduled at your convenience.
+            Get a same-day quotation and on-site survey scheduled at your convenience.
           </p>
         </motion.div>
 

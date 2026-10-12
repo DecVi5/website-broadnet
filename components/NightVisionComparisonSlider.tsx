@@ -382,7 +382,7 @@ export default function NightVisionComparisonSlider({
               Upgrade Your Home or Business to ColorVu Today
             </h4>
             <p className="text-xs sm:text-sm text-white/70 mt-1 max-w-lg">
-              Includes free on-site survey across Avadi & Chennai, concealed conduit piping, and 2-Year replacement warranty.
+              Includes professional on-site survey across Avadi & Chennai, concealed conduit piping, and 2-Year replacement warranty.
             </p>
           </div>
 

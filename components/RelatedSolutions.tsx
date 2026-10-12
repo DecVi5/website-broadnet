@@ -7,10 +7,19 @@ import {
   Wifi,
   ArrowRight,
   Sparkles,
+  Network,
+  Radio,
 } from "lucide-react";
 
 interface RelatedSolutionsProps {
-  currentKey: "cameras" | "door-phones" | "access-control" | "intrusion-alarms" | "internet";
+  currentKey:
+    | "cameras"
+    | "door-phones"
+    | "access-control"
+    | "intrusion-alarms"
+    | "internet"
+    | "networking"
+    | "enterprise-wifi";
 }
 
 const ALL_SOLUTIONS = [
@@ -58,6 +67,24 @@ const ALL_SOLUTIONS = [
     url: "/internet",
     icon: Wifi,
     color: "#00C2FF",
+  },
+  {
+    key: "networking",
+    title: "Structured Cabling & Firewalls",
+    tagline: "Cat6 cabling, server racks, fiber splicing & Tactine UTMs",
+    price: "From ₹8,999",
+    url: "/services/networking",
+    icon: Network,
+    color: "#4E0DBA",
+  },
+  {
+    key: "enterprise-wifi",
+    title: "Enterprise Wi-Fi 6 Access Points",
+    tagline: "Grandstream seamless roaming mesh & guest captive portals",
+    price: "From ₹6,500",
+    url: "/services/enterprise-wifi",
+    icon: Radio,
+    color: "#4E0DBA",
   },
 ];
 

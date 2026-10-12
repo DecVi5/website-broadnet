@@ -6,7 +6,7 @@ import IndustriesClient from "./IndustriesClient";
 export const metadata: Metadata = {
   title: "Industry Security & Networking Solutions Chennai | Broadnet",
   description:
-    "Tailored surveillance and technology systems for homes, apartments, schools, factories, hotels, and offices across Chennai & Avadi. Free site survey. Call 86818 88111.",
+    "Tailored surveillance and technology systems for homes, apartments, schools, factories, hotels, and offices across Chennai & Avadi. Professional site survey. Call 86818 88111.",
   keywords: [
     "Apartment CCTV Chennai",
     "Factory security surveillance Avadi",

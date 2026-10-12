@@ -130,11 +130,16 @@ export default function HardwareGallery({
 
                 {/* Key Specs */}
                 {item.specs && item.specs.length > 0 && (
-                  <div className="pt-3 border-t border-black/5 dark:border-white/10 space-y-1.5">
+                  <div className={`pt-3.5 border-t ${isDark ? "border-white/10" : "border-[#16143E]/10"} space-y-2`}>
                     {item.specs.map((spec) => (
-                      <div key={spec} className="flex items-center gap-2 text-[11px] text-white/75 dark:text-white/75 text-[#16143E]/75">
-                        <CheckCircle2 size={12} className="text-emerald-500 flex-shrink-0" />
-                        <span>{spec}</span>
+                      <div key={spec} className="flex items-center gap-2.5 text-xs font-medium">
+                        <CheckCircle2
+                          size={15}
+                          className="text-white fill-emerald-500 flex-shrink-0"
+                        />
+                        <span className={isDark ? "text-slate-200" : "text-[#16143E]/85"}>
+                          {spec}
+                        </span>
                       </div>
                     ))}
                   </div>

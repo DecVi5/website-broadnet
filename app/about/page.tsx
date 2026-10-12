@@ -510,35 +510,26 @@ export default function AboutPage() {
               {CERTIFICATE_SLOTS.map((cert) => (
                 <div
                   key={cert.title}
-                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 flex flex-col justify-between hover:border-[#00C2FF]/50 hover:bg-white/[0.07] transition-all group"
+                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 flex flex-col justify-between hover:border-[#00C2FF]/50 hover:bg-white/[0.07] transition-all group"
                 >
                   <div>
-                    {/* Certificate Official Brand & Credential Frame */}
-                    <div className="relative aspect-[4/3] rounded-xl bg-gradient-to-b from-white/[0.08] to-black/50 border border-white/12 overflow-hidden mb-4 flex flex-col items-center justify-center p-4 text-center group-hover:border-[#00C2FF]/40 transition-colors">
-                      <div className="mb-2.5 p-2 rounded-lg bg-black/40 border border-white/10 shadow-xs flex items-center justify-center">
-                        <PartnerLogo brand={cert.brand} variant="white" className="h-6 w-auto max-w-[130px]" />
-                      </div>
-                      <span className="text-xs font-bold text-white font-display leading-tight">
-                        {cert.credential}
-                      </span>
-                      <span className="text-[10px] text-white/60 mt-1">{cert.partner}</span>
-
-                      <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-emerald-500/20 text-[9px] font-bold text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
-                        <BadgeCheck size={10} /> Verified
-                      </div>
+                    {/* Company Logo Header */}
+                    <div className="h-20 sm:h-24 rounded-xl bg-black/35 border border-white/10 mb-5 flex items-center justify-center p-4 group-hover:border-[#00C2FF]/40 transition-colors">
+                      <PartnerLogo brand={cert.brand} variant="full" className="h-8 sm:h-9 w-auto max-w-[150px] object-contain" />
                     </div>
 
-                    <h3 className="text-sm font-bold text-white font-display mb-1.5">
+                    {/* Text Details */}
+                    <h3 className="text-sm sm:text-base font-bold text-white font-display mb-2">
                       {cert.title}
                     </h3>
-                    <p className="text-xs text-white/60 leading-relaxed font-body">
+                    <p className="text-xs text-white/65 leading-relaxed font-body">
                       {cert.desc}
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-white/8 flex items-center justify-between text-[11px] text-emerald-400 font-semibold">
+                  <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-emerald-400 font-semibold">
                     <span>Verified Partner</span>
-                    <BadgeCheck size={14} />
+                    <BadgeCheck size={15} />
                   </div>
                 </div>
               ))}

@@ -6,7 +6,7 @@ import CCTVLandingClient from "./CCTVLandingClient";
 export const metadata: Metadata = {
   title: "CCTV Installation & Service in Avadi, Chennai | Broadnet Surveillance Division",
   description:
-    "Official Hikvision & CP PLUS CCTV camera sales, installation and AMC services across Avadi & Chennai. HD, IP, Audio & ColorVu cameras. Free on-site survey and 2-hour technician dispatch. Call 86818 88111.",
+    "Official Hikvision & CP PLUS CCTV camera sales, installation and AMC services across Avadi & Chennai. HD, IP, Audio & ColorVu cameras. Professional on-site survey and 2-hour technician dispatch. Call 86818 88111.",
   keywords: [
     "CCTV installation Avadi",
     "CCTV dealers Chennai",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CCTV Installation & Service in Avadi, Chennai | Broadnet",
     description:
-      "Official Hikvision & CP PLUS CCTV camera sales, installation and AMC services across Avadi & Chennai. Free on-site survey and 2-hour technician dispatch.",
+      "Official Hikvision & CP PLUS CCTV camera sales, installation and AMC services across Avadi & Chennai. Professional on-site survey and 2-hour technician dispatch.",
     url: "https://www.broadnet.in/cctv-landing",
     type: "website",
     images: [

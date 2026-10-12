@@ -222,7 +222,7 @@ export default function HeroSection() {
         >
           <Sparkles size={14} className="text-[#EF1313] flex-shrink-0" />
           <span>
-            <strong>100% Free On-Site Inspection</strong> across Avadi & Chennai · Zero Obligation Survey
+            <strong>Professional On-Site Inspection</strong> across Avadi & Chennai · Transparent Quotations
           </span>
         </motion.div>
       </div>

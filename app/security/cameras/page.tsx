@@ -36,7 +36,7 @@ import {
 export const metadata: Metadata = {
   title: "CCTV Camera Installation in Avadi, Chennai | CP PLUS & Hikvision HD/4K Systems",
   description:
-    "Official CP PLUS & Hikvision certified CCTV camera installation in Avadi. Complete 4-camera kits from ₹8,499, enterprise IP solutions with no upper ceiling. 2-hour technician dispatch, free site inspection.",
+    "Official CP PLUS & Hikvision certified CCTV camera installation in Avadi. Complete 4-camera kits from ₹8,499, enterprise IP solutions with no upper ceiling. 2-hour technician dispatch, professional site inspection.",
   keywords: [
     "CCTV installation Avadi",
     "Hikvision CCTV dealer Chennai",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CCTV Camera Installation & Services in Avadi | Broadnet",
     description:
-      "24/7 HD & 4K CCTV surveillance systems. Free site survey, concealed conduit wiring, mobile live monitoring, and 2-hour local technician dispatch in Avadi.",
+      "24/7 HD & 4K CCTV surveillance systems. Professional site survey, concealed conduit wiring, mobile live monitoring, and 2-hour local technician dispatch in Avadi.",
     url: "https://www.broadnet.in/security/cameras",
   },
 };
@@ -166,7 +166,7 @@ const HARDWARE_GALLERY_ITEMS = [
 const WORKFLOW = [
   {
     step: "01",
-    title: "Free Site Survey & Blind-Spot Audit",
+    title: "Site Survey & Blind-Spot Audit",
     desc: "Our certified security engineer visits your property in Avadi to map entry points, lighting conditions, and eliminate all camera blind spots.",
   },
   {
@@ -215,8 +215,8 @@ const REVIEWS = [
 
 const FAQS = [
   {
-    q: "Do you offer free on-site inspection in Avadi?",
-    a: "Yes! We provide 100% free site inspections across Avadi, Thirumullaivoyal, Ambattur, Pattabiram, Poonamallee, and surrounding areas. Our engineer assesses your premises, identifies blind spots, and provides an itemized quotation with zero obligation.",
+    q: "Do you offer on-site inspections in Avadi?",
+    a: "Yes! We provide on-site inspections across Avadi, Thirumullaivoyal, Ambattur, Pattabiram, Poonamallee, and surrounding areas. Our engineer assesses your premises, identifies blind spots, and provides an itemized quotation with zero obligation.",
   },
   {
     q: "Can I view my CCTV cameras on my smartphone when I am away from home?",

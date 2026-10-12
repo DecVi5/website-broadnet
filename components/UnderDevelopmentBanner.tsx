@@ -1,18 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 
 export default function UnderDevelopmentBanner() {
-  const handleScrollToRoadmap = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const el = document.getElementById("under-development");
-    if (el) {
-      e.preventDefault();
-      window.history.pushState(null, "", "#under-development");
-      scrollToWithPhysics("under-development");
-    }
-  };
-
   return (
     <aside
       aria-label="Website development notification"
@@ -29,15 +20,14 @@ export default function UnderDevelopmentBanner() {
           <span>New features &amp; customer portal rolling out. Broadband installations &amp; security services are </span>
           <strong className="text-emerald-400 font-semibold">100% active</strong>.
         </p>
-        <a
-          href="/#under-development"
-          onClick={handleScrollToRoadmap}
+        <Link
+          href="/under-development"
           className="hidden sm:inline-flex items-center gap-1 text-purple-300 hover:text-white font-bold ml-2 underline underline-offset-2 transition-colors cursor-pointer flex-shrink-0"
           style={{ fontFamily: "Syne, sans-serif" }}
         >
           <span>View Roadmap</span>
           <ArrowRight size={12} />
-        </a>
+        </Link>
       </div>
     </aside>
   );

@@ -431,7 +431,7 @@ export default function UnderDevelopmentSection() {
                 Don&apos;t Wait For The Portal — Our Engineers Are Ready Right Now.
               </h3>
               <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-body">
-                Whether you need a new 4K CCTV camera system installed, a free on-site survey at your premises, or an instant fiber connection in Avadi or Chennai, our team is standing by to assist you.
+                Whether you need a new 4K CCTV camera system installed, an on-site survey at your premises, or an instant fiber connection in Avadi or Chennai, our team is standing by to assist you.
               </p>
             </div>
 
