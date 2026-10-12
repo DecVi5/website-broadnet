@@ -16,7 +16,10 @@ export type AnalyticsEvent =
   | "quote_request"
   | "comparison_slider_interact"
   | "comparison_preset_click"
-  | "colorvu_upgrade_click";
+  | "colorvu_upgrade_click"
+  | "under_development_notify_signup"
+  | "under_development_interact"
+  | "bill_pay_click";
 
 export interface AnalyticsPayload {
   category?: string;

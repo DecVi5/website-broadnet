@@ -21,6 +21,7 @@ const QUICK_LINKS = [
   { label: "Service Areas (Chennai / Avadi)", href: "/service-areas" },
   { label: "About Us (12 Years / 10+ Staff)", href: "/about" },
   { label: "Fiber Internet Plans", href: "/internet" },
+  { label: "Pay Internet Bill (3 Portals)", href: "/pay-bill" },
 ];
 
 export default function Footer() {

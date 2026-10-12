@@ -19,8 +19,10 @@ import {
   Wifi,
   MapPin,
   Network,
+  CreditCard,
 } from "lucide-react";
 import BroadnetLogo from "./BroadnetLogo";
+import UnderDevelopmentBanner from "./UnderDevelopmentBanner";
 import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 import { trackEvent } from "@/lib/analytics";
 
@@ -34,6 +36,7 @@ const SECURITY_SERVICES = [
 
 const INTERNET_NETWORKING_SERVICES = [
   { id: "internet", shortTitle: "Fiber Broadband Plans", href: "/internet" },
+  { id: "pay-bill", shortTitle: "Pay Internet Bill (3 Portals)", href: "/pay-bill" },
   { id: "enterprise-wifi", shortTitle: "Enterprise & Industrial Wi-Fi", href: "/services/enterprise-wifi" },
   { id: "networking", shortTitle: "Network Infrastructure & Firewalls", href: "/services/networking" },
 ];
@@ -86,6 +89,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
     pathname?.startsWith("/industries") ||
     activePage === "About Us" ||
     activePage === "Industries";
+  const isPayBill = pathname === "/pay-bill" || activePage === "Pay Bill";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -140,6 +144,9 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
         }`}
         style={{ overflow: "visible" }}
       >
+        {/* Top Dismissible Under Development Notification Banner */}
+        <UnderDevelopmentBanner />
+
         {/* Main Clean Header Bar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 sm:h-18 gap-4">
@@ -352,6 +359,19 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                   )}
                 </AnimatePresence>
               </div>
+
+              {/* Pay Bill */}
+              <Link
+                href="/pay-bill"
+                className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200 ${
+                  isPayBill
+                    ? "text-[#4E0DBA] bg-white shadow-xs"
+                    : "text-[#16143E]/75 hover:text-[#16143E] hover:bg-white/60"
+                }`}
+                style={{ fontFamily: "Syne, sans-serif" }}
+              >
+                Pay Bill
+              </Link>
 
               {/* Projects */}
               <Link
@@ -608,6 +628,20 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                     </div>
                   )}
                 </div>
+
+                {/* Mobile Pay Bill Link */}
+                <Link
+                  href="/pay-bill"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-bold text-[#4E0DBA] bg-[#4E0DBA]/[0.06] border border-[#4E0DBA]/15 hover:bg-[#4E0DBA]/[0.1]"
+                  style={{ fontFamily: "Syne, sans-serif" }}
+                >
+                  <span className="flex items-center gap-2">
+                    <CreditCard size={15} className="text-[#4E0DBA]" />
+                    <span>Pay Internet Bill (3 Portals)</span>
+                  </span>
+                  <ArrowRight size={14} className="text-[#4E0DBA]" />
+                </Link>
 
                 {/* Mobile Projects */}
                 <Link

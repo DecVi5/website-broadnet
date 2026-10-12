@@ -11,6 +11,7 @@ import HomeFiberSection from "@/components/HomeFiberSection";
 import LocationChecker from "@/components/LocationChecker";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import HomeFaqSection from "@/components/HomeFaqSection";
+import UnderDevelopmentSection from "@/components/UnderDevelopmentSection";
 import EnquirySection from "@/components/EnquirySection";
 import Footer from "@/components/Footer";
 
@@ -83,7 +84,10 @@ export default function HomePage() {
         {/* 10. Frequently Asked Questions with FAQPage JSON-LD schema */}
         <HomeFaqSection />
 
-        {/* 11. Free Site Visit & Quote Enquiry Form */}
+        {/* 11. Website Under Active Development & Digital Platform Roadmap */}
+        <UnderDevelopmentSection />
+
+        {/* 12. Free Site Visit & Quote Enquiry Form */}
         <EnquirySection />
       </main>
       <Footer />
