@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import EnquirySection from "@/components/EnquirySection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ServiceAreaCoverageClient from "./ServiceAreaCoverageClient";
+import { getCctvServiceJsonLd, getBreadcrumbJsonLd } from "@/lib/jsonLd";
 
 export const metadata: Metadata = {
   title: "Service Areas & Coverage Checker in Chennai & Avadi | Broadnet",
@@ -16,13 +17,32 @@ export const metadata: Metadata = {
     "CCTV Thirumullaivoyal",
     "CCTV Thiruverkadu",
     "CCTV Ayapakkam",
+    "CCTV Ambattur",
+    "CCTV Poonamallee",
     "Broadband Avadi pincode",
   ],
+  alternates: {
+    canonical: "https://www.broadnet.in/service-areas",
+  },
 };
 
 export default function ServiceAreasPage() {
+  const serviceJsonLd = getCctvServiceJsonLd();
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Home", url: "https://www.broadnet.in" },
+    { name: "Service Areas", url: "https://www.broadnet.in/service-areas" },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header activePage="Service Areas" />
       <main className="bg-white text-[#16143E]">
         <section className="relative pt-32 pb-16 bg-gradient-to-b from-[#F7F5FC] via-white to-white border-b border-[#16143E]/8">

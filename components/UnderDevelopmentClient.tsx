@@ -12,7 +12,6 @@ import {
   Clock,
   ArrowRight,
   Phone,
-  MessageCircle,
   Sparkles,
   Send,
   Zap,
@@ -21,7 +20,6 @@ import {
   Headphones,
   HelpCircle,
   ChevronDown,
-  Shield,
   Wifi,
   MapPin,
   Camera,
@@ -186,7 +184,7 @@ export default function UnderDevelopmentClient() {
                 className="text-xs font-bold tracking-wider uppercase text-amber-300"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
-                Platform Upgrade In Progress • v2.4 Beta
+                Platform Upgrade In Progress • v2.5 Beta
               </span>
             </motion.div>
 
@@ -220,11 +218,11 @@ export default function UnderDevelopmentClient() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.24 }}
-              className="flex flex-wrap items-center justify-center gap-3 sm:gap-4"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full max-w-xs sm:max-w-none"
             >
               <a
                 href={SITE_CONFIG.phones.primaryTel}
-                className="px-6 py-3 rounded-full bg-white text-[#16143E] hover:bg-white/90 font-bold text-xs sm:text-sm flex items-center gap-2 transition-all duration-200 shadow-xl hover:scale-[1.02]"
+                className="px-6 py-3 rounded-full bg-white text-[#16143E] hover:bg-white/90 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all duration-200 shadow-xl hover:scale-[1.02] w-full sm:w-auto text-center"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
                 <Phone size={15} className="text-[#EF1313]" />
@@ -235,7 +233,7 @@ export default function UnderDevelopmentClient() {
                 href={`https://wa.me/${SITE_CONFIG.whatsapp.cleanNumber}?text=Hi%20Broadnet,%20I%20saw%20your%20website%20under%20development%20and%20need%20quick%20assistance.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm flex items-center gap-2 transition-all duration-200 shadow-xl hover:scale-[1.02]"
+                className="px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all duration-200 shadow-xl hover:scale-[1.02] w-full sm:w-auto text-center"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
                 <WhatsAppIcon size={16} />
@@ -244,7 +242,7 @@ export default function UnderDevelopmentClient() {
 
               <Link
                 href="/pay-bill"
-                className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/15 text-white border border-white/20 font-bold text-xs sm:text-sm flex items-center gap-2 transition-all duration-200"
+                className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/15 text-white border border-white/20 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all duration-200 w-full sm:w-auto text-center"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
                 <CreditCard size={15} className="text-emerald-400" />
@@ -326,7 +324,7 @@ export default function UnderDevelopmentClient() {
                 </div>
                 <div className="text-base sm:text-lg font-bold text-amber-200 flex items-center gap-2 font-display">
                   <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                  85% Built (v2.4)
+                  90% Built (v2.5)
                 </div>
                 <div className="text-[11px] text-amber-300/60 mt-1">Phase 3 in Progress</div>
               </div>

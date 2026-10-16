@@ -26,7 +26,6 @@ import {
   Store,
   Layers,
   Fingerprint,
-  Eye,
 } from "lucide-react";
 
 export const metadata: Metadata = {

@@ -11,16 +11,12 @@ import {
   Shield,
   Camera,
   CheckCircle2,
-  Clock,
-  Phone,
   MessageCircle,
   ArrowRight,
   Eye,
   HardDrive,
   Smartphone,
-  CloudRain,
   Cpu,
-  BadgeCheck,
   Star,
   Quote,
   HelpCircle,
@@ -28,9 +24,6 @@ import {
   Home,
   Store,
   Layers,
-  Sparkles,
-  Server,
-  Zap,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -236,11 +229,23 @@ const FAQS = [
   },
 ];
 
-import { getCctvPackagesJsonLd, getFaqPageJsonLd } from "@/lib/jsonLd";
+import {
+  getCctvPackagesJsonLd,
+  getFaqPageJsonLd,
+  getCctvServiceJsonLd,
+  getBreadcrumbJsonLd,
+} from "@/lib/jsonLd";
+import { MapPin, Clock, Phone, Sparkles } from "lucide-react";
 
 export default function CamerasPage() {
   const packagesJsonLd = getCctvPackagesJsonLd();
   const faqJsonLd = getFaqPageJsonLd(FAQS);
+  const cctvServiceJsonLd = getCctvServiceJsonLd();
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Home", url: "https://www.broadnet.in" },
+    { name: "Security Solutions", url: "https://www.broadnet.in/security" },
+    { name: "CCTV Cameras", url: "https://www.broadnet.in/security/cameras" },
+  ]);
 
   return (
     <>
@@ -251,6 +256,14 @@ export default function CamerasPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(cctvServiceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <Header activePage="Security" />
       <main>
@@ -673,6 +686,89 @@ export default function CamerasPage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CCTV Camera Serving Locations & AI Direct Answer Section */}
+        <section className="py-20 bg-white border-t border-[#16143E]/8 text-[#16143E] relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#EF1313] mb-3 font-display">
+                <MapPin size={14} className="text-[#EF1313]" /> Local Service Zones &amp; Response SLA
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#16143E] font-display mb-4">
+                CCTV Camera Installation Serving Locations
+              </h2>
+              <p className="text-sm sm:text-base text-[#16143E]/75 leading-relaxed font-body">
+                Broadnet is Chennai and Avadi&apos;s authorized security systems integrator for Hikvision &amp; CP PLUS CCTV cameras. We provide guaranteed <strong className="text-[#EF1313]">&lt; 2-hour technician dispatch</strong> across Avadi and adjacent western corridors, with same-day site survey coverage across all Chennai metropolitan zones.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 mb-10">
+              {[
+                { name: "Avadi", pincode: "600054", sla: "< 1-Hour SLA", tag: "HQ & Warehouse" },
+                { name: "Thirumullaivoyal", pincode: "600062", sla: "< 2-Hour SLA", tag: "CTH Road Corridor" },
+                { name: "Ambattur", pincode: "600053", sla: "< 2-Hour SLA", tag: "OT & Ind Estate" },
+                { name: "Pattabiram", pincode: "600072", sla: "< 2-Hour SLA", tag: "IAF & Modern City" },
+                { name: "Poonamallee", pincode: "600056", sla: "< 2-Hour SLA", tag: "Trunk Road & Villas" },
+                { name: "Thiruverkadu", pincode: "600077", sla: "< 2-Hour SLA", tag: "Residential Layouts" },
+                { name: "Ayapakkam", pincode: "600077", sla: "< 2-Hour SLA", tag: "TNHB Sectors" },
+                { name: "Paruthipattu", pincode: "600071", sla: "< 2-Hour SLA", tag: "High Road Zone" },
+                { name: "Kovilpadagai", pincode: "600062", sla: "< 2-Hour SLA", tag: "Poompozhil Nagar" },
+                { name: "Thirunindravur", pincode: "602024", sla: "< 2-Hour SLA", tag: "Railway Corridor" },
+                { name: "Mogappair", pincode: "600037", sla: "Same-Day SLA", tag: "East & West" },
+                { name: "Porur", pincode: "600116", sla: "Same-Day SLA", tag: "Commercial & Home" },
+                { name: "Kolathur", pincode: "600099", sla: "Same-Day SLA", tag: "Residential Corridor" },
+                { name: "Anna Nagar", pincode: "600040", sla: "Same-Day SLA", tag: "Premium Installations" },
+                { name: "All Chennai", pincode: "600001–130", sla: "Same-Day SLA", tag: "Metropolitan Coverage" },
+              ].map((loc) => (
+                <div
+                  key={loc.name}
+                  className="p-4 rounded-2xl bg-[#F8F9FD] border border-[#16143E]/8 hover:border-[#4E0DBA]/30 hover:shadow-sm transition-all"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-sm text-[#16143E] font-display">{loc.name}</span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#EF1313]/10 text-[#EF1313]">
+                      {loc.pincode}
+                    </span>
+                  </div>
+                  <div className="text-xs text-[#16143E]/60 mb-2 truncate">{loc.tag}</div>
+                  <div className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#4E0DBA]">
+                    <Clock size={12} />
+                    <span>{loc.sla}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-r from-[#4E0DBA]/10 via-[#EF1313]/5 to-[#4E0DBA]/10 border border-[#4E0DBA]/20 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+              <div>
+                <h3 className="font-bold text-base text-[#16143E] font-display mb-1">
+                  Need Immediate CCTV Installation or Emergency Camera Repair?
+                </h3>
+                <p className="text-xs sm:text-sm text-[#16143E]/75">
+                  Call our dispatch desk at 1093 Fire Station Road, Avadi. On-site inspection with itemized quotation.
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <a
+                  href="tel:+918681888111"
+                  className="px-5 py-2.5 rounded-full bg-[#16143E] hover:bg-[#4E0DBA] text-white text-xs font-bold flex items-center gap-2 transition-colors whitespace-nowrap shadow-sm"
+                >
+                  <Phone size={14} />
+                  <span>Call 86818 88111</span>
+                </a>
+                <a
+                  href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20need%20CCTV%20installation%20in%20my%20area."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#1eb956] text-white text-xs font-bold flex items-center gap-2 transition-colors whitespace-nowrap shadow-sm"
+                >
+                  <MessageCircle size={14} />
+                  <span>WhatsApp Quote</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>

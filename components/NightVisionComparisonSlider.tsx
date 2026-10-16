@@ -4,17 +4,13 @@ import React, { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 import {
   Sparkles,
-  Eye,
   SlidersHorizontal,
   CheckCircle2,
   XCircle,
   ArrowRight,
   ShieldCheck,
-  Zap,
   Camera,
   MessageCircle,
-  Layers,
-  Maximize2,
   Moon,
 } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
@@ -103,9 +99,13 @@ export default function NightVisionComparisonSlider({
     };
   }, [cancelAnimation]);
 
+  const containerRectRef = useRef<DOMRect | null>(null);
+
   const getPercentageFromClientX = useCallback((clientX: number) => {
-    if (!containerRef.current) return 50;
-    const rect = containerRef.current.getBoundingClientRect();
+    const rect =
+      containerRectRef.current ||
+      (containerRef.current ? containerRef.current.getBoundingClientRect() : null);
+    if (!rect) return 50;
     const x = clientX - rect.left;
     const percentage = (x / rect.width) * 100;
     return Math.max(2, Math.min(98, percentage));
@@ -116,6 +116,9 @@ export default function NightVisionComparisonSlider({
     if (e.button !== 0 && e.pointerType === "mouse") return;
 
     cancelAnimation();
+    if (containerRef.current) {
+      containerRectRef.current = containerRef.current.getBoundingClientRect();
+    }
     pointerStartRef.current = { x: e.clientX, time: performance.now() };
     hasMovedRef.current = false;
 
@@ -310,12 +313,12 @@ export default function NightVisionComparisonSlider({
                 className="object-cover object-center pointer-events-none"
               />
 
-              {/* ColorVu Side Badge (Top Right) */}
-              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 flex flex-col items-end gap-1.5 pointer-events-none select-none">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#00C2FF]/20 border border-[#00C2FF]/60 text-white backdrop-blur-md shadow-lg">
-                  <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-ping" />
-                  <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-cyan-200">
-                    BroadNet ColorVu Pro (4K True Color)
+              <div className="absolute top-3 right-3 sm:top-6 sm:right-6 z-20 flex flex-col items-end gap-1 pointer-events-none select-none">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl bg-[#00C2FF]/20 border border-[#00C2FF]/60 text-white backdrop-blur-md shadow-lg">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#00C2FF] animate-ping" />
+                  <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-cyan-200">
+                    <span className="sm:hidden">ColorVu 4K</span>
+                    <span className="hidden sm:inline">BroadNet ColorVu Pro (4K True Color)</span>
                   </span>
                 </div>
                 <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-md bg-black/60 backdrop-blur-sm text-[10px] text-emerald-400 font-semibold border border-emerald-500/30">
@@ -324,7 +327,6 @@ export default function NightVisionComparisonSlider({
               </div>
             </div>
 
-            {/* 2. Top Layer (Left / Clipped): Traditional IR Black & White */}
             <div
               className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none will-change-[clip-path]"
               style={{
@@ -341,12 +343,12 @@ export default function NightVisionComparisonSlider({
                 className="object-cover object-center pointer-events-none"
               />
 
-              {/* IR Side Badge (Top Left) */}
-              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 flex flex-col items-start gap-1.5 pointer-events-none select-none">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/70 border border-white/20 text-white backdrop-blur-md shadow-lg">
-                  <span className="w-2 h-2 rounded-full bg-red-500" />
-                  <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-zinc-300">
-                    Old 1080p IR Night Vision
+              <div className="absolute top-3 left-3 sm:top-6 sm:left-6 z-20 flex flex-col items-start gap-1 pointer-events-none select-none">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl bg-black/70 border border-white/20 text-white backdrop-blur-md shadow-lg">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-500" />
+                  <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-zinc-300">
+                    <span className="sm:hidden">Old IR (B&W)</span>
+                    <span className="hidden sm:inline">Old 1080p IR Night Vision</span>
                   </span>
                 </div>
                 <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-md bg-black/60 backdrop-blur-sm text-[10px] text-red-300 font-medium border border-red-500/30">
@@ -355,16 +357,15 @@ export default function NightVisionComparisonSlider({
               </div>
             </div>
 
-            {/* 3. Real-time Surveillance HUD Stamp (Bottom Left & Right) */}
-            <div className="absolute bottom-3 left-4 sm:bottom-4 sm:left-6 z-20 pointer-events-none font-mono text-[10px] sm:text-xs text-white/90 bg-black/60 px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/10 flex items-center gap-2 select-none">
-              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-              <span>LIVE • CAM 01: VILLA ENTRANCE DRIVEWAY</span>
+            <div className="absolute bottom-2.5 left-3 sm:bottom-4 sm:left-6 z-20 pointer-events-none font-mono text-[9px] sm:text-xs text-white/90 bg-black/70 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg backdrop-blur-md border border-white/10 flex items-center gap-1.5 sm:gap-2 select-none">
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-500 animate-pulse" />
+              <span className="sm:hidden">LIVE • CAM 01</span>
+              <span className="hidden sm:inline">LIVE • CAM 01: VILLA ENTRANCE DRIVEWAY</span>
             </div>
             <div className="absolute bottom-3 right-4 sm:bottom-4 sm:right-6 z-20 pointer-events-none font-mono text-[10px] sm:text-xs text-white/90 bg-black/60 px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/10 hidden sm:block select-none">
               <span>{currentTime} IST • 30 FPS • H.265+</span>
             </div>
 
-            {/* 4. DRAGGABLE SPLIT HANDLE & GLOW LINE */}
             <div
               className="absolute top-0 bottom-0 z-30 pointer-events-none will-change-[left,transform]"
               style={{
@@ -372,10 +373,8 @@ export default function NightVisionComparisonSlider({
                 transform: "translate3d(-50%, 0, 0)",
               }}
             >
-              {/* Vertical Glowing Divider Line */}
               <div className="w-[3px] h-full bg-gradient-to-b from-[#EF1313] via-white to-[#4E0DBA] shadow-[0_0_15px_#EF1313,0_0_25px_#4E0DBA]" />
 
-              {/* Center Handle Knob */}
               <div
                 role="slider"
                 tabIndex={0}
@@ -393,7 +392,6 @@ export default function NightVisionComparisonSlider({
                 <SlidersHorizontal size={18} className="text-[#EF1313]" />
               </div>
 
-              {/* Drag Prompt Tooltip */}
               <div
                 className={`absolute bottom-16 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/25 text-[10px] font-bold text-white uppercase tracking-wider whitespace-nowrap hidden sm:block shadow-xl select-none transition-all duration-300 ${
                   isDragging
@@ -407,9 +405,7 @@ export default function NightVisionComparisonSlider({
           </div>
         </div>
 
-        {/* ── SIDE-BY-SIDE SPECIFICATION BREAKDOWN ─────────────────────── */}
         <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-          {/* Card 1: Traditional Infrared (The Problem) */}
           <div className="rounded-3xl p-6 sm:p-8 bg-[#16123D]/60 border border-white/10 relative overflow-hidden">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-2xl bg-red-500/15 border border-red-500/30 flex items-center justify-center text-red-400 flex-shrink-0">
@@ -445,9 +441,7 @@ export default function NightVisionComparisonSlider({
             </ul>
           </div>
 
-          {/* Card 2: BroadNet ColorVu (The Solution) */}
           <div className="rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-[#1E144D] to-[#120D38] border-2 border-[#EF1313]/50 relative overflow-hidden shadow-xl shadow-[#EF1313]/10">
-            {/* Glow accent */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#EF1313]/15 rounded-full blur-2xl pointer-events-none" />
 
             <div className="flex items-center justify-between gap-3 mb-5">

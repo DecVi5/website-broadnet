@@ -1,6 +1,34 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Syne, DM_Sans } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import CustomCursor from "@/components/CustomCursor";
+import MobileStickyBar from "@/components/MobileStickyBar";
+import UnderDevelopmentSign from "@/components/UnderDevelopmentSign";
+import { getLocalBusinessJsonLd, getWebSiteJsonLd } from "@/lib/jsonLd";
+import { LanguageProvider } from "@/lib/i18n";
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  themeColor: "#16143E",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.broadnet.in"),
@@ -25,6 +53,10 @@ export const metadata: Metadata = {
     "enterprise Wi-Fi installation",
     "structured cabling Avadi",
     "Boom barriers Avadi",
+    "CCTV camera Thirumullaivoyal",
+    "CCTV installation Ambattur",
+    "CCTV installation Pattabiram",
+    "CCTV Poonamallee",
   ],
   authors: [{ name: "Broadnet Internet Services", url: "https://www.broadnet.in" }],
   creator: "Broadnet Internet Services",
@@ -36,6 +68,12 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.broadnet.in",
+  },
+  other: {
+    "geo.region": "IN-TN",
+    "geo.placename": "Avadi, Chennai, Tamil Nadu",
+    "geo.position": "13.1147;80.1018",
+    "ICBM": "13.1147, 80.1018",
   },
   openGraph: {
     type: "website",
@@ -74,26 +112,21 @@ export const metadata: Metadata = {
   },
 };
 
-import CustomCursor from "@/components/CustomCursor";
-import MobileStickyBar from "@/components/MobileStickyBar";
-import { getLocalBusinessJsonLd } from "@/lib/jsonLd";
-
-import { LanguageProvider } from "@/lib/i18n";
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const localBusinessJsonLd = getLocalBusinessJsonLd();
+  const webSiteJsonLd = getWebSiteJsonLd();
+
   return (
-    <html lang="en">
+    <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
         />
       </head>
       <body>
@@ -101,6 +134,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SmoothScrollProvider>
             <CustomCursor />
             {children}
+            <UnderDevelopmentSign />
             <MobileStickyBar />
           </SmoothScrollProvider>
         </LanguageProvider>

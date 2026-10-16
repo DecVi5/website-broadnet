@@ -4,13 +4,46 @@
   --indigo: #4E0DBA;
   --crimson: #EF1313;
   --obsidian: #16143E;
-  --font-display: "Syne", sans-serif;
-  --font-body: "DM Sans", sans-serif;
+  --font-display: var(--font-display, "Syne", sans-serif);
+  --font-body: var(--font-body, "DM Sans", sans-serif);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html {
   scroll-padding-top: 5.5rem;
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Eliminate 300ms mobile touch delay & ensure rapid tactile button response */
+button,
+a,
+input,
+select,
+textarea,
+[role="button"],
+.btn-crimson,
+.glow-btn-crimson {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+[role="button"],
+.btn-crimson {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Instant tactile feedback on button tap/click */
+button:active:not(:disabled),
+a.btn-crimson:active,
+.btn-crimson:active:not(:disabled),
+[role="button"]:active {
+  transform: scale(0.96) translateZ(0) !important;
+  transition: transform 50ms cubic-bezier(0, 0, 0.2, 1) !important;
 }
 
 html.lenis, html.lenis body {
@@ -42,9 +75,16 @@ body {
   background: #FFFFFF;
   color: #16143E;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -57,10 +97,28 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 700 !important;
 }
 
-/* Enable custom cursor only on desktop devices with a precision pointer */
+/* Enable custom cursor ONLY when active on desktop with precision pointer */
 @media (hover: hover) and (pointer: fine) {
-  body, a, button {
+  html.has-custom-cursor body,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [role="button"] {
     cursor: none;
+  }
+
+  /* Text inputs, textareas, and selects always preserve native precision cursor */
+  html.has-custom-cursor input,
+  html.has-custom-cursor textarea,
+  html.has-custom-cursor select,
+  html.has-custom-cursor [contenteditable="true"] {
+    cursor: auto !important;
+  }
+  html.has-custom-cursor input:not([type="button"]):not([type="submit"]):not([type="reset"]),
+  html.has-custom-cursor textarea {
+    cursor: text !important;
+  }
+  html.has-custom-cursor select {
+    cursor: pointer !important;
   }
 }
 
@@ -79,8 +137,7 @@ h1, h2, h3, h4, h5, h6,
   border: 2px solid #4E0DBA;
   pointer-events: none;
   z-index: 99998;
-  will-change: transform, width, height;
-  transition: width 0.18s ease, height 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, opacity 0.12s ease;
+  will-change: transform;
   margin-left: -18px;
   margin-top: -18px;
 }
@@ -88,15 +145,15 @@ h1, h2, h3, h4, h5, h6,
 .cursor-dot {
   position: fixed;
   top: 0; left: 0;
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #4E0DBA;
   pointer-events: none;
   z-index: 99999;
   will-change: transform;
-  margin-left: -2.5px;
-  margin-top: -2.5px;
+  margin-left: -3px;
+  margin-top: -3px;
 }
 
 /* BroadNet Brand Scrollbar System (The "Indian Pixel" Touch) */
@@ -263,6 +320,40 @@ html {
   box-shadow: 0 10px 32px -4px rgba(22, 20, 62, 0.08), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
 }
 
+.glass-header-dark {
+  background: rgba(7, 9, 30, 0.78);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-header-dark-scrolled {
+  background: rgba(7, 9, 30, 0.92);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 40px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+.antigravity-glass {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.antigravity-glass:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(49, 134, 255, 0.35);
+}
+
+.text-antigravity-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, #3186FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .text-gradient {
   background: linear-gradient(130deg, #4E0DBA 0%, #7B2FF7 55%, #EF1313 100%);
   -webkit-background-clip: text;
@@ -282,23 +373,49 @@ html {
   font-size: 0.875rem;
   letter-spacing: 0.03em;
   border-radius: 99px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  will-change: transform;
+  transform: translateZ(0);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease;
 }
 .btn-crimson:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 36px rgba(239,19,19,0.38);
+  transform: translateY(-2px) translateZ(0);
+  box-shadow: 0 8px 28px rgba(239, 19, 19, 0.35);
 }
 
 .card-obsidian {
   background: #16143E;
   border: 1px solid rgba(78,13,186,0.22);
   border-radius: 24px;
-  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 .card-obsidian:hover {
   border-color: rgba(78,13,186,0.65);
-  transform: translateY(-5px);
-  box-shadow: 0 28px 70px rgba(78,13,186,0.22);
+  transform: translateY(-4px) translateZ(0);
+  box-shadow: 0 24px 60px rgba(78,13,186,0.2);
+}
+
+/* Hardware-Accelerated Continuous Smooth GPU Marquee */
+@keyframes marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-gpu {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  animation: marquee-scroll 32s linear infinite;
+}
+
+@media (hover: hover) {
+  .animate-marquee-gpu:hover {
+    animation-play-state: paused;
+  }
 }
 
 /* Futuristic Surveillance HUD & Glows */
@@ -342,12 +459,14 @@ html {
 
 .glow-btn-crimson {
   position: relative;
-  box-shadow: 0 0 20px -2px rgba(239, 19, 19, 0.4), 0 10px 25px -5px rgba(239, 19, 19, 0.3);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  transform: translateZ(0);
+  box-shadow: 0 0 16px -2px rgba(239, 19, 19, 0.35), 0 8px 20px -4px rgba(239, 19, 19, 0.25);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glow-btn-crimson:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(239, 19, 19, 0.6), 0 12px 30px -4px rgba(239, 19, 19, 0.45);
+  transform: translateY(-2px) translateZ(0);
+  box-shadow: 0 0 24px rgba(239, 19, 19, 0.5), 0 10px 24px -4px rgba(239, 19, 19, 0.35);
 }
 
 .glass-card-premium {
@@ -361,8 +480,37 @@ html {
 .dark-hud-glass {
   background: radial-gradient(circle at 50% 0%, rgba(30, 27, 75, 0.95), rgba(15, 12, 38, 0.98));
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 25px 60px -15px rgba(15, 12, 38, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Mobile & Low-End Performance Adjustments */
+@media (max-width: 768px) {
+  .glass,
+  .glass-header,
+  .glass-header-scrolled,
+  .glass-card-premium,
+  .dark-hud-glass {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+}
+
+/* Accessibility: Prefers reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee-gpu {
+    animation: none !important;
+    transform: none !important;
+  }
 }
 
 .input-field {
@@ -400,6 +548,21 @@ textarea.input-field-compact {
   border-color: #4E0DBA;
   box-shadow: 0 0 0 4px rgba(78,13,186,0.1);
 }
+
+.input-field-dark {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+.input-field-dark::placeholder {
+  color: rgba(255, 255, 255, 0.38) !important;
+}
+.input-field-dark:focus {
+  border-color: #3186FF !important;
+  box-shadow: 0 0 0 4px rgba(49, 134, 255, 0.25) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
 
 /* Physical landing / stopping cushion animation */
 .section-arrival-cushion {

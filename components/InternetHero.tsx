@@ -20,7 +20,6 @@ export default function InternetHero() {
         aria-hidden="true"
       />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center">
-        {/* Breadcrumb Navigation */}
         <div className="flex justify-center mb-6">
           <Breadcrumbs
             items={[{ label: "Fiber Internet" }]}
@@ -29,7 +28,6 @@ export default function InternetHero() {
         </div>
 
         <div className="max-w-3xl mx-auto flex flex-col items-center">
-          {/* Eyebrow */}
           <motion.div
             initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -42,7 +40,6 @@ export default function InternetHero() {
             <span>ICT Infrastructure</span>
           </motion.div>
 
-          {/* Heading */}
           <motion.h1
             initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -57,7 +54,6 @@ export default function InternetHero() {
             <span className="text-gradient">Own Fibre Network</span>
           </motion.h1>
 
-          {/* Paragraph */}
           <motion.p
             initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -71,7 +67,6 @@ export default function InternetHero() {
             Broadnet operates its own optical fibre backbone across Avadi — delivering symmetric, dedicated high-speed internet to homes and enterprises with reliable fibre continuity.
           </motion.p>
 
-          {/* Action CTAs */}
           <motion.div
             initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
@@ -80,7 +75,7 @@ export default function InternetHero() {
               delay: shouldReduceMotion ? 0 : 0.18,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 w-full max-w-xs sm:max-w-none"
           >
             <button
               type="button"
@@ -88,7 +83,7 @@ export default function InternetHero() {
                 trackEvent("coverage_check", { category: "InternetHero", label: "CheckAvailability" });
                 scrollToWithPhysics("enquiry");
               }}
-              className="btn-crimson min-h-[48px] px-6 sm:px-7 text-sm sm:text-base font-bold justify-center shadow-md hover:shadow-lg transition-all cursor-pointer"
+              className="btn-crimson min-h-[48px] px-6 sm:px-7 text-sm sm:text-base font-bold justify-center shadow-md hover:shadow-lg w-full sm:w-auto"
             >
               <span>Check Fibre Availability</span>
               <ArrowRight size={16} aria-hidden="true" />
@@ -99,13 +94,12 @@ export default function InternetHero() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackEvent("whatsapp_click", { category: "InternetHero", label: "WhatsAppQuery" })}
-              className="min-h-[48px] px-5 sm:px-6 rounded-full bg-[#16143E]/[0.04] hover:bg-[#16143E]/[0.08] border border-[#16143E]/12 text-[#16143E]/80 hover:text-[#16143E] text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 transition-all cursor-pointer"
+              className="min-h-[48px] px-5 sm:px-6 rounded-full bg-[#16143E]/[0.04] hover:bg-[#16143E]/[0.08] border border-[#16143E]/12 text-[#16143E]/80 hover:text-[#16143E] text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 transition-transform duration-150 active:scale-[0.96] w-full sm:w-auto"
             >
               <span>Chat on WhatsApp</span>
             </a>
           </motion.div>
 
-          {/* Stats / Status */}
           <motion.div
             initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}

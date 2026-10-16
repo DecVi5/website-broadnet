@@ -25,7 +25,22 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/"],
       },
+      {
+        userAgent: [
+          "GPTBot",
+          "ChatGPT-User",
+          "PerplexityBot",
+          "ClaudeBot",
+          "Google-Extended",
+          "Applebot-Extended",
+          "CCBot",
+          "cohere-ai",
+          "Amazonbot",
+        ],
+        allow: "/",
+      },
     ],
     sitemap: "https://www.broadnet.in/sitemap.xml",
   };
 }
+

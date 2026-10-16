@@ -7,10 +7,7 @@ import {
   Award,
   CheckCircle2,
   ArrowRight,
-  Shield,
   BadgeCheck,
-  Sparkles,
-  ExternalLink,
 } from "lucide-react";
 import { BRAND_PARTNERS } from "@/data/services";
 import { scrollToWithPhysics } from "@/lib/scrollPhysics";
@@ -74,19 +71,11 @@ export default function BrandPartnersSection() {
             <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-white to-transparent z-10" />
             <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-white to-transparent z-10" />
 
-            <motion.div
-              className="flex gap-4 py-2"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{
-                repeat: Infinity,
-                ease: "linear",
-                duration: 32,
-              }}
-            >
-              {[...BRAND_PARTNERS, ...BRAND_PARTNERS, ...BRAND_PARTNERS].map((brand, idx) => (
+            <div className="animate-marquee-gpu flex gap-4 py-2 hover:[animation-play-state:paused]">
+              {[...BRAND_PARTNERS, ...BRAND_PARTNERS].map((brand, idx) => (
                 <div
                   key={`marquee-${brand.name}-${idx}`}
-                  className="flex-shrink-0 flex items-center gap-3 px-4.5 py-2.5 rounded-2xl bg-[#FAFAFE] border border-[#16143E]/8 shadow-2xs hover:border-[#EF1313]/30 hover:bg-white transition-all cursor-pointer group"
+                  className="flex-shrink-0 flex items-center gap-3 px-4.5 py-2.5 rounded-2xl bg-[#FAFAFE] border border-[#16143E]/8 shadow-2xs hover:border-[#EF1313]/30 hover:bg-white hover:scale-[1.02] transition-transform duration-150 cursor-pointer group transform-gpu"
                   onClick={() => scrollToWithPhysics("enquiry")}
                 >
                   <div className="h-7 w-28 sm:w-32 flex items-center justify-center">
@@ -99,7 +88,7 @@ export default function BrandPartnersSection() {
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
 

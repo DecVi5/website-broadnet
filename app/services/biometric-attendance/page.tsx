@@ -10,12 +10,8 @@ import RelatedSolutions from "@/components/RelatedSolutions";
 import {
   Fingerprint,
   CheckCircle2,
-  Clock,
   Users,
-  ShieldCheck,
-  Building2,
   ArrowRight,
-  Sparkles,
   Phone,
   MessageCircle,
   BadgeCheck,

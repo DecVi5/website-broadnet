@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Wifi, Server, Network, Shield, Zap, Globe, Tv, Cpu } from "lucide-react";
+import { Wifi, Network, Zap, Globe, Tv, Cpu } from "lucide-react";
 
 const SOLUTIONS = [
   { icon: Globe, title: "Broadnet Private FTTH", desc: "Private optical fiber network across Avadi starting at ₹499/mo with Free Installation & Free ONT. Symmetric speed with zero bottlenecks." },

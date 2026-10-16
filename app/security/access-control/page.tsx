@@ -11,7 +11,6 @@ import {
   Shield,
   Lock,
   CheckCircle2,
-  Clock,
   Phone,
   MessageCircle,
   ArrowRight,
@@ -26,7 +25,6 @@ import {
   Building,
   Key,
   Layers,
-  Cpu,
   Store,
 } from "lucide-react";
 

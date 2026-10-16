@@ -27,7 +27,7 @@ const QUICK_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-[#120F35] via-[#16143E] to-[#0D0B24] text-white pt-16 pb-14 border-t border-[#4E0DBA]/25">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-[#120F35] via-[#16143E] to-[#0D0B24] text-white pt-16 pb-28 md:pb-14 border-t border-[#4E0DBA]/25">
       {/* Top subtle gradient divider line and radial glow */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4E0DBA] to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-[#EF1313]/60 via-[#4E0DBA] to-[#EF1313]/60 blur-xs" />
@@ -188,8 +188,12 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
-          <div>
-            © {new Date().getFullYear()} Broadnet Internet Services. All Rights Reserved.
+          <div className="flex items-center gap-2.5">
+            <span>© {new Date().getFullYear()} Broadnet Internet Services. All Rights Reserved.</span>
+            <span className="hidden sm:inline text-white/30">·</span>
+            <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-white/60 tracking-wider">
+              v2.5
+            </span>
           </div>
           <div className="flex items-center gap-4 text-xs">
             <Link href="/cctv-landing" className="hover:text-white transition-colors">

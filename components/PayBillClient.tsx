@@ -8,19 +8,10 @@ import {
   ShieldCheck,
   CreditCard,
   Zap,
-  CheckCircle2,
-  HelpCircle,
   Phone,
-  MessageCircle,
   MapPin,
   Clock,
-  ArrowRight,
-  Wifi,
-  FileText,
-  AlertTriangle,
   ChevronDown,
-  Info,
-  Smartphone,
   Lock,
 } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -248,7 +239,7 @@ export default function PayBillClient() {
       </section>
 
       {/* 2. Interactive Provider Tabs Filter */}
-      <section className="sticky top-16 sm:top-18 z-30 bg-white/95 backdrop-blur-md border-b border-[#16143E]/10 py-3 shadow-xs">
+      <section className="sticky top-24 z-30 bg-white/95 backdrop-blur-md border-b border-[#16143E]/10 py-3 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between gap-4 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
             <div className="flex items-center gap-2">

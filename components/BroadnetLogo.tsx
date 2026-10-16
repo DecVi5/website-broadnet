@@ -6,7 +6,6 @@ import Image from "next/image";
 interface BroadnetLogoProps {
   variant?: "light" | "dark";
   className?: string;
-  showStrapline?: boolean;
 }
 
 export default function BroadnetLogo({

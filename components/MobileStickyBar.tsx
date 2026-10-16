@@ -3,7 +3,6 @@
 import { Phone, MessageCircle, Send } from "lucide-react";
 import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 import { trackEvent } from "@/lib/analytics";
-import { useLanguage } from "@/lib/i18n";
 
 export default function MobileStickyBar() {
   return (
@@ -13,11 +12,10 @@ export default function MobileStickyBar() {
       style={{ paddingBottom: "max(0.6rem, env(safe-area-inset-bottom))" }}
     >
       <div className="max-w-md mx-auto grid grid-cols-3 gap-2">
-        {/* 1. Direct Call (min-h-[48px] tap target) */}
         <a
           href="tel:+918681888111"
           onClick={() => trackEvent("call_click", { category: "MobileStickyBar" })}
-          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#16143E]/5 hover:bg-[#16143E]/10 border border-[#16143E]/10 text-[#16143E] active:scale-95 transition-all text-center"
+          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#16143E]/5 hover:bg-[#16143E]/10 border border-[#16143E]/10 text-[#16143E] active:scale-[0.95] transition-transform duration-100 text-center touch-manipulation"
           aria-label="Call Broadnet support directly"
         >
           <Phone size={16} className="text-[#EF1313] mb-0.5" />
@@ -26,13 +24,12 @@ export default function MobileStickyBar() {
           </span>
         </a>
 
-        {/* 2. WhatsApp (min-h-[48px] tap target) */}
         <a
           href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20enquire%20about%20your%20services%20and%20get%20a%20quote."
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackEvent("whatsapp_click", { category: "MobileStickyBar" })}
-          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#16143E] active:scale-95 transition-all text-center relative"
+          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#16143E] active:scale-[0.95] transition-transform duration-100 text-center relative touch-manipulation"
           aria-label="Chat with Broadnet on WhatsApp"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 absolute top-1.5 right-2 animate-ping" />
@@ -42,7 +39,6 @@ export default function MobileStickyBar() {
           </span>
         </a>
 
-        {/* 3. Get Quote (min-h-[48px] tap target) */}
         <button
           type="button"
           onClick={() => {
@@ -55,7 +51,7 @@ export default function MobileStickyBar() {
               window.location.href = "/contact#enquiry";
             }
           }}
-          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#EF1313] hover:bg-[#d81010] text-white shadow-md shadow-[#EF1313]/30 active:scale-95 transition-all text-center cursor-pointer glow-btn-crimson"
+          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#EF1313] hover:bg-[#d81010] text-white shadow-md shadow-[#EF1313]/30 active:scale-[0.95] transition-transform duration-100 text-center cursor-pointer glow-btn-crimson touch-manipulation"
           aria-label="Request a quotation"
         >
           <Send size={15} className="text-white mb-0.5" />

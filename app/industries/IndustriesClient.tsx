@@ -9,16 +9,11 @@ import {
   Factory,
   Hotel,
   Briefcase,
-  ShieldCheck,
   Camera,
-  Fingerprint,
-  Wifi,
   ArrowRight,
   Sparkles,
   Phone,
   CheckCircle2,
-  Clock,
-  Layers,
   MessageCircle,
 } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";

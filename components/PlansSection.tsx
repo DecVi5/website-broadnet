@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { Check, ChevronDown, ChevronUp, MessageCircle, Gift, Tv, MapPin } from "lucide-react";
+import { Check, MessageCircle, Gift, Tv, MapPin } from "lucide-react";
 import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 
 interface PlanItem {
@@ -557,7 +557,6 @@ export default function PlansSection() {
           )}
         </AnimatePresence>
 
-        {/* WhatsApp Catalog Hardware & Value Add Services Showcase */}
         <div className="mt-20 pt-16 border-t border-white/10">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-xs font-bold uppercase tracking-widest text-[#EF1313]">

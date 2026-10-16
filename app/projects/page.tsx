@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import EnquirySection from "@/components/EnquirySection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ProjectsGallery from "@/components/ProjectsGallery";
-import { Sparkles, Phone, ArrowRight } from "lucide-react";
+import { Sparkles, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Projects & Installation Gallery Chennai | Broadnet Internet & Security",

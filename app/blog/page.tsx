@@ -5,13 +5,10 @@ import Footer from "@/components/Footer";
 import EnquirySection from "@/components/EnquirySection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import {
-  BookOpen,
   Calendar,
   Clock,
   ArrowRight,
   Sparkles,
-  Tag,
-  ShieldCheck,
 } from "lucide-react";
 
 export const metadata: Metadata = {

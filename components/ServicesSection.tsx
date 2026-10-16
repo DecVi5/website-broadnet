@@ -17,9 +17,7 @@ import {
   ShieldCheck,
   CheckCircle2,
   Sparkles,
-  Phone,
   MessageCircle,
-  Zap,
   Filter,
 } from "lucide-react";
 import { SERVICES_LIST } from "@/data/services";

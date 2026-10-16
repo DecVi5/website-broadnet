@@ -1,7 +1,9 @@
 "use client";
 
+import { prefersReducedMotion } from "@/lib/devicePerformance";
+
 /**
- * Physical smooth scrolling with deceleration and a soft stopping inertia cushion.
+ * Snappy physical smooth scrolling with responsive deceleration and soft stopping cushion.
  */
 export function scrollToWithPhysics(
   targetId: string,
@@ -37,12 +39,20 @@ export function scrollToWithPhysics(
   // Dispatch scroll start event
   window.dispatchEvent(new CustomEvent("broadnet:scroll-start", { detail: { targetId: id } }));
 
-  // If Lenis is active, use its motion-graphic easing
+  // If user prefers reduced motion, jump directly with 0 latency
+  if (prefersReducedMotion()) {
+    window.scrollTo({ top: targetY, behavior: "instant" as ScrollBehavior });
+    triggerArrivalAnimation(targetEl, id);
+    options?.onArrival?.();
+    return;
+  }
+
+  // If Lenis is active, use its motion-graphic easing with snappy 0.7s duration
   const lenis = (window as unknown as { lenis?: { scrollTo: (target: HTMLElement, opts: Record<string, unknown>) => void } }).lenis;
   if (lenis) {
     lenis.scrollTo(targetEl, {
       offset: -offset,
-      duration: 1.25,
+      duration: 0.72,
       onComplete: () => {
         triggerArrivalAnimation(targetEl, id);
         options?.onArrival?.();
@@ -58,11 +68,11 @@ export function scrollToWithPhysics(
     return;
   }
 
-  // Calculate physics duration: swift glide with heavy cushioned deceleration
-  const duration = options?.duration ?? Math.min(1150, Math.max(680, Math.abs(distance) * 0.44));
+  // Snappy physics transit: swift glide with cushioned deceleration (320ms - 580ms max)
+  const duration = options?.duration ?? Math.min(580, Math.max(320, Math.abs(distance) * 0.26));
   let startTime: number | null = null;
 
-  // Ease-Out Quart: high initial momentum, rapid smooth transit, gentle cushioned stop
+  // Ease-Out Quart: high initial momentum, rapid transit, gentle cushioned stop
   const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
 
   function step(timestamp: number) {
@@ -92,12 +102,15 @@ export function scrollToWithPhysics(
 }
 
 export function triggerArrivalAnimation(element: HTMLElement, id: string) {
-  element.classList.remove("section-arrival-cushion");
-  // Trigger DOM reflow to restart keyframe animation
-  void element.offsetWidth;
-  element.classList.add("section-arrival-cushion");
-
   window.dispatchEvent(new CustomEvent("broadnet:section-arrived", { detail: { targetId: id } }));
+
+  if (prefersReducedMotion()) return;
+
+  element.classList.remove("section-arrival-cushion");
+  // Use RAF to re-apply animation class without forced synchronous DOM reflow
+  requestAnimationFrame(() => {
+    element.classList.add("section-arrival-cushion");
+  });
 
   setTimeout(() => {
     element.classList.remove("section-arrival-cushion");

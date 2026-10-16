@@ -2,15 +2,12 @@
 
 import { useState } from "react";
 import {
-  MapPin,
   Search,
   CheckCircle2,
   AlertCircle,
   ShieldCheck,
   Globe,
-  Clock,
   ArrowRight,
-  Sparkles,
 } from "lucide-react";
 
 interface LocalityItem {

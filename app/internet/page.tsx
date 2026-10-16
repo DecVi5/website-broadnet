@@ -47,15 +47,24 @@ export const metadata: Metadata = {
   },
 };
 
-import { getBroadbandPlansJsonLd } from "@/lib/jsonLd";
+import { getBroadbandPlansJsonLd, getBreadcrumbJsonLd } from "@/lib/jsonLd";
 
 export default function InternetPage() {
   const jsonLd = getBroadbandPlansJsonLd();
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Home", url: "https://www.broadnet.in" },
+    { name: "Fiber Internet", url: "https://www.broadnet.in/internet" },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <Header activePage="Internet" />
       <main>

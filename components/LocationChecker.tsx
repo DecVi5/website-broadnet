@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useMemo, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import {
   MapPin,
@@ -14,7 +14,6 @@ import {
   AlertCircle,
   Check,
   ChevronRight,
-  Sparkles,
   Phone,
   User,
   X,
@@ -22,7 +21,7 @@ import {
 } from "lucide-react";
 import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 import { trackEvent } from "@/lib/analytics";
-import { buildWhatsAppLink, normalizeTel } from "@/data/site";
+import { buildWhatsAppLink } from "@/data/site";
 
 export interface LocationData {
   name: string;

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Camera, Shield, Eye, Layers, Maximize2, Sparkles, CheckCircle2 } from "lucide-react";
+import { Camera, CheckCircle2 } from "lucide-react";
 
 export interface GalleryItem {
   title: string;

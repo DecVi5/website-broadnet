@@ -11,14 +11,12 @@ import {
   Shield,
   Zap,
   CheckCircle2,
-  Clock,
   Phone,
   MessageCircle,
   ArrowRight,
   Eye,
   Smartphone,
   Lock,
-  Volume2,
   BadgeCheck,
   Star,
   Quote,
@@ -28,7 +26,6 @@ import {
   Camera,
   Building,
   Users,
-  Key,
 } from "lucide-react";
 
 export const metadata: Metadata = {

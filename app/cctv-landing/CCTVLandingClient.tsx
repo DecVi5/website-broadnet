@@ -9,15 +9,8 @@ import {
   Camera,
   Star,
   CheckCircle2,
-  HardDrive,
-  Eye,
-  Sliders,
   Sparkles,
   ArrowRight,
-  Clock,
-  MapPin,
-  Send,
-  Check,
   AlertCircle,
   HelpCircle,
   ChevronDown,
@@ -26,16 +19,16 @@ import {
   Store,
   Factory,
   Briefcase,
-  Sun,
-  Moon,
   Calculator,
-  User,
   Lock,
+  MapPin,
+  Clock,
 } from "lucide-react";
 import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 import PackageCard from "@/components/PackageCard";
 import NightVisionComparisonSlider from "@/components/NightVisionComparisonSlider";
-import { CCTV_PACKAGES, CCTVPackage } from "@/data/site";
+import { CCTV_PACKAGES } from "@/data/site";
+import { CCTV_LANDING_FAQS } from "@/data/cctvLandingData";
 
 const REVIEWS = [
   {
@@ -64,28 +57,7 @@ const REVIEWS = [
   },
 ];
 
-const FAQS = [
-  {
-    q: "How do I get an exact CCTV installation quote?",
-    a: "Our certified CCTV specialists review your premises layout and requirements (with priority in Avadi, Pattabiram, Thirumullaivoyal, Ambattur, Poonamallee, etc.) to assess coverage angles, identify blind spots, calculate necessary cable footage, and provide an exact, itemized quotation.",
-  },
-  {
-    q: "Can I view the cameras live on my mobile phone when away?",
-    a: "Yes! Every CCTV package includes free mobile application configuration on your Android phone, iPhone, iPad, or laptop. You can monitor live views, play back past footage, and receive push notifications from anywhere in the world.",
-  },
-  {
-    q: "What is the difference between IP and HD cameras?",
-    a: "HD (Analog HD/TVI) cameras use coaxial cable and offer fantastic 1080p to 5MP clarity at economical prices. IP (Network) cameras connect via Cat6 ethernet cables, offer ultra-high resolutions up to 4K, smart AI human/vehicle detection, and plug-and-play scalability.",
-  },
-  {
-    q: "Do you provide CCTV Annual Maintenance Contracts (AMC)?",
-    a: "Yes! We manage CCTV AMC contracts for apartments, commercial stores, factories, and schools across Chennai with guaranteed 2-hour technician dispatch, regular camera cleaning, and NVR health checks.",
-  },
-  {
-    q: "Are the camera hardware and warranty 100% genuine?",
-    a: "Absolutely. We are authorized partners for Hikvision, CP PLUS, and Dahua. Every system is unboxed in front of you with official serial numbers, brand warranty cards, and manufacturer invoices.",
-  },
-];
+const FAQS = CCTV_LANDING_FAQS;
 
 export default function CCTVLandingClient() {
   const [form, setForm] = useState({
@@ -197,25 +169,25 @@ export default function CCTVLandingClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           {/* Top Trust Ribbon */}
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#EF1313]/10 text-[#EF1313] text-xs font-bold uppercase tracking-wider border border-[#EF1313]/20">
-              <ShieldCheck size={14} />
-              <span>Lead Surveillance Division · 12+ Years in Avadi</span>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[#EF1313]/10 text-[#EF1313] text-[11px] sm:text-xs font-bold uppercase tracking-wider border border-[#EF1313]/20">
+              <ShieldCheck size={13} />
+              <span>Surveillance Division · 12+ Years</span>
             </div>
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-[11px] sm:text-xs font-bold border border-emerald-200">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Active Dispatch in Avadi & Chennai · &lt;2h SLA</span>
+              <span>Active Dispatch · &lt;2h Response</span>
             </div>
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#4E0DBA]/10 text-[#4E0DBA] text-xs font-bold border border-[#4E0DBA]/20">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[#4E0DBA]/10 text-[#4E0DBA] text-[11px] sm:text-xs font-bold border border-[#4E0DBA]/20">
               <Star size={12} className="fill-[#F59E0B] text-[#F59E0B]" />
-              <span>4.9/5 Rating (500+ Google Reviews)</span>
+              <span>4.9/5 Rating (500+ Reviews)</span>
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: Headlines & Instant Dispatch Buttons */}
             <div className="lg:col-span-7 text-center lg:text-left">
               <h1
-                className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#16143E] tracking-tight leading-[1.08] mb-5"
+                className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#16143E] tracking-tight leading-[1.12] sm:leading-[1.08] mb-4 sm:mb-5"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
                 We Secure <br className="hidden sm:inline" />
@@ -236,7 +208,7 @@ export default function CCTVLandingClient() {
                 <button
                   type="button"
                   onClick={() => scrollToWithPhysics("cctv-quote-form")}
-                  className="btn-crimson min-h-[52px] px-8 text-sm sm:text-base font-bold justify-center shadow-xl shadow-[#EF1313]/25 hover:shadow-[#EF1313]/40 cursor-pointer glow-btn-crimson"
+                  className="btn-crimson min-h-[50px] sm:min-h-[52px] px-8 text-sm sm:text-base font-bold justify-center shadow-xl shadow-[#EF1313]/25 hover:shadow-[#EF1313]/40 cursor-pointer glow-btn-crimson w-full sm:w-auto"
                 >
                   <span>Get Free Quotation</span>
                   <ArrowRight size={17} />
@@ -244,7 +216,7 @@ export default function CCTVLandingClient() {
 
                 <a
                   href="tel:+918681888111"
-                  className="min-h-[52px] px-6 rounded-full border-2 border-[#16143E]/15 hover:border-[#16143E] text-sm sm:text-base font-bold text-[#16143E] bg-white flex items-center justify-center gap-2 transition-all shadow-xs hover:shadow-md"
+                  className="min-h-[50px] sm:min-h-[52px] px-6 rounded-full border-2 border-[#16143E]/15 hover:border-[#16143E] text-sm sm:text-base font-bold text-[#16143E] bg-white flex items-center justify-center gap-2 transition-all shadow-xs hover:shadow-md w-full sm:w-auto"
                   style={{ fontFamily: "Syne, sans-serif" }}
                 >
                   <Phone size={17} className="text-[#EF1313]" />
@@ -255,7 +227,7 @@ export default function CCTVLandingClient() {
                   href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20get%20a%20free%20CCTV%20quotation."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-h-[52px] px-5 rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#15803d] text-sm font-bold flex items-center justify-center gap-2 transition-all shadow-xs"
+                  className="min-h-[50px] sm:min-h-[52px] px-5 rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#15803d] text-sm font-bold flex items-center justify-center gap-2 transition-all shadow-xs w-full sm:w-auto"
                   style={{ fontFamily: "Syne, sans-serif" }}
                 >
                   <MessageCircle size={17} className="text-[#25D366]" />
@@ -748,6 +720,64 @@ export default function CCTVLandingClient() {
                 <MessageCircle size={16} /> WhatsApp Us
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5.5 CCTV Service Areas & Fast Dispatch Directory */}
+      <section className="py-20 bg-white border-b border-[#16143E]/8 text-[#16143E]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#EF1313] inline-flex items-center gap-1.5">
+              <MapPin size={14} /> Rapid Local Dispatch Network
+            </span>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-[#16143E] mt-1.5"
+              style={{ fontFamily: "Syne, sans-serif" }}
+            >
+              Serving Avadi &amp; All Chennai Corridors
+            </h2>
+            <p className="text-xs sm:text-sm text-[#16143E]/75 mt-2">
+              Technicians stationed at 1093 Fire Station Road, Avadi with guaranteed <strong className="text-[#EF1313]">&lt;2-hour on-site dispatch</strong> across western corridors and same-day site visits across metropolitan Chennai.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-10">
+            {[
+              { name: "Avadi", pincode: "600054", sla: "< 1-Hr Dispatch" },
+              { name: "Thirumullaivoyal", pincode: "600062", sla: "< 2-Hr Dispatch" },
+              { name: "Ambattur", pincode: "600053", sla: "< 2-Hr Dispatch" },
+              { name: "Pattabiram", pincode: "600072", sla: "< 2-Hr Dispatch" },
+              { name: "Poonamallee", pincode: "600056", sla: "< 2-Hr Dispatch" },
+              { name: "Thiruverkadu", pincode: "600077", sla: "< 2-Hr Dispatch" },
+              { name: "Ayapakkam", pincode: "600077", sla: "< 2-Hr Dispatch" },
+              { name: "Paruthipattu", pincode: "600071", sla: "< 2-Hr Dispatch" },
+              { name: "Kovilpadagai", pincode: "600062", sla: "< 2-Hr Dispatch" },
+              { name: "Thirunindravur", pincode: "602024", sla: "< 2-Hr Dispatch" },
+              { name: "Mogappair", pincode: "600037", sla: "Same-Day Survey" },
+              { name: "Porur", pincode: "600116", sla: "Same-Day Survey" },
+              { name: "Kolathur", pincode: "600099", sla: "Same-Day Survey" },
+              { name: "Anna Nagar", pincode: "600040", sla: "Same-Day Survey" },
+              { name: "All Chennai", pincode: "600001–130", sla: "Same-Day Survey" },
+            ].map((loc) => (
+              <div
+                key={loc.name}
+                className="p-3.5 rounded-2xl bg-[#F8F9FD] border border-[#16143E]/8 hover:border-[#4E0DBA]/35 transition-all text-left"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-bold text-xs sm:text-sm text-[#16143E]" style={{ fontFamily: "Syne, sans-serif" }}>
+                    {loc.name}
+                  </span>
+                  <span className="text-[10px] font-bold text-[#EF1313] bg-[#EF1313]/10 px-1.5 py-0.5 rounded-full">
+                    {loc.pincode}
+                  </span>
+                </div>
+                <div className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#4E0DBA]">
+                  <Clock size={11} />
+                  <span>{loc.sla}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

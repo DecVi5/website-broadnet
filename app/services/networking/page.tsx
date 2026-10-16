@@ -10,9 +10,7 @@ import {
   Network,
   Server,
   Shield,
-  Sparkles,
   CheckCircle2,
-  Lock,
   ArrowRight,
   MessageCircle,
   Phone,
@@ -24,10 +22,7 @@ import {
   HelpCircle,
   Star,
   Quote,
-  BadgeCheck,
   Activity,
-  Cpu,
-  Wifi,
 } from "lucide-react";
 
 export const metadata: Metadata = {

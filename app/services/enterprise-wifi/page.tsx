@@ -6,12 +6,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import {
   Wifi,
   Sparkles,
-  CheckCircle2,
   Radio,
-  Sliders,
   Shield,
   MessageCircle,
-  Phone,
 } from "lucide-react";
 
 export const metadata: Metadata = {

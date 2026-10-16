@@ -10,10 +10,8 @@ import PartnerLogo from "@/components/PartnerLogo";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import {
   Users,
-  Award,
   MapPin,
   Clock,
-  TrendingUp,
   Heart,
   BadgeCheck,
   ArrowRight,
@@ -24,13 +22,10 @@ import {
   Network,
   CheckCircle2,
   HardHat,
-  Cpu,
   Building2,
   PhoneCall,
   Lock,
   Wrench,
-  Radio,
-  FileCheck2,
   UploadCloud,
 } from "lucide-react";
 

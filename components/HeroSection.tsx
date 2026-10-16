@@ -13,7 +13,7 @@ import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 import { COMPANY_NUMBERS } from "@/data/services";
 import { useLanguage } from "@/lib/i18n";
 import { trackEvent } from "@/lib/analytics";
-import CursorGrid from "@/components/CursorGrid";
+import Antigravity from "@/components/Antigravity";
 
 function WhatsAppIcon({ size = 18, className = "" }: { size?: number; className?: string }) {
   return (
@@ -114,76 +114,52 @@ export default function HeroSection() {
       id="hero"
       className="relative min-h-[88vh] flex flex-col items-center justify-start overflow-hidden pt-28 sm:pt-36 pb-16 bg-white text-[#16143E] scroll-mt-24"
     >
-      {/* Background Interactive CursorGrid & Radial Aurora Glows */}
-      <div className="absolute inset-0 select-none overflow-hidden z-0">
-        <CursorGrid
-          cellSize={60}
-          color="#4E0DBA"
-          radius={175}
-          falloff="smooth"
-          holdTime={220}
-          fadeDuration={900}
-          lineWidth={0.9}
-          maxOpacity={0.22}
-          fillOpacity={0.02}
-          gridOpacity={0.015}
-          cellRadius={4}
-          glowBlur={12}
-          clickPulse={true}
-          pulseSpeed={520}
-        />
-        {/* Purple top-left aura */}
-        <div
-          className="absolute -top-32 -left-32 w-[650px] h-[650px] rounded-full pointer-events-none opacity-40 blur-3xl"
-          style={{ background: "radial-gradient(circle, rgba(78,13,186,0.18) 0%, transparent 70%)" }}
-        />
-        {/* Crimson top-right aura */}
-        <div
-          className="absolute top-20 -right-20 w-[600px] h-[600px] rounded-full pointer-events-none opacity-30 blur-3xl"
-          style={{ background: "radial-gradient(circle, rgba(239,19,19,0.16) 0%, transparent 70%)" }}
-        />
-        {/* Subtle center ambient light */}
-        <div
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[550px] rounded-full pointer-events-none opacity-20 blur-3xl"
-          style={{ background: "radial-gradient(ellipse at center, rgba(78,13,186,0.12) 0%, transparent 70%)" }}
-        />
+      {/* Interactive Google Antigravity Concentric Ripple Canvas */}
+      <div className="absolute inset-0 select-none overflow-hidden z-0 pointer-events-none">
+        <Antigravity />
       </div>
 
-      {/* Main Container */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 w-full flex flex-col items-center text-center">
-        {/* Main Punchy Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
+        {/* Live operational badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-[1.08] tracking-tight mb-6 text-[#16143E] max-w-4xl"
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-900 mb-6 shadow-xs"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
+          </span>
+          <span className="text-xs font-bold uppercase tracking-wider font-display">
+            Direct Technician Dispatch · Avadi & Chennai
+          </span>
+        </motion.div>
+
+        {/* Primary Clear H1 Headline */}
+        <h1
+          className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#16143E] tracking-tight mb-5 max-w-4xl leading-[1.08]"
           style={{ fontFamily: "Syne, sans-serif" }}
         >
-          Engineered{" "}
-          <span className="text-[#EF1313] relative inline-block">
-            Surveillance.
-            <span className="absolute left-0 bottom-1.5 w-full h-1 bg-[#EF1313]/20 rounded-full" />
+          {t("hero.title1")}
+          <span className="block mt-1 sm:mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#EF1313] via-[#4E0DBA] to-[#EF1313] pb-1">
+            {t("hero.title2")}
           </span>
-          <br />
-          Intelligent <span className="text-[#4E0DBA]">Security Systems.</span>
-        </motion.h1>
+        </h1>
 
-        {/* Description: 1 to 2 clean lines about the company */}
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.1 }}
-          className="text-[#16143E]/80 text-base sm:text-lg md:text-xl leading-relaxed mb-9 max-w-2xl font-normal"
+        {/* Clear Subtitle */}
+        <p
+          className="text-base sm:text-lg md:text-xl text-[#16143E]/75 max-w-2xl mb-8 leading-relaxed font-normal"
           style={{ fontFamily: "DM Sans, sans-serif" }}
         >
           {t("hero.desc")}
-        </motion.p>
+        </p>
 
-        {/* Above the fold CTAs: Exactly One Primary & One Secondary */}
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.15 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
           className="flex flex-wrap items-center justify-center gap-3.5 sm:gap-4 mb-6"
         >
           {/* Primary CTA */}
@@ -227,7 +203,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Rotating Brand Certifications & Authorizations Moving Track - Full Width Corner to Corner */}
+      {/* Rotating Brand Certifications & Authorizations Moving Track */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -243,29 +219,16 @@ export default function HeroSection() {
           <span className="w-12 h-px bg-gradient-to-l from-transparent to-[#4E0DBA]/30" />
         </div>
 
-        {/* Continuous Full-Width Corner-to-Corner Moving Stream with Silky Soft Gradient Blends */}
+        {/* Continuous Full-Width Corner-to-Corner Moving Stream */}
         <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
-          {/* Left Screen Corner Gradient Blend Overlay */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-44 md:w-60 bg-gradient-to-r from-white via-white/80 to-transparent z-20" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-44 md:w-60 bg-gradient-to-r from-[#FAFAFE] via-[#FAFAFE]/80 to-transparent z-20" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-44 md:w-60 bg-gradient-to-l from-[#FAFAFE] via-[#FAFAFE]/80 to-transparent z-20" />
 
-          {/* Right Screen Corner Gradient Blend Overlay */}
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-44 md:w-60 bg-gradient-to-l from-white via-white/80 to-transparent z-20" />
-
-          <motion.div
-            className="flex gap-4.5 w-max py-2 pl-4"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              repeat: Infinity,
-              ease: "linear",
-              duration: 38,
-            }}
-          >
-            {[...BRAND_CREDENTIALS, ...BRAND_CREDENTIALS, ...BRAND_CREDENTIALS, ...BRAND_CREDENTIALS].map((b, idx) => (
-              <motion.div
+          <div className="animate-marquee-gpu flex gap-4.5 w-max py-2 pl-4 hover:[animation-play-state:paused]">
+            {[...BRAND_CREDENTIALS, ...BRAND_CREDENTIALS].map((b, idx) => (
+              <div
                 key={`${b.brand}-${idx}`}
-                whileHover={{ scale: 1.05, rotate: 0, y: -4 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                className={`w-[290px] sm:w-[320px] flex-shrink-0 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-[#16143E]/10 hover:border-[#4E0DBA] shadow-xs hover:shadow-xl transition-all duration-300 text-left cursor-pointer group/card ${b.rotation}`}
+                className={`w-[290px] sm:w-[320px] flex-shrink-0 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-[#16143E]/10 hover:border-[#4E0DBA] shadow-xs hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 hover:rotate-0 transition-transform duration-200 text-left cursor-pointer group/card ${b.rotation} transform-gpu`}
               >
                 <div className="flex items-center justify-between mb-2">
                   <span
@@ -278,7 +241,7 @@ export default function HeroSection() {
                     className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider"
                     style={{
                       backgroundColor: `${b.accent}12`,
-                      color: b.accent,
+                      color: b.accent === "#16143E" ? "#4E0DBA" : b.accent,
                     }}
                   >
                     <ShieldCheck size={11} />
@@ -298,15 +261,14 @@ export default function HeroSection() {
                 >
                   {b.category}
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </motion.div>
 
       {/* Main Container for Metrics */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 w-full flex flex-col items-center text-center">
-
         {/* Dynamic Metric Numbers Strip */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
