@@ -210,7 +210,7 @@ export default function LocationChecker() {
     setLeadError("");
 
     try {
-      const res = await fetch("/api/enquiry", {
+      const res = await fetch("/api/enquiry/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

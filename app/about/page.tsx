@@ -6,10 +6,10 @@ import Footer from "@/components/Footer";
 import EnquirySection from "@/components/EnquirySection";
 import MilestonesSection from "@/components/MilestonesSection";
 import BrandPartnersSection from "@/components/BrandPartnersSection";
+import IndustriesServedSection from "@/components/IndustriesServedSection";
 import PartnerLogo from "@/components/PartnerLogo";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import {
-  Users,
   MapPin,
   Clock,
   Heart,
@@ -121,41 +121,6 @@ const OPERATIONS_GALLERY = [
   },
 ];
 
-// Dedicated photo slots for In-House Leadership & Engineers
-const TEAM_MEMBERS = [
-  {
-    name: "Surveillance Systems Architect",
-    role: "Lead CCTV & ELV Security Engineer",
-    badge: "CP PLUS CSE • Hikvision HCSA",
-    experience: "12+ Years Field Experience",
-    specialty: "High-density IP camera mesh, optical NVR matrix, perimeter intrusion lasers",
-    imageSrc: "/assets/about/team-cctv-lead.jpg",
-  },
-  {
-    name: "Optical Network Specialist",
-    role: "Fiber Infrastructure & Transmission Lead",
-    badge: "FTTH Core Fusion Specialist",
-    experience: "10+ Years Optical Fiber",
-    specialty: "Private 100+ km trunk design, OTDR link loss testing, symmetric gigabit feeds",
-    imageSrc: "/assets/about/team-fiber-lead.jpg",
-  },
-  {
-    name: "Biometrics & Automation Engineer",
-    role: "Access Control & Turnstiles Specialist",
-    badge: "eSSL Certified Systems Partner",
-    experience: "8+ Years Corporate ELV",
-    specialty: "Facial attendance integration, RFID boom barriers, electromagnetic drop-bolts",
-    imageSrc: "/assets/about/team-access-lead.jpg",
-  },
-  {
-    name: "Customer Operations & Dispatch Lead",
-    role: "Avadi Rapid Response Coordinator",
-    badge: "2-Hour Local SLA Guarantee",
-    experience: "9+ Years Operations",
-    specialty: "2-hour emergency technician dispatch, preventive AMC scheduling, client care",
-    imageSrc: "/assets/about/team-dispatch-lead.jpg",
-  },
-];
 
 // Dedicated photo slots for Official Certificates & Accreditations
 const CERTIFICATE_SLOTS = [
@@ -374,32 +339,31 @@ export default function AboutPage() {
                     key={item.id}
                     className="rounded-3xl bg-white border border-[#16143E]/10 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#4E0DBA]/40 transition-all duration-300 flex flex-col justify-between group"
                   >
-                    {/* Visual Photo Container / Drop-in Image Frame */}
-                    <div className="relative aspect-[16/10] bg-gradient-to-br from-[#16143E] via-[#211B54] to-[#120F2E] overflow-hidden flex flex-col items-center justify-center p-6 text-center border-b border-[#16143E]/8">
-                      {/* Ambient grid texture */}
-                      <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] opacity-10 [background-size:18px_18px]" />
-
-                      {/* Icon & Placeholder Art */}
-                      <div
-                        className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110 shadow-lg"
-                        style={{ background: `${item.color}25`, color: item.color, border: `1px solid ${item.color}40` }}
-                      >
-                        <Icon size={26} />
-                      </div>
-
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-white/90 font-display">
-                        {item.category}
-                      </span>
-                      <span className="text-[10px] text-white/50">{item.location}</span>
+                    {/* Visual Photo Container with Real Installation Photo */}
+                    <div className="relative aspect-[16/10] bg-gradient-to-br from-[#16143E] via-[#211B54] to-[#120F2E] overflow-hidden border-b border-[#16143E]/8">
+                      <Image
+                        src={item.imageSrc}
+                        alt={item.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
 
                       {/* Top Corner Badges */}
-                      <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md text-[10px] font-bold text-white border border-white/15">
-                        {item.tag}
+                      <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-bold text-white border border-white/20 z-10 flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: item.color }} />
+                        <span>{item.tag}</span>
                       </div>
 
-                      {/* Image slot identifier label */}
-                      <div className="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm text-[9px] font-mono text-white/50 flex items-center gap-1">
-                        <UploadCloud size={10} /> Image: {item.imageSrc}
+                      {/* Floating Category & Location */}
+                      <div className="absolute bottom-3 left-4 right-4 text-white z-10">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-white/80 block font-display">
+                          {item.category}
+                        </span>
+                        <span className="text-xs text-white/95 font-medium truncate block">
+                          {item.location}
+                        </span>
                       </div>
                     </div>
 
@@ -426,65 +390,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 4. In-House Certified Engineering & Technical Leadership */}
-        <section className="py-24 bg-white text-[#16143E]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#EF1313] mb-3 font-display">
-                <span className="w-4 h-px bg-[#EF1313]" /> Technical Personnel <span className="w-4 h-px bg-[#EF1313]" />
-              </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#16143E] tracking-tight font-display mb-4">
-                The Certified Specialists Behind Your Systems
-              </h2>
-              <p className="text-[#16143E]/65 text-base sm:text-lg leading-relaxed">
-                We believe security and optical networks require trained engineers, not subcontracted labor. Meet the in-house specialists handling your site survey, installation, and AMC maintenance.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {TEAM_MEMBERS.map((member) => (
-                <div
-                  key={member.role}
-                  className="rounded-3xl bg-[#F8F9FD] border border-[#16143E]/10 p-6 flex flex-col justify-between hover:border-[#4E0DBA]/40 hover:shadow-xl transition-all duration-300 group"
-                >
-                  <div>
-                    {/* Portrait Photo Container / Drop-in Image Frame */}
-                    <div className="relative aspect-square rounded-2xl bg-gradient-to-br from-[#16143E] to-[#2B236E] overflow-hidden mb-5 flex flex-col items-center justify-center p-4 text-center border border-[#16143E]/10">
-                      <div className="w-16 h-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white/80 mb-2 group-hover:scale-110 transition-transform">
-                        <Users size={28} />
-                      </div>
-                      <span className="text-[11px] font-bold text-white font-display">
-                        {member.name}
-                      </span>
-                      <span className="text-[10px] text-white/50">{member.experience}</span>
-
-                      {/* Image path guide */}
-                      <div className="absolute bottom-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm text-[8.5px] font-mono text-white/50">
-                        {member.imageSrc}
-                      </div>
-                    </div>
-
-                    <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#EF1313]/10 text-[#EF1313] border border-[#EF1313]/20 mb-2">
-                      {member.badge}
-                    </span>
-
-                    <h3 className="text-base font-bold text-[#16143E] font-display mb-1.5 leading-snug">
-                      {member.role}
-                    </h3>
-                    <p className="text-xs text-[#16143E]/65 leading-relaxed font-body">
-                      {member.specialty}
-                    </p>
-                  </div>
-
-                  <div className="mt-5 pt-3 border-t border-[#16143E]/8 flex items-center justify-between text-[11px] text-[#16143E]/50">
-                    <span>Avadi Operations</span>
-                    <BadgeCheck size={14} className="text-[#4E0DBA]" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* 5. Brand Authorizations & Certificate Wall (Drop-in Ready) */}
         <section className="py-20 bg-[#16143E] text-white relative">
@@ -536,7 +441,10 @@ export default function AboutPage() {
         <MilestonesSection />
         <BrandPartnersSection />
 
-        {/* 7. Our Principles & Workmanship Standards */}
+        {/* 7. Sectors & Facilities We Serve */}
+        <IndustriesServedSection />
+
+        {/* 8. Our Principles & Workmanship Standards */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">

@@ -19,7 +19,10 @@ export type AnalyticsEvent =
   | "colorvu_upgrade_click"
   | "under_development_notify_signup"
   | "under_development_interact"
-  | "bill_pay_click";
+  | "bill_pay_click"
+  | "404_home_click"
+  | "404_whatsapp_click"
+  | "404_destination_click";
 
 export interface AnalyticsPayload {
   category?: string;

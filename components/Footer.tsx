@@ -187,15 +187,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
-          <div className="flex items-center gap-2.5">
+        <div className="pt-8 border-t border-white/8 flex flex-col md:flex-row items-center justify-between text-xs text-white/50 gap-4">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5">
             <span>© {new Date().getFullYear()} Broadnet Internet Services. All Rights Reserved.</span>
             <span className="hidden sm:inline text-white/30">·</span>
             <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-white/60 tracking-wider">
               v2.5
             </span>
           </div>
-          <div className="flex items-center gap-4 text-xs">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs">
             <Link href="/cctv-landing" className="hover:text-white transition-colors">
               CCTV Division
             </Link>
@@ -211,6 +211,9 @@ export default function Footer() {
             <Link href="/projects" className="hover:text-white transition-colors">
               Projects
             </Link>
+          </div>
+          <div className="text-[11px] text-white/40 text-center md:text-right tracking-wide">
+            Made with <span className="text-white/75 font-semibold">Indian Pixel</span>
           </div>
         </div>
       </div>

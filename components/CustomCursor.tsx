@@ -43,9 +43,6 @@ export default function CustomCursor() {
 
     const onDown = () => {
       isClicked.current = true;
-      if (ringRef.current) {
-        ringRef.current.style.transform = `translate3d(${ring.current.x}px, ${ring.current.y}px, 0) scale(0.8)`;
-      }
     };
 
     const onUp = () => {
@@ -98,14 +95,18 @@ export default function CustomCursor() {
     document.addEventListener("mouseenter", onEnterWindow);
 
     // Smooth spring follow for outer halo ring
+    let currentScale = 1;
+
     const animate = () => {
-      const factor = 0.25;
+      const factor = 0.22;
       ring.current.x += (pos.current.x - ring.current.x) * factor;
       ring.current.y += (pos.current.y - ring.current.y) * factor;
 
+      const targetScale = isClicked.current ? 0.8 : isHovering.current ? 1.35 : 1;
+      currentScale += (targetScale - currentScale) * 0.16;
+
       if (ringRef.current) {
-        const scale = isClicked.current ? 0.8 : isHovering.current ? 1.35 : 1;
-        ringRef.current.style.transform = `translate3d(${ring.current.x}px, ${ring.current.y}px, 0) scale(${scale})`;
+        ringRef.current.style.transform = `translate3d(${ring.current.x}px, ${ring.current.y}px, 0) scale(${currentScale.toFixed(3)})`;
       }
 
       rafId.current = requestAnimationFrame(animate);

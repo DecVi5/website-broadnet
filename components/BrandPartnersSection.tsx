@@ -75,7 +75,7 @@ export default function BrandPartnersSection() {
               {[...BRAND_PARTNERS, ...BRAND_PARTNERS].map((brand, idx) => (
                 <div
                   key={`marquee-${brand.name}-${idx}`}
-                  className="flex-shrink-0 flex items-center gap-3 px-4.5 py-2.5 rounded-2xl bg-[#FAFAFE] border border-[#16143E]/8 shadow-2xs hover:border-[#EF1313]/30 hover:bg-white hover:scale-[1.02] transition-transform duration-150 cursor-pointer group transform-gpu"
+                  className="flex-shrink-0 flex items-center gap-3 px-4.5 py-2.5 rounded-2xl bg-white border border-[#16143E]/10 shadow-sm hover:border-[#EF1313]/30 hover:shadow-md hover:scale-[1.02] transition-all duration-150 cursor-pointer group transform-gpu"
                   onClick={() => scrollToWithPhysics("enquiry")}
                 >
                   <div className="h-7 w-28 sm:w-32 flex items-center justify-center">
@@ -140,7 +140,7 @@ export default function BrandPartnersSection() {
 
                 <div>
                   {/* Dedicated Logo Showcase Stage */}
-                  <div className="h-16 sm:h-18 w-full rounded-xl bg-[#FAFAFE] group-hover:bg-white border border-[#16143E]/6 group-hover:border-[#16143E]/15 p-3 flex items-center justify-center mb-4 transition-all duration-300 shadow-2xs group-hover:shadow-sm">
+                  <div className="h-16 sm:h-18 w-full rounded-xl bg-white border border-[#16143E]/10 group-hover:border-[#EF1313]/25 p-3 flex items-center justify-center mb-4 transition-all duration-300 shadow-sm group-hover:shadow-md">
                     <PartnerLogo
                       brand={brand.name}
                       className="h-9 w-auto max-w-[160px] object-contain group-hover:scale-105 transition-transform duration-300"
@@ -198,7 +198,7 @@ export default function BrandPartnersSection() {
             {CERTIFICATIONS_BADGES.map((cert) => (
               <div
                 key={cert.name}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#FAFAFE] border border-[#16143E]/8 text-xs font-semibold text-[#16143E] hover:border-[#4E0DBA]/40 hover:bg-white shadow-2xs transition-all"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-[#16143E]/10 text-xs font-semibold text-[#16143E] hover:border-[#4E0DBA]/40 shadow-sm transition-all"
               >
                 <div className="w-4.5 h-4.5 rounded-full bg-[#4E0DBA]/10 text-[#4E0DBA] flex items-center justify-center flex-shrink-0">
                   <ShieldCheck size={12} />

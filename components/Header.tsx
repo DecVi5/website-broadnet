@@ -60,15 +60,12 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileSecurityOpen, setMobileSecurityOpen] = useState(true);
   const [mobileInternetOpen, setMobileInternetOpen] = useState(false);
   const [activeServiceTab, setActiveServiceTab] = useState<"security" | "internet">("security");
-  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
 
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const aboutTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const pathname = usePathname();
   const isHomePage = pathname === "/" || activePage === "Home";
@@ -99,9 +96,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
 
   const handleDropdownEnter = () => {
     if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
-    if (aboutTimeoutRef.current) clearTimeout(aboutTimeoutRef.current);
     setActiveServiceTab("security");
-    setAboutDropdownOpen(false);
     setDropdownOpen(true);
   };
 
@@ -111,23 +106,9 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
     }, 180);
   };
 
-  const handleAboutEnter = () => {
-    if (aboutTimeoutRef.current) clearTimeout(aboutTimeoutRef.current);
-    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
-    setDropdownOpen(false);
-    setAboutDropdownOpen(true);
-  };
-
-  const handleAboutLeave = () => {
-    aboutTimeoutRef.current = setTimeout(() => {
-      setAboutDropdownOpen(false);
-    }, 180);
-  };
-
   const handleEnquiryClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
     setMobileOpen(false);
     setDropdownOpen(false);
-    setAboutDropdownOpen(false);
     const enquiryEl = document.getElementById("enquiry");
     if (enquiryEl) {
       e.preventDefault();
@@ -386,74 +367,18 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                 Projects
               </Link>
 
-              {/* About Us Dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={handleAboutEnter}
-                onMouseLeave={handleAboutLeave}
+              {/* About Us Direct Link */}
+              <Link
+                href="/about"
+                className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200 ${
+                  isAbout
+                    ? "text-[#4E0DBA] bg-white shadow-xs"
+                    : "text-[#16143E]/75 hover:text-[#16143E] hover:bg-white/60"
+                }`}
+                style={{ fontFamily: "Syne, sans-serif" }}
               >
-                <button
-                  type="button"
-                  className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200 flex items-center gap-1.5 cursor-pointer ${
-                    isAbout
-                      ? "text-[#4E0DBA] bg-white shadow-xs"
-                      : "text-[#16143E]/75 hover:text-[#16143E] hover:bg-white/60"
-                  }`}
-                  style={{ fontFamily: "Syne, sans-serif" }}
-                >
-                  <span>About Us</span>
-                  <ChevronDown
-                    size={12}
-                    className={`transition-transform duration-200 ${
-                      aboutDropdownOpen ? "rotate-180 text-[#EF1313]" : "text-[#16143E]/50"
-                    }`}
-                  />
-                </button>
-
-                <AnimatePresence>
-                  {aboutDropdownOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 6, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 4, scale: 0.98 }}
-                      transition={{ duration: 0.15, ease: "easeOut" }}
-                      className="absolute top-full left-0 mt-2 w-56 rounded-2xl bg-white/95 backdrop-blur-xl border border-[#16143E]/10 shadow-xl shadow-[#16143E]/5 p-1.5 z-50 before:content-[''] before:absolute before:-top-3 before:left-0 before:right-0 before:h-3"
-                    >
-                      <div className="flex flex-col gap-0.5">
-                        <Link
-                          href="/about"
-                          onClick={() => setAboutDropdownOpen(false)}
-                          className="group flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-[#16143E]/75 hover:text-[#4E0DBA] hover:bg-[#16143E]/[0.04] transition-all duration-150"
-                          style={{ fontFamily: "Syne, sans-serif" }}
-                        >
-                          <span className="transition-transform duration-150 group-hover:translate-x-1">
-                            About Broadnet
-                          </span>
-                          <ArrowRight
-                            size={12}
-                            className="opacity-0 -translate-x-1.5 text-[#4E0DBA] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-150"
-                          />
-                        </Link>
-
-                        <Link
-                          href="/industries"
-                          onClick={() => setAboutDropdownOpen(false)}
-                          className="group flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-[#16143E]/75 hover:text-[#4E0DBA] hover:bg-[#16143E]/[0.04] transition-all duration-150"
-                          style={{ fontFamily: "Syne, sans-serif" }}
-                        >
-                          <span className="transition-transform duration-150 group-hover:translate-x-1">
-                            Industries & Solutions
-                          </span>
-                          <ArrowRight
-                            size={12}
-                            className="opacity-0 -translate-x-1.5 text-[#4E0DBA] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-150"
-                          />
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                About Us
+              </Link>
             </nav>
 
             {/* Desktop Quick Actions */}
@@ -653,50 +578,19 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                   <ArrowRight size={14} className="text-[#16143E]/30" />
                 </Link>
 
-                {/* Mobile About Us Accordion */}
-                <div className="rounded-xl border border-[#16143E]/8 overflow-hidden bg-[#FAFAFE]">
-                  <div className="flex items-center justify-between pr-2">
-                    <span className="px-4 py-2.5 text-sm font-bold text-[#16143E] flex items-center gap-2">
-                      <Users size={16} className="text-[#4E0DBA]" />
-                      <span>About Us</span>
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
-                      className="p-2 text-[#16143E]/60 cursor-pointer"
-                      aria-label="Toggle about us list"
-                    >
-                      <ChevronDown
-                        size={16}
-                        className={`transition-transform duration-200 ${
-                          mobileAboutOpen ? "rotate-180 text-[#EF1313]" : ""
-                        }`}
-                      />
-                    </button>
-                  </div>
-
-                  {mobileAboutOpen && (
-                    <div className="px-2 pb-2 space-y-0.5 border-t border-[#16143E]/8 pt-1.5">
-                      <Link
-                        href="/about"
-                        onClick={() => setMobileOpen(false)}
-                        className="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold text-[#16143E]/80 hover:text-[#4E0DBA] hover:bg-white transition-all"
-                      >
-                        <span>About Broadnet</span>
-                        <ArrowRight size={12} className="text-[#16143E]/30" />
-                      </Link>
-
-                      <Link
-                        href="/industries"
-                        onClick={() => setMobileOpen(false)}
-                        className="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold text-[#16143E]/80 hover:text-[#4E0DBA] hover:bg-white transition-all"
-                      >
-                        <span>Industries & Solutions</span>
-                        <ArrowRight size={12} className="text-[#16143E]/30" />
-                      </Link>
-                    </div>
-                  )}
-                </div>
+                {/* Mobile About Us Link */}
+                <Link
+                  href="/about"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-bold text-[#16143E] hover:bg-[#16143E]/5"
+                  style={{ fontFamily: "Syne, sans-serif" }}
+                >
+                  <span className="flex items-center gap-2">
+                    <Users size={16} className="text-[#4E0DBA]" />
+                    <span>About Us</span>
+                  </span>
+                  <ArrowRight size={14} className="text-[#16143E]/30" />
+                </Link>
               </div>
 
               {/* Mobile CTA Strip */}

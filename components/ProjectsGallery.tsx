@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   MapPin,
   Calendar,
@@ -26,7 +27,7 @@ export interface ProjectItem {
   scope: string;
   outcome: string;
   hardware: string[];
-  placeholderTag: string;
+  imageSrc: string;
 }
 
 export const REAL_PROJECTS: ProjectItem[] = [
@@ -39,7 +40,7 @@ export const REAL_PROJECTS: ProjectItem[] = [
     scope: "16x 4K Hikvision IP Cameras + Automatic RFID Boom Barrier + 32-Channel NVR Guard Cabin Video Wall",
     outcome: "Full perimeter protection, automated vehicle entry logging, and zero unauthorized gate trespassing.",
     hardware: ["Hikvision 4K IP", "RFID Boom Barrier", "32-Ch NVR", "WD Purple 4TB"],
-    placeholderTag: "[REAL PHOTO NEEDED: Pattabiram Society Guard Gate]",
+    imageSrc: "/assets/projects/proj-1.jpg",
   },
   {
     id: "proj-2",
@@ -50,7 +51,7 @@ export const REAL_PROJECTS: ProjectItem[] = [
     scope: "eSSL Contactless Face Attendance + Hikvision 7-inch Touchscreen Video Door Phone with Electronic Latch",
     outcome: "Sterile touch-free visitor access, doctors' private cabin door lock, and automated HR attendance export.",
     hardware: ["eSSL Face Terminal", "Hikvision 7-in VDP", "Electromagnetic Latch", "Battery Backup"],
-    placeholderTag: "[REAL PHOTO NEEDED: Clinic Reception & Door Lock]",
+    imageSrc: "/assets/projects/proj-2.jpg",
   },
   {
     id: "proj-3",
@@ -61,7 +62,7 @@ export const REAL_PROJECTS: ProjectItem[] = [
     scope: "1.2 km Fusion-Spliced Optical Fiber + 8x Long-Range ColorVu Bullet Cameras + 2x Optical Zoom PTZ Units",
     outcome: "Crystal-clear night monitoring of 3-acre loading docks with zero cable attenuation across heavy machinery.",
     hardware: ["30x PTZ Cameras", "ColorVu Bullets", "Optical Fiber Ring", "Outdoor Enclosures"],
-    placeholderTag: "[REAL PHOTO NEEDED: Avadi Factory Yard & PTZ Pole]",
+    imageSrc: "/assets/projects/proj-3.jpg",
   },
   {
     id: "proj-4",
@@ -72,7 +73,7 @@ export const REAL_PROJECTS: ProjectItem[] = [
     scope: "4x CP PLUS Full-Color Night Vision Cameras + 3x Grandstream Ceiling PoE Access Points",
     outcome: "Concealed heavy PVC conduit wiring preserving interior wall aesthetics with zero-drop Wi-Fi across floors.",
     hardware: ["CP PLUS ColorVu", "Grandstream Wi-Fi 6", "Concealed PVC", "1TB Surveillance HDD"],
-    placeholderTag: "[REAL PHOTO NEEDED: Villa Elevation & Concealed Cam]",
+    imageSrc: "/assets/projects/proj-4.jpg",
   },
   {
     id: "proj-5",
@@ -83,7 +84,7 @@ export const REAL_PROJECTS: ProjectItem[] = [
     scope: "48-Node Cat6A Patch Panel Termination + 24U Server Rack Dressing + Tactine UTM Hardware Firewall",
     outcome: "Certified gigabit throughput across all developer workstations and secure branch-to-branch VPN.",
     hardware: ["Cat6A D-Link", "24U Server Rack", "Tactine UTM", "Gigabit PoE Switches"],
-    placeholderTag: "[REAL PHOTO NEEDED: Ambattur IT Server Rack Dressing]",
+    imageSrc: "/assets/projects/proj-5.jpg",
   },
   {
     id: "proj-6",
@@ -94,7 +95,7 @@ export const REAL_PROJECTS: ProjectItem[] = [
     scope: "8x In-Built Audio Cameras covering cash tills + Hikvision Wireless AX PRO Alarm with 110dB Outdoor Siren",
     outcome: "Immediate phone notification during after-hours shutter tampering and dispute-free cash counter records.",
     hardware: ["Audio Mic Cameras", "AX PRO Alarm Panel", "GSM Dialer", "PIR Motion Sensors"],
-    placeholderTag: "[REAL PHOTO NEEDED: Supermarket Aisle & Cash Counter]",
+    imageSrc: "/assets/projects/proj-6.jpg",
   },
 ];
 
@@ -149,42 +150,31 @@ export default function ProjectsGallery({ isTeaser = false }: { isTeaser?: boole
             className="rounded-3xl bg-white border border-[#16143E]/10 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col justify-between"
           >
             <div>
-              {/* Photo Area with Noticeable [REAL PHOTO NEEDED] Placeholder Card */}
-              <div className="relative h-52 bg-gradient-to-br from-[#16143E] to-[#251B4E] p-6 flex flex-col justify-between text-white overflow-hidden group-hover:scale-[1.01] transition-transform">
-                {/* Tech grid overlay */}
-                <div
-                  className="absolute inset-0 opacity-15 pointer-events-none"
-                  style={{
-                    backgroundImage: "radial-gradient(circle, #EF1313 1px, transparent 1px)",
-                    backgroundSize: "20px 20px",
-                  }}
+              {/* Photo Area with Real Installation Photo */}
+              <div className="relative h-52 bg-gradient-to-br from-[#16143E] to-[#251B4E] p-4 flex flex-col justify-between text-white overflow-hidden group-hover:scale-[1.01] transition-transform">
+                <Image
+                  src={proj.imageSrc}
+                  alt={proj.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40" />
 
                 <div className="relative z-10 flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full text-[10.5px] font-bold bg-white/10 backdrop-blur-md text-white border border-white/20">
+                  <span className="px-3 py-1 rounded-full text-[10.5px] font-bold bg-black/60 backdrop-blur-md text-white border border-white/20">
                     {proj.category}
                   </span>
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#EF1313] text-white">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#EF1313] text-white shadow-sm">
                     {proj.year}
                   </span>
                 </div>
 
-                {/* Prominent Placeholder Notice */}
-                <div className="relative z-10 my-auto text-center p-3 rounded-2xl bg-black/40 backdrop-blur-md border border-white/10">
-                  <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-amber-300 mb-1">
-                    <Camera size={14} />
-                    <span>[REAL PHOTO NEEDED]</span>
-                  </div>
-                  <div className="text-[10px] text-white/70 font-mono line-clamp-1">
-                    {proj.placeholderTag}
-                  </div>
-                </div>
-
-                <div className="relative z-10 flex items-center justify-between text-[11px] text-white/70">
-                  <span className="flex items-center gap-1 font-medium">
+                <div className="relative z-10 flex items-center justify-between text-[11px] text-white/95">
+                  <span className="flex items-center gap-1 font-semibold bg-black/50 px-2.5 py-1 rounded-lg backdrop-blur-md">
                     <MapPin size={12} className="text-[#EF1313]" /> {proj.location}
                   </span>
-                  <span className="flex items-center gap-1 text-white/90 group-hover:text-[#EF1313] font-bold transition-colors">
+                  <span className="flex items-center gap-1 text-white group-hover:text-[#EF1313] font-bold transition-colors bg-black/50 px-2.5 py-1 rounded-lg backdrop-blur-md">
                     <Maximize2 size={12} /> View Details
                   </span>
                 </div>
@@ -249,24 +239,33 @@ export default function ProjectsGallery({ isTeaser = false }: { isTeaser?: boole
             <button
               type="button"
               onClick={() => setSelectedProject(null)}
-              className="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#16143E]/5 hover:bg-[#16143E]/10 flex items-center justify-center text-[#16143E] cursor-pointer transition-colors"
+              className="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#16143E]/5 hover:bg-[#16143E]/10 flex items-center justify-center text-[#16143E] cursor-pointer transition-colors z-20"
               aria-label="Close modal"
             >
               <X size={18} />
             </button>
 
             {/* Modal Photo Area */}
-            <div className="rounded-2xl bg-gradient-to-br from-[#16143E] to-[#251B4E] p-8 text-white mb-6 text-center">
-              <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#EF1313] text-white inline-block mb-3">
-                {selectedProject.category} · Completed {selectedProject.year}
-              </span>
-              <div className="p-4 rounded-xl bg-black/30 border border-white/10 max-w-md mx-auto my-3">
-                <div className="text-amber-300 font-bold text-sm mb-1">
-                  {selectedProject.placeholderTag}
-                </div>
-                <div className="text-xs text-white/60">
-                  Location: {selectedProject.location}
-                </div>
+            <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden mb-6 bg-slate-900">
+              <Image
+                src={selectedProject.imageSrc}
+                alt={selectedProject.title}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/40" />
+              <div className="absolute top-4 left-4 z-10">
+                <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#EF1313] text-white shadow-md">
+                  {selectedProject.category} · Completed {selectedProject.year}
+                </span>
+              </div>
+              <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between text-xs text-white">
+                <span className="flex items-center gap-1 font-semibold bg-black/60 px-3 py-1 rounded-lg backdrop-blur-md">
+                  <MapPin size={13} className="text-[#EF1313]" /> {selectedProject.location}
+                </span>
+                <span className="text-[11px] bg-emerald-500/80 text-white font-bold px-3 py-1 rounded-lg backdrop-blur-md">
+                  Verified On-Site Deployment
+                </span>
               </div>
             </div>
 

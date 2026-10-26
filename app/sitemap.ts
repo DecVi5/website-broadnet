@@ -87,12 +87,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/industries`,
-      lastModified: releaseDate,
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
       url: `${baseUrl}/projects`,
       lastModified: releaseDate,
       changeFrequency: "weekly",

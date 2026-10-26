@@ -369,7 +369,7 @@ export default function EnquirySection({ initialService, initialType }: EnquiryS
     const referenceId = `BN-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
 
     try {
-      const response = await fetch("/api/enquiry", {
+      const response = await fetch("/api/enquiry/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
