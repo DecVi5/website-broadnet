@@ -213,7 +213,15 @@ export default function Footer() {
             </Link>
           </div>
           <div className="text-[11px] text-white/40 text-center md:text-right tracking-wide">
-            Made with <span className="text-white/75 font-semibold">Indian Pixel</span>
+            Made with{" "}
+            <a
+              href="https://website-indianpixel.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/75 font-semibold hover:text-white transition-colors underline-offset-4 hover:underline"
+            >
+              Indian Pixel
+            </a>
           </div>
         </div>
       </div>
