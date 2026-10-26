@@ -46,3 +46,4 @@ START-SERVER.bat
 
 # certificates (add via public/ folder intentionally)
 # *.pem
+.env*
