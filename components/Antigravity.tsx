@@ -637,7 +637,11 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
     const ro = new ResizeObserver(() => resize());
     ro.observe(container);
 
-    // Visibility Observer
+    // Visibility Observer & Timing
+    const startTime = performance.now();
+    let lastTime = 0;
+    const getElapsed = () => (performance.now() - startTime) / 1000;
+
     let isVisible = true;
     let isTabActive = !document.hidden;
     let rafId: number = 0;
@@ -646,7 +650,7 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
       ([entry]) => {
         isVisible = entry.isIntersecting;
         if (isVisible && !rafId) {
-          lastTime = clock.getElapsedTime();
+          lastTime = getElapsed();
           loop();
         }
       },
@@ -657,7 +661,7 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
     const onVisibilityChange = () => {
       isTabActive = !document.hidden;
       if (isTabActive && isVisible && !rafId) {
-        lastTime = clock.getElapsedTime();
+        lastTime = getElapsed();
         loop();
       }
     };
@@ -685,16 +689,13 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
     }
 
     // 7. Render Loop
-    const startTime = performance.now();
-    let lastTime = 0;
-
     const loop = () => {
       if (!isVisible || !isTabActive) {
         rafId = 0;
         return;
       }
 
-      const time = (performance.now() - startTime) / 1000;
+      const time = getElapsed();
       const dt = Math.min(0.05, time - lastTime);
       lastTime = time;
 
