@@ -685,8 +685,8 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
     }
 
     // 7. Render Loop
-    const clock = new THREE.Clock();
-    let lastTime = clock.getElapsedTime();
+    const startTime = performance.now();
+    let lastTime = 0;
 
     const loop = () => {
       if (!isVisible || !isTabActive) {
@@ -694,7 +694,7 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
         return;
       }
 
-      const time = clock.getElapsedTime();
+      const time = (performance.now() - startTime) / 1000;
       const dt = Math.min(0.05, time - lastTime);
       lastTime = time;
 
