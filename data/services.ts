@@ -269,7 +269,7 @@ export const MILESTONES = [
   { year: "2014", title: "Founded in Avadi", desc: "Started operations from Fire Station Road, delivering dedicated network connectivity." },
   { year: "2016", title: "RailWire Franchise Partner", desc: "Expanded fiber reach as official RailWire high-speed telecom partner." },
   { year: "2019", title: "BSNL FTTH Partner", desc: "Formed strategic partnership for national Bharat Fibre deployments across Avadi." },
-  { year: "2024", title: "CP PLUS & Grandstream Certified", desc: "Achieved certified surveillance engineer and enterprise Wi-Fi specialist credentials." },
+  { year: "2024", title: "CP PLUS & Grandstream", desc: "Achieved certified surveillance engineer and enterprise Wi-Fi specialist credentials." },
   { year: "2025", title: "Hikvision Partner", desc: "Certified Hikvision HCSA security partner for advanced IP, ColorVu, and intrusion alarms." },
   { year: "2026", title: "eSSL Authorised Partner", desc: "Appointed official eSSL partner for biometric time attendance and entrance automation." },
 ];

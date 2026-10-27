@@ -429,7 +429,7 @@ export default function AboutPage() {
                 >
                   <div>
                     {/* Company Logo Header */}
-                    <div className="h-20 sm:h-24 rounded-xl bg-black/35 border border-white/10 mb-5 flex items-center justify-center p-4 group-hover:border-[#00C2FF]/40 transition-colors">
+                    <div className="h-20 sm:h-24 rounded-xl bg-white shadow-sm border border-white/20 mb-5 flex items-center justify-center p-4 group-hover:border-[#00C2FF]/60 group-hover:shadow-md transition-all duration-300">
                       <PartnerLogo brand={cert.brand} variant="full" className="h-8 sm:h-9 w-auto max-w-[150px] object-contain" />
                     </div>
 

@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "animation-principles": {
+      "source": "NVlabs/Skill2Env",
+      "sourceType": "github",
+      "skillPath": "SkillHub/skills/animation-principles/SKILL.md",
+      "computedHash": "4a676e849b19b28b7bf9820bfbb95aee1a25c5bf9990c3d8de854124687e877a"
+    },
     "apple-design": {
       "source": "dickwu/apple-design-skill",
       "sourceType": "github",

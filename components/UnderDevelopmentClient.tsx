@@ -184,7 +184,7 @@ export default function UnderDevelopmentClient() {
                 className="text-xs font-bold tracking-wider uppercase text-amber-300"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
-                Platform Upgrade In Progress • v2.5 Beta
+                Platform Upgrade In Progress • v2.7 Beta
               </span>
             </motion.div>
 
@@ -324,7 +324,7 @@ export default function UnderDevelopmentClient() {
                 </div>
                 <div className="text-base sm:text-lg font-bold text-amber-200 flex items-center gap-2 font-display">
                   <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                  90% Built (v2.5)
+                  90% Built (v2.7)
                 </div>
                 <div className="text-[11px] text-amber-300/60 mt-1">Phase 3 in Progress</div>
               </div>

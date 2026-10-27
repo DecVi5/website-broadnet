@@ -103,8 +103,8 @@ export default function MilestonesSection() {
           <div
             className="hidden lg:block absolute top-1/2 -translate-y-1/2 pointer-events-none z-0"
             style={{
-              left: "calc((100% - 6.25rem) / 12)",
-              right: "calc((100% - 6.25rem) / 12)",
+              left: "8.33%",
+              right: "8.33%",
               height: "3px",
             }}
           >
@@ -134,7 +134,7 @@ export default function MilestonesSection() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-3 lg:gap-3 xl:gap-4.5 relative z-10">
             {MILESTONES.map((m, index) => {
               const isReached = currentProgress >= thresholds[index];
               return (
@@ -145,16 +145,16 @@ export default function MilestonesSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: index * 0.08 }}
                   whileHover={{ y: -6, scale: 1.02 }}
-                  className={`p-5 rounded-2xl bg-white border transition-all duration-300 group flex flex-col justify-between cursor-pointer relative ${
+                  className={`p-3.5 sm:p-4 lg:p-3 xl:p-4.5 rounded-2xl bg-white border transition-all duration-300 group flex flex-col justify-between cursor-pointer relative overflow-hidden ${
                     isReached
                       ? "border-[#4E0DBA]/35 shadow-sm"
                       : "border-[#16143E]/12"
                   } hover:border-[#4E0DBA] hover:shadow-xl hover:shadow-[#4E0DBA]/12 hover:bg-gradient-to-b hover:from-white hover:to-[#4E0DBA]/[0.02]`}
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-2.5">
                       <span
-                        className="text-xl font-extrabold text-[#EF1313] group-hover:text-[#4E0DBA] group-hover:scale-105 transition-all duration-200 inline-block"
+                        className="text-lg xl:text-xl font-extrabold text-[#EF1313] group-hover:text-[#4E0DBA] group-hover:scale-105 transition-all duration-200 inline-block"
                         style={{ fontFamily: "Syne, sans-serif" }}
                       >
                         {m.year}
@@ -168,13 +168,13 @@ export default function MilestonesSection() {
                       />
                     </div>
                     <h3
-                      className="text-sm font-bold text-[#16143E] group-hover:text-[#4E0DBA] transition-colors mb-1.5 leading-snug"
+                      className="text-xs sm:text-[13px] xl:text-sm font-bold text-[#16143E] group-hover:text-[#4E0DBA] transition-colors mb-1.5 leading-snug tracking-tight break-words"
                       style={{ fontFamily: "Syne, sans-serif" }}
                     >
                       {m.title}
                     </h3>
                     <p
-                      className="text-xs text-[#16143E]/65 leading-relaxed"
+                      className="text-[11px] xl:text-xs text-[#16143E]/65 leading-relaxed"
                       style={{ fontFamily: "DM Sans, sans-serif" }}
                     >
                       {m.desc}
