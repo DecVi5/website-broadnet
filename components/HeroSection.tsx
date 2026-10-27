@@ -112,7 +112,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[88vh] flex flex-col items-center justify-start overflow-hidden pt-28 sm:pt-36 pb-16 bg-white text-[#16143E] scroll-mt-24"
+      className="relative min-h-hero flex flex-col items-center justify-start overflow-hidden pt-24 sm:pt-36 pb-12 sm:pb-16 bg-white text-[#16143E] scroll-mt-24"
     >
       {/* Interactive Google Antigravity Concentric Ripple Canvas */}
       <div className="absolute inset-0 select-none overflow-hidden z-0 pointer-events-none">
@@ -160,7 +160,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="flex flex-wrap items-center justify-center gap-3.5 sm:gap-4 mb-6"
+          className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mb-6 w-full max-w-xs sm:max-w-none mx-auto"
         >
           {/* Primary CTA */}
           <button
@@ -228,7 +228,7 @@ export default function HeroSection() {
             {[...BRAND_CREDENTIALS, ...BRAND_CREDENTIALS].map((b, idx) => (
               <div
                 key={`${b.brand}-${idx}`}
-                className={`w-[290px] sm:w-[320px] flex-shrink-0 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-[#16143E]/10 hover:border-[#4E0DBA] shadow-xs hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 hover:rotate-0 transition-transform duration-200 text-left cursor-pointer group/card ${b.rotation} transform-gpu`}
+                className={`w-[260px] sm:w-[320px] flex-shrink-0 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-[#16143E]/10 hover:border-[#4E0DBA] shadow-xs hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 hover:rotate-0 transition-transform duration-200 text-left cursor-pointer group/card ${b.rotation} transform-gpu`}
               >
                 <div className="flex items-center justify-between mb-2">
                   <span

@@ -92,31 +92,33 @@ export default function BrandPartnersSection() {
           </div>
         </div>
 
-        {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer inline-flex items-center gap-1.5 ${
-                activeCategory === cat.id
-                  ? "bg-[#16143E] text-white shadow-md scale-102"
-                  : "bg-[#FAFAFE] text-[#16143E]/75 hover:text-[#16143E] hover:bg-slate-100 border border-[#16143E]/8"
-              }`}
-            >
-              <span>{cat.label}</span>
-              <span
-                className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
+        {/* Category Filter Tabs — scrollable on mobile */}
+        <div className="w-full overflow-x-auto no-scrollbar mb-8">
+          <div className="flex items-center justify-start sm:justify-center gap-2 min-w-max sm:min-w-0 px-1">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat.id}
+                type="button"
+                onClick={() => setActiveCategory(cat.id)}
+                className={`px-3.5 py-2 min-h-[44px] rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer inline-flex items-center gap-1.5 whitespace-nowrap ${
                   activeCategory === cat.id
-                    ? "bg-white/20 text-white"
-                    : "bg-[#16143E]/8 text-[#16143E]/70"
+                    ? "bg-[#16143E] text-white shadow-md scale-102"
+                    : "bg-[#FAFAFE] text-[#16143E]/75 hover:text-[#16143E] hover:bg-slate-100 border border-[#16143E]/8"
                 }`}
               >
-                {cat.count}
-              </span>
-            </button>
-          ))}
+                <span>{cat.label}</span>
+                <span
+                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
+                    activeCategory === cat.id
+                      ? "bg-white/20 text-white"
+                      : "bg-[#16143E]/8 text-[#16143E]/70"
+                  }`}
+                >
+                  {cat.count}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Brand Cards Grid */}

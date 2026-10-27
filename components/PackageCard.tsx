@@ -238,7 +238,7 @@ export default function PackageCard({
               e.stopPropagation();
               handleOpenDetails();
             }}
-            className={`flex-1 py-2.5 px-4 rounded-full font-bold text-xs sm:text-[13px] flex items-center justify-center gap-2 cursor-pointer transition-transform duration-150 active:scale-[0.97] shadow-sm ${
+            className={`flex-1 min-h-[44px] py-2.5 px-4 rounded-full font-bold text-xs sm:text-[13px] flex items-center justify-center gap-2 cursor-pointer transition-transform duration-150 active:scale-[0.97] shadow-sm ${
               isPopular
                 ? "btn-crimson glow-btn-crimson"
                 : isDark
@@ -258,7 +258,7 @@ export default function PackageCard({
               e.stopPropagation();
               trackEvent("whatsapp_click", { category: "PackageCardCompact", label: pkg.name });
             }}
-            className={`w-10 h-10 rounded-full flex items-center justify-center border transition-colors flex-shrink-0 ${
+            className={`w-11 h-11 rounded-full flex items-center justify-center border transition-colors flex-shrink-0 ${
               isDark
                 ? "bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#4ade80] border-[#25D366]/40"
                 : "bg-[#25D366]/12 hover:bg-[#25D366]/20 text-[#15803d] border-[#25D366]/30"
@@ -312,10 +312,10 @@ export default function PackageCard({
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}
-                    className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white flex items-center justify-center transition-colors z-20 cursor-pointer"
+                    className="absolute top-3 right-3 sm:top-4 sm:right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white flex items-center justify-center transition-colors z-20 cursor-pointer"
                     aria-label="Close package details"
                   >
-                    <X size={16} />
+                    <X size={18} />
                   </button>
 
                   {/* Floating Badge */}
@@ -426,7 +426,7 @@ export default function PackageCard({
                     <button
                       type="button"
                       onClick={handleBook}
-                      className={`w-full py-3 px-4 rounded-full font-bold text-xs sm:text-sm flex items-center justify-center gap-2 cursor-pointer transition-all shadow-md ${
+                      className={`w-full min-h-[44px] py-3 px-4 rounded-full font-bold text-xs sm:text-sm flex items-center justify-center gap-2 cursor-pointer transition-all shadow-md ${
                         isPopular
                           ? "btn-crimson glow-btn-crimson"
                           : "bg-[#2A2466] hover:bg-[#342D7D] text-white border border-white/15"
@@ -446,7 +446,7 @@ export default function PackageCard({
                           label: pkg.name,
                         })
                       }
-                      className="w-full py-2.5 px-3 rounded-full font-bold text-xs flex items-center justify-center gap-1.5 border border-[#25D366]/40 bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#4ade80] transition-colors"
+                      className="w-full min-h-[44px] py-3 px-3 rounded-full font-bold text-xs flex items-center justify-center gap-1.5 border border-[#25D366]/40 bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#4ade80] transition-colors"
                     >
                       <svg
                         className="w-3.5 h-3.5 flex-shrink-0 fill-current"

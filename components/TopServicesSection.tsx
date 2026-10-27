@@ -175,7 +175,7 @@ export default function TopServicesSection() {
                   <div className="grid grid-cols-2 gap-2">
                     <Link
                       href={srv.href}
-                      className="py-2.5 px-3 rounded-xl bg-[#16143E] hover:bg-[#232057] text-white text-xs font-bold flex items-center justify-center gap-1 transition-colors text-center"
+                      className="min-h-[44px] py-2.5 px-3 rounded-xl bg-[#16143E] hover:bg-[#232057] text-white text-xs font-bold flex items-center justify-center gap-1 transition-colors text-center"
                     >
                       <span>Explore Details</span>
                       <ArrowRight size={12} />
@@ -186,7 +186,7 @@ export default function TopServicesSection() {
                         trackEvent("quote_request", { category: "TopServices", label: srv.id });
                         scrollToWithPhysics("enquiry");
                       }}
-                      className="py-2.5 px-3 rounded-xl bg-[#EF1313]/10 hover:bg-[#EF1313]/20 text-[#EF1313] border border-[#EF1313]/25 text-xs font-bold transition-colors cursor-pointer text-center"
+                      className="min-h-[44px] py-2.5 px-3 rounded-xl bg-[#EF1313]/10 hover:bg-[#EF1313]/20 text-[#EF1313] border border-[#EF1313]/25 text-xs font-bold transition-colors cursor-pointer text-center"
                     >
                       Get Quote
                     </button>
@@ -198,8 +198,8 @@ export default function TopServicesSection() {
         </div>
 
         {/* Bottom Banner to see all 9 services */}
-        <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#16143E]/10 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3 text-center sm:text-left">
+        <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#16143E]/10 shadow-xs flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-3 text-left">
             <div className="w-10 h-10 rounded-xl bg-[#4E0DBA]/10 text-[#4E0DBA] flex items-center justify-center flex-shrink-0">
               <ShieldCheck size={20} />
             </div>
@@ -214,7 +214,7 @@ export default function TopServicesSection() {
           </div>
           <Link
             href="/security"
-            className="btn-crimson text-xs font-bold px-5 py-2.5 whitespace-nowrap glow-btn-crimson"
+            className="btn-crimson min-h-[44px] text-xs font-bold px-5 py-2.5 whitespace-nowrap glow-btn-crimson w-full sm:w-auto text-center justify-center flex-shrink-0"
           >
             <span>View All 9 Solutions</span>
             <ArrowRight size={13} />

@@ -88,41 +88,43 @@ export default function ServicesSection() {
             From lead surveillance installations to biometric access, enterprise Wi-Fi 6, and fiber cabling across Chennai. Every system is deployed with precision and backed by genuine manufacturer warranties.
           </p>
 
-          {/* Interactive Category Filter Tabs */}
-          <div className="inline-flex items-center p-1.5 rounded-2xl bg-white border border-[#16143E]/10 shadow-xs">
-            <button
-              type="button"
-              onClick={() => setFilter("all")}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                filter === "all"
-                  ? "bg-[#16143E] text-white shadow-xs"
-                  : "text-[#16143E]/70 hover:text-[#16143E] hover:bg-slate-50"
-              }`}
-            >
-              All Offerings (9)
-            </button>
-            <button
-              type="button"
-              onClick={() => setFilter("security")}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                filter === "security"
-                  ? "bg-[#EF1313] text-white shadow-xs shadow-[#EF1313]/30"
-                  : "text-[#16143E]/70 hover:text-[#16143E] hover:bg-slate-50"
-              }`}
-            >
-              Surveillance & Physical Security
-            </button>
-            <button
-              type="button"
-              onClick={() => setFilter("network")}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                filter === "network"
-                  ? "bg-[#4E0DBA] text-white shadow-xs shadow-[#4E0DBA]/30"
-                  : "text-[#16143E]/70 hover:text-[#16143E] hover:bg-slate-50"
-              }`}
-            >
-              Enterprise IT & Networking
-            </button>
+          {/* Interactive Category Filter Tabs — scrollable on mobile */}
+          <div className="w-full overflow-x-auto no-scrollbar">
+            <div className="inline-flex items-center p-1.5 rounded-2xl bg-white border border-[#16143E]/10 shadow-xs min-w-max sm:min-w-0">
+              <button
+                type="button"
+                onClick={() => setFilter("all")}
+                className={`px-4 py-2.5 min-h-[44px] rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap ${
+                  filter === "all"
+                    ? "bg-[#16143E] text-white shadow-xs"
+                    : "text-[#16143E]/70 hover:text-[#16143E] hover:bg-slate-50"
+                }`}
+              >
+                All (9)
+              </button>
+              <button
+                type="button"
+                onClick={() => setFilter("security")}
+                className={`px-4 py-2.5 min-h-[44px] rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap ${
+                  filter === "security"
+                    ? "bg-[#EF1313] text-white shadow-xs shadow-[#EF1313]/30"
+                    : "text-[#16143E]/70 hover:text-[#16143E] hover:bg-slate-50"
+                }`}
+              >
+                Surveillance & Security
+              </button>
+              <button
+                type="button"
+                onClick={() => setFilter("network")}
+                className={`px-4 py-2.5 min-h-[44px] rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap ${
+                  filter === "network"
+                    ? "bg-[#4E0DBA] text-white shadow-xs shadow-[#4E0DBA]/30"
+                    : "text-[#16143E]/70 hover:text-[#16143E] hover:bg-slate-50"
+                }`}
+              >
+                Enterprise IT & Networking
+              </button>
+            </div>
           </div>
         </div>
 

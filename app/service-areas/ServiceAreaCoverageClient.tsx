@@ -181,7 +181,7 @@ export default function ServiceAreaCoverageClient() {
               placeholder="Search by neighborhood name or pincode (e.g. 600054, Pattabiram, Ayapakkam)..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-white border-2 border-[#16143E]/15 focus:border-[#4E0DBA] text-sm text-[#16143E] shadow-sm outline-none transition-all"
+              className="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-white border-2 border-[#16143E]/15 focus:border-[#4E0DBA] text-base sm:text-sm text-[#16143E] shadow-sm outline-none transition-all"
             />
           </div>
           <div className="flex flex-wrap items-center gap-2 mt-3 text-xs text-[#16143E]/60">
@@ -191,7 +191,7 @@ export default function ServiceAreaCoverageClient() {
                 key={t}
                 type="button"
                 onClick={() => setQuery(t)}
-                className="px-2.5 py-0.5 rounded-full bg-white border border-[#16143E]/10 hover:border-[#EF1313] text-[11px] font-semibold text-[#16143E]/80 transition-colors cursor-pointer"
+                className="px-3 py-1.5 min-h-[34px] inline-flex items-center rounded-full bg-white border border-[#16143E]/10 hover:border-[#EF1313] text-xs font-semibold text-[#16143E]/80 transition-colors cursor-pointer"
               >
                 {t}
               </button>
@@ -251,7 +251,7 @@ export default function ServiceAreaCoverageClient() {
                 <div className="pt-3 border-t border-[#16143E]/8">
                   <a
                     href="tel:+918681888111"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#EF1313] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#EF1313] hover:underline touch-link py-1.5 min-h-[36px]"
                   >
                     <span>Request Visit in {loc.name.split(" ")[0]}</span>
                     <ArrowRight size={12} />

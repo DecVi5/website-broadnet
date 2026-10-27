@@ -22,7 +22,6 @@ import {
   CreditCard,
 } from "lucide-react";
 import BroadnetLogo from "./BroadnetLogo";
-import UnderDevelopmentBanner from "./UnderDevelopmentBanner";
 import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 import { trackEvent } from "@/lib/analytics";
 
@@ -125,9 +124,6 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
         }`}
         style={{ overflow: "visible" }}
       >
-        {/* Top Persistent Under Development Notification Banner */}
-        <UnderDevelopmentBanner />
-
         {/* Main Clean Header Bar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 sm:h-18 gap-4">
@@ -382,7 +378,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
             </nav>
 
             {/* Desktop Quick Actions */}
-            <div className="hidden sm:flex items-center gap-2.5">
+            <div className="hidden md:flex items-center gap-2.5">
               <a
                 href="tel:+918681888111"
                 className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-[#16143E] hover:text-[#EF1313] hover:bg-[#16143E]/5 transition-colors"
@@ -450,7 +446,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                     <button
                       type="button"
                       onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                      className="p-2 text-[#16143E]/60 cursor-pointer"
+                      className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#16143E]/60 cursor-pointer"
                       aria-label="Toggle services list"
                     >
                       <ChevronDown
@@ -469,7 +465,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                         <button
                           type="button"
                           onClick={() => setMobileSecurityOpen(!mobileSecurityOpen)}
-                          className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-[#16143E] hover:text-[#4E0DBA] transition-colors cursor-pointer"
+                          className="w-full flex items-center justify-between px-3 py-2.5 min-h-[44px] text-xs font-bold text-[#16143E] hover:text-[#4E0DBA] transition-colors cursor-pointer"
                         >
                           <span className="flex items-center gap-2">
                             <ShieldCheck size={14} className="text-[#4E0DBA]" />
@@ -490,7 +486,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                                 key={srv.id}
                                 href={srv.href}
                                 onClick={() => setMobileOpen(false)}
-                                className="flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-semibold text-[#16143E]/80 hover:text-[#4E0DBA] hover:bg-white transition-all"
+                                className="flex items-center justify-between px-2.5 py-2.5 min-h-[44px] rounded-md text-xs font-semibold text-[#16143E]/80 hover:text-[#4E0DBA] hover:bg-white transition-all"
                               >
                                 <span>{srv.shortTitle}</span>
                                 <ArrowRight size={11} className="text-[#16143E]/30" />
@@ -505,7 +501,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                         <button
                           type="button"
                           onClick={() => setMobileInternetOpen(!mobileInternetOpen)}
-                          className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-[#16143E] hover:text-[#EF1313] transition-colors cursor-pointer"
+                          className="w-full flex items-center justify-between px-3 py-2.5 min-h-[44px] text-xs font-bold text-[#16143E] hover:text-[#EF1313] transition-colors cursor-pointer"
                         >
                           <span className="flex items-center gap-2">
                             <Wifi size={14} className="text-[#EF1313]" />
@@ -526,7 +522,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                                 key={srv.id}
                                 href={srv.href}
                                 onClick={() => setMobileOpen(false)}
-                                className="flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-semibold text-[#16143E]/80 hover:text-[#EF1313] hover:bg-white transition-all"
+                                className="flex items-center justify-between px-2.5 py-2.5 min-h-[44px] rounded-md text-xs font-semibold text-[#16143E]/80 hover:text-[#EF1313] hover:bg-white transition-all"
                               >
                                 <span>{srv.shortTitle}</span>
                                 <ArrowRight size={11} className="text-[#16143E]/30" />
@@ -542,7 +538,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                       <Link
                         href="/service-areas"
                         onClick={() => setMobileOpen(false)}
-                        className="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-bold text-[#16143E] hover:text-[#4E0DBA] hover:bg-white transition-all"
+                        className="flex items-center justify-between px-3 py-2.5 min-h-[44px] rounded-lg text-xs font-bold text-[#16143E] hover:text-[#4E0DBA] hover:bg-white transition-all"
                       >
                         <span className="flex items-center gap-2">
                           <MapPin size={14} className="text-emerald-500" />

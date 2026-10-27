@@ -96,7 +96,7 @@ export default function TestimonialsSection() {
           </p>
 
           {/* Google Review Aggregation Card */}
-          <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-3 px-5 py-2.5 rounded-full bg-[#16143E]/4 border border-[#16143E]/10 shadow-sm">
+          <div className="mt-6 inline-flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-3 px-4 sm:px-5 py-2.5 rounded-2xl sm:rounded-full bg-[#16143E]/4 border border-[#16143E]/10 shadow-sm">
             <div className="flex items-center text-[#F59E0B]">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} size={15} className="fill-[#F59E0B]" />
@@ -180,9 +180,9 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* Footer of Card: Concrete Spec Tag */}
-                <div className="pt-3 border-t border-[#16143E]/8 flex items-center justify-between gap-2 text-xs">
+                <div className="pt-3 border-t border-[#16143E]/8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs">
                   <span
-                    className="inline-flex items-center gap-1.5 font-semibold text-[11px] px-2.5 py-1 rounded-full border"
+                    className="inline-flex items-center gap-1.5 font-semibold text-[11px] px-2.5 py-1 rounded-full border max-w-full"
                     style={{
                       borderColor: `${accent}33`,
                       color: accent,

@@ -122,7 +122,7 @@ const OPERATIONS_GALLERY = [
 ];
 
 
-// Dedicated photo slots for Official Certificates & Accreditations
+// Official Partner Accreditations & Verified Credentials
 const CERTIFICATE_SLOTS = [
   {
     title: "CP PLUS CSE Certification",
@@ -130,7 +130,6 @@ const CERTIFICATE_SLOTS = [
     partner: "CP PLUS India",
     brand: "CP PLUS",
     desc: "Official factory-certified engineer authorization covering HD/IP cameras, NVRs, and AI video analytics.",
-    imageSrc: "/assets/about/cert-cpplus.jpg",
   },
   {
     title: "Hikvision HCSA Partner Certification",
@@ -138,7 +137,6 @@ const CERTIFICATE_SLOTS = [
     partner: "Hikvision Global / Prama",
     brand: "Hikvision",
     desc: "Certified partner authorization for ColorVu 24/7 color night vision, AcuSense human/vehicle detection, and perimeter defense.",
-    imageSrc: "/assets/about/cert-hikvision.jpg",
   },
   {
     title: "eSSL Authorized Partner",
@@ -146,7 +144,6 @@ const CERTIFICATE_SLOTS = [
     partner: "eSSL Security Solutions",
     brand: "eSSL",
     desc: "Direct partner authorization for contactless facial recognition, fingerprint readers, and cloud payroll software.",
-    imageSrc: "/assets/about/cert-essl.jpg",
   },
   {
     title: "RailWire Telecom Partner",
@@ -154,7 +151,6 @@ const CERTIFICATE_SLOTS = [
     partner: "RailTel Corporation of India",
     brand: "RailWire",
     desc: "Official Tier-1 telecom broadband franchise provider delivering high-speed gigabit FTTH internet in Avadi.",
-    imageSrc: "/assets/about/cert-railwire.jpg",
   },
 ];
 
@@ -252,34 +248,53 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Right Column: Hero Showcase Image Frame (Drop-in ready) */}
+              {/* Right Column: Interactive Google Maps Integration for Avadi HQ */}
               <div className="lg:col-span-5">
-                <div className="relative rounded-3xl overflow-hidden border-2 border-[#16143E]/12 bg-gradient-to-br from-[#16143E] to-[#252060] p-3 shadow-2xl shadow-[#16143E]/15 group">
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#0F0D2E] flex flex-col items-center justify-center p-6 text-center border border-white/10">
-                    {/* Placeholder illustration / Drop-in Image Slot */}
-                    <div className="absolute inset-0 bg-[radial-gradient(#4E0DBA_1px,transparent_1px)] opacity-20 [background-size:16px_16px]" />
-                    <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-[#00C2FF] mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <Building2 size={32} />
+                <div className="relative rounded-3xl overflow-hidden border-2 border-[#16143E]/12 bg-white shadow-2xl shadow-[#16143E]/15 group">
+                  {/* Google Map Embed Header */}
+                  <div className="p-4 bg-[#16143E] text-white flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-lg bg-[#EF1313] flex items-center justify-center text-white">
+                        <MapPin size={16} />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold font-display">BroadNet Avadi HQ</div>
+                        <div className="text-[10px] text-white/60">1093, Fire Station Rd, TNHB, Avadi</div>
+                      </div>
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#00C2FF] font-display mb-1">
-                      HQ & Operations Hub
-                    </span>
-                    <h3 className="text-lg font-bold text-white font-display mb-1">
-                      Broadnet Engineering Center
-                    </h3>
-                    <p className="text-xs text-white/60 max-w-xs leading-relaxed">
-                      1093, Fire Station Road, TNHB, Avadi. Direct engineering dispatch, hardware testing lab & optical headend.
-                    </p>
-
-                    <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[11px] font-semibold">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10.5px] font-semibold">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      Active Local Dispatch SLA (&lt; 2 Hrs)
+                      &lt; 2 Hr Dispatch
                     </div>
+                  </div>
 
-                    {/* Image indicator tag */}
-                    <div className="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm text-[9px] font-mono text-white/60 flex items-center gap-1">
-                      <Camera size={10} /> Photo Slot: /assets/about/hq-hub.jpg
-                    </div>
+                  {/* Interactive Google Maps Frame */}
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+                    <iframe
+                      title="BroadNet Avadi Headquarters Map Location"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.5562779777974!2d80.09848577508006!3d13.127246987199994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52631555555555%3A0x7d3e4d9c4909a47a!2sFire%20Station%20Rd%2C%20TNHB%20Mig%20V%20Block%2C%20Avadi%2C%20Tamil%20Nadu%20600054!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen={false}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="w-full h-full"
+                    />
+                  </div>
+
+                  {/* Map Footer Bar with Direct Directions */}
+                  <div className="p-3 bg-slate-50 border-t border-slate-200/80 flex items-center justify-between text-xs">
+                    <span className="text-[#16143E]/70 font-medium">Chennai, Tamil Nadu 600054</span>
+                    <a
+                      href="https://www.google.com/maps/dir/?api=1&destination=1093,+Fire+Station+Road,+TNHB,+Avadi,+Chennai,+Tamil+Nadu+600054"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-[#4E0DBA] hover:text-[#EF1313] hover:underline flex items-center gap-1 transition-colors"
+                    >
+                      <span>Get Directions</span>
+                      <ArrowRight size={13} />
+                    </a>
                   </div>
                 </div>
               </div>

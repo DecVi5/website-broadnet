@@ -41,15 +41,15 @@ export default function TrustBar() {
   ];
 
   return (
-    <section className="bg-gradient-to-r from-[#16143E] via-[#1F1B4E] to-[#16143E] text-white py-5 border-y border-white/10 shadow-lg relative z-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 items-center">
+    <section className="bg-gradient-to-r from-[#16143E] via-[#1F1B4E] to-[#16143E] text-white py-4 sm:py-5 border-y border-white/10 shadow-lg relative z-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-2 sm:gap-4 items-center">
           {TRUST_ITEMS.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.title}
-                className={`flex items-center gap-3 p-2.5 sm:p-3 rounded-2xl transition-all ${
+                className={`flex items-center gap-2.5 sm:gap-3 p-2 sm:p-3 rounded-2xl transition-all ${
                   idx === 4 ? "col-span-2 md:col-span-1 justify-center md:justify-start" : ""
                 } ${
                   item.highlight

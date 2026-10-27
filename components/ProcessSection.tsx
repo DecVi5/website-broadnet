@@ -192,14 +192,14 @@ export default function ProcessSection() {
               Connect with our certified specialists in Avadi &amp; Chennai for an itemized proposal.
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
             <button
               type="button"
               onClick={() => {
                 trackEvent("quote_request", { category: "ProcessSection" });
                 scrollToWithPhysics("enquiry");
               }}
-              className="btn-crimson text-xs sm:text-sm font-bold glow-btn-crimson cursor-pointer"
+              className="btn-crimson min-h-[44px] text-xs sm:text-sm font-bold glow-btn-crimson cursor-pointer w-full sm:w-auto justify-center"
             >
               <span>Request Detailed Quote</span>
               <ArrowRight size={14} />
@@ -207,7 +207,7 @@ export default function ProcessSection() {
             <a
               href="tel:+918681888111"
               onClick={() => trackEvent("call_click", { category: "ProcessSection" })}
-              className="px-4 py-2.5 rounded-full border border-white/20 hover:bg-white/10 text-white text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-colors"
+              className="min-h-[44px] px-4 py-2.5 rounded-full border border-white/20 hover:bg-white/10 text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 transition-colors w-full sm:w-auto"
             >
               <Phone size={13} className="text-[#EF1313]" />
               <span>86818 88111</span>

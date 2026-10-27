@@ -66,9 +66,9 @@ export default function HardwareGallery({
                   : "bg-[#F8F9FD] border-[#16143E]/10 hover:border-[#EF1313]/30 shadow-sm hover:shadow-xl hover:shadow-[#16143E]/5"
               }`}
             >
-              {/* Image Frame or Aesthetic Placeholder */}
-              <div className="relative h-52 sm:h-56 w-full overflow-hidden flex items-center justify-center bg-gradient-to-br from-[#120F2E] via-[#1A1647] to-[#0E0C26]">
-                {item.imageSrc ? (
+              {/* Image Frame — only rendered when genuine imageSrc is available */}
+              {item.imageSrc ? (
+                <div className="relative h-52 sm:h-56 w-full overflow-hidden flex items-center justify-center bg-gradient-to-br from-[#120F2E] via-[#1A1647] to-[#0E0C26]">
                   <div className="relative w-full h-full p-4 flex items-center justify-center">
                     <Image
                       src={item.imageSrc}
@@ -77,50 +77,41 @@ export default function HardwareGallery({
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                ) : (
-                  /* Ultra-clean Branded Placeholder Frame */
-                  <div className="relative w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                    {/* Ambient Glow */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#EF1313]/15 blur-2xl rounded-full pointer-events-none" />
 
-                    {/* Placeholder Icon Graphic */}
-                    <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center text-white mb-3 shadow-inner group-hover:scale-110 group-hover:bg-[#EF1313] transition-all duration-300">
-                      <Camera size={26} className="text-white/90" />
-                    </div>
+                  {/* Status Badge */}
+                  <div className="absolute top-3 right-3 z-10">
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-[#16143E]/80 backdrop-blur-md text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      {item.status || "Ready Stock"}
+                    </span>
+                  </div>
 
-                    <span className="text-[11px] font-bold text-white/90 tracking-wide uppercase font-display">
+                  {/* Category Pill */}
+                  <div className="absolute bottom-3 left-3 z-10">
+                    <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white/90 border border-white/15">
                       {item.category}
                     </span>
-                    <span className="text-[10px] text-white/50 mt-0.5">
-                      Broadnet Certified Hardware
-                    </span>
-
-                    {/* Frame Corner Accents */}
-                    <div className="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-white/30 rounded-tl-sm" />
-                    <div className="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-white/30 rounded-tr-sm" />
-                    <div className="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-white/30 rounded-bl-sm" />
-                    <div className="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-white/30 rounded-br-sm" />
                   </div>
-                )}
-
-                {/* Status Badge */}
-                <div className="absolute top-3 right-3 z-10">
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-[#16143E]/80 backdrop-blur-md text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    {item.status || "Ready Stock"}
-                  </span>
                 </div>
-
-                {/* Category Pill */}
-                <div className="absolute bottom-3 left-3 z-10">
-                  <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white/90 border border-white/15">
-                    {item.category}
-                  </span>
-                </div>
-              </div>
+              ) : null}
 
               {/* Card Details */}
               <div className="p-6">
+                {!item.imageSrc && (
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider ${
+                      isDark
+                        ? "bg-white/10 text-white/80 border border-white/10"
+                        : "bg-[#16143E]/5 text-[#4E0DBA] border border-[#4E0DBA]/15"
+                    }`}>
+                      {item.category}
+                    </span>
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200/80 inline-flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      {item.status || "Ready Stock"}
+                    </span>
+                  </div>
+                )}
                 <h3 className={`text-lg font-bold font-display mb-2 ${isDark ? "text-white group-hover:text-[#EF1313]" : "text-[#16143E] group-hover:text-[#EF1313]"} transition-colors`}>
                   {item.title}
                 </h3>

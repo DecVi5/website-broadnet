@@ -254,7 +254,7 @@ export default function NightVisionComparisonSlider({
             <button
               type="button"
               onClick={() => setPreset(10, "show_colorvu")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer inline-flex items-center gap-1.5 ${
+              className={`min-h-[40px] px-4 py-2 rounded-full text-xs font-bold border transition-all cursor-pointer inline-flex items-center gap-1.5 ${
                 sliderPosition < 25
                   ? "bg-[#EF1313] text-white border-[#EF1313] shadow-md shadow-[#EF1313]/30"
                   : "bg-white/5 hover:bg-white/10 text-white/80 border-white/10"
@@ -266,7 +266,7 @@ export default function NightVisionComparisonSlider({
             <button
               type="button"
               onClick={() => setPreset(50, "split_view")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer inline-flex items-center gap-1.5 ${
+              className={`min-h-[40px] px-4 py-2 rounded-full text-xs font-bold border transition-all cursor-pointer inline-flex items-center gap-1.5 ${
                 sliderPosition >= 40 && sliderPosition <= 60
                   ? "bg-[#4E0DBA] text-white border-[#8B5CF6] shadow-md shadow-[#4E0DBA]/40"
                   : "bg-white/5 hover:bg-white/10 text-white/80 border-white/10"
@@ -278,7 +278,7 @@ export default function NightVisionComparisonSlider({
             <button
               type="button"
               onClick={() => setPreset(90, "show_ir")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer inline-flex items-center gap-1.5 ${
+              className={`min-h-[40px] px-4 py-2 rounded-full text-xs font-bold border transition-all cursor-pointer inline-flex items-center gap-1.5 ${
                 sliderPosition > 75
                   ? "bg-zinc-700 text-white border-zinc-500 shadow-md"
                   : "bg-white/5 hover:bg-white/10 text-white/80 border-white/10"
@@ -383,17 +383,17 @@ export default function NightVisionComparisonSlider({
                 aria-valuemin={2}
                 aria-valuemax={98}
                 onKeyDown={handleKeyDown}
-                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white text-[#16143E] shadow-[0_0_25px_rgba(239,19,19,0.8),0_4px_15px_rgba(0,0,0,0.5)] border-2 border-[#EF1313] flex items-center justify-center pointer-events-auto cursor-ew-resize transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-[#EF1313]/60 ${
+                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-white text-[#16143E] shadow-[0_0_25px_rgba(239,19,19,0.8),0_4px_15px_rgba(0,0,0,0.5)] border-2 border-[#EF1313] flex items-center justify-center pointer-events-auto cursor-ew-resize transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-[#EF1313]/60 ${
                   isDragging
                     ? "scale-110 shadow-[0_0_35px_rgba(239,19,19,1),0_6px_25px_rgba(0,0,0,0.6)] ring-4 ring-[#EF1313]/40 cursor-grabbing"
                     : "hover:scale-110 active:scale-95"
                 }`}
               >
-                <SlidersHorizontal size={18} className="text-[#EF1313]" />
+                <SlidersHorizontal size={19} className="text-[#EF1313]" />
               </div>
 
               <div
-                className={`absolute bottom-16 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/25 text-[10px] font-bold text-white uppercase tracking-wider whitespace-nowrap hidden sm:block shadow-xl select-none transition-all duration-300 ${
+                className={`absolute bottom-10 sm:bottom-16 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-full bg-black/85 backdrop-blur-md border border-white/25 text-[9px] sm:text-[10px] font-bold text-white uppercase tracking-wider whitespace-nowrap block shadow-xl select-none transition-all duration-300 ${
                   isDragging
                     ? "opacity-0 scale-90 translate-y-1 pointer-events-none"
                     : "opacity-100 scale-100 translate-y-0"

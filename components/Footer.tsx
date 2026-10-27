@@ -22,7 +22,6 @@ const QUICK_LINKS = [
   { label: "About Us (12 Years / 10+ Staff)", href: "/about" },
   { label: "Fiber Internet Plans", href: "/internet" },
   { label: "Pay Internet Bill (3 Portals)", href: "/pay-bill" },
-  { label: "Website Status & Roadmap", href: "/under-development" },
 ];
 
 export default function Footer() {
@@ -84,7 +83,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white/65 hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2 py-1 group"
+                    className="text-white/65 hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2 py-1.5 group touch-link"
                   >
                     <ArrowUpRight size={12} className="text-[#A78BFA] opacity-60 group-hover:opacity-100 group-hover:text-white transition-all" />
                     <span>{link.label}</span>
@@ -108,7 +107,7 @@ export default function Footer() {
                 <li key={srv.id}>
                   <Link
                     href={srv.href}
-                    className="text-white/65 hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2 py-1 group"
+                    className="text-white/65 hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2 py-1.5 group touch-link"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#EF1313] to-[#4E0DBA] opacity-70 group-hover:opacity-100 flex-shrink-0" />
                     <span className="truncate">{srv.shortTitle}</span>
@@ -195,7 +194,7 @@ export default function Footer() {
               v2.5
             </span>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-4 text-xs">
             <Link href="/cctv-landing" className="hover:text-white transition-colors">
               CCTV Division
             </Link>

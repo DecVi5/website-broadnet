@@ -4,7 +4,6 @@ import "./globals.css";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CustomCursor from "@/components/CustomCursor";
 import MobileStickyBar from "@/components/MobileStickyBar";
-import UnderDevelopmentSign from "@/components/UnderDevelopmentSign";
 import { getLocalBusinessJsonLd, getWebSiteJsonLd } from "@/lib/jsonLd";
 import { LanguageProvider } from "@/lib/i18n";
 
@@ -134,7 +133,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SmoothScrollProvider>
             <CustomCursor />
             {children}
-            <UnderDevelopmentSign />
             <MobileStickyBar />
           </SmoothScrollProvider>
         </LanguageProvider>

@@ -222,7 +222,7 @@ export default function UnderDevelopmentClient() {
             >
               <a
                 href={SITE_CONFIG.phones.primaryTel}
-                className="px-6 py-3 rounded-full bg-white text-[#16143E] hover:bg-white/90 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all duration-200 shadow-xl hover:scale-[1.02] w-full sm:w-auto text-center"
+                className="min-h-[44px] px-6 py-3 rounded-full bg-white text-[#16143E] hover:bg-white/90 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all duration-200 shadow-xl hover:scale-[1.02] w-full sm:w-auto text-center"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
                 <Phone size={15} className="text-[#EF1313]" />
@@ -233,7 +233,7 @@ export default function UnderDevelopmentClient() {
                 href={`https://wa.me/${SITE_CONFIG.whatsapp.cleanNumber}?text=Hi%20Broadnet,%20I%20saw%20your%20website%20under%20development%20and%20need%20quick%20assistance.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all duration-200 shadow-xl hover:scale-[1.02] w-full sm:w-auto text-center"
+                className="min-h-[44px] px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all duration-200 shadow-xl hover:scale-[1.02] w-full sm:w-auto text-center"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
                 <WhatsAppIcon size={16} />
@@ -242,7 +242,7 @@ export default function UnderDevelopmentClient() {
 
               <Link
                 href="/pay-bill"
-                className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/15 text-white border border-white/20 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all duration-200 w-full sm:w-auto text-center"
+                className="min-h-[44px] px-6 py-3 rounded-full bg-white/10 hover:bg-white/15 text-white border border-white/20 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all duration-200 w-full sm:w-auto text-center"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
                 <CreditCard size={15} className="text-emerald-400" />
@@ -561,11 +561,11 @@ export default function UnderDevelopmentClient() {
                     placeholder="Enter your email or phone number"
                     value={emailInput}
                     onChange={(e) => setEmailInput(e.target.value)}
-                    className="w-full px-4 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/40 text-xs sm:text-sm focus:outline-none focus:border-[#4E0DBA] transition-colors"
+                    className="w-full px-4 py-3 min-h-[44px] rounded-full bg-white/10 border border-white/20 text-white placeholder-white/40 text-base sm:text-sm focus:outline-none focus:border-[#4E0DBA] transition-colors"
                   />
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#4E0DBA] hover:bg-[#3D0A93] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 flex-shrink-0 transition-colors shadow-lg cursor-pointer"
+                    className="w-full sm:w-auto px-6 py-3 min-h-[44px] rounded-full bg-[#4E0DBA] hover:bg-[#3D0A93] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 flex-shrink-0 transition-colors shadow-lg cursor-pointer"
                     style={{ fontFamily: "Syne, sans-serif" }}
                   >
                     <Send size={13} />
@@ -583,9 +583,9 @@ export default function UnderDevelopmentClient() {
                   key={feature}
                   type="button"
                   onClick={() => setSelectedFeature(feature)}
-                  className={`text-[11px] px-2.5 py-1 rounded-full border transition-all cursor-pointer ${
+                  className={`text-xs px-3.5 py-1.5 min-h-[36px] inline-flex items-center rounded-full border transition-all cursor-pointer ${
                     selectedFeature === feature
-                      ? "bg-[#4E0DBA] text-white border-purple-400 font-bold"
+                      ? "bg-[#4E0DBA] text-white border-purple-400 font-bold shadow-md shadow-[#4E0DBA]/30"
                       : "bg-white/[0.04] text-white/60 border-white/10 hover:border-white/25 hover:text-white"
                   }`}
                 >

@@ -10,7 +10,7 @@ export default function InternetHero() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative pt-32 pb-20 bg-white overflow-hidden">
+    <section className="relative pt-24 sm:pt-32 pb-14 sm:pb-20 bg-white overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{

@@ -429,34 +429,35 @@ export default function NetworkingPage() {
                         </span>
                       </div>
 
-                      {/* Technical Console Display */}
-                      <div className="relative h-56 sm:h-64 w-full flex flex-col items-center justify-center my-3 bg-gradient-to-b from-slate-50/90 to-slate-100/60 rounded-2xl border-2 border-dashed border-slate-200/90 p-6 text-center group transition-all duration-300 hover:border-[#4E0DBA]/40 hover:bg-slate-50">
-                        {/* Technical Corner Brackets / Reticle */}
-                        <div className="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-slate-300 group-hover:border-[#4E0DBA]/60 transition-colors pointer-events-none" />
-                        <div className="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-slate-300 group-hover:border-[#4E0DBA]/60 transition-colors pointer-events-none" />
-                        <div className="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-slate-300 group-hover:border-[#4E0DBA]/60 transition-colors pointer-events-none" />
-                        <div className="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-slate-300 group-hover:border-[#4E0DBA]/60 transition-colors pointer-events-none" />
-
-                        <div className="relative mb-3.5">
-                          <div className="w-16 h-16 rounded-2xl bg-white border border-slate-200/80 shadow-md shadow-slate-200/60 flex items-center justify-center text-[#4E0DBA] group-hover:scale-105 group-hover:shadow-lg transition-transform">
-                            <Network size={32} strokeWidth={1.8} className="text-[#4E0DBA]" />
+                      {/* Hardware Specification Card */}
+                      <div className="my-4 p-5 rounded-2xl bg-gradient-to-b from-slate-50 to-slate-100/80 border border-slate-200/90 space-y-3">
+                        <div className="flex items-center gap-3">
+                          <div className="w-11 h-11 rounded-xl bg-white border border-slate-200/80 shadow-xs flex items-center justify-center text-[#4E0DBA] flex-shrink-0">
+                            <Network size={22} strokeWidth={2} />
                           </div>
-                          <span className="absolute -top-1 -right-1 flex h-3 w-3">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75" />
-                            <span className="relative inline-flex rounded-full h-3 w-3 bg-[#4E0DBA]" />
-                          </span>
+                          <div>
+                            <div className="text-sm font-bold text-[#16143E] font-display">
+                              Enterprise Infrastructure Hub
+                            </div>
+                            <div className="text-xs text-[#16143E]/60">
+                              Cat6A patch panels, fiber backhauls &amp; Tactine UTMs
+                            </div>
+                          </div>
                         </div>
 
-                        <div className="text-sm font-bold text-[#16143E] font-display">
-                          Enterprise Infrastructure Console
-                        </div>
-                        <p className="text-xs text-[#16143E]/55 mt-1 font-medium max-w-[240px]">
-                          Cat6A patch panels, server rack cable dressing, fusion fiber splicing &amp; Tactine UTMs
-                        </p>
-
-                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200/90 text-[11px] font-mono text-[#16143E]/70 mt-3 shadow-2xs">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#4E0DBA]" />
-                          Schneider &amp; Tactine Certified
+                        <div className="pt-2 border-t border-slate-200/60 space-y-1.5 text-xs text-[#16143E]/80">
+                          <div className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#4E0DBA]" />
+                            <span>10Gbps Pure Copper Cat6/Cat6A Certified Structured Drops</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#4E0DBA]" />
+                            <span>12U to 42U Server Rack Cable Dressing &amp; Patch Panels</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#4E0DBA]" />
+                            <span>Precision Fusion Fiber Splicing with Sub-0.02dB Loss</span>
+                          </div>
                         </div>
                       </div>
 
