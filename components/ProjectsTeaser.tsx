@@ -9,7 +9,7 @@ export default function ProjectsTeaser() {
   const { lang, t } = useLanguage();
 
   return (
-    <section className="py-20 sm:py-24 bg-white border-b border-[#16143E]/8 relative overflow-hidden">
+    <section className="py-20 sm:py-24 bg-white border-b border-[#16143E]/8 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-14 gap-6">
           <div className="max-w-2xl">

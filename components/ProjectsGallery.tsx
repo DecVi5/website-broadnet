@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import {
   MapPin,
@@ -112,6 +113,11 @@ const CATEGORIES = [
 export default function ProjectsGallery({ isTeaser = false }: { isTeaser?: boolean }) {
   const [activeCategory, setActiveCategory] = useState("All Projects");
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const filteredProjects = isTeaser
     ? REAL_PROJECTS.slice(0, 3)
@@ -224,14 +230,17 @@ export default function ProjectsGallery({ isTeaser = false }: { isTeaser?: boole
         ))}
       </div>
 
-      {/* Lightbox Modal */}
-      {selectedProject && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md animate-fadeIn"
-          onClick={() => setSelectedProject(null)}
-        >
+      {/* Lightbox Modal rendered via Portal to escape parent section stacking contexts */}
+      {mounted &&
+        selectedProject &&
+        createPortal(
+          <div
+            role="dialog"
+            aria-modal="true"
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn"
+            data-lenis-prevent
+            onClick={() => setSelectedProject(null)}
+          >
           <div
             className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative border border-white/20 max-h-[90vh] overflow-y-auto custom-scrollbar-light"
             onClick={(e) => e.stopPropagation()}
@@ -326,7 +335,8 @@ export default function ProjectsGallery({ isTeaser = false }: { isTeaser?: boole
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
