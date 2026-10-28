@@ -66,6 +66,8 @@ export function trackEvent(eventName: AnalyticsEvent, payload?: AnalyticsPayload
     }
   } catch (err) {
     // Analytics should never break user interactions
-    console.debug("[Analytics Error]", err);
+    if (process.env.NODE_ENV === "development") {
+      console.debug("[Analytics Error]", err);
+    }
   }
 }

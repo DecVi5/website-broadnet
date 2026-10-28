@@ -308,7 +308,7 @@ export default function NightVisionComparisonSlider({
                 src="/assets/colorvu-night-vision.jpg"
                 alt="BroadNet 4K ColorVu Full Color Night Vision Surveillance Feed"
                 fill
-                priority
+                loading="lazy"
                 sizes="(max-width: 1200px) 100vw, 1200px"
                 className="object-cover object-center pointer-events-none"
               />
@@ -338,7 +338,7 @@ export default function NightVisionComparisonSlider({
                 src="/assets/traditional-ir-night-vision.jpg"
                 alt="Traditional Grainy Infrared IR Black and White Night Vision Feed"
                 fill
-                priority
+                loading="lazy"
                 sizes="(max-width: 1200px) 100vw, 1200px"
                 className="object-cover object-center pointer-events-none"
               />

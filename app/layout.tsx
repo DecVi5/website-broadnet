@@ -68,6 +68,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.broadnet.in",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/assets/logo.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/assets/logo.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   other: {
     "geo.region": "IN-TN",
     "geo.placename": "Avadi, Chennai, Tamil Nadu",
