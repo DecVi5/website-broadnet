@@ -123,8 +123,8 @@ export default function TopServicesSection() {
                     <span
                       className={`text-[11px] font-bold px-3 py-1 rounded-full ${
                         srv.popular
-                          ? "bg-[#EF1313]/10 text-[#EF1313] border border-[#EF1313]/20"
-                          : "bg-[#16143E]/5 text-[#16143E]/70"
+                          ? "bg-[#EF1313]/10 text-[#B91C1C] border border-[#EF1313]/20"
+                          : "bg-[#16143E]/5 text-[#16143E]/80"
                       }`}
                     >
                       {srv.badge}
@@ -137,13 +137,13 @@ export default function TopServicesSection() {
                   >
                     {srv.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#16143E]/70 mb-5 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#16143E]/75 mb-5 leading-relaxed">
                     {srv.desc}
                   </p>
 
                   {/* Brand tags */}
                   <div className="flex flex-wrap items-center gap-1.5 mb-5">
-                    <span className="text-[10.5px] font-bold text-[#16143E]/50 uppercase tracking-wider mr-1">
+                    <span className="text-[10.5px] font-bold text-[#16143E]/75 uppercase tracking-wider mr-1">
                       Brands:
                     </span>
                     {srv.brands.map((b) => (
@@ -168,7 +168,7 @@ export default function TopServicesSection() {
                 </div>
 
                 <div className="pt-4 border-t border-[#16143E]/8 space-y-2.5">
-                  <div className="text-xs font-bold text-[#EF1313]">
+                  <div className="text-xs font-bold text-[#DC2626]">
                     {srv.price}
                   </div>
 
@@ -186,7 +186,7 @@ export default function TopServicesSection() {
                         trackEvent("quote_request", { category: "TopServices", label: srv.id });
                         scrollToWithPhysics("enquiry");
                       }}
-                      className="min-h-[44px] py-2.5 px-3 rounded-xl bg-[#EF1313]/10 hover:bg-[#EF1313]/20 text-[#EF1313] border border-[#EF1313]/25 text-xs font-bold transition-colors cursor-pointer text-center"
+                      className="min-h-[44px] py-2.5 px-3 rounded-xl bg-[#EF1313]/10 hover:bg-[#EF1313]/20 text-[#B91C1C] border border-[#EF1313]/30 text-xs font-bold transition-colors cursor-pointer text-center"
                     >
                       Get Quote
                     </button>
@@ -207,7 +207,7 @@ export default function TopServicesSection() {
               <div className="text-sm font-bold text-[#16143E]">
                 Need boom barriers, intrusion alarms, or campus optical fiber?
               </div>
-              <div className="text-xs text-[#16143E]/60 mt-0.5">
+              <div className="text-xs text-[#16143E]/75 mt-0.5">
                 We design and maintain all 9 ELV security and communication disciplines.
               </div>
             </div>

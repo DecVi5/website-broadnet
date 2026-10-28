@@ -16,9 +16,9 @@ export default function MobileStickyBar() {
           href="tel:+918681888111"
           onClick={() => trackEvent("call_click", { category: "MobileStickyBar" })}
           className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#16143E]/5 hover:bg-[#16143E]/10 border border-[#16143E]/10 text-[#16143E] active:scale-[0.95] transition-transform duration-100 text-center touch-manipulation"
-          aria-label="Call Broadnet support directly"
+          aria-label="Call Now - Broadnet Direct Support"
         >
-          <Phone size={16} className="text-[#EF1313] mb-0.5" />
+          <Phone size={16} className="text-[#DC2626] mb-0.5" />
           <span className="text-[11px] font-bold" style={{ fontFamily: "Syne, sans-serif" }}>
             Call Now
           </span>
@@ -30,7 +30,7 @@ export default function MobileStickyBar() {
           rel="noopener noreferrer"
           onClick={() => trackEvent("whatsapp_click", { category: "MobileStickyBar" })}
           className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#16143E] active:scale-[0.95] transition-transform duration-100 text-center relative touch-manipulation"
-          aria-label="Chat with Broadnet on WhatsApp"
+          aria-label="WhatsApp - Chat with Broadnet"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 absolute top-1.5 right-2 animate-ping" />
           <MessageCircle size={16} className="text-[#25D366] mb-0.5" />
@@ -51,8 +51,8 @@ export default function MobileStickyBar() {
               window.location.href = "/contact#enquiry";
             }
           }}
-          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#EF1313] hover:bg-[#d81010] text-white shadow-md shadow-[#EF1313]/30 active:scale-[0.95] transition-transform duration-100 text-center cursor-pointer glow-btn-crimson touch-manipulation"
-          aria-label="Request a quotation"
+          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white shadow-md shadow-[#DC2626]/30 active:scale-[0.95] transition-transform duration-100 text-center cursor-pointer glow-btn-crimson touch-manipulation"
+          aria-label="Free Quote - Request a quotation"
         >
           <Send size={15} className="text-white mb-0.5" />
           <span className="text-[11px] font-bold" style={{ fontFamily: "Syne, sans-serif" }}>

@@ -14,20 +14,29 @@ import { COMPANY_NUMBERS } from "@/data/services";
 import { useLanguage } from "@/lib/i18n";
 import { trackEvent } from "@/lib/analytics";
 
-const Antigravity = dynamic(() => import("@/components/Antigravity"), {
-  ssr: false,
-  loading: () => (
+function MobileAntigravityFallback() {
+  return (
     <div
       className="absolute inset-0 pointer-events-none overflow-hidden select-none"
       aria-hidden="true"
     >
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full border border-[#2c64ed]/20" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-[#f84242]/15" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-[#ffcf03]/15" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-radial from-[#2c64ed]/[0.08] via-[#f84242]/[0.04] to-transparent blur-2xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] rounded-full border border-[#2c64ed]/25" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] rounded-full border border-[#f84242]/20" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[640px] rounded-full border border-[#ffcf03]/20" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] h-[540px] rounded-full bg-radial from-[#2c64ed]/[0.08] via-[#f84242]/[0.04] to-transparent blur-2xl" />
+      <span className="absolute top-[40%] left-[24%] w-4 h-1.5 rounded-full bg-[#2c64ed]/40 -rotate-12" />
+      <span className="absolute top-[58%] right-[24%] w-4 h-1.5 rounded-full bg-[#f84242]/40 rotate-45" />
+      <span className="absolute top-[32%] right-[30%] w-3 h-1.5 rounded-full bg-[#ffcf03]/45 -rotate-30" />
+      <span className="absolute bottom-[34%] left-[32%] w-3.5 h-1.5 rounded-full bg-[#2c64ed]/35 rotate-15" />
     </div>
-  ),
+  );
+}
+
+const Antigravity = dynamic(() => import("@/components/Antigravity"), {
+  ssr: false,
+  loading: () => <MobileAntigravityFallback />,
 });
+
 
 
 function WhatsAppIcon({ size = 18, className = "" }: { size?: number; className?: string }) {
@@ -115,6 +124,17 @@ const BRAND_CREDENTIALS = [
 export default function HeroSection() {
   const { lang, t } = useLanguage();
   const [tick, setTick] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const isCoarse = window.matchMedia("(pointer: coarse)").matches;
+      const isSmall = window.innerWidth < 768;
+      if (!isCoarse && !isSmall) {
+        setIsDesktop(true);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -129,9 +149,9 @@ export default function HeroSection() {
       id="hero"
       className="relative min-h-hero flex flex-col items-center justify-start overflow-hidden pt-24 sm:pt-36 pb-12 sm:pb-16 bg-white text-[#16143E] scroll-mt-24"
     >
-      {/* Interactive Google Antigravity Concentric Ripple Canvas */}
+      {/* Interactive Google Antigravity Concentric Ripple Canvas (Desktop only) or CSS Fallback (Mobile) */}
       <div className="absolute inset-0 select-none overflow-hidden z-0 pointer-events-none">
-        <Antigravity />
+        {isDesktop ? <Antigravity /> : <MobileAntigravityFallback />}
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 w-full flex flex-col items-center text-center">
@@ -289,7 +309,7 @@ export default function HeroSection() {
                 {m.label}
               </div>
               <div
-                className="text-[11px] text-[#EF1313] font-semibold"
+                className="text-[11px] text-[#DC2626] font-semibold"
                 style={{ fontFamily: "DM Sans, sans-serif" }}
               >
                 {m.detail}
@@ -299,9 +319,8 @@ export default function HeroSection() {
         </div>
       </div>
 
-
       {/* Subtle Scroll Indicator */}
-      <div className="mt-10 flex flex-col items-center gap-1 text-[#16143E]/40 z-20">
+      <div className="mt-10 flex flex-col items-center gap-1 text-[#16143E]/70 z-20">
         <span className="text-[10px] tracking-widest uppercase font-bold">
           Explore Services
         </span>

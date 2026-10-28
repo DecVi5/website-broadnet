@@ -122,7 +122,7 @@ export default function PackageCard({
             <span
               className={`px-3.5 py-1 rounded-full text-[11px] font-black uppercase tracking-wider shadow-sm flex items-center gap-1.5 ${
                 isPopular
-                  ? "bg-[#EF1313] text-white shadow-[#EF1313]/30"
+                  ? "bg-[#DC2626] text-white shadow-[#DC2626]/30"
                   : isDark
                     ? "bg-[#4E0DBA] text-white"
                     : "bg-[#16143E] text-white"
@@ -200,7 +200,7 @@ export default function PackageCard({
                   : "bg-[#16143E]/5 border-[#16143E]/8 text-[#16143E]/80"
               }`}
             >
-              <Camera size={13} className="text-[#EF1313] flex-shrink-0" />
+              <Camera size={13} className="text-[#DC2626] flex-shrink-0" />
               <span>{pkg.resolution}</span>
             </span>
             <span
@@ -357,7 +357,7 @@ export default function PackageCard({
                   {/* Core Specs Pills */}
                   <div className="flex flex-wrap gap-1.5 mb-5 text-[11px] font-semibold text-white/85">
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-white/5 border-white/10">
-                      <Camera size={13} className="text-[#EF1313] flex-shrink-0" />
+                      <Camera size={13} className="text-[#DC2626] flex-shrink-0" />
                       <span>{pkg.resolution}</span>
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-white/5 border-white/10">
@@ -393,8 +393,8 @@ export default function PackageCard({
 
                   {/* "What's Included & Terms" Card (Red Bordered matching screenshot) */}
                   {showWhatIsIncluded && pkg.included && (
-                    <div className="mb-6 p-3.5 rounded-2xl border border-[#EF1313]/30 bg-[#EF1313]/5 text-white/85 text-xs space-y-2">
-                      <div className="flex items-center gap-1.5 font-bold text-[#EF1313] text-[11.5px] uppercase tracking-wider">
+                    <div className="mb-6 p-3.5 rounded-2xl border border-[#DC2626]/30 bg-[#DC2626]/5 text-white/85 text-xs space-y-2">
+                      <div className="flex items-center gap-1.5 font-bold text-[#DC2626] text-[11.5px] uppercase tracking-wider">
                         <ShieldCheck size={14} />
                         <span>What&apos;s Included & Terms</span>
                       </div>

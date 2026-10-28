@@ -171,14 +171,14 @@ export default function ProjectsGallery({ isTeaser = false }: { isTeaser?: boole
                   <span className="px-3 py-1 rounded-full text-[10.5px] font-bold bg-black/60 backdrop-blur-md text-white border border-white/20">
                     {proj.category}
                   </span>
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#EF1313] text-white shadow-sm">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#DC2626] text-white shadow-sm">
                     {proj.year}
                   </span>
                 </div>
 
                 <div className="relative z-10 flex items-center justify-between text-[11px] text-white/95">
                   <span className="flex items-center gap-1 font-semibold bg-black/50 px-2.5 py-1 rounded-lg backdrop-blur-md">
-                    <MapPin size={12} className="text-[#EF1313]" /> {proj.location}
+                    <MapPin size={12} className="text-[#DC2626]" /> {proj.location}
                   </span>
                   <span className="flex items-center gap-1 text-white group-hover:text-[#EF1313] font-bold transition-colors bg-black/50 px-2.5 py-1 rounded-lg backdrop-blur-md">
                     <Maximize2 size={12} /> View Details

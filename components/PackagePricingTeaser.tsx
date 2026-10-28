@@ -28,7 +28,7 @@ export default function PackagePricingTeaser() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#EF1313]/10 text-[#EF1313] text-xs font-bold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#EF1313]/10 text-[#B91C1C] text-xs font-bold uppercase tracking-wider mb-3">
             <Sparkles size={13} />
             <span>Turnkey CCTV Pricing</span>
           </div>
@@ -83,11 +83,11 @@ export default function PackagePricingTeaser() {
           {/* 4 Inclusions Pillars */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6">
             <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-white border border-[#16143E]/6 shadow-xs">
-              <div className="w-9 h-9 rounded-xl bg-[#EF1313]/10 text-[#EF1313] flex items-center justify-center flex-shrink-0">
+              <div className="w-9 h-9 rounded-xl bg-[#EF1313]/10 text-[#DC2626] flex items-center justify-center flex-shrink-0">
                 <Camera size={18} />
               </div>
               <div>
-                <h5 className="text-xs font-bold text-[#16143E]">Genuine Brand Hardware</h5>
+                <h4 className="text-xs font-bold text-[#16143E]">Genuine Brand Hardware</h4>
                 <p className="text-[11px] text-[#16143E]/65 mt-0.5 leading-snug">
                   Original cameras, DVR/NVR recorder &amp; 24/7 surveillance-grade HDD.
                 </p>
@@ -99,7 +99,7 @@ export default function PackagePricingTeaser() {
                 <Wrench size={18} />
               </div>
               <div>
-                <h5 className="text-xs font-bold text-[#16143E]">Concealed Conduit Cabling</h5>
+                <h4 className="text-xs font-bold text-[#16143E]">Concealed Conduit Cabling</h4>
                 <p className="text-[11px] text-[#16143E]/65 mt-0.5 leading-snug">
                   Heavy-duty copper cables enclosed in neat PVC pipes with zero messy loose wires.
                 </p>
@@ -111,7 +111,7 @@ export default function PackagePricingTeaser() {
                 <Smartphone size={18} />
               </div>
               <div>
-                <h5 className="text-xs font-bold text-[#16143E]">Mobile App &amp; Remote View</h5>
+                <h4 className="text-xs font-bold text-[#16143E]">Mobile App &amp; Remote View</h4>
                 <p className="text-[11px] text-[#16143E]/65 mt-0.5 leading-snug">
                   Live feed &amp; past playback configured on all your Android, iOS phones &amp; screens.
                 </p>
@@ -123,7 +123,7 @@ export default function PackagePricingTeaser() {
                 <ShieldCheck size={18} />
               </div>
               <div>
-                <h5 className="text-xs font-bold text-[#16143E]">2-Year Warranty &amp; AMC</h5>
+                <h4 className="text-xs font-bold text-[#16143E]">2-Year Warranty &amp; AMC</h4>
                 <p className="text-[11px] text-[#16143E]/65 mt-0.5 leading-snug">
                   Full angle calibration, user demonstration, and prompt 2-hour technician support.
                 </p>
@@ -139,12 +139,12 @@ export default function PackagePricingTeaser() {
               <Calculator size={24} />
             </div>
             <div>
-              <h4
+              <h3
                 className="text-lg sm:text-xl font-bold"
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
                 Need a Custom Camera Count or Lens Setup?
-              </h4>
+              </h3>
               <p className="text-xs sm:text-sm text-white/70 mt-1 max-w-xl">
                 Try our interactive cost calculator or request a custom site survey for gated apartments, factories, or commercial showrooms.
               </p>

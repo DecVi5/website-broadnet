@@ -186,11 +186,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/8 flex flex-col md:flex-row items-center justify-between text-xs text-white/50 gap-4">
+        <div className="pt-8 border-t border-white/8 flex flex-col md:flex-row items-center justify-between text-xs text-white/70 gap-4">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5">
             <span>© {new Date().getFullYear()} Broadnet Internet Services. All Rights Reserved.</span>
-            <span className="hidden sm:inline text-white/30">·</span>
-            <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-white/60 tracking-wider">
+            <span className="hidden sm:inline text-white/50">·</span>
+            <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-white/75 tracking-wider">
               v2.8
             </span>
           </div>
@@ -211,13 +211,13 @@ export default function Footer() {
               Projects
             </Link>
           </div>
-          <div className="text-[11px] text-white/40 text-center md:text-right tracking-wide">
+          <div className="text-[11px] text-white/70 text-center md:text-right tracking-wide">
             Made with{" "}
             <a
               href="https://website-indianpixel.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/75 font-semibold hover:text-white transition-colors underline-offset-4 hover:underline"
+              className="text-white font-semibold hover:text-white transition-colors underline-offset-4 hover:underline"
             >
               Indian Pixel
             </a>

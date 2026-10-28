@@ -428,12 +428,12 @@ export default function LocationChecker() {
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
                     <div>
                       <div className="flex items-center gap-2 flex-wrap mb-1">
-                        <h4
+                        <h3
                           className="text-xl sm:text-2xl font-bold text-white"
                           style={{ fontFamily: "Syne, sans-serif" }}
                         >
                           {activeResult.name}
-                        </h4>
+                        </h3>
                         <span className="text-xs font-mono px-2 py-0.5 rounded bg-white/10 text-white/80 border border-white/10">
                           {activeResult.pincode}
                         </span>
@@ -511,12 +511,12 @@ export default function LocationChecker() {
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
                     <div>
                       <div className="flex items-center gap-2 flex-wrap mb-1">
-                        <h4
+                        <h3
                           className="text-xl sm:text-2xl font-bold text-white"
                           style={{ fontFamily: "Syne, sans-serif" }}
                         >
                           {activeResult.name}
-                        </h4>
+                        </h3>
                         <span className="text-xs font-mono px-2 py-0.5 rounded bg-white/10 text-white/80 border border-white/10">
                           {activeResult.pincode}
                         </span>
@@ -615,12 +615,12 @@ export default function LocationChecker() {
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
                     <div>
                       <div className="flex items-center gap-2 flex-wrap mb-1">
-                        <h4
+                        <h3
                           className="text-xl sm:text-2xl font-bold text-white"
                           style={{ fontFamily: "Syne, sans-serif" }}
                         >
                           {searchQuery}
-                        </h4>
+                        </h3>
                         <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-red-500/20 text-red-300 border border-red-500/30 flex items-center gap-1">
                           <AlertCircle size={12} className="text-red-400" />
                           <span>Not Yet In Core Network</span>
@@ -806,9 +806,9 @@ export default function LocationChecker() {
               <Zap size={18} className="text-[#A78BFA]" />
             </div>
             <div>
-              <h5 className="font-bold text-sm text-white mb-1">
+              <h3 className="font-bold text-sm text-white mb-1">
                 Zero Third-Party Reseller Mesh
-              </h5>
+              </h3>
               <p className="text-white/50 text-xs leading-relaxed">
                 Direct optical connections from our private headend ring. Dedicated symmetric bandwidth engineered to prevent evening congestion.
               </p>
@@ -820,9 +820,9 @@ export default function LocationChecker() {
               <Clock size={18} className="text-[#EF1313]" />
             </div>
             <div>
-              <h5 className="font-bold text-sm text-white mb-1">
+              <h3 className="font-bold text-sm text-white mb-1">
                 Local Avadi Technician SLA
-              </h5>
+              </h3>
               <p className="text-white/50 text-xs leading-relaxed">
                 Technician response within 2 hours; priority installation scheduled at your convenience.
               </p>
@@ -834,9 +834,9 @@ export default function LocationChecker() {
               <CheckCircle2 size={18} className="text-emerald-400" />
             </div>
             <div>
-              <h5 className="font-bold text-sm text-white mb-1">
+              <h3 className="font-bold text-sm text-white mb-1">
                 Free Optical ONT Equipment
-              </h5>
+              </h3>
               <p className="text-white/50 text-xs leading-relaxed">
                 All live coverage areas qualify for 100% Free Installation and free-to-use high gain optical ONT routers.
               </p>
