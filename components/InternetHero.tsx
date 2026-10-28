@@ -1,14 +1,11 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 import { trackEvent } from "@/lib/analytics";
 
 export default function InternetHero() {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <section className="relative pt-24 sm:pt-32 pb-14 sm:pb-20 bg-white overflow-hidden">
       <div
@@ -28,55 +25,20 @@ export default function InternetHero() {
         </div>
 
         <div className="max-w-3xl mx-auto flex flex-col items-center">
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: shouldReduceMotion ? 0.2 : 0.45,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-[#4E0DBA] mb-3 sm:mb-4"
-          >
+          <div className="hero-fade-in inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-[#4E0DBA] mb-3 sm:mb-4">
             <span>ICT Infrastructure</span>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: shouldReduceMotion ? 0.2 : 0.55,
-              delay: shouldReduceMotion ? 0 : 0.06,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#16143E] leading-[1.14] mb-4 sm:mb-6 font-display tracking-tight text-center"
-          >
+          <h1 className="hero-fade-in text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#16143E] leading-[1.14] mb-4 sm:mb-6 font-display tracking-tight text-center">
             100+ km of Your{" "}
             <span className="text-gradient">Own Fibre Network</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: shouldReduceMotion ? 0.2 : 0.55,
-              delay: shouldReduceMotion ? 0 : 0.12,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="text-[#16143E]/75 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto font-body text-center"
-          >
+          <p className="hero-fade-in text-[#16143E]/75 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto font-body text-center">
             Broadnet operates its own optical fibre backbone across Avadi — delivering symmetric, dedicated high-speed internet to homes and enterprises with reliable fibre continuity.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: shouldReduceMotion ? 0.2 : 0.5,
-              delay: shouldReduceMotion ? 0 : 0.18,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 w-full max-w-xs sm:max-w-none"
-          >
+          <div className="hero-fade-in flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 w-full max-w-xs sm:max-w-none">
             <button
               type="button"
               onClick={() => {
@@ -98,18 +60,9 @@ export default function InternetHero() {
             >
               <span>Chat on WhatsApp</span>
             </a>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: shouldReduceMotion ? 0.2 : 0.5,
-              delay: shouldReduceMotion ? 0 : 0.24,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 pt-1"
-          >
+          <div className="hero-fade-in flex flex-wrap items-center justify-center gap-3 sm:gap-6 pt-1">
             <div
               role="status"
               aria-label="Network status: Operational"
@@ -126,9 +79,10 @@ export default function InternetHero() {
             <div className="text-xs sm:text-sm font-medium text-[#16143E]/75">
               2,500+ active subscribers
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+

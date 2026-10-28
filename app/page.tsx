@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import TrustBar from "@/components/TrustBar";
-import TopServicesSection from "@/components/TopServicesSection";
-import PackagePricingTeaser from "@/components/PackagePricingTeaser";
-import NightVisionComparisonSlider from "@/components/NightVisionComparisonSlider";
-import ProcessSection from "@/components/ProcessSection";
-import ProjectsTeaser from "@/components/ProjectsTeaser";
-import HomeFiberSection from "@/components/HomeFiberSection";
-import LocationChecker from "@/components/LocationChecker";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import HomeFaqSection from "@/components/HomeFaqSection";
-import EnquirySection from "@/components/EnquirySection";
-import Footer from "@/components/Footer";
+
+const TopServicesSection = dynamic(() => import("@/components/TopServicesSection"));
+const PackagePricingTeaser = dynamic(() => import("@/components/PackagePricingTeaser"));
+const NightVisionComparisonSlider = dynamic(() => import("@/components/NightVisionComparisonSlider"));
+const ProcessSection = dynamic(() => import("@/components/ProcessSection"));
+const ProjectsTeaser = dynamic(() => import("@/components/ProjectsTeaser"));
+const HomeFiberSection = dynamic(() => import("@/components/HomeFiberSection"));
+const LocationChecker = dynamic(() => import("@/components/LocationChecker"));
+const TestimonialsSection = dynamic(() => import("@/components/TestimonialsSection"));
+const HomeFaqSection = dynamic(() => import("@/components/HomeFaqSection"));
+const EnquirySection = dynamic(() => import("@/components/EnquirySection"));
+const Footer = dynamic(() => import("@/components/Footer"));
+
 
 export const metadata: Metadata = {
   title: "Broadnet | CCTV Camera Installation & Security Systems in Chennai & Avadi",

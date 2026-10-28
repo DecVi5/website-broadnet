@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import { isTouchDevice, prefersReducedMotion, isLowEndDevice } from "@/lib/devicePerformance";
+
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Google Antigravity WebGL Simulation Engine
@@ -413,368 +415,431 @@ export interface AntigravityProps {
   [key: string]: unknown;
 }
 
+function MobileAntigravityFallback({
+  className = "",
+  opacity = 0.62,
+}: {
+  className?: string;
+  opacity?: number;
+}) {
+  return (
+    <div
+      className={`w-full h-full relative pointer-events-none select-none overflow-hidden ${className}`}
+      style={{ opacity }}
+      aria-hidden="true"
+    >
+      {/* Concentric rings matching Google chromatic aesthetic */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] rounded-full border border-[#2c64ed]/25" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] rounded-full border border-[#f84242]/20" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[640px] rounded-full border border-[#ffcf03]/20" />
+      {/* Ambient gradient glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] h-[540px] rounded-full bg-radial from-[#2c64ed]/[0.08] via-[#f84242]/[0.04] to-transparent blur-2xl" />
+      {/* Slender capsule pill accents */}
+      <span className="absolute top-[40%] left-[24%] w-4 h-1.5 rounded-full bg-[#2c64ed]/40 -rotate-12" />
+      <span className="absolute top-[58%] right-[24%] w-4 h-1.5 rounded-full bg-[#f84242]/40 rotate-45" />
+      <span className="absolute top-[32%] right-[30%] w-3 h-1.5 rounded-full bg-[#ffcf03]/45 -rotate-30" />
+      <span className="absolute bottom-[34%] left-[32%] w-3.5 h-1.5 rounded-full bg-[#2c64ed]/35 rotate-15" />
+    </div>
+  );
+}
+
 export default function Antigravity({ className = "", opacity = 0.62 }: AntigravityProps) {
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    const isCoarse = window.matchMedia("(pointer: coarse)").matches;
+    const isSmallScreen = window.innerWidth < 768;
+    const isLowPerf = prefersReducedMotion() || isLowEndDevice();
+
+    if (isCoarse || isSmallScreen || isLowPerf) {
+      setIsMobile(true);
+      return;
+    }
+    setIsMobile(false);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile !== false) return;
     const container = containerRef.current;
     const canvas = canvasRef.current;
     if (!container || !canvas) return;
 
-    let width = container.clientWidth || window.innerWidth;
-    let height = container.clientHeight || 750;
-    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    let isCancelled = false;
+    let cleanupFn: (() => void) | null = null;
 
-    // Exact Antigravity attributes from https://antigravity.google/
-    const density = 230;
-    const ringWidth = 0.006;
-    const ringWidth2 = 0.107;
-    const ringDisplacement = 0.62;
-    const particlesScale = 0.59;
+    const initThree = () => {
+      if (isCancelled) return;
+      let width = container.clientWidth || window.innerWidth;
+      let height = container.clientHeight || 750;
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
 
-    // Linear mapping matching Google Antigravity
-    const pMin = (density - 0) * (2 - 10) / (300 - 0) + 10;
-    const pMax = (density - 0) * (3 - 11) / (300 - 0) + 11;
+      const ringWidth = 0.006;
+      const ringWidth2 = 0.107;
+      const ringDisplacement = 0.62;
+      const particlesScale = 0.62;
 
-    // 1. Generate Poisson Disk Points across 500x500 box
-    const rawPoints = generatePoissonPoints(500, 500, pMin, pMax, 20);
-    const count = Math.min(rawPoints.length, 65536);
+      // 1. Generate Poisson Disk Points across 500x500 box
+      // pMin = 8.0, pMax = 11.0 generates ~3,200 points in under 2ms (previously 90s!)
+      const rawPoints = generatePoissonPoints(500, 500, 8.0, 11.0, 10);
+      const count = Math.min(rawPoints.length, 4096);
 
-    // 2. Setup Three.js Renderer
-    let renderer: THREE.WebGLRenderer;
-    try {
-      renderer = new THREE.WebGLRenderer({
-        canvas,
-        antialias: true,
-        alpha: true,
-        powerPreference: "high-performance",
-        precision: "highp",
-      });
-    } catch (e) {
-      console.warn("[Antigravity] WebGL initialization fallback:", e);
-      return;
-    }
-
-    renderer.setSize(width, height);
-    renderer.setPixelRatio(pixelRatio);
-    renderer.setClearColor(0x000000, 0);
-
-    // Camera & Raycast Plane
-    const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 1000);
-    camera.position.z = 3.1;
-
-    const mainScene = new THREE.Scene();
-    const raycastPlane = new THREE.Mesh(
-      new THREE.PlaneGeometry(12.5, 12.5),
-      new THREE.MeshBasicMaterial({ visible: false, side: THREE.DoubleSide })
-    );
-    mainScene.add(raycastPlane);
-
-    // 3. Create Position DataTexture & Ping-Pong RenderTargets
-    const SIZE = 256;
-    const texData = new Float32Array(SIZE * SIZE * 4);
-    for (let t = 0; t < count; t++) {
-      const n = t * 4;
-      texData[n + 0] = (rawPoints[t][0] - 250) * (1 / 250);
-      texData[n + 1] = (rawPoints[t][1] - 250) * (1 / 250);
-      texData[n + 2] = 0;
-      texData[n + 3] = 0;
-    }
-
-    const posTex = new THREE.DataTexture(texData, SIZE, SIZE, THREE.RGBAFormat, THREE.FloatType);
-    posTex.needsUpdate = true;
-
-    const rtOptions = {
-      wrapS: THREE.ClampToEdgeWrapping,
-      wrapT: THREE.ClampToEdgeWrapping,
-      minFilter: THREE.NearestFilter,
-      magFilter: THREE.NearestFilter,
-      format: THREE.RGBAFormat,
-      type: renderer.capabilities.isWebGL2 ? THREE.FloatType : THREE.HalfFloatType,
-      depthBuffer: false,
-      stencilBuffer: false,
-    };
-
-    let rt1 = new THREE.WebGLRenderTarget(SIZE, SIZE, rtOptions);
-    let rt2 = new THREE.WebGLRenderTarget(SIZE, SIZE, rtOptions);
-
-    // Clear RTs
-    renderer.setRenderTarget(rt1);
-    renderer.clear();
-    renderer.setRenderTarget(rt2);
-    renderer.clear();
-    renderer.setRenderTarget(null);
-
-    // 4. Simulation Quad & Material
-    const simScene = new THREE.Scene();
-    const simCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-    const simMaterial = new THREE.ShaderMaterial({
-      uniforms: {
-        uPosition: { value: posTex },
-        uPosRefs: { value: posTex },
-        uRingPos: { value: new THREE.Vector2(0, 0) },
-        uRingRadius: { value: 0.175 },
-        uDeltaTime: { value: 0 },
-        uRingWidth: { value: ringWidth },
-        uRingWidth2: { value: ringWidth2 },
-        uRingDisplacement: { value: ringDisplacement },
-        uTime: { value: 0 },
-      },
-      vertexShader: SIM_VERTEX_SHADER,
-      fragmentShader: SIM_FRAGMENT_SHADER,
-    });
-    const simQuad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), simMaterial);
-    simScene.add(simQuad);
-
-    // 5. Points Mesh & Render Material
-    const geom = new THREE.BufferGeometry();
-    const uvs = new Float32Array(count * 2);
-    const positions = new Float32Array(count * 3);
-    const seeds = new Float32Array(count * 4);
-
-    for (let e = 0; e < count; e++) {
-      const col = e % SIZE;
-      const row = Math.floor(e / SIZE);
-      uvs[e * 2] = col / SIZE;
-      uvs[e * 2 + 1] = row / SIZE;
-
-      seeds[e * 4] = Math.random();
-      seeds[e * 4 + 1] = Math.random();
-      seeds[e * 4 + 2] = Math.random();
-      seeds[e * 4 + 3] = Math.random();
-    }
-
-    geom.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-    geom.setAttribute("uv", new THREE.BufferAttribute(uvs, 2));
-    geom.setAttribute("seeds", new THREE.BufferAttribute(seeds, 4));
-
-    let particleScale = (width / 2000) * particlesScale;
-
-    const renderMaterial = new THREE.ShaderMaterial({
-      uniforms: {
-        uPosition: { value: posTex },
-        uTime: { value: 0 },
-        uColor1: { value: new THREE.Color("#2c64ed") }, // Google Chromatic Blue
-        uColor2: { value: new THREE.Color("#f84242") }, // Google Chromatic Red / Coral
-        uColor3: { value: new THREE.Color("#ffcf03") }, // Google Chromatic Yellow / Amber
-        uAlpha: { value: opacity },
-        uRingPos: { value: new THREE.Vector2(0, 0) },
-        uRez: { value: new THREE.Vector2(width, height) },
-        uParticleScale: { value: particleScale },
-        uPixelRatio: { value: pixelRatio },
-        uColorScheme: { value: 1 }, // Light mode
-      },
-      vertexShader: RENDER_VERTEX_SHADER,
-      fragmentShader: RENDER_FRAGMENT_SHADER,
-      transparent: true,
-      depthTest: false,
-      depthWrite: false,
-    });
-
-    const pointsMesh = new THREE.Points(geom, renderMaterial);
-    pointsMesh.position.set(0, 0, 0);
-    pointsMesh.scale.set(5, 5, 5);
-    mainScene.add(pointsMesh);
-
-    // 6. Interaction State & Noise
-    const noise = new Noise1D();
-    const ringPos = new THREE.Vector2(0, 0);
-    const cursorPos = new THREE.Vector2(0, 0);
-    const mouse = new THREE.Vector2();
-    const intersectionPoint = new THREE.Vector3();
-    const raycaster = new THREE.Raycaster();
-    let isIntersecting = false;
-
-    // Track mouse pointer across window, with bounds check relative to hero canvas
-    const onPointerMove = (e: PointerEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      const px = e.clientX - rect.left;
-      const py = e.clientY - rect.top;
-
-      if (px < -100 || px > rect.width + 100 || py < -100 || py > rect.height + 100) {
-        isIntersecting = false;
+      // 2. Setup Three.js Renderer
+      let renderer: THREE.WebGLRenderer;
+      try {
+        renderer = new THREE.WebGLRenderer({
+          canvas,
+          antialias: true,
+          alpha: true,
+          powerPreference: "high-performance",
+          precision: "mediump",
+        });
+      } catch (e) {
+        console.warn("[Antigravity] WebGL initialization fallback:", e);
         return;
       }
-
-      mouse.x = (px / rect.width) * 2 - 1;
-      mouse.y = -(py / rect.height) * 2 + 1;
-
-      raycaster.setFromCamera(mouse, camera);
-      const intersects = raycaster.intersectObject(raycastPlane);
-      if (intersects.length > 0) {
-        intersectionPoint.copy(intersects[0].point);
-        isIntersecting = true;
-      } else {
-        isIntersecting = false;
-      }
-    };
-
-    const onPointerLeave = () => {
-      isIntersecting = false;
-    };
-
-    window.addEventListener("pointermove", onPointerMove, { passive: true });
-    document.addEventListener("mouseleave", onPointerLeave);
-    window.addEventListener("pointerleave", onPointerLeave);
-
-    // Resize Handler
-    const resize = () => {
-      if (!container || !canvas) return;
-      width = container.clientWidth;
-      height = container.clientHeight;
 
       renderer.setSize(width, height);
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
+      renderer.setPixelRatio(pixelRatio);
+      renderer.setClearColor(0x000000, 0);
 
-      particleScale = (width / 2000) * particlesScale;
-      renderMaterial.uniforms.uRez.value.set(width, height);
-      renderMaterial.uniforms.uParticleScale.value = particleScale;
-      renderMaterial.uniforms.uPixelRatio.value = pixelRatio;
-    };
+      // Camera & Raycast Plane
+      const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 1000);
+      camera.position.z = 3.1;
 
-    const ro = new ResizeObserver(() => resize());
-    ro.observe(container);
+      const mainScene = new THREE.Scene();
+      const raycastPlane = new THREE.Mesh(
+        new THREE.PlaneGeometry(12.5, 12.5),
+        new THREE.MeshBasicMaterial({ visible: false, side: THREE.DoubleSide })
+      );
+      mainScene.add(raycastPlane);
 
-    // Visibility Observer & Timing
-    const startTime = performance.now();
-    let lastTime = 0;
-    const getElapsed = () => (performance.now() - startTime) / 1000;
-
-    let isVisible = true;
-    let isTabActive = !document.hidden;
-    let rafId: number = 0;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        isVisible = entry.isIntersecting;
-        if (isVisible && !rafId) {
-          lastTime = getElapsed();
-          loop();
-        }
-      },
-      { threshold: 0.01 }
-    );
-    observer.observe(container);
-
-    const onVisibilityChange = () => {
-      isTabActive = !document.hidden;
-      if (isTabActive && isVisible && !rafId) {
-        lastTime = getElapsed();
-        loop();
-      }
-    };
-    document.addEventListener("visibilitychange", onVisibilityChange);
-
-    // Warm up the simulation buffer so the ring is fully formed immediately
-    for (let i = 0; i < 6; i++) {
-      const warmTime = i * 0.05;
-      simMaterial.uniforms.uPosition.value = i === 0 ? posTex : rt1.texture;
-      simMaterial.uniforms.uTime.value = warmTime;
-      simMaterial.uniforms.uDeltaTime.value = 0.05;
-      simMaterial.uniforms.uRingRadius.value = 0.175;
-      simMaterial.uniforms.uRingPos.value = ringPos;
-      simMaterial.uniforms.uRingWidth.value = ringWidth;
-      simMaterial.uniforms.uRingWidth2.value = ringWidth2;
-      simMaterial.uniforms.uRingDisplacement.value = ringDisplacement;
-
-      renderer.setRenderTarget(rt2);
-      renderer.render(simScene, simCamera);
-      renderer.setRenderTarget(null);
-
-      const temp = rt1;
-      rt1 = rt2;
-      rt2 = temp;
-    }
-
-    // 7. Render Loop
-    const loop = () => {
-      if (!isVisible || !isTabActive) {
-        rafId = 0;
-        return;
+      // 3. Create Position DataTexture & Ping-Pong RenderTargets (64x64 = 4096 points)
+      const SIZE = 64;
+      const texData = new Float32Array(SIZE * SIZE * 4);
+      for (let t = 0; t < count; t++) {
+        const n = t * 4;
+        texData[n + 0] = (rawPoints[t][0] - 250) * (1 / 250);
+        texData[n + 1] = (rawPoints[t][1] - 250) * (1 / 250);
+        texData[n + 2] = 0;
+        texData[n + 3] = 0;
       }
 
-      const time = getElapsed();
-      const dt = Math.min(0.05, time - lastTime);
-      lastTime = time;
+      const posTex = new THREE.DataTexture(texData, SIZE, SIZE, THREE.RGBAFormat, THREE.FloatType);
+      posTex.needsUpdate = true;
 
-      // Wandering Noise Drift
-      const n = (noise.getVal(time * 0.66 + 94.234) - 0.5) * 2;
-      const r = (noise.getVal(time * 0.75 + 21.028) - 0.5) * 2;
+      const rtOptions = {
+        wrapS: THREE.ClampToEdgeWrapping,
+        wrapT: THREE.ClampToEdgeWrapping,
+        minFilter: THREE.NearestFilter,
+        magFilter: THREE.NearestFilter,
+        format: THREE.RGBAFormat,
+        type: renderer.capabilities.isWebGL2 ? THREE.FloatType : THREE.HalfFloatType,
+        depthBuffer: false,
+        stencilBuffer: false,
+      };
 
-      if (isIntersecting) {
-        // Active mouse attraction: ring center shifts smoothly towards cursor
-        cursorPos.set(intersectionPoint.x * 0.175 + n * 0.05, intersectionPoint.y * 0.175 + r * 0.05);
-        ringPos.set(
-          ringPos.x + (cursorPos.x - ringPos.x) * 0.035,
-          ringPos.y + (cursorPos.y - ringPos.y) * 0.035
-        );
-      } else {
-        // Idle resting state: gentle wandering centered around zero
-        cursorPos.set(n * 0.08, r * 0.05);
-        ringPos.set(
-          ringPos.x + (cursorPos.x - ringPos.x) * 0.015,
-          ringPos.y + (cursorPos.y - ringPos.y) * 0.015
-        );
-      }
+      let rt1 = new THREE.WebGLRenderTarget(SIZE, SIZE, rtOptions);
+      let rt2 = new THREE.WebGLRenderTarget(SIZE, SIZE, rtOptions);
 
-      // Step A: GPU Simulation Pass
-      simMaterial.uniforms.uPosition.value = rt1.texture;
-      simMaterial.uniforms.uTime.value = time;
-      simMaterial.uniforms.uDeltaTime.value = dt;
-      simMaterial.uniforms.uRingRadius.value =
-        0.175 + Math.sin(time * 1.0) * 0.03 + Math.cos(time * 3.0) * 0.02;
-      simMaterial.uniforms.uRingPos.value = ringPos;
-      simMaterial.uniforms.uRingWidth.value = ringWidth;
-      simMaterial.uniforms.uRingWidth2.value = ringWidth2;
-      simMaterial.uniforms.uRingDisplacement.value = ringDisplacement;
-
-      renderer.setRenderTarget(rt2);
-      renderer.render(simScene, simCamera);
-      renderer.setRenderTarget(null);
-
-      // Step B: Final Particle Render Pass
-      renderMaterial.uniforms.uPosition.value = rt2.texture;
-      renderMaterial.uniforms.uTime.value = time;
-      renderMaterial.uniforms.uRingPos.value = ringPos;
-      renderMaterial.uniforms.uParticleScale.value = particleScale;
-      renderMaterial.uniforms.uPixelRatio.value = pixelRatio;
-
-      renderer.autoClear = false;
+      // Clear RTs
+      renderer.setRenderTarget(rt1);
       renderer.clear();
-      renderer.render(mainScene, camera);
+      renderer.setRenderTarget(rt2);
+      renderer.clear();
+      renderer.setRenderTarget(null);
 
-      // Ping-Pong Swap
-      const temp = rt1;
-      rt1 = rt2;
-      rt2 = temp;
+      // 4. Simulation Quad & Material
+      const simScene = new THREE.Scene();
+      const simCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+      const simMaterial = new THREE.ShaderMaterial({
+        uniforms: {
+          uPosition: { value: posTex },
+          uPosRefs: { value: posTex },
+          uRingPos: { value: new THREE.Vector2(0, 0) },
+          uRingRadius: { value: 0.175 },
+          uDeltaTime: { value: 0 },
+          uRingWidth: { value: ringWidth },
+          uRingWidth2: { value: ringWidth2 },
+          uRingDisplacement: { value: ringDisplacement },
+          uTime: { value: 0 },
+        },
+        vertexShader: SIM_VERTEX_SHADER,
+        fragmentShader: SIM_FRAGMENT_SHADER,
+      });
+      const simQuad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), simMaterial);
+      simScene.add(simQuad);
 
-      rafId = requestAnimationFrame(loop);
+      // 5. Points Mesh & Render Material
+      const geom = new THREE.BufferGeometry();
+      const uvs = new Float32Array(count * 2);
+      const positions = new Float32Array(count * 3);
+      const seeds = new Float32Array(count * 4);
+
+      for (let e = 0; e < count; e++) {
+        const col = e % SIZE;
+        const row = Math.floor(e / SIZE);
+        uvs[e * 2] = col / SIZE;
+        uvs[e * 2 + 1] = row / SIZE;
+
+        seeds[e * 4] = Math.random();
+        seeds[e * 4 + 1] = Math.random();
+        seeds[e * 4 + 2] = Math.random();
+        seeds[e * 4 + 3] = Math.random();
+      }
+
+      geom.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+      geom.setAttribute("uv", new THREE.BufferAttribute(uvs, 2));
+      geom.setAttribute("seeds", new THREE.BufferAttribute(seeds, 4));
+
+      let particleScale = (width / 2000) * particlesScale * 1.35;
+
+      const renderMaterial = new THREE.ShaderMaterial({
+        uniforms: {
+          uPosition: { value: posTex },
+          uTime: { value: 0 },
+          uColor1: { value: new THREE.Color("#2c64ed") },
+          uColor2: { value: new THREE.Color("#f84242") },
+          uColor3: { value: new THREE.Color("#ffcf03") },
+          uAlpha: { value: opacity },
+          uRingPos: { value: new THREE.Vector2(0, 0) },
+          uRez: { value: new THREE.Vector2(width, height) },
+          uParticleScale: { value: particleScale },
+          uPixelRatio: { value: pixelRatio },
+          uColorScheme: { value: 1 },
+        },
+        vertexShader: RENDER_VERTEX_SHADER,
+        fragmentShader: RENDER_FRAGMENT_SHADER,
+        transparent: true,
+        depthTest: false,
+        depthWrite: false,
+      });
+
+      const pointsMesh = new THREE.Points(geom, renderMaterial);
+      pointsMesh.position.set(0, 0, 0);
+      pointsMesh.scale.set(5, 5, 5);
+      mainScene.add(pointsMesh);
+
+      // 6. Interaction State & Noise
+      const noise = new Noise1D();
+      const ringPos = new THREE.Vector2(0, 0);
+      const cursorPos = new THREE.Vector2(0, 0);
+      const mouse = new THREE.Vector2();
+      const intersectionPoint = new THREE.Vector3();
+      const raycaster = new THREE.Raycaster();
+      let isIntersecting = false;
+
+      const onPointerMove = (e: PointerEvent) => {
+        const rect = canvas.getBoundingClientRect();
+        const px = e.clientX - rect.left;
+        const py = e.clientY - rect.top;
+
+        if (px < -100 || px > rect.width + 100 || py < -100 || py > rect.height + 100) {
+          isIntersecting = false;
+          return;
+        }
+
+        mouse.x = (px / rect.width) * 2 - 1;
+        mouse.y = -(py / rect.height) * 2 + 1;
+
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObject(raycastPlane);
+        if (intersects.length > 0) {
+          intersectionPoint.copy(intersects[0].point);
+          isIntersecting = true;
+        } else {
+          isIntersecting = false;
+        }
+      };
+
+      const onPointerLeave = () => {
+        isIntersecting = false;
+      };
+
+      window.addEventListener("pointermove", onPointerMove, { passive: true });
+      document.addEventListener("mouseleave", onPointerLeave);
+      window.addEventListener("pointerleave", onPointerLeave);
+
+      // Resize Handler
+      const resize = () => {
+        if (!container || !canvas) return;
+        width = container.clientWidth;
+        height = container.clientHeight;
+
+        renderer.setSize(width, height);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+
+        particleScale = (width / 2000) * particlesScale * 1.35;
+        renderMaterial.uniforms.uRez.value.set(width, height);
+        renderMaterial.uniforms.uParticleScale.value = particleScale;
+        renderMaterial.uniforms.uPixelRatio.value = pixelRatio;
+      };
+
+      const ro = new ResizeObserver(() => resize());
+      ro.observe(container);
+
+      // Visibility Observer & Timing
+      const startTime = performance.now();
+      let lastTime = 0;
+      const getElapsed = () => (performance.now() - startTime) / 1000;
+
+      let isVisible = false;
+      let isTabActive = !document.hidden;
+      let rafId: number = 0;
+
+      // 7. Render Loop
+      const loop = () => {
+        if (!isVisible || !isTabActive) {
+          rafId = 0;
+          return;
+        }
+
+        const time = getElapsed();
+        const dt = Math.min(0.05, time - lastTime);
+        lastTime = time;
+
+        // Wandering Noise Drift
+        const n = (noise.getVal(time * 0.66 + 94.234) - 0.5) * 2;
+        const r = (noise.getVal(time * 0.75 + 21.028) - 0.5) * 2;
+
+        if (isIntersecting) {
+          cursorPos.set(intersectionPoint.x * 0.175 + n * 0.05, intersectionPoint.y * 0.175 + r * 0.05);
+          ringPos.set(
+            ringPos.x + (cursorPos.x - ringPos.x) * 0.035,
+            ringPos.y + (cursorPos.y - ringPos.y) * 0.035
+          );
+        } else {
+          cursorPos.set(n * 0.08, r * 0.05);
+          ringPos.set(
+            ringPos.x + (cursorPos.x - ringPos.x) * 0.015,
+            ringPos.y + (cursorPos.y - ringPos.y) * 0.015
+          );
+        }
+
+        // Step A: GPU Simulation Pass
+        simMaterial.uniforms.uPosition.value = rt1.texture;
+        simMaterial.uniforms.uTime.value = time;
+        simMaterial.uniforms.uDeltaTime.value = dt;
+        simMaterial.uniforms.uRingRadius.value =
+          0.175 + Math.sin(time * 1.0) * 0.03 + Math.cos(time * 3.0) * 0.02;
+        simMaterial.uniforms.uRingPos.value = ringPos;
+        simMaterial.uniforms.uRingWidth.value = ringWidth;
+        simMaterial.uniforms.uRingWidth2.value = ringWidth2;
+        simMaterial.uniforms.uRingDisplacement.value = ringDisplacement;
+
+        renderer.setRenderTarget(rt2);
+        renderer.render(simScene, simCamera);
+        renderer.setRenderTarget(null);
+
+        // Step B: Final Particle Render Pass
+        renderMaterial.uniforms.uPosition.value = rt2.texture;
+        renderMaterial.uniforms.uTime.value = time;
+        renderMaterial.uniforms.uRingPos.value = ringPos;
+        renderMaterial.uniforms.uParticleScale.value = particleScale;
+        renderMaterial.uniforms.uPixelRatio.value = pixelRatio;
+
+        renderer.autoClear = false;
+        renderer.clear();
+        renderer.render(mainScene, camera);
+
+        // Ping-Pong Swap
+        const temp = rt1;
+        rt1 = rt2;
+        rt2 = temp;
+
+        rafId = requestAnimationFrame(loop);
+      };
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          isVisible = entry.isIntersecting;
+          if (isVisible && !rafId && isTabActive) {
+            lastTime = getElapsed();
+            rafId = requestAnimationFrame(loop);
+          } else if (!isVisible && rafId) {
+            cancelAnimationFrame(rafId);
+            rafId = 0;
+          }
+        },
+        { threshold: 0.01 }
+      );
+      observer.observe(container);
+
+      const onVisibilityChange = () => {
+        isTabActive = !document.hidden;
+        if (isTabActive && isVisible && !rafId) {
+          lastTime = getElapsed();
+          rafId = requestAnimationFrame(loop);
+        } else if (!isTabActive && rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = 0;
+        }
+      };
+      document.addEventListener("visibilitychange", onVisibilityChange);
+
+      // Warm up simulation buffer
+      for (let i = 0; i < 4; i++) {
+        const warmTime = i * 0.05;
+        simMaterial.uniforms.uPosition.value = i === 0 ? posTex : rt1.texture;
+        simMaterial.uniforms.uTime.value = warmTime;
+        simMaterial.uniforms.uDeltaTime.value = 0.05;
+        simMaterial.uniforms.uRingRadius.value = 0.175;
+        simMaterial.uniforms.uRingPos.value = ringPos;
+        simMaterial.uniforms.uRingWidth.value = ringWidth;
+        simMaterial.uniforms.uRingWidth2.value = ringWidth2;
+        simMaterial.uniforms.uRingDisplacement.value = ringDisplacement;
+
+        renderer.setRenderTarget(rt2);
+        renderer.render(simScene, simCamera);
+        renderer.setRenderTarget(null);
+
+        const temp = rt1;
+        rt1 = rt2;
+        rt2 = temp;
+      }
+
+      cleanupFn = () => {
+        if (rafId) cancelAnimationFrame(rafId);
+        window.removeEventListener("pointermove", onPointerMove);
+        document.removeEventListener("mouseleave", onPointerLeave);
+        window.removeEventListener("pointerleave", onPointerLeave);
+        observer.disconnect();
+        document.removeEventListener("visibilitychange", onVisibilityChange);
+        ro.disconnect();
+
+        geom.dispose();
+        renderMaterial.dispose();
+        simMaterial.dispose();
+        posTex.dispose();
+        rt1.dispose();
+        rt2.dispose();
+        raycastPlane.geometry.dispose();
+        (raycastPlane.material as THREE.Material).dispose();
+        renderer.dispose();
+      };
     };
 
-    rafId = requestAnimationFrame(loop);
+    const timerId = typeof window !== "undefined" && "requestIdleCallback" in window
+      ? (window as unknown as { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback(initThree, { timeout: 1200 })
+      : (setTimeout(initThree, 180) as unknown as number);
 
     return () => {
-      if (rafId) cancelAnimationFrame(rafId);
-      window.removeEventListener("pointermove", onPointerMove);
-      document.removeEventListener("mouseleave", onPointerLeave);
-      window.removeEventListener("pointerleave", onPointerLeave);
-      observer.disconnect();
-      document.removeEventListener("visibilitychange", onVisibilityChange);
-      ro.disconnect();
-
-      geom.dispose();
-      renderMaterial.dispose();
-      simMaterial.dispose();
-      posTex.dispose();
-      rt1.dispose();
-      rt2.dispose();
-      raycastPlane.geometry.dispose();
-      (raycastPlane.material as THREE.Material).dispose();
-      renderer.dispose();
+      isCancelled = true;
+      if (typeof window !== "undefined" && "cancelIdleCallback" in window) {
+        (window as unknown as { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(timerId);
+      } else {
+        clearTimeout(timerId);
+      }
+      if (cleanupFn) cleanupFn();
     };
-  }, [opacity]);
+  }, [isMobile, opacity]);
+
+  if (isMobile !== false) {
+    return <MobileAntigravityFallback className={className} opacity={opacity} />;
+  }
 
   return (
     <div ref={containerRef} className={`w-full h-full relative pointer-events-none select-none ${className}`}>
@@ -782,3 +847,4 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
     </div>
   );
 }
+

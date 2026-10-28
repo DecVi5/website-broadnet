@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import {
   ArrowRight,
   Sparkles,
@@ -13,7 +13,22 @@ import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 import { COMPANY_NUMBERS } from "@/data/services";
 import { useLanguage } from "@/lib/i18n";
 import { trackEvent } from "@/lib/analytics";
-import Antigravity from "@/components/Antigravity";
+
+const Antigravity = dynamic(() => import("@/components/Antigravity"), {
+  ssr: false,
+  loading: () => (
+    <div
+      className="absolute inset-0 pointer-events-none overflow-hidden select-none"
+      aria-hidden="true"
+    >
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full border border-[#2c64ed]/20" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-[#f84242]/15" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-[#ffcf03]/15" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-radial from-[#2c64ed]/[0.08] via-[#f84242]/[0.04] to-transparent blur-2xl" />
+    </div>
+  ),
+});
+
 
 function WhatsAppIcon({ size = 18, className = "" }: { size?: number; className?: string }) {
   return (
@@ -121,12 +136,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 w-full flex flex-col items-center text-center">
         {/* Live operational badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-900 mb-6 shadow-xs"
-        >
+        <div className="hero-fade-in inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-900 mb-6 shadow-xs">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
@@ -134,7 +144,7 @@ export default function HeroSection() {
           <span className="text-xs font-bold uppercase tracking-wider font-display">
             Direct Technician Dispatch · Avadi & Chennai
           </span>
-        </motion.div>
+        </div>
 
         {/* Primary Clear H1 Headline */}
         <h1
@@ -156,12 +166,7 @@ export default function HeroSection() {
         </p>
 
         {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mb-6 w-full max-w-xs sm:max-w-none mx-auto"
-        >
+        <div className="hero-fade-in flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mb-6 w-full max-w-xs sm:max-w-none mx-auto">
           {/* Primary CTA */}
           <button
             type="button"
@@ -187,29 +192,19 @@ export default function HeroSection() {
             <WhatsAppIcon size={18} className="text-[#25D366]" />
             <span>{t("hero.whatsappCta")} · 86818 88111</span>
           </a>
-        </motion.div>
+        </div>
 
         {/* Reassurance line */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="inline-flex items-center gap-2 text-xs text-[#16143E]/75 font-medium mb-8"
-        >
+        <div className="hero-fade-in inline-flex items-center gap-2 text-xs text-[#16143E]/75 font-medium mb-8">
           <Sparkles size={14} className="text-[#EF1313] flex-shrink-0" />
           <span>
             <strong>Professional On-Site Inspection</strong> across Avadi & Chennai · Transparent Quotations
           </span>
-        </motion.div>
+        </div>
       </div>
 
       {/* Rotating Brand Certifications & Authorizations Moving Track */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.22 }}
-        className="w-full mb-12 relative overflow-hidden select-none z-10"
-      >
+      <div className="hero-fade-in w-full mb-12 relative overflow-hidden select-none z-10">
         <div className="flex items-center justify-center gap-3 mb-4 max-w-5xl mx-auto px-4">
           <span className="w-12 h-px bg-gradient-to-r from-transparent to-[#4E0DBA]/30" />
           <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#4E0DBA] flex items-center gap-1.5">
@@ -265,17 +260,12 @@ export default function HeroSection() {
             ))}
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Main Container for Metrics */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 w-full flex flex-col items-center text-center">
         {/* Dynamic Metric Numbers Strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4 w-full"
-        >
+        <div className="hero-fade-in grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4 w-full">
           {COMPANY_NUMBERS.map((m, i) => (
             <div
               key={m.label}
@@ -306,8 +296,9 @@ export default function HeroSection() {
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
+
 
       {/* Subtle Scroll Indicator */}
       <div className="mt-10 flex flex-col items-center gap-1 text-[#16143E]/40 z-20">
