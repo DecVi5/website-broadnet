@@ -41,6 +41,22 @@ export const metadata: Metadata = {
     description:
       "Avadi's technology and security systems provider. CCTV, biometrics, enterprise Wi-Fi, and network infrastructure.",
     url: "https://www.broadnet.in/about",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "About Broadnet Internet Services Avadi",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Broadnet | Avadi's Security & Fiber Integrator",
+    description:
+      "12+ years in Avadi with 10+ certified engineers and over 100 km of optical fiber infrastructure.",
+    images: ["/og-image.png"],
   },
 };
 

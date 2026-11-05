@@ -89,71 +89,24 @@ export default function PartnerLogo({
     );
   }
 
-  // 2. CP PLUS
+  // 2. CP PLUS (Official Modern Crosshair Emblem & Wordmark from cppluslogo.png)
   if (normalized.includes("cp plus") || normalized.includes("cpplus")) {
     return (
-      <svg
-        viewBox="0 0 165 36"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className={className}
-        aria-label="CP PLUS Official Partner Logo"
-      >
-        <g>
-          {/* Red Emblem Badge */}
-          <rect
-            x="0"
-            y="2"
-            width="52"
-            height="26"
-            rx="5"
-            fill={variant === "white" ? "#DC2626" : "#D71920"}
-          />
-          {/* CP in Badge */}
-          <text
-            x="6"
-            y="21"
-            fill="#FFFFFF"
-            fontFamily="system-ui, -apple-system, sans-serif"
-            fontWeight="900"
-            fontSize="18"
-            letterSpacing="-0.5px"
-          >
-            CP
-          </text>
-          {/* Plus Symbol in Badge */}
-          <path
-            d="M38 10 H44 V14 H48 V18 H44 V22 H40 V18 H36 V14 H40 V10 Z"
-            fill="#FFFFFF"
-          />
-
-          {/* PLUS Wordmark */}
-          <text
-            x="60"
-            y="22"
-            fill={variant === "white" ? "#FFFFFF" : variant === "monochrome" ? "currentColor" : "#1A1A1A"}
-            fontFamily="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-            fontWeight="900"
-            fontSize="22"
-            letterSpacing="1px"
-          >
-            PLUS
-          </text>
-
-          {/* Tagline */}
-          <text
-            x="60"
-            y="31"
-            fill={variant === "white" ? "#FCA5A5" : "#D71920"}
-            fontFamily="system-ui, -apple-system, sans-serif"
-            fontWeight="800"
-            fontSize="6.5"
-            letterSpacing="1.8px"
-          >
-            SECURITY SOLUTIONS
-          </text>
-        </g>
-      </svg>
+      <img
+        src="/assets/partners/cp-plus.png"
+        alt="CP PLUS Official Partner Logo"
+        width={540}
+        height={85}
+        className={`${className} object-contain ${
+          variant === "white"
+            ? "brightness-0 invert"
+            : variant === "monochrome"
+            ? "grayscale contrast-125"
+            : ""
+        }`}
+        loading="lazy"
+        decoding="async"
+      />
     );
   }
 

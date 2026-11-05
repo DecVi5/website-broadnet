@@ -43,7 +43,7 @@ export const SERVICES_LIST: ServiceDetail[] = [
     isLeadDivision: true,
     brands: ["Hikvision", "CP PLUS", "Dahua", "HiFocus", "Prama"],
     certifications: ["Hikvision HCSA Certified", "CP PLUS Certified Surveillance Engineers"],
-    startingPrice: "From ₹1,399 / Cam",
+    startingPrice: "On Enquiry",
     features: [
       "IP & HD Bullet, Dome, and PTZ 360° Cameras (1080p to 4K UHD)",
       "Built-in Audio & Smart Dual-Light (IR + Warm White LED)",
@@ -66,7 +66,7 @@ export const SERVICES_LIST: ServiceDetail[] = [
     badge: "eSSL Authorised Partner",
     brands: ["eSSL", "Hikvision", "Realtime"],
     certifications: ["eSSL Authorised Enterprise Partner"],
-    startingPrice: "From ₹4,500",
+    startingPrice: "On Enquiry",
     features: [
       "Contactless 0.2s High-Speed Facial Recognition Terminals",
       "Scratch-Resistant Optical Fingerprint Sensors",
@@ -89,7 +89,7 @@ export const SERVICES_LIST: ServiceDetail[] = [
     badge: "Smart Home Security",
     brands: ["Hikvision", "CP PLUS", "Panasonic", "CCL"],
     certifications: ["Certified Video Intercom Specialists"],
-    startingPrice: "From ₹3,999",
+    startingPrice: "On Enquiry",
     features: [
       "7-Inch & 10-Inch Crystal Color Indoor Touchscreen Panels",
       "Pinhole Weatherproof Night Vision Outdoor Bell Unit",
@@ -112,7 +112,7 @@ export const SERVICES_LIST: ServiceDetail[] = [
     badge: "Grandstream Certified",
     brands: ["Grandstream", "Ruijie Reyee", "Aruba", "Ubiquiti"],
     certifications: ["Grandstream Certified Network Specialists"],
-    startingPrice: "From ₹3,200 / AP",
+    startingPrice: "On Enquiry",
     features: [
       "Wi-Fi 6 (802.11ax) Dual-Band & Tri-Band Gigabit Speeds",
       "Zero-Handoff Seamless Roaming (No Call Drops Between Rooms)",
@@ -135,7 +135,7 @@ export const SERVICES_LIST: ServiceDetail[] = [
     badge: "Tactine Firewall Dealer",
     brands: ["Tactine", "D-Link", "Schneider Digilink", "Cisco", "TP-Link Omada"],
     certifications: ["Tactine Firewall Dealer", "Certified Optical Fiber Engineers"],
-    startingPrice: "Custom Project Quote",
+    startingPrice: "On Enquiry",
     features: [
       "Structured Cat6/Cat6A High-Speed Copper Cabling",
       "Server Rack Setup, Patch Panel Termination & Cable Dressing",
@@ -158,7 +158,7 @@ export const SERVICES_LIST: ServiceDetail[] = [
     badge: "Hikvision Certified",
     brands: ["Hikvision AX PRO", "CP PLUS", "Securico"],
     certifications: ["Hikvision Certified Security Associate (HCSA)"],
-    startingPrice: "From ₹6,999",
+    startingPrice: "On Enquiry",
     features: [
       "Invisible Infrared Photoelectric Compound Wall Perimeter Beams",
       "Wireless PIR Motion Detectors with Pet-Immunity (No False Alarms)",
@@ -181,7 +181,7 @@ export const SERVICES_LIST: ServiceDetail[] = [
     badge: "eSSL & Hikvision",
     brands: ["eSSL", "Hikvision", "ZKTeco"],
     certifications: ["Certified Physical Access Integrators"],
-    startingPrice: "From ₹5,499",
+    startingPrice: "On Enquiry",
     features: [
       "600 lbs Heavy-Duty Electromagnetic (EM) Locks & Drop Bolts",
       "Touchless RFID Card, Biometric Fingerprint & PIN Entry Readers",
@@ -204,7 +204,7 @@ export const SERVICES_LIST: ServiceDetail[] = [
     badge: "Commercial Perimeter",
     brands: ["eSSL", "Hikvision", "CP PLUS"],
     certifications: ["Heavy-Duty Entrance Automation Integrators"],
-    startingPrice: "Custom Site Quote",
+    startingPrice: "On Enquiry",
     features: [
       "High-Speed Automatic Boom Barriers (3m to 6m Telescopic Boom)",
       "Long-Range RFID FASTag / Windshield Reader for Residents & Staff",

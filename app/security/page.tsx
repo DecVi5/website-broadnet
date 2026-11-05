@@ -50,6 +50,22 @@ export const metadata: Metadata = {
     description:
       "Certified Hikvision & CP PLUS surveillance, smart video door phones, and biometric access control with 2-hour technician dispatch in Avadi.",
     url: "https://www.broadnet.in/security",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Broadnet Electronic Security and CCTV Systems in Avadi",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Electronic Security & CCTV Surveillance | Broadnet Avadi",
+    description:
+      "Official CP PLUS & Hikvision certified CCTV, biometric access, and perimeter alarms in Avadi & Chennai.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -158,7 +174,7 @@ const DOMAINS = [
     title: "HD & 4K CCTV Surveillance Systems",
     desc: "Complete IP & HD camera setups from CP PLUS and Hikvision with ColorVu night vision, NVR recording loops, and zero-latency smartphone remote monitoring.",
     badge: "CP PLUS CSE • Hikvision HCSA",
-    startingPrice: "From ₹1,399 / Cam",
+    startingPrice: "On Enquiry",
     ceilingNote: "No Upper Ceiling (16, 32, 64+ Channel Systems)",
     features: [
       "1080p to 4K Ultra-HD resolution with color night vision",
@@ -175,7 +191,7 @@ const DOMAINS = [
     title: "Smart Video Door Phones (VDP)",
     desc: "HD touchscreen door intercoms allowing you to see, speak with, and remotely unlock front gates for courier agents or visitors without opening the door.",
     badge: "Home & Villa Security",
-    startingPrice: "From ₹3,999",
+    startingPrice: "On Enquiry",
     ceilingNote: "Scalable for Multi-Apartment Complexes",
     features: [
       "7-Inch capacitive touchscreen indoor display panel",
@@ -192,7 +208,7 @@ const DOMAINS = [
     title: "eSSL Biometric Access Control & Attendance",
     desc: "Contactless facial recognition and optical fingerprint door locks with automated cloud attendance software for offices, clinics, schools, and factories.",
     badge: "eSSL Authorized Partner",
-    startingPrice: "From ₹4,500",
+    startingPrice: "On Enquiry",
     ceilingNote: "Enterprise Multi-Door & Turnstile Deployments",
     features: [
       "Sub-second (0.2s) contactless facial recognition & fingerprint",
@@ -209,7 +225,7 @@ const DOMAINS = [
     title: "Perimeter Alarms & Intrusion Detection",
     desc: "Active boundary defense with compound wall laser trip beams, passive infrared sensors, loud 110dB sirens, and automated GSM phone calls upon breach.",
     badge: "Active Defense",
-    startingPrice: "From ₹6,999",
+    startingPrice: "On Enquiry",
     ceilingNote: "Multi-Zone Perimeter Laser Defense",
     features: [
       "Dual photo-electric laser trip beams for boundary walls",
@@ -226,7 +242,7 @@ const DOMAINS = [
     title: "Multi-Station Intercom & EPABX Systems",
     desc: "Dedicated internal communication infrastructure connecting security guard booths, individual flats, and management offices without recurring call costs.",
     badge: "Apartments & Societies",
-    startingPrice: "Custom Society Quote",
+    startingPrice: "On Enquiry",
     ceilingNote: "8 to 500+ Flats Network",
     features: [
       "Connects 8 to 500+ flats with dedicated security intercom lines",
@@ -243,7 +259,7 @@ const DOMAINS = [
     title: "RFID Boom Barriers & Flap Turnstiles",
     desc: "Automated vehicular access with RFID / ANPR license plate integration and pedestrian flap barriers for gated communities, factories, and corporate tech parks.",
     badge: "Authorized Dealer",
-    startingPrice: "Custom Commercial Quote",
+    startingPrice: "On Enquiry",
     ceilingNote: "High-Frequency Automated Barriers",
     features: [
       "Heavy-duty motorized barrier arms with safety edge sensors",
@@ -251,7 +267,7 @@ const DOMAINS = [
       "Pedestrian optical flap barriers with access card integration",
       "Manual clutch override in case of complete power failure",
     ],
-    pageUrl: "/contact?service=Boom+%26+Flap+Barriers",
+    pageUrl: "/services/entrance-security",
     ctaText: "Request Barrier Consultation",
     color: "#EF1313",
   },
@@ -275,7 +291,7 @@ const TRUST_PILLARS = [
   },
   {
     icon: Building,
-    title: "From ₹1,399 to Enterprise Scale",
+    title: "Tailored Packages to Enterprise Scale",
     desc: "Whether you need a single doorbell camera for your villa or a 128-camera industrial mesh for a factory, we deliver without upper ceiling limits.",
   },
 ];
@@ -434,7 +450,7 @@ export default function SecurityPage() {
                             <p className="text-xs text-[#16143E]/55">Certified In-House Technicians</p>
                           </div>
                           <span className="text-sm font-bold text-[#EF1313] bg-red-50 border border-red-200/90 px-3 py-1.5 rounded-lg shadow-2xs">
-                            Starts ₹1,399
+                            On Enquiry
                           </span>
                         </div>
                       </div>

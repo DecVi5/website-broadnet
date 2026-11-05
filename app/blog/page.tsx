@@ -22,6 +22,31 @@ export const metadata: Metadata = {
     "Best CCTV dealer Avadi",
     "Hikvision ColorVu camera review",
   ],
+  alternates: {
+    canonical: "https://www.broadnet.in/blog",
+  },
+  openGraph: {
+    title: "Security & Networking Knowledge Hub | Broadnet Avadi",
+    description:
+      "Expert security guides, CCTV installation tips in Avadi, biometric attendance rules, and network infrastructure advice from certified engineers.",
+    url: "https://www.broadnet.in/blog",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Broadnet Knowledge Hub and Security Guides",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Broadnet Security & Networking Blog",
+    description:
+      "Expert security guides, CCTV installation tips in Avadi, and network infrastructure advice.",
+    images: ["/og-image.png"],
+  },
 };
 
 const POSTS = [

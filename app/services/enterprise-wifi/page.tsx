@@ -22,6 +22,31 @@ export const metadata: Metadata = {
     "Hotel Wi-Fi captive portal Chennai",
     "Wi-Fi 6 access points Avadi",
   ],
+  alternates: {
+    canonical: "https://www.broadnet.in/services/enterprise-wifi",
+  },
+  openGraph: {
+    title: "Enterprise Wi-Fi & Grandstream Access Points | Broadnet",
+    description:
+      "Enterprise Wi-Fi 6 deployment, seamless multi-floor roaming mesh, and guest captive portals across Chennai & Avadi.",
+    url: "https://www.broadnet.in/services/enterprise-wifi",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Broadnet Enterprise Wi-Fi and Wireless Infrastructure",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Enterprise Wi-Fi & Networking | Broadnet Avadi",
+    description:
+      "Certified Grandstream enterprise Wi-Fi 6 networks and cloud management across Chennai & Avadi.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function EnterpriseWifiPage() {

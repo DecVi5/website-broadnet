@@ -39,6 +39,8 @@ const INTERNET_NETWORKING_SERVICES = [
   { id: "pay-bill", shortTitle: "Pay Internet Bill (3 Portals)", href: "/pay-bill" },
   { id: "enterprise-wifi", shortTitle: "Enterprise & Industrial Wi-Fi", href: "/services/enterprise-wifi" },
   { id: "networking", shortTitle: "Network Infrastructure & Firewalls", href: "/services/networking" },
+  { id: "service-areas", shortTitle: "Service Areas & Coverage", href: "/service-areas" },
+  { id: "cctv-landing", shortTitle: "CCTV System Configurator", href: "/cctv-landing" },
 ];
 
 function WhatsAppIcon({ size = 16, className = "" }: { size?: number; className?: string }) {
@@ -87,6 +89,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
     activePage === "About Us" ||
     activePage === "Industries";
   const isPayBill = pathname === "/pay-bill" || activePage === "Pay Bill";
+  const isContact = pathname === "/contact" || activePage === "Contact";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -375,6 +378,19 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                 style={{ fontFamily: "Syne, sans-serif" }}
               >
                 About Us
+              </Link>
+
+              {/* Contact Direct Link */}
+              <Link
+                href="/contact"
+                className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200 ${
+                  isContact
+                    ? "text-[#4E0DBA] bg-white shadow-xs"
+                    : "text-[#16143E]/75 hover:text-[#16143E] hover:bg-white/60"
+                }`}
+                style={{ fontFamily: "Syne, sans-serif" }}
+              >
+                Contact
               </Link>
             </nav>
 

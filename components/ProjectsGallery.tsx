@@ -62,7 +62,7 @@ export const REAL_PROJECTS: ProjectItem[] = [
     year: "2024",
     scope: "1.2 km Fusion-Spliced Optical Fiber + 8x Long-Range ColorVu Bullet Cameras + 2x Optical Zoom PTZ Units",
     outcome: "Crystal-clear night monitoring of 3-acre loading docks with zero cable attenuation across heavy machinery.",
-    hardware: ["30x PTZ Cameras", "ColorVu Bullets", "Optical Fiber Ring", "Outdoor Enclosures"],
+    hardware: ["30x Optical Zoom PTZ", "ColorVu Bullets", "Optical Fiber Ring", "Outdoor Enclosures"],
     imageSrc: "/assets/projects/proj-3.jpg",
   },
   {

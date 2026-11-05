@@ -31,7 +31,7 @@ import {
 export const metadata: Metadata = {
   title: "Perimeter Alarms & Intrusion Detection in Avadi, Chennai | Hikvision Certified",
   description:
-    "Active perimeter defense with laser trip sensors, boundary wall alarms, 110dB loud sirens, and GSM auto-dialer mobile alerts in Avadi. Complete kits from ₹6,999. Professional site assessment.",
+    "Active perimeter defense with laser trip sensors, boundary wall alarms, 110dB loud sirens, and GSM auto-dialer mobile alerts in Avadi. Complete kits on enquiry with professional site assessment.",
   keywords: [
     "intrusion alarm system Avadi",
     "perimeter beam sensor Chennai",
@@ -48,6 +48,22 @@ export const metadata: Metadata = {
     description:
       "Stop intrusions before breaches occur with laser boundary sensors, high-decibel deterrent sirens, and automated GSM phone alerts in Avadi.",
     url: "https://www.broadnet.in/security/intrusion-alarms",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Broadnet Perimeter Intrusion Alarms and Security Sensors",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Perimeter Alarms & Intrusion Detection | Broadnet Avadi",
+    description:
+      "Boundary wall laser trip sensors, 110dB sirens, and GSM auto-dialer alarms in Avadi & Chennai.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -154,7 +170,7 @@ const PACKAGES = [
   {
     name: "Entry Door / Shutter Siren",
     tagline: "Heavy-duty magnetic sensor for shop rolling shutters and villa main gates",
-    price: "₹2,999",
+    price: "On Enquiry",
     unit: "standalone alarm with siren",
     badge: "Basic Deterrence",
     popular: false,
@@ -171,7 +187,7 @@ const PACKAGES = [
   {
     name: "Wireless GSM Home Alarm Kit",
     tagline: "Comprehensive multi-sensor intrusion defense for independent homes",
-    price: "₹6,999",
+    price: "On Enquiry",
     unit: "complete wireless kit",
     badge: "Most Popular",
     popular: true,
@@ -189,7 +205,7 @@ const PACKAGES = [
   {
     name: "Compound Wall Laser Beam Kit",
     tagline: "Active boundary wall defense detecting intruders before they touch your house",
-    price: "₹14,999",
+    price: "On Enquiry",
     unit: "dual laser perimeter kit",
     badge: "Perimeter Defense",
     popular: false,
@@ -207,7 +223,7 @@ const PACKAGES = [
   {
     name: "Enterprise Multi-Zone Alarm Grid",
     tagline: "Custom-engineered for industrial factories, warehouses & luxury estates",
-    price: "Custom Quote",
+    price: "On Enquiry",
     unit: "No Upper Ceiling — Multi-Acre Scale",
     badge: "Industrial Scale",
     popular: false,

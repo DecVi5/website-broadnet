@@ -29,7 +29,7 @@ import {
 export const metadata: Metadata = {
   title: "CCTV Camera Installation in Avadi, Chennai | CP PLUS & Hikvision HD/4K Systems",
   description:
-    "Official CP PLUS & Hikvision certified CCTV camera installation in Avadi. Complete 4-camera kits from ₹8,499, enterprise IP solutions with no upper ceiling. 2-hour technician dispatch, professional site inspection.",
+    "Official CP PLUS & Hikvision certified CCTV camera installation in Avadi. Complete turnkey home & commercial camera packages with pricing on enquiry, 2-hour technician dispatch, and professional on-site inspection. Call 86818 88111.",
   keywords: [
     "CCTV installation Avadi",
     "Hikvision CCTV dealer Chennai",
@@ -47,6 +47,22 @@ export const metadata: Metadata = {
     description:
       "24/7 HD & 4K CCTV surveillance systems. Professional site survey, concealed conduit wiring, mobile live monitoring, and 2-hour local technician dispatch in Avadi.",
     url: "https://www.broadnet.in/security/cameras",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Broadnet CCTV Camera Installation in Avadi",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CCTV Camera Installation in Avadi | Broadnet",
+    description:
+      "Official CP PLUS & Hikvision certified CCTV camera installation in Avadi. Turnkey packages on enquiry with 2-hour dispatch.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -68,7 +84,7 @@ const WHAT_IS_IT_POINTS = [
   {
     icon: Cpu,
     title: "AI AcuSense Motion Analytics",
-    desc: "Smart onboard deep-learning algorithms classify human targets and vehicles, eliminating 95% of false alarms caused by rain, wind, or animals.",
+    desc: "Smart onboard deep-learning algorithms classify human targets and vehicles, reducing up to 95% of routine false alarms from rain, shadows, or animals based on manufacturer field benchmarks.",
   },
   {
     icon: Smartphone,
@@ -525,7 +541,7 @@ export default function CamerasPage() {
                 {
                   icon: Shield,
                   title: "Active Deterrence of Trespassing",
-                  desc: "Visible, professionally positioned CCTV bullet cameras deter over 85% of opportunistic property trespassing, vehicle tampering, and boundary breaches before they occur.",
+                  desc: "Visible, professionally positioned CCTV bullet cameras deter up to 85% of opportunistic property trespassing based on security industry surveys, vehicle tampering, and boundary breaches before they occur.",
                 },
                 {
                   icon: Smartphone,
@@ -707,7 +723,7 @@ export default function CamerasPage() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 mb-10">
               {[
-                { name: "Avadi", pincode: "600054", sla: "< 1-Hour SLA", tag: "HQ & Warehouse" },
+                { name: "Avadi", pincode: "600054", sla: "< 2-Hour SLA", tag: "HQ & Rapid Dispatch" },
                 { name: "Thirumullaivoyal", pincode: "600062", sla: "< 2-Hour SLA", tag: "CTH Road Corridor" },
                 { name: "Ambattur", pincode: "600053", sla: "< 2-Hour SLA", tag: "OT & Ind Estate" },
                 { name: "Pattabiram", pincode: "600072", sla: "< 2-Hour SLA", tag: "IAF & Modern City" },

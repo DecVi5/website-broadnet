@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.broadnet.in"),
   title: {
     default: "Broadnet Internet Services | Fiber Broadband & CCTV Security in Avadi, Chennai",
-    template: "%s | Broadnet Internet Services",
+    template: "%s | Broadnet",
   },
   description:
     "Broadnet delivers high-speed fiber internet from ₹499/mo, BSNL Bharat Fibre, and certified Hikvision & CP PLUS CCTV security systems with 2-hour technician dispatch across Avadi & Chennai.",
@@ -108,11 +108,11 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   robots: {
-    index: true,
-    follow: true,
+    index: process.env.NEXT_PUBLIC_DISABLE_INDEXING !== "true",
+    follow: process.env.NEXT_PUBLIC_DISABLE_INDEXING !== "true",
     googleBot: {
-      index: true,
-      follow: true,
+      index: process.env.NEXT_PUBLIC_DISABLE_INDEXING !== "true",
+      follow: process.env.NEXT_PUBLIC_DISABLE_INDEXING !== "true",
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,

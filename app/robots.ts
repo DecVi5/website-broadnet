@@ -3,11 +3,13 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
-  const isPreview =
+  const isStaging =
     process.env.VERCEL_ENV === "preview" ||
-    process.env.NEXT_PUBLIC_VERCEL_ENV === "preview";
+    process.env.NEXT_PUBLIC_VERCEL_ENV === "preview" ||
+    process.env.NEXT_PUBLIC_DISABLE_INDEXING === "true" ||
+    (process.env.VERCEL_URL && !process.env.VERCEL_URL.includes("broadnet.in"));
 
-  if (isPreview) {
+  if (isStaging) {
     return {
       rules: [
         {

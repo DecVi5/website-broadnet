@@ -35,7 +35,7 @@ const DICTIONARY: Record<Language, Record<string, string>> = {
     "hero.title1": "Engineered Surveillance.",
     "hero.title2": "Intelligent Security Systems.",
     "hero.desc":
-      "BroadNet has been connecting and securing homes, businesses, and communities across Avadi & Chennai since 2014 with certified technology infrastructure.",
+      "Since 2014, our in-house engineers have kept homes, apartments, and businesses across Avadi & Chennai safely connected with genuine Hikvision & CP PLUS systems.",
     "hero.primaryCta": "Get Free Quote",
     "hero.callCta": "Call 86818 88111",
     "hero.whatsappCta": "WhatsApp Tech Desk",

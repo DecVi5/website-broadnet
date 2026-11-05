@@ -88,7 +88,7 @@ export default function TopServicesSection() {
           </div>
 
           <Link
-            href="/services/entrance-security"
+            href="/security"
             className="inline-flex items-center gap-2 text-sm font-bold text-[#4E0DBA] hover:text-[#EF1313] transition-colors py-2 group"
           >
             <span>View All 9 Services & Solutions</span>

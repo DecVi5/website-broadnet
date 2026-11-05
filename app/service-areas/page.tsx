@@ -25,6 +25,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.broadnet.in/service-areas",
   },
+  openGraph: {
+    title: "Service Areas & Coverage Checker in Chennai & Avadi | Broadnet",
+    description:
+      "CCTV installation & security integration across all of Chennai, with 2-hour dispatch in Avadi, Pattabiram, Thirumullaivoyal, and Thiruverkadu.",
+    url: "https://www.broadnet.in/service-areas",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Broadnet Service Areas and Local Coverage in Chennai & Avadi",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Broadnet Service Areas & Dispatch Zones",
+    description:
+      "2-Hour local technician dispatch for CCTV, biometrics, and security across Avadi & Chennai.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function ServiceAreasPage() {

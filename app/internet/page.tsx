@@ -11,7 +11,7 @@ import RelatedSolutions from "@/components/RelatedSolutions";
 export const metadata: Metadata = {
   title: "High-Speed Fiber Internet & Broadband Plans in Avadi | From ₹499/mo",
   description:
-    "Explore symmetric FTTH fiber internet plans from 60 to 300 Mbps in Avadi, Chennai. Includes BSNL Bharat Fibre, Railwire OTT bundles (Prime + 20 OTTs), and enterprise Wi-Fi 6.",
+    "Explore symmetric FTTH fiber internet plans from 60 to 150 Mbps (with up to 300 Mbps optical line capacity) in Avadi, Chennai. Includes BSNL Bharat Fibre and Railwire OTT bundles.",
   keywords: [
     "fiber internet Avadi",
     "broadband plans Avadi",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Broadnet Fiber Internet and Broadband Plans in Avadi",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fiber Broadband Plans in Avadi | Broadnet",
     description: "Unlimited high-speed fiber broadband from ₹499/mo across Avadi.",
-    images: ["/opengraph-image"],
+    images: ["/og-image.png"],
   },
 };
 

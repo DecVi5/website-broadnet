@@ -105,7 +105,7 @@ export default function TestimonialsSection() {
             <span className="text-sm font-bold text-[#16143E]">4.9 out of 5</span>
             <span className="text-xs text-[#16143E]/40">•</span>
             <span className="text-xs font-semibold text-[#16143E]/70">
-              420+ Verified Local Google Reviews
+              500+ Verified Local Google Reviews
             </span>
             <span className="text-xs text-[#16143E]/40">•</span>
             <span className="inline-flex items-center gap-1 text-xs font-bold text-[#25D366]">

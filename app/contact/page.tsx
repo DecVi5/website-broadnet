@@ -17,6 +17,22 @@ export const metadata: Metadata = {
     description:
       "Get in touch with Avadi's dedicated fiber internet and security solutions engineers. Call 86818 88111 or book an on-site consultation.",
     url: "https://www.broadnet.in/contact",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact Broadnet Avadi Office and Dispatch Desk",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Broadnet | Avadi Office & Dispatch",
+    description:
+      "Visit our Avadi office or call 86818 88111 for 2-hour technician dispatch across Chennai.",
+    images: ["/og-image.png"],
   },
 };
 

@@ -46,6 +46,22 @@ export const metadata: Metadata = {
     description:
       "Enterprise LAN/WAN cabling, server rack dressing, optical fiber backbone splicing, and Tactine UTM cyber firewalls in Avadi & Chennai.",
     url: "https://www.broadnet.in/services/networking",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Broadnet Structured Cabling and Network Infrastructure",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Structured Cabling & Network Infrastructure | Broadnet",
+    description:
+      "Enterprise LAN/WAN cabling, server rack dressing, fiber splicing, and Tactine firewalls in Avadi & Chennai.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -152,7 +168,7 @@ const PACKAGES = [
   {
     name: "Small Office LAN Setup",
     tagline: "Essential structured cabling for clinics, shops & offices with 10–24 users",
-    price: "₹8,999",
+    price: "On Enquiry",
     unit: "setup & termination (10-24 drops)",
     badge: "Startup & Retail",
     popular: false,
@@ -169,7 +185,7 @@ const PACKAGES = [
   {
     name: "Corporate Structured Cabling",
     tagline: "Complete corporate network infrastructure for IT offices & corporate facilities",
-    price: "₹19,999",
+    price: "On Enquiry",
     unit: "cabling & rack dressing (25-60 drops)",
     badge: "Most Popular",
     popular: true,
@@ -187,7 +203,7 @@ const PACKAGES = [
   {
     name: "Fiber Optic Campus Backbone",
     tagline: "High-speed multi-building optical backbone for factories, colleges & warehouses",
-    price: "₹24,999",
+    price: "On Enquiry",
     unit: "fusion splicing & fiber backhaul",
     badge: "Campus & Industrial",
     popular: false,
@@ -204,7 +220,7 @@ const PACKAGES = [
   {
     name: "Tactine Enterprise UTM Firewall",
     tagline: "Hardware-level cybersecurity, intrusion prevention & multi-WAN gateway",
-    price: "₹32,000",
+    price: "On Enquiry",
     unit: "hardware UTM appliance + setup",
     badge: "Cyber Defense",
     popular: false,

@@ -145,7 +145,7 @@ const RECOMMENDATIONS: Record<string, Recommendation> = {
     title: "HD & 4K CCTV Surveillance Systems",
     badge: "Official CP PLUS CSE & Hikvision HCSA Partner",
     tagline: "Uncompromising 24/7 video monitoring with AI human detection and crystal-clear night vision.",
-    startingPrice: "From ₹1,399 / Camera (Kits from ₹8,499)",
+    startingPrice: "On Enquiry (Turnkey Camera Packages)",
     ceilingNote: "No Upper Ceiling — Fully Scalable for 16, 32, 64+ Channel Enterprise Deployments",
     highlights: [
       "1080p Full HD to 4K Ultra-HD with ColorVu 24/7 full-color night vision",
@@ -169,7 +169,7 @@ const RECOMMENDATIONS: Record<string, Recommendation> = {
     title: "Smart Video Door Phones (VDP) & Intercom",
     badge: "CP PLUS & Hikvision Certified Solutions",
     tagline: "Screen, speak, and remotely unlock your front gate without opening the door to strangers.",
-    startingPrice: "From ₹3,999 (7-inch HD Display + Doorbell Kit)",
+    startingPrice: "On Enquiry (7-inch HD Display & Kits)",
     ceilingNote: "No Upper Ceiling — Scalable for Multi-Story Buildings and Multi-Apartment Complexes",
     highlights: [
       "7-inch crystal-clear indoor touch panel with high-fidelity 2-way intercom",
@@ -193,7 +193,7 @@ const RECOMMENDATIONS: Record<string, Recommendation> = {
     title: "Biometric Access Control & Time-Attendance",
     badge: "eSSL Authorized Partner & Installer",
     tagline: "Contactless facial recognition and optical fingerprint access to safeguard premises and automate staff logs.",
-    startingPrice: "From ₹4,500 (Standalone Biometric Terminal)",
+    startingPrice: "On Enquiry (Biometric & Access Kits)",
     ceilingNote: "No Upper Ceiling — Multi-Door Central Server Integration & Flap Barrier Turnstiles",
     highlights: [
       "Sub-second (0.3s) facial recognition and high-precision optical fingerprint scanner",
@@ -217,7 +217,7 @@ const RECOMMENDATIONS: Record<string, Recommendation> = {
     title: "Perimeter Alarms & Intrusion Detection",
     badge: "Hikvision Certified Intrusion Defense",
     tagline: "Active boundary defense with laser trip beams, dual-tech sensors, and loud GSM sirens.",
-    startingPrice: "From ₹6,999 (GSM Control Panel + Motion Sensors)",
+    startingPrice: "On Enquiry (GSM Alarm & Sensor Kits)",
     ceilingNote: "No Upper Ceiling — Full Compound Perimeter Multi-Zone Protection",
     highlights: [
       "Infrared photo-beam sensors for compound walls detecting unauthorized perimeter climbing",

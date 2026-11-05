@@ -31,7 +31,7 @@ import {
 export const metadata: Metadata = {
   title: "Video Door Phone Installation in Avadi, Chennai | Smart Video Doorbells & Intercom",
   description:
-    "Official CP PLUS & Hikvision video door phone (VDP) systems in Avadi. 7-inch touch monitors from ₹3,999, electronic lock integration, mobile app live viewing, and 2-hour technician dispatch.",
+    "Official CP PLUS & Hikvision video door phone (VDP) systems in Avadi. 7-inch touch monitors on enquiry, electronic lock integration, mobile app live viewing, and 2-hour technician dispatch.",
   keywords: [
     "video door phone installation Avadi",
     "smart video doorbell Chennai",
@@ -48,6 +48,22 @@ export const metadata: Metadata = {
     description:
       "Screen visitors, speak with delivery personnel, and unlock gates remotely with certified video door phone systems in Avadi.",
     url: "https://www.broadnet.in/security/door-phones",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Broadnet Video Door Phone and Intercom Systems in Avadi",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Video Door Phones & Smart Intercom | Broadnet Avadi",
+    description:
+      "Official CP PLUS & Hikvision video door phones and apartment intercoms with 2-hour technician dispatch.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -154,7 +170,7 @@ const PACKAGES = [
   {
     name: "Smart Wi-Fi Video Doorbell",
     tagline: "Wireless smartphone doorbell for flats & apartments with existing chime",
-    price: "₹2,499",
+    price: "On Enquiry",
     unit: "standalone unit with setup",
     badge: "Compact Setup",
     popular: false,
@@ -171,7 +187,7 @@ const PACKAGES = [
   {
     name: "Classic 7-Inch HD VDP Kit",
     tagline: "The quintessential wired video door phone for independent houses and villas",
-    price: "₹3,999",
+    price: "On Enquiry",
     unit: "indoor display + outdoor camera kit",
     badge: "Most Popular",
     popular: true,
@@ -189,7 +205,7 @@ const PACKAGES = [
   {
     name: "Smart Wi-Fi Connected Touch VDP",
     tagline: "Answer visitors and release front door locks directly from your smartphone",
-    price: "₹7,999",
+    price: "On Enquiry",
     unit: "smart touchscreen system",
     badge: "Mobile Unlocking",
     popular: false,
@@ -207,7 +223,7 @@ const PACKAGES = [
   {
     name: "Multi-Apartment Intercom Network",
     tagline: "Complete multi-dwelling intercom system for housing societies & RWAs",
-    price: "Custom Quote",
+    price: "On Enquiry",
     unit: "No Upper Ceiling — 8 to 500+ Flats",
     badge: "Apartment Societies",
     popular: false,

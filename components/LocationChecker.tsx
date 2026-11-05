@@ -474,8 +474,8 @@ export default function LocationChecker() {
 
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3 border-t border-white/10 text-xs">
                     <div>
-                      <span className="text-white/40 block">Max Fiber Speed</span>
-                      <span className="font-bold text-white">{activeResult.speed}</span>
+                      <span className="text-white/40 block">Network Line Capacity</span>
+                      <span className="font-bold text-white">{activeResult.speed} (Plans 60-150 Mbps)</span>
                     </div>
                     <div>
                       <span className="text-white/40 block">Installation</span>

@@ -465,7 +465,7 @@ export default function NightVisionComparisonSlider({
               <li className="flex items-start gap-2.5">
                 <CheckCircle2 size={15} className="text-emerald-400 flex-shrink-0 mt-0.5" />
                 <span>
-                  <strong>24/7 Full-Color Clarity:</strong> Retains true vivid color even in total 0.0005 Lux darkness.
+                  <strong>24/7 Full-Color Clarity:</strong> Retains vivid color in ultra-low illumination rated down to 0.0005 Lux in manufacturer sensor specifications.
                 </span>
               </li>
               <li className="flex items-start gap-2.5">

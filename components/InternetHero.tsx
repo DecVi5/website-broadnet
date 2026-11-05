@@ -30,12 +30,12 @@ export default function InternetHero() {
           </div>
 
           <h1 className="hero-fade-in text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#16143E] leading-[1.14] mb-4 sm:mb-6 font-display tracking-tight text-center">
-            100+ km of Your{" "}
-            <span className="text-gradient">Own Fibre Network</span>
+            Over 100 km of Dedicated{" "}
+            <span className="text-gradient">Private Fiber in Avadi</span>
           </h1>
 
           <p className="hero-fade-in text-[#16143E]/75 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto font-body text-center">
-            Broadnet operates its own optical fibre backbone across Avadi — delivering symmetric, dedicated high-speed internet to homes and enterprises with reliable fibre continuity.
+            We don&apos;t rent congested lines or resell someone else&apos;s bandwidth. Broadnet runs its own optical fiber across Avadi, so you enjoy true symmetric speeds, low latency, and quick local technician support.
           </p>
 
           <div className="hero-fade-in flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 w-full max-w-xs sm:max-w-none">

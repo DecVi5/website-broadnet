@@ -210,6 +210,14 @@ export default function Footer() {
             <Link href="/projects" className="hover:text-white transition-colors">
               Projects
             </Link>
+            <span>·</span>
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <span>·</span>
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Terms
+            </Link>
           </div>
           <div className="text-[11px] text-white/70 text-center md:text-right tracking-wide">
             Made with{" "}

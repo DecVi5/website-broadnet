@@ -36,6 +36,31 @@ export const metadata: Metadata = {
     "Flap barrier turnstile Chennai",
     "RFID vehicle boom barrier Chennai",
   ],
+  alternates: {
+    canonical: "https://www.broadnet.in/services/entrance-security",
+  },
+  openGraph: {
+    title: "Boom Barriers, Turnstiles & Metal Detectors | Broadnet",
+    description:
+      "Automated vehicle boom barriers, long-range RFID windshield tags, and pedestrian flap barriers across Chennai & Avadi. 2-Hour technician dispatch.",
+    url: "https://www.broadnet.in/services/entrance-security",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Broadnet Entrance Automation and Boom Barrier Systems",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Boom Barriers & Entrance Security | Broadnet Avadi",
+    description:
+      "Automated boom barriers, RFID access, and flap barrier turnstiles across Chennai & Avadi. Call 86818 88111.",
+    images: ["/og-image.png"],
+  },
 };
 
 const WHAT_IS_IT_POINTS = [
@@ -47,7 +72,7 @@ const WHAT_IS_IT_POINTS = [
   {
     icon: Zap,
     title: "Long-Range Windshield RFID Readers",
-    desc: "UHF RFID antennas reading registered resident vehicle windshield tags from 6 meters away, opening gates seamlessly with zero stoppage.",
+    desc: "UHF RFID antennas reading registered resident vehicle windshield tags from 6 meters away, opening gates instantly without slowing down.",
   },
   {
     icon: ShieldCheck,
@@ -141,7 +166,7 @@ const PACKAGES = [
   {
     name: "Automatic Boom Barrier Kit",
     tagline: "Motorized boom barrier with push button and remote keyfobs for residential gates",
-    price: "₹32,000",
+    price: "On Enquiry",
     unit: "barrier unit + installation",
     badge: "Entry Automation",
     popular: false,
@@ -158,7 +183,7 @@ const PACKAGES = [
   {
     name: "Complete RFID Tag Society Gate",
     tagline: "Automated hands-free vehicle entry system for apartment communities",
-    price: "₹48,000",
+    price: "On Enquiry",
     unit: "barrier + RFID reader + tags",
     badge: "Most Popular",
     popular: true,
@@ -176,7 +201,7 @@ const PACKAGES = [
   {
     name: "Walk-Through Metal Detector (DFMD)",
     tagline: "Multi-zone security screening gate for halls, schools, and offices",
-    price: "₹35,000",
+    price: "On Enquiry",
     unit: "multi-zone DFMD gate",
     badge: "Security Screening",
     popular: false,
@@ -193,7 +218,7 @@ const PACKAGES = [
   {
     name: "Corporate Optical Flap Turnstiles",
     tagline: "Motorized pedestrian entrance automation for tech parks & tech headquarters",
-    price: "Custom Quote",
+    price: "On Enquiry",
     unit: "Multi-Lane Turnstile Systems",
     badge: "Enterprise Scale",
     popular: false,

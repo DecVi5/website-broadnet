@@ -31,7 +31,7 @@ import {
 export const metadata: Metadata = {
   title: "Biometric Access Control & Time-Attendance in Avadi | eSSL Partner",
   description:
-    "Official eSSL biometric access control and employee time-attendance machines in Avadi, Chennai. Face recognition, fingerprint door locks from ₹4,500, electromagnetic latches, and 2-hour technician dispatch.",
+    "Official eSSL biometric access control and employee time-attendance machines in Avadi, Chennai. Face recognition, fingerprint door locks on enquiry, electromagnetic latches, and 2-hour technician dispatch.",
   keywords: [
     "biometric access control Avadi",
     "fingerprint attendance machine Chennai",
@@ -48,6 +48,22 @@ export const metadata: Metadata = {
     description:
       "Eliminate buddy punching and secure restricted offices with certified eSSL biometric fingerprint and facial recognition systems in Avadi.",
     url: "https://www.broadnet.in/security/access-control",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Broadnet Biometric Access Control and Time Attendance in Avadi",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Biometric Access Control | Broadnet Avadi",
+    description:
+      "Official eSSL biometric access control, facial recognition, and attendance systems in Avadi.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -154,7 +170,7 @@ const PACKAGES = [
   {
     name: "Standalone Attendance Machine",
     tagline: "Essential attendance logging for clinics, retail shops & small offices",
-    price: "₹4,500",
+    price: "On Enquiry",
     unit: "standalone device with software",
     badge: "Attendance Only",
     popular: false,
@@ -171,7 +187,7 @@ const PACKAGES = [
   {
     name: "Complete Biometric Door Lock Kit",
     tagline: "Secures entry doors with fingerprint verification and magnetic lock",
-    price: "₹9,999",
+    price: "On Enquiry",
     unit: "reader + lock + backup kit",
     badge: "Most Popular",
     popular: true,
@@ -189,7 +205,7 @@ const PACKAGES = [
   {
     name: "AI Face Recognition Terminal",
     tagline: "Ultra-fast contactless hygiene scanning for modern corporate offices",
-    price: "₹14,500",
+    price: "On Enquiry",
     unit: "AI touchless terminal",
     badge: "Contactless AI",
     popular: false,
@@ -207,7 +223,7 @@ const PACKAGES = [
   {
     name: "Multi-Door & Flap Barrier Turnstiles",
     tagline: "Enterprise access management for tech parks, factories & educational campuses",
-    price: "Custom Quote",
+    price: "On Enquiry",
     unit: "No Upper Ceiling — Any Facility",
     badge: "Enterprise Scale",
     popular: false,

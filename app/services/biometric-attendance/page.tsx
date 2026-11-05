@@ -37,6 +37,31 @@ export const metadata: Metadata = {
     "Face recognition attendance Chennai",
     "Biometric payroll software Chennai",
   ],
+  alternates: {
+    canonical: "https://www.broadnet.in/services/biometric-attendance",
+  },
+  openGraph: {
+    title: "Biometric Time Attendance Systems in Chennai & Avadi | Broadnet",
+    description:
+      "Authorised eSSL biometric attendance & facial recognition systems. Turnkey installation with 2-hour technician dispatch across Chennai & Avadi.",
+    url: "https://www.broadnet.in/services/biometric-attendance",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Broadnet Biometric Time Attendance & eSSL Access Systems",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Biometric Time Attendance Systems | Broadnet Avadi",
+    description:
+      "eSSL biometric fingerprint and AI face recognition attendance systems across Avadi & Chennai.",
+    images: ["/og-image.png"],
+  },
 };
 
 const WHAT_IS_IT_POINTS = [
@@ -142,7 +167,7 @@ const PACKAGES = [
   {
     name: "Standalone Attendance Machine",
     tagline: "Essential attendance logging for clinics, retail shops & small offices",
-    price: "₹4,500",
+    price: "On Enquiry",
     unit: "standalone device with software",
     badge: "Attendance Only",
     popular: false,
@@ -159,7 +184,7 @@ const PACKAGES = [
   {
     name: "Complete Biometric Door Lock Kit",
     tagline: "Secures entry doors with fingerprint verification and magnetic lock",
-    price: "₹9,999",
+    price: "On Enquiry",
     unit: "reader + lock + backup kit",
     badge: "Most Popular",
     popular: true,
@@ -177,7 +202,7 @@ const PACKAGES = [
   {
     name: "AI Face Recognition Terminal",
     tagline: "Ultra-fast contactless hygiene scanning for modern corporate offices",
-    price: "₹14,500",
+    price: "On Enquiry",
     unit: "AI touchless terminal",
     badge: "Contactless AI",
     popular: false,
@@ -195,7 +220,7 @@ const PACKAGES = [
   {
     name: "Multi-Branch Cloud Enterprise Grid",
     tagline: "Enterprise access management for tech parks, factories & educational campuses",
-    price: "Custom Quote",
+    price: "On Enquiry",
     unit: "No Upper Ceiling — Any Scale",
     badge: "Enterprise Scale",
     popular: false,

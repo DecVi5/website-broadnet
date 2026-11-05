@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  // output: "export", // Disabled so /api/enquiry serverless function runs on Vercel
   trailingSlash: true,
   reactStrictMode: true,
   poweredByHeader: false,

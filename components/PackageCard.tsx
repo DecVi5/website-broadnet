@@ -83,7 +83,7 @@ export default function PackageCard({
     }
   };
 
-  const isEnquirePrice = pkg.price.toLowerCase() === "enquire";
+  const isEnquirePrice = pkg.price.toLowerCase().includes("enquir");
   const waLink = buildWhatsAppLink({
     text: isEnquirePrice
       ? `Hello Broadnet, I am interested in the ${pkg.name}. Please share package pricing details and schedule a site survey.`
