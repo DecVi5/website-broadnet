@@ -461,6 +461,16 @@ html {
   animation: marquee-scroll 32s linear infinite;
 }
 
+/* GPU hardware compositing for utility animations (eliminates Lighthouse non-composited penalties) */
+.animate-ping,
+.animate-bounce,
+.animate-pulse,
+.animate-spin {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
 @media (hover: hover) {
   .animate-marquee-gpu:hover {
     animation-play-state: paused;

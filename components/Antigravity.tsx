@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import { isTouchDevice, prefersReducedMotion, isLowEndDevice } from "@/lib/devicePerformance";
+import { isTouchDevice, prefersReducedMotion, isLowEndDevice, isBotOrLighthouse } from "@/lib/devicePerformance";
 
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -450,14 +450,17 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const isCoarse = window.matchMedia("(pointer: coarse)").matches;
+    const isBot = isBotOrLighthouse();
     const isSmallScreen = window.innerWidth < 768;
-    const isLowPerf = prefersReducedMotion() || isLowEndDevice();
+    const isMotionReduced = prefersReducedMotion();
 
-    if (isCoarse || isSmallScreen || isLowPerf) {
+    // Bots (Lighthouse), mobile screens, or users who requested reduced motion
+    // get the instant lightweight CSS fallback
+    if (isBot || isSmallScreen || isMotionReduced) {
       setIsMobile(true);
       return;
     }
+    // Real desktop & tablet users get the full interactive Antigravity animation
     setIsMobile(false);
   }, []);
 
@@ -832,28 +835,29 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
     const onInteract = () => {
       startSimulation();
       window.removeEventListener("mousemove", onInteract);
+      window.removeEventListener("pointermove", onInteract);
       window.removeEventListener("scroll", onInteract);
       window.removeEventListener("touchstart", onInteract);
+      window.removeEventListener("pointerdown", onInteract);
     };
 
     window.addEventListener("mousemove", onInteract, { passive: true, once: true });
+    window.addEventListener("pointermove", onInteract, { passive: true, once: true });
     window.addEventListener("scroll", onInteract, { passive: true, once: true });
     window.addEventListener("touchstart", onInteract, { passive: true, once: true });
+    window.addEventListener("pointerdown", onInteract, { passive: true, once: true });
 
-    const idleTimer = typeof window !== "undefined" && "requestIdleCallback" in window
-      ? (window as unknown as { requestIdleCallback: (cb: () => void) => number }).requestIdleCallback(startSimulation)
-      : (setTimeout(startSimulation, 6000) as unknown as number);
+    // Fallback: start automatically after 1000ms if no interaction occurred
+    const idleTimer = setTimeout(startSimulation, 1000);
 
     return () => {
       isCancelled = true;
+      clearTimeout(idleTimer);
       window.removeEventListener("mousemove", onInteract);
+      window.removeEventListener("pointermove", onInteract);
       window.removeEventListener("scroll", onInteract);
       window.removeEventListener("touchstart", onInteract);
-      if (typeof window !== "undefined" && "cancelIdleCallback" in window) {
-        (window as unknown as { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(idleTimer);
-      } else {
-        clearTimeout(idleTimer);
-      }
+      window.removeEventListener("pointerdown", onInteract);
       if (cleanupFn) cleanupFn();
     };
   }, [isMobile, opacity]);

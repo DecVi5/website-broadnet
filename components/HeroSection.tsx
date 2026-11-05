@@ -13,7 +13,6 @@ import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 import { COMPANY_NUMBERS } from "@/data/services";
 import { useLanguage } from "@/lib/i18n";
 import { trackEvent } from "@/lib/analytics";
-import { isLowEndDevice } from "@/lib/devicePerformance";
 
 function MobileAntigravityFallback() {
   return (
@@ -129,10 +128,9 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const isCoarse = window.matchMedia("(pointer: coarse)").matches;
       const isSmall = window.innerWidth < 768;
-      const isLowPerf = isLowEndDevice();
-      if (!isCoarse && !isSmall && !isLowPerf) {
+      // Desktop & laptop screens (including touchscreen laptops) get full layout & Antigravity
+      if (!isSmall) {
         setIsDesktop(true);
       }
     }
@@ -171,7 +169,7 @@ export default function HeroSection() {
         {/* Live operational badge */}
         <div className="hero-fade-in inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-900 mb-6 shadow-xs">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75 will-change-transform transform-gpu" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
           </span>
           <span className="text-xs font-bold uppercase tracking-wider font-display">
@@ -337,7 +335,7 @@ export default function HeroSection() {
         <span className="text-[10px] tracking-widest uppercase font-bold">
           Explore Services
         </span>
-        <ChevronDown size={14} className="animate-bounce" />
+        <ChevronDown size={14} className="animate-bounce will-change-transform transform-gpu" />
       </div>
     </section>
   );
