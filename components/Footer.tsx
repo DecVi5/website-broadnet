@@ -191,7 +191,7 @@ export default function Footer() {
             <span>© {new Date().getFullYear()} Broadnet Internet Services. All Rights Reserved.</span>
             <span className="hidden sm:inline text-white/50">·</span>
             <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-white/75 tracking-wider">
-              v2.8
+              v2.9
             </span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-4 text-xs">
