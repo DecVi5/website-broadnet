@@ -5,7 +5,7 @@ import PayBillClient from "@/components/PayBillClient";
 import { SITE_CONFIG } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Pay Internet Bill Online | Broadnet, BSNL Bharat Fibre & Railwire Recharge",
+  title: "Pay Internet Bill Online (3 Quick Portals)",
   description:
     "Official online bill payment and quick recharge portal for Broadnet Internet Services, BSNL Bharat Fibre, and Railwire Broadband subscribers across Avadi and Chennai. Instant UPI, Net Banking & card payments.",
   keywords: [
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     "fiber internet recharge Chennai",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/pay-bill",
+    canonical: "https://www.broadnet.in/pay-bill/",
   },
   openGraph: {
     title: "Pay Internet Bill Online | Broadnet, BSNL & Railwire Billing",
     description:
       "Direct links to official payment interfaces for Broadnet Fiber, BSNL Bharat Fibre, and Railwire Broadband subscribers in Avadi and Chennai.",
-    url: "https://www.broadnet.in/pay-bill",
+    url: "https://www.broadnet.in/pay-bill/",
     type: "website",
     images: [
       {

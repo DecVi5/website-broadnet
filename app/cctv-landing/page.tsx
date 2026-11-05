@@ -11,7 +11,7 @@ import {
 } from "@/lib/jsonLd";
 
 export const metadata: Metadata = {
-  title: "CCTV Installation & Service in Avadi, Chennai | Broadnet Surveillance Division",
+  title: "CCTV Installation & Service in Avadi",
   description:
     "Official Hikvision & CP PLUS CCTV camera sales, installation and AMC services across Avadi & Chennai. HD, IP, Audio & ColorVu cameras. Professional on-site survey and 2-hour technician dispatch. Call 86818 88111.",
   keywords: [
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     "CCTV Poonamallee",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/cctv-landing",
+    canonical: "https://www.broadnet.in/cctv-landing/",
   },
   openGraph: {
     title: "CCTV Installation & Service in Avadi, Chennai | Broadnet",
     description:
       "Official Hikvision & CP PLUS CCTV camera sales, installation and AMC services across Avadi & Chennai. Professional on-site survey and 2-hour technician dispatch.",
-    url: "https://www.broadnet.in/cctv-landing",
+    url: "https://www.broadnet.in/cctv-landing/",
     type: "website",
     images: [
       {

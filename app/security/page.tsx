@@ -29,7 +29,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Electronic Security & CCTV Surveillance in Avadi, Chennai | Broadnet",
+  title: "Electronic Security & CCTV Surveillance",
   description:
     "Official CP PLUS & Hikvision partner for CCTV surveillance, smart video door phones, eSSL biometric access control, and perimeter alarms in Avadi. Complete packages with no upper ceiling. 2-hour technician dispatch.",
   keywords: [
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     "electronic security Avadi",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/security",
+    canonical: "https://www.broadnet.in/security/",
   },
   openGraph: {
     title: "Electronic Security & Surveillance Systems in Avadi | Broadnet",
     description:
       "Certified Hikvision & CP PLUS surveillance, smart video door phones, and biometric access control with 2-hour technician dispatch in Avadi.",
-    url: "https://www.broadnet.in/security",
+    url: "https://www.broadnet.in/security/",
     type: "website",
     images: [
       {

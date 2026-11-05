@@ -41,7 +41,7 @@ export const REAL_PROJECTS: ProjectItem[] = [
     scope: "16x 4K Hikvision IP Cameras + Automatic RFID Boom Barrier + 32-Channel NVR Guard Cabin Video Wall",
     outcome: "Full perimeter protection, automated vehicle entry logging, and zero unauthorized gate trespassing.",
     hardware: ["Hikvision 4K IP", "RFID Boom Barrier", "32-Ch NVR", "WD Purple 4TB"],
-    imageSrc: "/assets/projects/proj-1.jpg",
+    imageSrc: "/assets/projects/proj-1.webp",
   },
   {
     id: "proj-2",
@@ -52,7 +52,7 @@ export const REAL_PROJECTS: ProjectItem[] = [
     scope: "eSSL Contactless Face Attendance + Hikvision 7-inch Touchscreen Video Door Phone with Electronic Latch",
     outcome: "Sterile touch-free visitor access, doctors' private cabin door lock, and automated HR attendance export.",
     hardware: ["eSSL Face Terminal", "Hikvision 7-in VDP", "Electromagnetic Latch", "Battery Backup"],
-    imageSrc: "/assets/projects/proj-2.jpg",
+    imageSrc: "/assets/projects/proj-2.webp",
   },
   {
     id: "proj-3",
@@ -63,7 +63,7 @@ export const REAL_PROJECTS: ProjectItem[] = [
     scope: "1.2 km Fusion-Spliced Optical Fiber + 8x Long-Range ColorVu Bullet Cameras + 2x Optical Zoom PTZ Units",
     outcome: "Crystal-clear night monitoring of 3-acre loading docks with zero cable attenuation across heavy machinery.",
     hardware: ["30x Optical Zoom PTZ", "ColorVu Bullets", "Optical Fiber Ring", "Outdoor Enclosures"],
-    imageSrc: "/assets/projects/proj-3.jpg",
+    imageSrc: "/assets/projects/proj-3.webp",
   },
   {
     id: "proj-4",
@@ -74,7 +74,7 @@ export const REAL_PROJECTS: ProjectItem[] = [
     scope: "4x CP PLUS Full-Color Night Vision Cameras + 3x Grandstream Ceiling PoE Access Points",
     outcome: "Concealed heavy PVC conduit wiring preserving interior wall aesthetics with zero-drop Wi-Fi across floors.",
     hardware: ["CP PLUS ColorVu", "Grandstream Wi-Fi 6", "Concealed PVC", "1TB Surveillance HDD"],
-    imageSrc: "/assets/projects/proj-4.jpg",
+    imageSrc: "/assets/projects/proj-4.webp",
   },
   {
     id: "proj-5",
@@ -85,7 +85,7 @@ export const REAL_PROJECTS: ProjectItem[] = [
     scope: "48-Node Cat6A Patch Panel Termination + 24U Server Rack Dressing + Tactine UTM Hardware Firewall",
     outcome: "Certified gigabit throughput across all developer workstations and secure branch-to-branch VPN.",
     hardware: ["Cat6A D-Link", "24U Server Rack", "Tactine UTM", "Gigabit PoE Switches"],
-    imageSrc: "/assets/projects/proj-5.jpg",
+    imageSrc: "/assets/projects/proj-5.webp",
   },
   {
     id: "proj-6",
@@ -96,7 +96,7 @@ export const REAL_PROJECTS: ProjectItem[] = [
     scope: "8x In-Built Audio Cameras covering cash tills + Hikvision Wireless AX PRO Alarm with 110dB Outdoor Siren",
     outcome: "Immediate phone notification during after-hours shutter tampering and dispute-free cash counter records.",
     hardware: ["Audio Mic Cameras", "AX PRO Alarm Panel", "GSM Dialer", "PIR Motion Sensors"],
-    imageSrc: "/assets/projects/proj-6.jpg",
+    imageSrc: "/assets/projects/proj-6.webp",
   },
 ];
 

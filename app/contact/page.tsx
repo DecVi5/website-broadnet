@@ -6,17 +6,17 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Broadnet | Office, Support & Technician Dispatch in Avadi",
+  title: "Contact Us & 2-Hour Dispatch in Avadi",
   description:
     "Visit Broadnet at 1093 Fire Station Road, TNHB, Avadi, Chennai 600054 or call 86818 88111. 2-hour technician dispatch across Avadi.",
   alternates: {
-    canonical: "https://www.broadnet.in/contact",
+    canonical: "https://www.broadnet.in/contact/",
   },
   openGraph: {
     title: "Contact Broadnet Internet Services | Avadi, Chennai",
     description:
       "Get in touch with Avadi's dedicated fiber internet and security solutions engineers. Call 86818 88111 or book an on-site consultation.",
-    url: "https://www.broadnet.in/contact",
+    url: "https://www.broadnet.in/contact/",
     type: "website",
     images: [
       {

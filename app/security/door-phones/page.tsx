@@ -29,7 +29,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Video Door Phone Installation in Avadi, Chennai | Smart Video Doorbells & Intercom",
+  title: "Video Door Phones & Smart Intercoms",
   description:
     "Official CP PLUS & Hikvision video door phone (VDP) systems in Avadi. 7-inch touch monitors on enquiry, electronic lock integration, mobile app live viewing, and 2-hour technician dispatch.",
   keywords: [
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     "apartment intercom system Avadi",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/security/door-phones",
+    canonical: "https://www.broadnet.in/security/door-phones/",
   },
   openGraph: {
     title: "Smart Video Door Phone & Intercom Installation in Avadi | Broadnet",
     description:
       "Screen visitors, speak with delivery personnel, and unlock gates remotely with certified video door phone systems in Avadi.",
-    url: "https://www.broadnet.in/security/door-phones",
+    url: "https://www.broadnet.in/security/door-phones/",
     type: "website",
     images: [
       {

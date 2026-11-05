@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Biometric Time Attendance Systems in Chennai & Avadi | eSSL Authorised Partner",
+  title: "Biometric Attendance Systems | eSSL Partner",
   description:
     "Authorised eSSL biometric time attendance installations across Chennai and Avadi. Facial recognition, fingerprint readers, cloud attendance software, and automated payroll integration. Call 86818 88111.",
   keywords: [
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
     "Biometric payroll software Chennai",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/services/biometric-attendance",
+    canonical: "https://www.broadnet.in/services/biometric-attendance/",
   },
   openGraph: {
     title: "Biometric Time Attendance Systems in Chennai & Avadi | Broadnet",
     description:
       "Authorised eSSL biometric attendance & facial recognition systems. Turnkey installation with 2-hour technician dispatch across Chennai & Avadi.",
-    url: "https://www.broadnet.in/services/biometric-attendance",
+    url: "https://www.broadnet.in/services/biometric-attendance/",
     type: "website",
     images: [
       {

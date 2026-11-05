@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "CCTV Camera Installation in Avadi, Chennai | CP PLUS & Hikvision HD/4K Systems",
+  title: "CCTV Camera Installation in Chennai & Avadi",
   description:
     "Official CP PLUS & Hikvision certified CCTV camera installation in Avadi. Complete turnkey home & commercial camera packages with pricing on enquiry, 2-hour technician dispatch, and professional on-site inspection. Call 86818 88111.",
   keywords: [
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
     "CCTV repair and AMC Avadi",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/security/cameras",
+    canonical: "https://www.broadnet.in/security/cameras/",
   },
   openGraph: {
     title: "CCTV Camera Installation & Services in Avadi | Broadnet",
     description:
       "24/7 HD & 4K CCTV surveillance systems. Professional site survey, concealed conduit wiring, mobile live monitoring, and 2-hour local technician dispatch in Avadi.",
-    url: "https://www.broadnet.in/security/cameras",
+    url: "https://www.broadnet.in/security/cameras/",
     type: "website",
     images: [
       {
@@ -129,7 +129,7 @@ const HARDWARE_GALLERY_ITEMS = [
     title: "CP PLUS / Hikvision Dome Camera",
     category: "Indoor Surveillance",
     description: "Compact, vandal-resistant dome housing ideal for living rooms, retail aisles, and office ceilings with wide-angle coverage.",
-    imageSrc: "/assets/dome_camera_clean.png",
+    imageSrc: "/assets/dome_camera_clean.webp",
     specs: ["1080p to 4K Ultra HD", "Built-in Microphone for Audio", "30m Smart Infrared Range"],
     status: "In Stock",
   },
@@ -137,7 +137,7 @@ const HARDWARE_GALLERY_ITEMS = [
     title: "Full-Color ColorVu Bullet Camera",
     category: "Outdoor Perimeter",
     description: "Heavy-duty metal bullet camera engineered for outdoor boundary walls, driveways, and gates with 24/7 vivid color night vision.",
-    imageSrc: "/assets/colorvu-night-vision.jpg",
+    imageSrc: "/assets/colorvu-night-vision.webp",
     specs: ["F1.0 Super Aperture", "IP67 Weatherproof Rating", "Active White Light Warning"],
     status: "In Stock",
   },
@@ -145,7 +145,7 @@ const HARDWARE_GALLERY_ITEMS = [
     title: "Traditional IR Night Vision",
     category: "Infrared Comparison",
     description: "Standard infrared surveillance sensor offering dependable monochrome nighttime coverage for budget-conscious properties.",
-    imageSrc: "/assets/traditional-ir-night-vision.jpg",
+    imageSrc: "/assets/traditional-ir-night-vision.webp",
     specs: ["Monochrome Infrared Night Mode", "Smart IR Anti-Overexposure", "Cost-Effective Security"],
     status: "Available",
   },
@@ -406,7 +406,7 @@ export default function CamerasPage() {
                     {/* Genuine Camera Hardware Image */}
                     <div className="relative z-10 w-full flex items-center justify-center py-4">
                       <Image
-                        src="/assets/realistic_cctv.png"
+                        src="/assets/realistic_cctv.webp"
                         alt="Ultra-HD 4K CCTV Camera Hardware"
                         width={320}
                         height={320}

@@ -305,7 +305,7 @@ export default function NightVisionComparisonSlider({
             {/* 1. Base Layer (Right / Behind): ColorVu Full Color Vision */}
             <div className="absolute inset-0 w-full h-full pointer-events-none">
               <Image
-                src="/assets/colorvu-night-vision.jpg"
+                src="/assets/colorvu-night-vision.webp"
                 alt="BroadNet 4K ColorVu Full Color Night Vision Surveillance Feed"
                 fill
                 loading="lazy"
@@ -335,7 +335,7 @@ export default function NightVisionComparisonSlider({
               }}
             >
               <Image
-                src="/assets/traditional-ir-night-vision.jpg"
+                src="/assets/traditional-ir-night-vision.webp"
                 alt="Traditional Grainy Infrared IR Black and White Night Vision Feed"
                 fill
                 loading="lazy"

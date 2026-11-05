@@ -30,17 +30,17 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Broadnet | Avadi's Leading Security & Network Integrator Since 2014",
+  title: "About Our Team & Infrastructure",
   description:
     "Broadnet Internet Services operates in Avadi, Chennai since 2014 with 10+ certified engineers. 2,500+ installations, 100+ km fiber network, and certified partner for Hikvision, CP PLUS, Grandstream, and eSSL.",
   alternates: {
-    canonical: "https://www.broadnet.in/about",
+    canonical: "https://www.broadnet.in/about/",
   },
   openGraph: {
     title: "About Broadnet Internet Services | 12 Years in Avadi, Chennai",
     description:
       "Avadi's technology and security systems provider. CCTV, biometrics, enterprise Wi-Fi, and network infrastructure.",
-    url: "https://www.broadnet.in/about",
+    url: "https://www.broadnet.in/about/",
     type: "website",
     images: [
       {
@@ -78,7 +78,7 @@ const OPERATIONS_GALLERY = [
     tag: "Avadi HQ",
     color: "#4E0DBA",
     icon: Building2,
-    imageSrc: "/assets/about/hq-hub.jpg",
+    imageSrc: "/assets/about/hq-hub.webp",
   },
   {
     id: "fiber-splicing",
@@ -89,7 +89,7 @@ const OPERATIONS_GALLERY = [
     tag: "100+ km Mesh",
     color: "#00C2FF",
     icon: Network,
-    imageSrc: "/assets/about/fiber-splicing.jpg",
+    imageSrc: "/assets/about/fiber-splicing.webp",
   },
   {
     id: "control-room",
@@ -100,7 +100,7 @@ const OPERATIONS_GALLERY = [
     tag: "Zero DOA Protocol",
     color: "#EF1313",
     icon: Camera,
-    imageSrc: "/assets/about/control-room.jpg",
+    imageSrc: "/assets/about/control-room.webp",
   },
   {
     id: "dispatch-fleet",
@@ -111,7 +111,7 @@ const OPERATIONS_GALLERY = [
     tag: "< 2-Hour SLA",
     color: "#22c55e",
     icon: Wrench,
-    imageSrc: "/assets/about/dispatch-fleet.jpg",
+    imageSrc: "/assets/about/dispatch-fleet.webp",
   },
   {
     id: "access-turnstile",
@@ -122,7 +122,7 @@ const OPERATIONS_GALLERY = [
     tag: "eSSL Authorized",
     color: "#4E0DBA",
     icon: Lock,
-    imageSrc: "/assets/about/access-turnstile.jpg",
+    imageSrc: "/assets/about/access-turnstile.webp",
   },
   {
     id: "client-handover",
@@ -133,7 +133,7 @@ const OPERATIONS_GALLERY = [
     tag: "Full Handover",
     color: "#F59E0B",
     icon: BadgeCheck,
-    imageSrc: "/assets/about/client-handover.jpg",
+    imageSrc: "/assets/about/client-handover.webp",
   },
 ];
 

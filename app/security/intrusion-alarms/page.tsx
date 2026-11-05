@@ -29,7 +29,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Perimeter Alarms & Intrusion Detection in Avadi, Chennai | Hikvision Certified",
+  title: "Intrusion Alarms & Perimeter Security",
   description:
     "Active perimeter defense with laser trip sensors, boundary wall alarms, 110dB loud sirens, and GSM auto-dialer mobile alerts in Avadi. Complete kits on enquiry with professional site assessment.",
   keywords: [
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     "GSM wireless intruder alarm Chennai",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/security/intrusion-alarms",
+    canonical: "https://www.broadnet.in/security/intrusion-alarms/",
   },
   openGraph: {
     title: "Perimeter Alarms & Intrusion Detection Systems in Avadi | Broadnet",
     description:
       "Stop intrusions before breaches occur with laser boundary sensors, high-decibel deterrent sirens, and automated GSM phone alerts in Avadi.",
-    url: "https://www.broadnet.in/security/intrusion-alarms",
+    url: "https://www.broadnet.in/security/intrusion-alarms/",
     type: "website",
     images: [
       {

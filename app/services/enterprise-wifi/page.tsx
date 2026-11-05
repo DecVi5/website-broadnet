@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Wi-Fi Access Points & Enterprise Wi-Fi Chennai | Grandstream Certified Partner",
+  title: "Enterprise Wi-Fi 6 & Access Points",
   description:
     "Grandstream Certified Network Specialists installing enterprise Wi-Fi 6 access points, seamless multi-floor mesh, guest captive portals, and cloud management across Chennai & Avadi. Call 86818 88111.",
   keywords: [
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     "Wi-Fi 6 access points Avadi",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/services/enterprise-wifi",
+    canonical: "https://www.broadnet.in/services/enterprise-wifi/",
   },
   openGraph: {
     title: "Enterprise Wi-Fi & Grandstream Access Points | Broadnet",
     description:
       "Enterprise Wi-Fi 6 deployment, seamless multi-floor roaming mesh, and guest captive portals across Chennai & Avadi.",
-    url: "https://www.broadnet.in/services/enterprise-wifi",
+    url: "https://www.broadnet.in/services/enterprise-wifi/",
     type: "website",
     images: [
       {

@@ -9,7 +9,7 @@ import IctSolutions from "@/components/IctSolutions";
 import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
-  title: "High-Speed Fiber Internet & Broadband Plans in Avadi | From ₹499/mo",
+  title: "High-Speed Fiber Internet & Broadband Plans",
   description:
     "Explore symmetric FTTH fiber internet plans from 60 to 150 Mbps (with up to 300 Mbps optical line capacity) in Avadi, Chennai. Includes BSNL Bharat Fibre and Railwire OTT bundles.",
   keywords: [
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     "enterprise Wi-Fi Avadi",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/internet",
+    canonical: "https://www.broadnet.in/internet/",
   },
   openGraph: {
     title: "Fiber Broadband Plans in Avadi | Broadnet Internet Services",
     description:
       "Direct private fiber network with zero reseller bottlenecks. Unlimited broadband plans from ₹499/mo with free ONT installation.",
-    url: "https://www.broadnet.in/internet",
+    url: "https://www.broadnet.in/internet/",
     type: "website",
     images: [
       {

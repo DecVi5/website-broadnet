@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Broadnet Internet Services Avadi",
+  title: "Privacy Policy",
   description:
     "Privacy Policy for Broadnet Internet Services. How we collect, handle, and protect customer data for broadband connections and security system installations.",
   alternates: {

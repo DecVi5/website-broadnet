@@ -18,17 +18,17 @@ const Footer = dynamic(() => import("@/components/Footer"));
 
 
 export const metadata: Metadata = {
-  title: "Broadnet | CCTV Camera Installation & Security Systems in Chennai & Avadi",
+  title: "Broadnet | Fiber Internet & CCTV Installation Chennai",
   description:
     "Broadnet Internet Services (Est. 2014): Official Hikvision & CP PLUS CCTV camera installation, eSSL biometric attendance, video door phones, and enterprise networking across Chennai. Call 86818 88111.",
   alternates: {
-    canonical: "https://www.broadnet.in",
+    canonical: "https://www.broadnet.in/",
   },
   openGraph: {
     title: "Broadnet | CCTV Security Systems & Fiber Internet in Chennai & Avadi",
     description:
       "Avadi & Chennai's authorized security systems integrator for Hikvision & CP PLUS CCTV cameras, eSSL biometrics, and high-speed fiber broadband. Established 2014.",
-    url: "https://www.broadnet.in",
+    url: "https://www.broadnet.in/",
     type: "website",
     images: [
       {

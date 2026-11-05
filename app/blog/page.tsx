@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Security & Networking Knowledge Hub | CCTV in Avadi, Chennai Blog",
+  title: "Security & Networking Knowledge Hub",
   description:
     "Expert security guides, CCTV installation tips in Avadi, biometric attendance rules, and network infrastructure advice from certified engineers at Broadnet.",
   keywords: [
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     "Hikvision ColorVu camera review",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/blog",
+    canonical: "https://www.broadnet.in/blog/",
   },
   openGraph: {
     title: "Security & Networking Knowledge Hub | Broadnet Avadi",
     description:
       "Expert security guides, CCTV installation tips in Avadi, biometric attendance rules, and network infrastructure advice from certified engineers.",
-    url: "https://www.broadnet.in/blog",
+    url: "https://www.broadnet.in/blog/",
     type: "website",
     images: [
       {

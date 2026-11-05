@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Broadnet Internet Services Avadi",
+  title: "Terms of Service",
   description:
     "Terms of service, warranty policy, and installation commitments for Broadnet Internet Services and security systems in Avadi, Chennai.",
   alternates: {

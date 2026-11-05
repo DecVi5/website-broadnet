@@ -8,7 +8,7 @@ import ServiceAreaCoverageClient from "./ServiceAreaCoverageClient";
 import { getCctvServiceJsonLd, getBreadcrumbJsonLd } from "@/lib/jsonLd";
 
 export const metadata: Metadata = {
-  title: "Service Areas & Coverage Checker in Chennai & Avadi | Broadnet",
+  title: "Service Areas & Coverage Checker in Chennai",
   description:
     "Broadnet provides CCTV installation & security integration across all of Chennai, with 2-hour dispatch in Avadi, Pattabiram, Thirumullaivoyal, and Thiruverkadu. Fiber internet available in Avadi only.",
   keywords: [
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     "Broadband Avadi pincode",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/service-areas",
+    canonical: "https://www.broadnet.in/service-areas/",
   },
   openGraph: {
     title: "Service Areas & Coverage Checker in Chennai & Avadi | Broadnet",
     description:
       "CCTV installation & security integration across all of Chennai, with 2-hour dispatch in Avadi, Pattabiram, Thirumullaivoyal, and Thiruverkadu.",
-    url: "https://www.broadnet.in/service-areas",
+    url: "https://www.broadnet.in/service-areas/",
     type: "website",
     images: [
       {

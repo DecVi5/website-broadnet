@@ -5,7 +5,7 @@ import UnderDevelopmentClient from "@/components/UnderDevelopmentClient";
 import EnquirySection from "@/components/EnquirySection";
 
 export const metadata: Metadata = {
-  title: "Website Under Active Development & Digital Roadmap | Broadnet Avadi",
+  title: "Website Development & Roadmap",
   description:
     "Explore Broadnet's digital upgrade roadmap, live operational status, upcoming CCTV simulators and bill payment portals in Avadi, Chennai. 100% active field technician dispatches.",
   keywords: [
@@ -16,20 +16,29 @@ export const metadata: Metadata = {
     "Broadnet technician dispatch Chennai",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/under-development",
+    canonical: "https://www.broadnet.in/under-development/",
   },
   openGraph: {
     title: "Website Under Active Development & Digital Roadmap | Broadnet",
     description:
       "Digital upgrade status and roadmap for Broadnet. High-speed broadband and CCTV security installations remain 100% active across Avadi & Chennai.",
-    url: "https://www.broadnet.in/under-development",
+    url: "https://www.broadnet.in/under-development/",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Broadnet Website Roadmap",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Website Under Active Development | Broadnet",
     description:
       "Explore upcoming digital self-service tools and 24/7 on-ground technician dispatches in Avadi & Chennai.",
+    images: ["/og-image.png"],
   },
 };
 
