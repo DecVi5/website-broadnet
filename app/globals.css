@@ -467,21 +467,21 @@ html {
   }
 }
 
-/* Futuristic Surveillance HUD & Glows */
+/* Futuristic Surveillance HUD & Glows (Hardware Composited) */
 @keyframes radar-ping {
-  0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1.6); opacity: 0; }
-  100% { transform: scale(0.95); opacity: 0; }
+  0% { transform: scale3d(0.95, 0.95, 1); opacity: 0.8; }
+  50% { transform: scale3d(1.6, 1.6, 1); opacity: 0; }
+  100% { transform: scale3d(0.95, 0.95, 1); opacity: 0; }
 }
 
 @keyframes scanline {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(400px); }
+  0% { transform: translate3d(0, -100%, 0); }
+  100% { transform: translate3d(0, 400px, 0); }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
+  0%, 100% { opacity: 0.4; transform: scale3d(1, 1, 1); }
+  50% { opacity: 0.8; transform: scale3d(1.05, 1.05, 1); }
 }
 
 .radar-dot {
@@ -494,6 +494,8 @@ html {
   inset: -3px;
   border-radius: 9999px;
   background: inherit;
+  will-change: transform, opacity;
+  transform: translateZ(0);
   animation: radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
@@ -502,6 +504,8 @@ html {
   top: 0; left: 0; right: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.6), transparent);
+  will-change: transform;
+  transform: translateZ(0);
   animation: scanline 3.5s linear infinite;
   pointer-events: none;
 }
@@ -747,4 +751,4 @@ textarea.input-field-compact {
     animation: none !important;
     transform: none !important;
   }
-}
+}

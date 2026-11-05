@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
   },
   devIndicators: false,
   experimental: {
-    optimizePackageImports: ["lucide-react", "framer-motion"],
+    optimizePackageImports: ["lucide-react", "framer-motion", "three"],
   },
 };
 

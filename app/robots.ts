@@ -3,13 +3,10 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
-  const isStaging =
-    process.env.VERCEL_ENV === "preview" ||
-    process.env.NEXT_PUBLIC_VERCEL_ENV === "preview" ||
-    process.env.NEXT_PUBLIC_DISABLE_INDEXING === "true" ||
-    (process.env.VERCEL_URL && !process.env.VERCEL_URL.includes("broadnet.in"));
+  // Only disallow indexing if explicitly disabled via environment variable
+  const isBlocked = process.env.NEXT_PUBLIC_DISABLE_INDEXING === "true";
 
-  if (isStaging) {
+  if (isBlocked) {
     return {
       rules: [
         {
@@ -45,4 +42,3 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: "https://www.broadnet.in/sitemap.xml",
   };
 }
-

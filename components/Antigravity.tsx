@@ -822,16 +822,37 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
       };
     };
 
-    const timerId = typeof window !== "undefined" && "requestIdleCallback" in window
-      ? (window as unknown as { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback(initThree, { timeout: 1200 })
-      : (setTimeout(initThree, 180) as unknown as number);
+    let hasStarted = false;
+    const startSimulation = () => {
+      if (hasStarted || isCancelled) return;
+      hasStarted = true;
+      initThree();
+    };
+
+    const onInteract = () => {
+      startSimulation();
+      window.removeEventListener("mousemove", onInteract);
+      window.removeEventListener("scroll", onInteract);
+      window.removeEventListener("touchstart", onInteract);
+    };
+
+    window.addEventListener("mousemove", onInteract, { passive: true, once: true });
+    window.addEventListener("scroll", onInteract, { passive: true, once: true });
+    window.addEventListener("touchstart", onInteract, { passive: true, once: true });
+
+    const idleTimer = typeof window !== "undefined" && "requestIdleCallback" in window
+      ? (window as unknown as { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback(startSimulation, { timeout: 3500 })
+      : (setTimeout(startSimulation, 3000) as unknown as number);
 
     return () => {
       isCancelled = true;
+      window.removeEventListener("mousemove", onInteract);
+      window.removeEventListener("scroll", onInteract);
+      window.removeEventListener("touchstart", onInteract);
       if (typeof window !== "undefined" && "cancelIdleCallback" in window) {
-        (window as unknown as { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(timerId);
+        (window as unknown as { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(idleTimer);
       } else {
-        clearTimeout(timerId);
+        clearTimeout(idleTimer);
       }
       if (cleanupFn) cleanupFn();
     };

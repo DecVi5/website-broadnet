@@ -29,6 +29,7 @@ export default function CustomCursor() {
 
     const onMove = (e: MouseEvent) => {
       pos.current = { x: e.clientX, y: e.clientY };
+      requestTick();
 
       // Instant 0ms hardware-like tracking for the central pointer dot
       if (dotRef.current) {
@@ -43,10 +44,12 @@ export default function CustomCursor() {
 
     const onDown = () => {
       isClicked.current = true;
+      requestTick();
     };
 
     const onUp = () => {
       isClicked.current = false;
+      requestTick();
     };
 
     const onOver = (e: MouseEvent) => {
@@ -69,6 +72,7 @@ export default function CustomCursor() {
       if (isInteractive !== isHovering.current) {
         isHovering.current = isInteractive;
         setHovering(isInteractive);
+        requestTick();
       }
 
       if (ringRef.current) ringRef.current.style.opacity = "1";
@@ -96,11 +100,21 @@ export default function CustomCursor() {
 
     // Smooth spring follow for outer halo ring
     let currentScale = 1;
+    let isLoopRunning = false;
+
+    const requestTick = () => {
+      if (!isLoopRunning) {
+        isLoopRunning = true;
+        rafId.current = requestAnimationFrame(animate);
+      }
+    };
 
     const animate = () => {
       const factor = 0.22;
-      ring.current.x += (pos.current.x - ring.current.x) * factor;
-      ring.current.y += (pos.current.y - ring.current.y) * factor;
+      const dx = pos.current.x - ring.current.x;
+      const dy = pos.current.y - ring.current.y;
+      ring.current.x += dx * factor;
+      ring.current.y += dy * factor;
 
       const targetScale = isClicked.current ? 0.8 : isHovering.current ? 1.35 : 1;
       currentScale += (targetScale - currentScale) * 0.16;
@@ -109,10 +123,12 @@ export default function CustomCursor() {
         ringRef.current.style.transform = `translate3d(${ring.current.x}px, ${ring.current.y}px, 0) scale(${currentScale.toFixed(3)})`;
       }
 
-      rafId.current = requestAnimationFrame(animate);
+      if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1 || Math.abs(targetScale - currentScale) > 0.01) {
+        rafId.current = requestAnimationFrame(animate);
+      } else {
+        isLoopRunning = false;
+      }
     };
-
-    rafId.current = requestAnimationFrame(animate);
 
     return () => {
       document.documentElement.classList.remove("has-custom-cursor");

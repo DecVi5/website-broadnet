@@ -93,7 +93,7 @@ export default function PartnerLogo({
   if (normalized.includes("cp plus") || normalized.includes("cpplus")) {
     return (
       <img
-        src="/assets/partners/cp-plus.png"
+        src="/assets/partners/cp-plus.webp"
         alt="CP PLUS Official Partner Logo"
         width={540}
         height={85}

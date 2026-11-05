@@ -140,8 +140,19 @@ export default function HeroSection() {
     if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
     }
-    const id = setInterval(() => setTick((t) => (t + 1) % COMPANY_NUMBERS.length), 3200);
-    return () => clearInterval(id);
+    let intervalId: ReturnType<typeof setInterval>;
+    const timeoutId = setTimeout(() => {
+      intervalId = setInterval(() => {
+        if (typeof document !== "undefined" && document.visibilityState === "visible") {
+          setTick((t) => (t + 1) % COMPANY_NUMBERS.length);
+        }
+      }, 3500);
+    }, 2500);
+
+    return () => {
+      clearTimeout(timeoutId);
+      if (intervalId) clearInterval(intervalId);
+    };
   }, []);
 
   return (
