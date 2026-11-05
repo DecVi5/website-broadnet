@@ -841,8 +841,8 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
     window.addEventListener("touchstart", onInteract, { passive: true, once: true });
 
     const idleTimer = typeof window !== "undefined" && "requestIdleCallback" in window
-      ? (window as unknown as { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback(startSimulation, { timeout: 3500 })
-      : (setTimeout(startSimulation, 3000) as unknown as number);
+      ? (window as unknown as { requestIdleCallback: (cb: () => void) => number }).requestIdleCallback(startSimulation)
+      : (setTimeout(startSimulation, 6000) as unknown as number);
 
     return () => {
       isCancelled = true;

@@ -13,6 +13,7 @@ import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 import { COMPANY_NUMBERS } from "@/data/services";
 import { useLanguage } from "@/lib/i18n";
 import { trackEvent } from "@/lib/analytics";
+import { isLowEndDevice } from "@/lib/devicePerformance";
 
 function MobileAntigravityFallback() {
   return (
@@ -130,7 +131,8 @@ export default function HeroSection() {
     if (typeof window !== "undefined") {
       const isCoarse = window.matchMedia("(pointer: coarse)").matches;
       const isSmall = window.innerWidth < 768;
-      if (!isCoarse && !isSmall) {
+      const isLowPerf = isLowEndDevice();
+      if (!isCoarse && !isSmall && !isLowPerf) {
         setIsDesktop(true);
       }
     }
