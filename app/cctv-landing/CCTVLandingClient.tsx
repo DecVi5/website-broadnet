@@ -216,11 +216,13 @@ export default function CCTVLandingClient() {
 
                 <a
                   href="tel:+918681888111"
-                  className="min-h-[50px] sm:min-h-[52px] px-6 rounded-full border-2 border-[#16143E]/15 hover:border-[#16143E] text-sm sm:text-base font-bold text-[#16143E] bg-white flex items-center justify-center gap-2 transition-all shadow-xs hover:shadow-md w-full sm:w-auto"
+                  data-copy-phone="true"
+                  title="Click to copy 86818 88111"
+                  className="min-h-[50px] sm:min-h-[52px] px-6 rounded-full border-2 border-[#16143E]/15 hover:border-[#16143E] text-sm sm:text-base font-bold text-[#16143E] bg-white flex items-center justify-center gap-2 transition-all shadow-xs hover:shadow-md w-full sm:w-auto cursor-pointer"
                   style={{ fontFamily: "Syne, sans-serif" }}
                 >
                   <Phone size={17} className="text-[#EF1313]" />
-                  <span>Call 86818 88111</span>
+                  <span>Call <span className="font-phone font-bold tracking-wider">86818 88111</span></span>
                 </a>
 
                 <a
@@ -707,9 +709,11 @@ export default function CCTVLandingClient() {
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
                 href="tel:+918681888111"
+                data-copy-phone="true"
+                title="Click to copy 86818 88111"
                 className="btn-crimson min-h-[48px] px-8 text-sm justify-center cursor-pointer glow-btn-crimson"
               >
-                <Phone size={16} /> Call 86818 88111
+                <Phone size={16} /> Call <span className="font-phone font-bold tracking-wider">86818 88111</span>
               </a>
               <a
                 href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20a%20CCTV%20quotation."

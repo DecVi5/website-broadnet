@@ -119,7 +119,21 @@ export default function ContactPage() {
                   <h3 className="text-[#16143E] font-bold text-sm uppercase tracking-wider mb-3">{info.title}</h3>
                   {info.lines.map((line, i) => (
                     info.links ? (
-                      <a key={line} href={info.links[i]} className="block text-sm text-[#16143E]/55 hover:text-[#16143E] transition-colors mb-1">
+                      <a
+                        key={line}
+                        href={info.links[i]}
+                        {...(info.links[i]?.startsWith("tel:")
+                          ? {
+                              "data-copy-phone": "true",
+                              title: "Click to copy 86818 88111 to clipboard",
+                            }
+                          : {})}
+                        className={`block text-sm transition-colors mb-1 ${
+                          info.links[i]?.startsWith("tel:")
+                            ? "font-phone font-bold text-base text-[#16143E] hover:text-[#EF1313] tracking-wider cursor-pointer"
+                            : "text-[#16143E]/55 hover:text-[#16143E]"
+                        }`}
+                      >
                         {line}
                       </a>
                     ) : (

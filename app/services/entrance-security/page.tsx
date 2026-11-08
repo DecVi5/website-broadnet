@@ -376,10 +376,12 @@ export default function EntranceSecurityPage() {
                   </a>
                   <a
                     href="tel:+918681888111"
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-50 hover:bg-slate-100 text-[#16143E] font-semibold text-sm transition-all border border-slate-200 shadow-2xs hover:border-slate-300"
+                    data-copy-phone="true"
+                    title="Click to copy 86818 88111"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-50 hover:bg-slate-100 text-[#16143E] font-semibold text-sm transition-all border border-slate-200 shadow-2xs hover:border-slate-300 cursor-pointer"
                   >
                     <Phone size={15} className="text-[#EF1313]" />
-                    <span>Call: 86818 88111</span>
+                    <span>Call: <span className="font-phone font-bold tracking-wider">86818 88111</span></span>
                   </a>
                 </div>
               </div>

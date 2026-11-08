@@ -152,7 +152,12 @@ export default function Footer() {
                   <Phone size={14} />
                 </div>
                 <div>
-                  <a href="tel:+918681888111" className="hover:text-white font-bold block text-white">
+                  <a
+                    href="tel:+918681888111"
+                    data-copy-phone="true"
+                    title="Click to copy 86818 88111 to clipboard"
+                    className="hover:text-amber-400 font-phone font-bold tracking-wider block text-white text-base transition-colors cursor-pointer"
+                  >
                     86818 88111
                   </a>
                 </div>

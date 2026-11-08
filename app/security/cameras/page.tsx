@@ -622,9 +622,11 @@ export default function CamerasPage() {
                 </a>
                 <a
                   href="tel:+918681888111"
-                  className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/15"
+                  data-copy-phone="true"
+                  title="Click to copy 86818 88111"
+                  className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/15 cursor-pointer"
                 >
-                  Direct Call: 86818 88111
+                  Direct Call: <span className="font-phone font-bold tracking-wider">86818 88111</span>
                 </a>
               </div>
             </div>
@@ -770,10 +772,12 @@ export default function CamerasPage() {
               <div className="flex items-center gap-3">
                 <a
                   href="tel:+918681888111"
-                  className="px-5 py-2.5 rounded-full bg-[#16143E] hover:bg-[#4E0DBA] text-white text-xs font-bold flex items-center gap-2 transition-colors whitespace-nowrap shadow-sm"
+                  data-copy-phone="true"
+                  title="Click to copy 86818 88111"
+                  className="px-5 py-2.5 rounded-full bg-[#16143E] hover:bg-[#4E0DBA] text-white text-xs font-bold flex items-center gap-2 transition-colors whitespace-nowrap shadow-sm cursor-pointer"
                 >
                   <Phone size={14} />
-                  <span>Call 86818 88111</span>
+                  <span>Call <span className="font-phone font-bold tracking-wider">86818 88111</span></span>
                 </a>
                 <a
                   href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20need%20CCTV%20installation%20in%20my%20area."

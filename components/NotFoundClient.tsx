@@ -146,7 +146,7 @@ export default function NotFoundClient() {
             style={{ fontFamily: "Syne, sans-serif" }}
           >
             <MessageCircle size={18} className="text-[#25D366]" aria-hidden="true" />
-            <span>WhatsApp Tech Desk · 86818 88111</span>
+            <span>WhatsApp Tech Desk · <span className="font-phone font-bold tracking-wider">86818 88111</span></span>
           </a>
         </motion.div>
 
@@ -239,10 +239,12 @@ export default function NotFoundClient() {
 
           <a
             href="tel:+918681888111"
+            data-copy-phone="true"
+            title="Click to copy 86818 88111"
             className="px-5 py-2 rounded-full bg-[#16143E] text-white text-xs font-bold hover:bg-[#4E0DBA] transition-colors flex-shrink-0 inline-flex items-center gap-1.5 cursor-pointer"
           >
             <Phone size={13} aria-hidden="true" />
-            <span>Call 86818 88111</span>
+            <span>Call <span className="font-phone font-bold tracking-wider">86818 88111</span></span>
           </a>
         </div>
       </div>

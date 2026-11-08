@@ -398,11 +398,12 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
             <div className="hidden md:flex items-center gap-2.5">
               <a
                 href="tel:+918681888111"
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-[#16143E] hover:text-[#EF1313] hover:bg-[#16143E]/5 transition-colors"
-                style={{ fontFamily: "Syne, sans-serif" }}
+                data-copy-phone="true"
+                title="Click to copy 86818 88111 to clipboard"
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-[#16143E] hover:text-[#EF1313] hover:bg-[#16143E]/5 transition-colors group/hdrphone cursor-pointer"
               >
-                <Phone size={14} className="text-[#EF1313]" />
-                <span>86818 88111</span>
+                <Phone size={14} className="text-[#EF1313] group-hover/hdrphone:scale-110 transition-transform" />
+                <span className="font-phone font-bold tracking-wider text-[13px]">86818 88111</span>
               </a>
 
               <a
@@ -610,9 +611,11 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
               <div className="pt-4 mt-4 border-t border-[#16143E]/10 flex flex-col gap-2">
                 <a
                   href="tel:+918681888111"
-                  className="w-full py-2.5 rounded-xl bg-[#16143E] text-white text-xs font-bold flex items-center justify-center gap-2"
+                  data-copy-phone="true"
+                  title="Click to copy 86818 88111"
+                  className="w-full py-2.5 rounded-xl bg-[#16143E] text-white text-xs font-bold flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <Phone size={14} className="text-[#EF1313]" /> Call 86818 88111
+                  <Phone size={14} className="text-[#EF1313]" /> Call <span className="font-phone font-bold tracking-wider text-[13px]">86818 88111</span>
                 </a>
                 <Link
                   href="/contact#enquiry"

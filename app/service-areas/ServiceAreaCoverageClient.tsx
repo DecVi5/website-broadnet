@@ -266,13 +266,15 @@ export default function ServiceAreaCoverageClient() {
                 Looking for another area in Chennai?
               </h4>
               <p className="text-xs text-[#16143E]/70 max-w-md mx-auto mb-4">
-                We install CCTV surveillance and security systems across ALL Chennai neighborhoods! Call us directly at 86818 88111 to verify dispatch timing for your address.
+                We install CCTV surveillance and security systems across ALL Chennai neighborhoods! Call us directly at <span className="font-phone font-bold text-[#16143E]">86818 88111</span> to verify dispatch timing for your address.
               </p>
               <a
                 href="tel:+918681888111"
-                className="btn-crimson min-h-[42px] px-6 text-xs justify-center"
+                data-copy-phone="true"
+                title="Click to copy 86818 88111"
+                className="btn-crimson min-h-[42px] px-6 text-xs justify-center cursor-pointer"
               >
-                Call Support: 86818 88111
+                Call Support: <span className="font-phone font-bold tracking-wider">86818 88111</span>
               </a>
             </div>
           )}

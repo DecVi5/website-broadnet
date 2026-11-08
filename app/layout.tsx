@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Syne, DM_Sans } from "next/font/google";
+import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import MobileStickyBar from "@/components/MobileStickyBar";
+import PhoneCopyManager from "@/components/PhoneCopyManager";
 import { getLocalBusinessJsonLd, getWebSiteJsonLd } from "@/lib/jsonLd";
 import { LanguageProvider } from "@/lib/i18n";
 
@@ -19,6 +20,13 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-body",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-phone",
   display: "swap",
 });
 
@@ -126,7 +134,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const webSiteJsonLd = getWebSiteJsonLd();
 
   return (
-    <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context" />
         <script
@@ -161,6 +169,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SmoothScrollProvider>
             {children}
             <MobileStickyBar />
+            <PhoneCopyManager />
           </SmoothScrollProvider>
         </LanguageProvider>
       </body>

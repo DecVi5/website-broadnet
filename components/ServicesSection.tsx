@@ -254,7 +254,12 @@ export default function ServicesSection() {
                   <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
                     <div>
                       <div className="text-[11px] text-white/60">Lead Division Hotline:</div>
-                      <a href="tel:+918681888111" className="text-sm font-bold text-white hover:text-[#EF1313] transition-colors">
+                      <a
+                        href="tel:+918681888111"
+                        data-copy-phone="true"
+                        title="Click to copy 86818 88111"
+                        className="text-sm font-phone font-bold tracking-wider text-white hover:text-amber-400 transition-colors cursor-pointer block"
+                      >
                         86818 88111
                       </a>
                     </div>

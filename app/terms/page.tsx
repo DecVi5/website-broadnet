@@ -62,7 +62,16 @@ export default function TermsPage() {
             <section>
               <h2 className="text-xl font-bold text-[#16143E] mb-2 font-display">3. Service Level Agreement (SLA)</h2>
               <p>
-                Service calls logged through our support line (+91 86818 88111) receive rapid technician dispatch within 2 hours in Avadi and surrounding local zones (Thirumullaivoyal, Ambattur, Pattabiram, Poonamallee).
+                Service calls logged through our support line (
+                <a
+                  href="tel:+918681888111"
+                  data-copy-phone="true"
+                  title="Click to copy 86818 88111"
+                  className="font-phone font-bold text-[#16143E] hover:text-[#EF1313] transition-colors cursor-pointer"
+                >
+                  +91 86818 88111
+                </a>
+                ) receive rapid technician dispatch within 2 hours in Avadi and surrounding local zones (Thirumullaivoyal, Ambattur, Pattabiram, Poonamallee).
               </p>
             </section>
           </div>

@@ -6,6 +6,13 @@
   --obsidian: #16143E;
   --font-display: var(--font-display, "Syne", sans-serif);
   --font-body: var(--font-body, "DM Sans", sans-serif);
+  --font-phone: var(--font-phone, "JetBrains Mono", monospace);
+}
+
+.font-phone {
+  font-family: var(--font-phone), "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: 0.04em;
 }
 
 *, *::before, *::after { box-sizing: border-box; }

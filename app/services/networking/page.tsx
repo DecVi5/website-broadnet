@@ -420,10 +420,12 @@ export default function NetworkingPage() {
                   </a>
                   <a
                     href="tel:+918681888111"
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-50 hover:bg-slate-100 text-[#16143E] font-semibold text-sm transition-all border border-slate-200 shadow-2xs hover:border-slate-300"
+                    data-copy-phone="true"
+                    title="Click to copy 86818 88111"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-50 hover:bg-slate-100 text-[#16143E] font-semibold text-sm transition-all border border-slate-200 shadow-2xs hover:border-slate-300 cursor-pointer"
                   >
                     <Phone size={15} className="text-[#EF1313]" />
-                    <span>Call: 86818 88111</span>
+                    <span>Call: <span className="font-phone font-bold tracking-wider">86818 88111</span></span>
                   </a>
                 </div>
               </div>
@@ -709,9 +711,11 @@ export default function NetworkingPage() {
                 </a>
                 <a
                   href="tel:+918681888111"
-                  className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/15"
+                  data-copy-phone="true"
+                  title="Click to copy 86818 88111"
+                  className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/15 cursor-pointer"
                 >
-                  Direct Call: 86818 88111
+                  Direct Call: <span className="font-phone font-bold tracking-wider">86818 88111</span>
                 </a>
               </div>
             </div>

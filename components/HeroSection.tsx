@@ -221,7 +221,9 @@ export default function HeroSection() {
             style={{ fontFamily: "Syne, sans-serif" }}
           >
             <WhatsAppIcon size={18} className="text-[#25D366]" />
-            <span>{t("hero.whatsappCta")} · 86818 88111</span>
+            <span>
+              {t("hero.whatsappCta")} · <span className="font-phone font-bold tracking-wider">86818 88111</span>
+            </span>
           </a>
         </div>
 

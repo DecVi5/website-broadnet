@@ -206,11 +206,13 @@ export default function ProcessSection() {
             </button>
             <a
               href="tel:+918681888111"
+              data-copy-phone="true"
+              title="Click to copy 86818 88111"
               onClick={() => trackEvent("call_click", { category: "ProcessSection" })}
-              className="min-h-[44px] px-4 py-2.5 rounded-full border border-white/20 hover:bg-white/10 text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 transition-colors w-full sm:w-auto"
+              className="min-h-[44px] px-4 py-2.5 rounded-full border border-white/20 hover:bg-white/10 text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 transition-colors w-full sm:w-auto cursor-pointer"
             >
               <Phone size={13} className="text-[#EF1313]" />
-              <span>86818 88111</span>
+              <span className="font-phone font-bold tracking-wider">86818 88111</span>
             </a>
           </div>
         </div>

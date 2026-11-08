@@ -89,7 +89,17 @@ export default function PrivacyPolicyPage() {
               <div className="p-4 rounded-2xl bg-[#F8F9FD] border border-[#16143E]/10 mt-3 text-xs sm:text-sm">
                 <p className="font-bold text-[#16143E]">Broadnet Internet Services</p>
                 <p>1093, Fire Station Road, TNHB, Avadi, Chennai – 600 054</p>
-                <p>Email: <a href="mailto:admin@broadnet.in" className="text-[#4E0DBA] font-semibold hover:underline">admin@broadnet.in</a> | Phone: +91 86818 88111</p>
+                <p>
+                  Email: <a href="mailto:admin@broadnet.in" className="text-[#4E0DBA] font-semibold hover:underline">admin@broadnet.in</a> | Phone:{" "}
+                  <a
+                    href="tel:+918681888111"
+                    data-copy-phone="true"
+                    title="Click to copy 86818 88111"
+                    className="font-phone font-bold text-[#16143E] hover:text-[#EF1313] transition-colors cursor-pointer"
+                  >
+                    +91 86818 88111
+                  </a>
+                </p>
               </div>
             </section>
           </div>

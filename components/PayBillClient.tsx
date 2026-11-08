@@ -302,11 +302,12 @@ export default function PayBillClient() {
             {/* Quick Phone Helper */}
             <a
               href="tel:+918681888111"
-              className="hidden lg:flex items-center gap-2 text-xs font-bold text-[#16143E]/80 hover:text-[#EF1313] transition-colors flex-shrink-0"
-              style={{ fontFamily: "Syne, sans-serif" }}
+              data-copy-phone="true"
+              title="Click to copy 86818 88111"
+              className="hidden lg:flex items-center gap-2 text-xs font-bold text-[#16143E]/80 hover:text-[#EF1313] transition-colors flex-shrink-0 cursor-pointer"
             >
               <Phone size={13} className="text-[#EF1313]" />
-              <span>Billing Desk: 86818 88111</span>
+              <span>Billing Desk: <span className="font-phone font-bold tracking-wider">86818 88111</span></span>
             </a>
           </div>
         </div>

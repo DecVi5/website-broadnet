@@ -14,14 +14,17 @@ export default function MobileStickyBar() {
       <div className="max-w-md mx-auto grid grid-cols-3 gap-2">
         <a
           href="tel:+918681888111"
+          data-copy-phone="true"
+          title="Call or Copy 86818 88111"
           onClick={() => trackEvent("call_click", { category: "MobileStickyBar" })}
-          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#16143E]/5 hover:bg-[#16143E]/10 border border-[#16143E]/10 text-[#16143E] active:scale-[0.95] transition-transform duration-100 text-center touch-manipulation"
-          aria-label="Call Now - Broadnet Direct Support"
+          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#16143E]/5 hover:bg-[#16143E]/10 border border-[#16143E]/10 text-[#16143E] active:scale-[0.95] transition-transform duration-100 text-center touch-manipulation cursor-pointer"
+          aria-label="Call 86818 88111 - Broadnet Direct Support"
         >
           <Phone size={16} className="text-[#DC2626] mb-0.5" />
           <span className="text-[11px] font-bold" style={{ fontFamily: "Syne, sans-serif" }}>
             Call Now
           </span>
+          <span className="text-[9px] font-phone font-bold text-[#16143E]/70 -mt-0.5">86818 88111</span>
         </a>
 
         <a

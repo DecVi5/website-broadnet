@@ -1005,10 +1005,12 @@ export default function EnquirySection({ initialService, initialType }: EnquiryS
 
                 <a
                   href="tel:+918681888111"
+                  data-copy-phone="true"
+                  title="Click to copy 86818 88111"
                   onClick={() => trackEvent("call_click", { location: "enquiry_form" })}
-                  className="min-h-[44px] inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold text-[#16143E]/70 hover:text-[#16143E] border border-[#16143E]/12 hover:border-[#16143E]/25 bg-transparent transition-all w-full sm:w-auto"
+                  className="min-h-[44px] inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold text-[#16143E]/70 hover:text-[#16143E] border border-[#16143E]/12 hover:border-[#16143E]/25 bg-transparent transition-all w-full sm:w-auto cursor-pointer"
                 >
-                  <Phone size={13} className="text-[#EF1313]" /> Call 86818 88111
+                  <Phone size={13} className="text-[#EF1313]" /> Call <span className="font-phone font-bold tracking-wider text-xs text-[#16143E]">86818 88111</span>
                 </a>
 
                 <div className="w-full sm:w-auto sm:ml-auto flex items-center justify-center sm:justify-end gap-2 text-[11px] text-[#16143E]/60 pt-1 sm:pt-0">
