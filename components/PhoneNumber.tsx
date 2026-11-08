@@ -71,7 +71,7 @@ export default function PhoneNumber({
       {prefix && <span className="opacity-90">{prefix}</span>}
 
       <span
-        className={`font-phone font-bold tracking-wider tabular-nums transition-colors duration-150 ${
+        className={`font-phone font-semibold tracking-wide tabular-nums transition-colors duration-150 ${
           copied ? "text-[#25D366]" : ""
         } ${numberClassName}`}
       >
@@ -111,3 +111,4 @@ export default function PhoneNumber({
 
   return content;
 }
+

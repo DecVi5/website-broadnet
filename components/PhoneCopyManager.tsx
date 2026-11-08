@@ -176,7 +176,7 @@ export default function PhoneCopyManager() {
         {/* Message */}
         <div className="flex items-center gap-2 text-xs sm:text-sm">
           <span className="text-white/80 font-medium">Copied</span>
-          <span className="font-phone font-bold text-amber-300 tracking-wider px-1.5 py-0.5 rounded bg-white/10 border border-white/15">
+          <span className="font-phone font-semibold text-amber-300 tracking-wide px-1.5 py-0.5 rounded bg-white/10 border border-white/15">
             {toast.number}
           </span>
           <span className="text-white/80 font-medium hidden sm:inline">to clipboard!</span>
