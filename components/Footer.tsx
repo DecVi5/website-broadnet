@@ -227,7 +227,7 @@ export default function Footer() {
           <div className="text-[11px] text-white/70 text-center md:text-right tracking-wide">
             Made with{" "}
             <a
-              href="https://website-indianpixel.vercel.app/"
+              href="https://indianpixel.in"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white font-semibold hover:text-white transition-colors underline-offset-4 hover:underline"
