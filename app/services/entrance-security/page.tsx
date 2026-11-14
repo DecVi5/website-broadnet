@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Boom Barriers, Turnstiles & Metal Detectors",
+  title: "Boom Barriers & Turnstiles in Avadi",
   description:
     "Automated boom barriers, RFID vehicle tags, doorframe metal detectors (DFMD), and pedestrian flap barriers for apartments, tech parks, and factories across Chennai & Avadi. Call 86818 88111.",
   keywords: [
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
     "RFID vehicle boom barrier Chennai",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/services/entrance-security/",
+    canonical: "https://broadnet.in/services/entrance-security/",
   },
   openGraph: {
-    title: "Boom Barriers, Turnstiles & Metal Detectors | Broadnet",
+    title: "Boom Barriers & Turnstiles in Avadi | Broadnet",
     description:
       "Automated vehicle boom barriers, long-range RFID windshield tags, and pedestrian flap barriers across Chennai & Avadi. 2-Hour technician dispatch.",
-    url: "https://www.broadnet.in/services/entrance-security/",
+    url: "https://broadnet.in/services/entrance-security/",
     type: "website",
     images: [
       {
@@ -56,9 +56,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Boom Barriers & Entrance Security | Broadnet Avadi",
-    description:
-      "Automated boom barriers, RFID access, and flap barrier turnstiles across Chennai & Avadi. Call 86818 88111.",
+    title: "Boom Barriers & Entrance Security in Avadi | Broadnet",
+    description: "Automated vehicle boom barriers, long-range RFID tags, and turnstiles in Avadi & Chennai.",
     images: ["/og-image.png"],
   },
 };

@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     "Privacy Policy for Broadnet Internet Services. How we collect, handle, and protect customer data for broadband connections and security system installations.",
   alternates: {
-    canonical: "https://www.broadnet.in/privacy-policy/",
+    canonical: "https://broadnet.in/privacy-policy/",
   },
   openGraph: {
     title: "Privacy Policy | Broadnet Internet Services",
     description:
       "Information handling and privacy commitments for Broadnet customers across Chennai and Avadi.",
-    url: "https://www.broadnet.in/privacy-policy/",
+    url: "https://broadnet.in/privacy-policy/",
     type: "website",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Broadnet Privacy Policy" }],
   },

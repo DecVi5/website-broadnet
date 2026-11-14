@@ -30,17 +30,17 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Our Team & Infrastructure",
+  title: "Security & Network Engineers in Avadi",
   description:
     "Broadnet Internet Services operates in Avadi, Chennai since 2014 with 10+ certified engineers. 2,500+ installations, 100+ km fiber network, and certified partner for Hikvision, CP PLUS, Grandstream, and eSSL.",
   alternates: {
-    canonical: "https://www.broadnet.in/about/",
+    canonical: "https://broadnet.in/about/",
   },
   openGraph: {
-    title: "About Broadnet Internet Services | 12 Years in Avadi, Chennai",
+    title: "About Broadnet | Security & Fiber Integrator in Avadi",
     description:
       "Avadi's technology and security systems provider. CCTV, biometrics, enterprise Wi-Fi, and network infrastructure.",
-    url: "https://www.broadnet.in/about/",
+    url: "https://broadnet.in/about/",
     type: "website",
     images: [
       {
@@ -54,8 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About Broadnet | Avadi's Security & Fiber Integrator",
-    description:
-      "12+ years in Avadi with 10+ certified engineers and over 100 km of optical fiber infrastructure.",
+    description: "12+ years in Avadi with 10+ certified engineers and over 100 km of optical fiber infrastructure.",
     images: ["/og-image.png"],
   },
 };

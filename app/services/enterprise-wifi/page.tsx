@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Enterprise Wi-Fi 6 & Access Points",
+  title: "Enterprise Wi-Fi 6 in Avadi & Chennai",
   description:
     "Grandstream Certified Network Specialists installing enterprise Wi-Fi 6 access points, seamless multi-floor mesh, guest captive portals, and cloud management across Chennai & Avadi. Call 86818 88111.",
   keywords: [
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     "Wi-Fi 6 access points Avadi",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/services/enterprise-wifi/",
+    canonical: "https://broadnet.in/services/enterprise-wifi/",
   },
   openGraph: {
-    title: "Enterprise Wi-Fi & Grandstream Access Points | Broadnet",
+    title: "Enterprise Wi-Fi & Access Points in Avadi | Broadnet",
     description:
       "Enterprise Wi-Fi 6 deployment, seamless multi-floor roaming mesh, and guest captive portals across Chennai & Avadi.",
-    url: "https://www.broadnet.in/services/enterprise-wifi/",
+    url: "https://broadnet.in/services/enterprise-wifi/",
     type: "website",
     images: [
       {
@@ -42,9 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Enterprise Wi-Fi & Networking | Broadnet Avadi",
-    description:
-      "Certified Grandstream enterprise Wi-Fi 6 networks and cloud management across Chennai & Avadi.",
+    title: "Enterprise Wi-Fi & Networking in Avadi | Broadnet",
+    description: "Certified Grandstream enterprise Wi-Fi 6 access points, mesh networks, and cabling in Avadi.",
     images: ["/og-image.png"],
   },
 };

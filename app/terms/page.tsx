@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     "Terms of service, warranty policy, and installation commitments for Broadnet Internet Services and security systems in Avadi, Chennai.",
   alternates: {
-    canonical: "https://www.broadnet.in/terms/",
+    canonical: "https://broadnet.in/terms/",
   },
   openGraph: {
     title: "Terms of Service | Broadnet Internet Services",
     description:
       "Installation terms, warranty policies, and service level agreements for Broadnet customers across Chennai and Avadi.",
-    url: "https://www.broadnet.in/terms/",
+    url: "https://broadnet.in/terms/",
     type: "website",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Broadnet Terms of Service" }],
   },

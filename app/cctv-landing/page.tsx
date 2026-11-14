@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     "CCTV Poonamallee",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/cctv-landing/",
+    canonical: "https://broadnet.in/cctv-landing/",
   },
   openGraph: {
-    title: "CCTV Installation & Service in Avadi, Chennai | Broadnet",
+    title: "CCTV Installation & Service in Avadi | Broadnet",
     description:
       "Official Hikvision & CP PLUS CCTV camera sales, installation and AMC services across Avadi & Chennai. Professional on-site survey and 2-hour technician dispatch.",
-    url: "https://www.broadnet.in/cctv-landing/",
+    url: "https://broadnet.in/cctv-landing/",
     type: "website",
     images: [
       {
@@ -47,9 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CCTV Installation & Service in Avadi, Chennai | Broadnet",
-    description:
-      "Official Hikvision & CP PLUS CCTV camera sales, installation and AMC services across Avadi & Chennai.",
+    title: "CCTV Installation & Service in Avadi | Broadnet",
+    description: "Official Hikvision & CP PLUS CCTV camera sales, installation and AMC services across Avadi & Chennai.",
     images: ["/og-image.png"],
   },
 };
@@ -59,8 +58,8 @@ export default function CCTVLandingPage() {
   const serviceJsonLd = getCctvServiceJsonLd();
   const faqJsonLd = getFaqPageJsonLd(CCTV_LANDING_FAQS);
   const breadcrumbJsonLd = getBreadcrumbJsonLd([
-    { name: "Home", url: "https://www.broadnet.in" },
-    { name: "CCTV Surveillance", url: "https://www.broadnet.in/cctv-landing" },
+    { name: "Home", url: "https://broadnet.in" },
+    { name: "CCTV Surveillance", url: "https://broadnet.in/cctv-landing" },
   ]);
 
   return (

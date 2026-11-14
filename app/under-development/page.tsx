@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     "Broadnet technician dispatch Chennai",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/under-development/",
+    canonical: "https://broadnet.in/under-development/",
   },
   openGraph: {
     title: "Website Under Active Development & Digital Roadmap | Broadnet",
     description:
       "Digital upgrade status and roadmap for Broadnet. High-speed broadband and CCTV security installations remain 100% active across Avadi & Chennai.",
-    url: "https://www.broadnet.in/under-development/",
+    url: "https://broadnet.in/under-development/",
     type: "website",
     images: [
       {
@@ -47,7 +47,7 @@ export default function UnderDevelopmentPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "Website Under Active Development & Digital Roadmap | Broadnet",
-    url: "https://www.broadnet.in/under-development",
+    url: "https://broadnet.in/under-development",
     description:
       "Official digital roadmap, feature release timeline, and operational status for Broadnet Internet Services and Security Systems.",
   };

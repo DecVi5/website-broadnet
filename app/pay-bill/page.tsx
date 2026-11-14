@@ -5,7 +5,7 @@ import PayBillClient from "@/components/PayBillClient";
 import { SITE_CONFIG } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Pay Internet Bill Online (3 Quick Portals)",
+  title: "Pay Internet Bill Online in Avadi",
   description:
     "Official online bill payment and quick recharge portal for Broadnet Internet Services, BSNL Bharat Fibre, and Railwire Broadband subscribers across Avadi and Chennai. Instant UPI, Net Banking & card payments.",
   keywords: [
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     "fiber internet recharge Chennai",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/pay-bill/",
+    canonical: "https://broadnet.in/pay-bill/",
   },
   openGraph: {
-    title: "Pay Internet Bill Online | Broadnet, BSNL & Railwire Billing",
+    title: "Pay Internet Bill Online in Avadi | Broadnet",
     description:
       "Direct links to official payment interfaces for Broadnet Fiber, BSNL Bharat Fibre, and Railwire Broadband subscribers in Avadi and Chennai.",
-    url: "https://www.broadnet.in/pay-bill/",
+    url: "https://broadnet.in/pay-bill/",
     type: "website",
     images: [
       {
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pay Internet Bill Online | Broadnet Services",
-    description: "Official payment portals for Broadnet, BSNL Bharat Fibre, and Railwire subscribers.",
+    title: "Pay Internet Bill Online in Avadi | Broadnet",
+    description: "Official payment portals for Broadnet, BSNL Bharat Fibre, and RailWire broadband subscribers in Avadi.",
     images: ["/og-image.png"],
   },
 };
@@ -49,7 +49,7 @@ export default function PayBillPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Pay Internet Bill Online | Broadnet, BSNL & Railwire",
-    "url": "https://www.broadnet.in/pay-bill",
+    "url": "https://broadnet.in/pay-bill",
     "description":
       "Official billing and online recharge interfaces for Broadnet Fiber, BSNL Bharat Fibre, and Railwire Broadband in Avadi and Chennai.",
     "provider": {

@@ -7,7 +7,7 @@ import ProjectsGallery from "@/components/ProjectsGallery";
 import { Sparkles, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Projects & Installation Gallery",
+  title: "CCTV & Network Projects in Chennai",
   description:
     "View completed CCTV, biometric attendance, network cabling, and boom barrier projects across Avadi, Pattabiram, Ambattur, and Chennai. Real installations since 2014.",
   keywords: [
@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     "Biometric installation photos Chennai",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/projects/",
+    canonical: "https://broadnet.in/projects/",
   },
   openGraph: {
-    title: "Projects & Installation Gallery Chennai | Broadnet Internet & Security",
+    title: "CCTV & Network Installation Projects in Chennai | Broadnet",
     description:
       "Explore 2,500+ completed CCTV, biometric access, and networking deployments across Chennai & Avadi.",
-    url: "https://www.broadnet.in/projects/",
+    url: "https://broadnet.in/projects/",
     type: "website",
     images: [
       {
@@ -36,9 +36,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Projects & Installation Gallery Chennai | Broadnet",
-    description:
-      "Explore 2,500+ completed CCTV, biometric access, and networking deployments across Chennai & Avadi.",
+    title: "CCTV & Network Installation Projects in Chennai | Broadnet",
+    description: "Explore 2,500+ completed CCTV, biometric, and fiber broadband installations in Chennai & Avadi.",
     images: ["/og-image.png"],
   },
 };

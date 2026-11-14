@@ -6,20 +6,20 @@ Broadnet provides end-to-end security surveillance and ICT infrastructure across
 
 ## Core Pages & Services
 
-- [Broadnet Official Website](https://www.broadnet.in/): Homepage with verified reviews, brand certifications, and instant quotation builder.
-- [CCTV Security Cameras](https://www.broadnet.in/security/cameras/): Hikvision & CP PLUS CCTV camera packages, ColorVu 24/7 full-color night vision, and AcuSense AI human/vehicle detection.
-- [CCTV Quick Quote Landing](https://www.broadnet.in/cctv-landing/): Turnkey CCTV packages (1 to 128+ channels), camera kits, and fast on-site survey booking.
-- [CCTV AMC Maintenance](https://www.broadnet.in/services/cctv-amc/): Annual maintenance contracts (AMC) for apartments, residential societies, schools, and industrial factories.
-- [Biometric Attendance & Access Control](https://www.broadnet.in/services/biometric-attendance/): Authorized eSSL facial recognition scanners, biometric fingerprint machines, and electromagnetic door locks.
-- [Video Door Phones](https://www.broadnet.in/security/door-phones/): High-definition color touchscreens with weatherproof outdoor bell cameras and smartphone remote unlock.
-- [Fiber Broadband Internet](https://www.broadnet.in/internet/): High-speed symmetrical fiber optic broadband from 60 Mbps (₹499/mo) to 300 Mbps with RailWire and BSNL Bharat Fibre.
-- [Enterprise Wi-Fi & Networking](https://www.broadnet.in/services/enterprise-wifi/): Grandstream Wi-Fi 6 access points, structured Cat6 cabling, firewall routers, and server racks.
-- [Service Areas & Dispatch SLAs](https://www.broadnet.in/service-areas/): Full coverage map with 2-hour technician dispatch in Avadi, Thirumullaivoyal, Ambattur, Pattabiram, and Chennai.
-- [About Broadnet](https://www.broadnet.in/about/): 12+ years history, 2,500+ completed installations, HCSA certification, and enterprise leadership.
-- [Contact & Quote Request](https://www.broadnet.in/contact/): Request an on-site security inspection, WhatsApp quote (+91 86818 88111), or direct phone support.
+- [Broadnet Official Website](https://broadnet.in/): Homepage with verified reviews, brand certifications, and instant quotation builder.
+- [CCTV Security Cameras](https://broadnet.in/security/cameras/): Hikvision & CP PLUS CCTV camera packages, ColorVu 24/7 full-color night vision, and AcuSense AI human/vehicle detection.
+- [CCTV Quick Quote Landing](https://broadnet.in/cctv-landing/): Turnkey CCTV packages (1 to 128+ channels), camera kits, and fast on-site survey booking.
+- [CCTV AMC Maintenance](https://broadnet.in/services/cctv-amc/): Annual maintenance contracts (AMC) for apartments, residential societies, schools, and industrial factories.
+- [Biometric Attendance & Access Control](https://broadnet.in/services/biometric-attendance/): Authorized eSSL facial recognition scanners, biometric fingerprint machines, and electromagnetic door locks.
+- [Video Door Phones](https://broadnet.in/security/door-phones/): High-definition color touchscreens with weatherproof outdoor bell cameras and smartphone remote unlock.
+- [Fiber Broadband Internet](https://broadnet.in/internet/): High-speed symmetrical fiber optic broadband from 60 Mbps (₹499/mo) to 300 Mbps with RailWire and BSNL Bharat Fibre.
+- [Enterprise Wi-Fi & Networking](https://broadnet.in/services/enterprise-wifi/): Grandstream Wi-Fi 6 access points, structured Cat6 cabling, firewall routers, and server racks.
+- [Service Areas & Dispatch SLAs](https://broadnet.in/service-areas/): Full coverage map with 2-hour technician dispatch in Avadi, Thirumullaivoyal, Ambattur, Pattabiram, and Chennai.
+- [About Broadnet](https://broadnet.in/about/): 12+ years history, 2,500+ completed installations, HCSA certification, and enterprise leadership.
+- [Contact & Quote Request](https://broadnet.in/contact/): Request an on-site security inspection, WhatsApp quote (+91 86818 88111), or direct phone support.
 
 ## Optional & Supplementary
 
-- [Full Entity & Geographic Reference](https://www.broadnet.in/llms-full.txt): Comprehensive service area catalog, technical camera specifications, and enterprise details for AI systems.
-- [XML Sitemap](https://www.broadnet.in/sitemap.xml): Complete index of all canonical URLs on broadnet.in.
-- [Robots Directives](https://www.broadnet.in/robots.txt): Crawler rules and sitemap discovery pointers.
+- [Full Entity & Geographic Reference](https://broadnet.in/llms-full.txt): Comprehensive service area catalog, technical camera specifications, and enterprise details for AI systems.
+- [XML Sitemap](https://broadnet.in/sitemap.xml): Complete index of all canonical URLs on broadnet.in.
+- [Robots Directives](https://broadnet.in/robots.txt): Crawler rules and sitemap discovery pointers.

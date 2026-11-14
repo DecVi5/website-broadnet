@@ -18,17 +18,17 @@ const Footer = dynamic(() => import("@/components/Footer"));
 
 
 export const metadata: Metadata = {
-  title: "Broadnet | Fiber Internet & CCTV Installation Chennai",
+  title: "CCTV Installation & Fiber Internet in Avadi",
   description:
     "Broadnet Internet Services (Est. 2014): Official Hikvision & CP PLUS CCTV camera installation, eSSL biometric attendance, video door phones, and enterprise networking across Chennai. Call 86818 88111.",
   alternates: {
-    canonical: "https://www.broadnet.in/",
+    canonical: "https://broadnet.in/",
   },
   openGraph: {
-    title: "Broadnet | CCTV Security Systems & Fiber Internet in Chennai & Avadi",
+    title: "CCTV Security Systems & Fiber Internet in Avadi | Broadnet",
     description:
       "Avadi & Chennai's authorized security systems integrator for Hikvision & CP PLUS CCTV cameras, eSSL biometrics, and high-speed fiber broadband. Established 2014.",
-    url: "https://www.broadnet.in/",
+    url: "https://broadnet.in/",
     type: "website",
     images: [
       {
@@ -41,9 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Broadnet | CCTV Security Systems & Fiber Broadband",
-    description:
-      "Official Hikvision & CP PLUS CCTV camera installations and high-speed fiber broadband across Avadi & Chennai.",
+    title: "CCTV Security Systems & Fiber Broadband in Avadi | Broadnet",
+    description: "Official Hikvision & CP PLUS CCTV camera installations and high-speed fiber broadband across Avadi & Chennai.",
     images: ["/og-image.png"],
   },
 };

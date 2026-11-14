@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "CCTV Camera Installation in Chennai & Avadi",
+  title: "CCTV Camera Installation in Avadi",
   description:
     "Official CP PLUS & Hikvision certified CCTV camera installation in Avadi. Complete turnkey home & commercial camera packages with pricing on enquiry, 2-hour technician dispatch, and professional on-site inspection. Call 86818 88111.",
   keywords: [
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
     "CCTV repair and AMC Avadi",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/security/cameras/",
+    canonical: "https://broadnet.in/security/cameras/",
   },
   openGraph: {
     title: "CCTV Camera Installation & Services in Avadi | Broadnet",
     description:
       "24/7 HD & 4K CCTV surveillance systems. Professional site survey, concealed conduit wiring, mobile live monitoring, and 2-hour local technician dispatch in Avadi.",
-    url: "https://www.broadnet.in/security/cameras/",
+    url: "https://broadnet.in/security/cameras/",
     type: "website",
     images: [
       {
@@ -60,8 +60,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "CCTV Camera Installation in Avadi | Broadnet",
-    description:
-      "Official CP PLUS & Hikvision certified CCTV camera installation in Avadi. Turnkey packages on enquiry with 2-hour dispatch.",
+    description: "Official CP PLUS & Hikvision certified CCTV camera installation in Avadi with 2-hour dispatch.",
     images: ["/og-image.png"],
   },
 };
@@ -258,9 +257,9 @@ export default function CamerasPage() {
   const faqJsonLd = getFaqPageJsonLd(FAQS);
   const cctvServiceJsonLd = getCctvServiceJsonLd();
   const breadcrumbJsonLd = getBreadcrumbJsonLd([
-    { name: "Home", url: "https://www.broadnet.in" },
-    { name: "Security Solutions", url: "https://www.broadnet.in/security" },
-    { name: "CCTV Cameras", url: "https://www.broadnet.in/security/cameras" },
+    { name: "Home", url: "https://broadnet.in" },
+    { name: "Security Solutions", url: "https://broadnet.in/security" },
+    { name: "CCTV Cameras", url: "https://broadnet.in/security/cameras" },
   ]);
 
   return (

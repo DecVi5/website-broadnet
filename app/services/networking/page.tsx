@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Structured Cabling & Network Infrastructure",
+  title: "Structured Cabling & Network in Avadi",
   description:
     "End-to-end LAN/WAN engineering, Cat6/Cat6A structured cabling, server rack management, optical fiber fusion splicing with OTDR testing, and Tactine UTM firewalls across Chennai & Avadi. Call 86818 88111.",
   keywords: [
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     "Server rack dressing Avadi",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/services/networking/",
+    canonical: "https://broadnet.in/services/networking/",
   },
   openGraph: {
-    title: "Structured Cabling & Network Infrastructure | Broadnet",
+    title: "Structured Cabling & Network Infrastructure in Avadi | Broadnet",
     description:
       "Enterprise LAN/WAN cabling, server rack dressing, optical fiber backbone splicing, and Tactine UTM cyber firewalls in Avadi & Chennai.",
-    url: "https://www.broadnet.in/services/networking/",
+    url: "https://broadnet.in/services/networking/",
     type: "website",
     images: [
       {
@@ -58,9 +58,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Structured Cabling & Network Infrastructure | Broadnet",
-    description:
-      "Enterprise LAN/WAN cabling, server rack dressing, fiber splicing, and Tactine firewalls in Avadi & Chennai.",
+    title: "Structured Cabling & Network in Avadi | Broadnet",
+    description: "Enterprise LAN/WAN cabling, server rack setup, and optical fiber fusion splicing in Avadi.",
     images: ["/og-image.png"],
   },
 };

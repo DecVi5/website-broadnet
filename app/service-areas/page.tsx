@@ -8,7 +8,7 @@ import ServiceAreaCoverageClient from "./ServiceAreaCoverageClient";
 import { getCctvServiceJsonLd, getBreadcrumbJsonLd } from "@/lib/jsonLd";
 
 export const metadata: Metadata = {
-  title: "Service Areas & Coverage Checker in Chennai",
+  title: "Service Areas & Coverage in Chennai",
   description:
     "Broadnet provides CCTV installation & security integration across all of Chennai, with 2-hour dispatch in Avadi, Pattabiram, Thirumullaivoyal, and Thiruverkadu. Fiber internet available in Avadi only.",
   keywords: [
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     "Broadband Avadi pincode",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/service-areas/",
+    canonical: "https://broadnet.in/service-areas/",
   },
   openGraph: {
-    title: "Service Areas & Coverage Checker in Chennai & Avadi | Broadnet",
+    title: "Service Areas & Coverage in Chennai & Avadi | Broadnet",
     description:
       "CCTV installation & security integration across all of Chennai, with 2-hour dispatch in Avadi, Pattabiram, Thirumullaivoyal, and Thiruverkadu.",
-    url: "https://www.broadnet.in/service-areas/",
+    url: "https://broadnet.in/service-areas/",
     type: "website",
     images: [
       {
@@ -42,9 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Broadnet Service Areas & Dispatch Zones",
-    description:
-      "2-Hour local technician dispatch for CCTV, biometrics, and security across Avadi & Chennai.",
+    title: "Broadnet Service Areas & Dispatch Zones in Chennai",
+    description: "2-Hour local technician dispatch for CCTV, biometrics, and fiber broadband across Chennai & Avadi.",
     images: ["/og-image.png"],
   },
 };
@@ -52,8 +51,8 @@ export const metadata: Metadata = {
 export default function ServiceAreasPage() {
   const serviceJsonLd = getCctvServiceJsonLd();
   const breadcrumbJsonLd = getBreadcrumbJsonLd([
-    { name: "Home", url: "https://www.broadnet.in" },
-    { name: "Service Areas", url: "https://www.broadnet.in/service-areas" },
+    { name: "Home", url: "https://broadnet.in" },
+    { name: "Service Areas", url: "https://broadnet.in/service-areas" },
   ]);
 
   return (

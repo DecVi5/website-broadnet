@@ -3,13 +3,13 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.broadnet.in";
+  const baseUrl = "https://broadnet.in";
   // Consistent release timestamp for accurate crawl cache invalidation
   const releaseDate = new Date("2026-10-09T00:00:00.000Z");
 
   return [
     {
-      url: baseUrl,
+      url: `${baseUrl}/`,
       lastModified: releaseDate,
       changeFrequency: "daily",
       priority: 1.0,
@@ -103,12 +103,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: releaseDate,
       changeFrequency: "monthly",
       priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/`,
-      lastModified: releaseDate,
-      changeFrequency: "weekly",
-      priority: 0.85,
     },
     {
       url: `${baseUrl}/contact/`,

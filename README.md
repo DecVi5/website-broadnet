@@ -5,7 +5,7 @@ Official web application for **Broadnet Internet Services** (Est. 2014) — Chen
 **Address:** 1093 Fire Station Road, TNHB, Avadi, Chennai 600054  
 **Primary Contact:** [+91 86818 88111](tel:+918681888111)  
 **Email:** admin@broadnet.in  
-**Website:** [https://www.broadnet.in](https://www.broadnet.in)
+**Website:** [https://broadnet.in](https://broadnet.in)
 
 ---
 
@@ -82,4 +82,4 @@ npm run start
 1. Import repository into Vercel.
 2. In **Project Settings → Environment Variables**, add `ADMIN_EMAIL`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, and `SMTP_PASS`.
 3. Preview deployments (`*.vercel.app`) automatically serve `X-Robots-Tag: noindex, nofollow` and `robots.txt: Disallow` to protect production SEO rankings.
-4. Production domain `https://www.broadnet.in` is fully indexed with dynamic XML sitemaps and localized JSON-LD schemas.
+4. Production domain `https://broadnet.in` is fully indexed with dynamic XML sitemaps and localized JSON-LD schemas.

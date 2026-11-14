@@ -39,6 +39,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://www.broadnet.in/sitemap.xml",
+    sitemap: "https://broadnet.in/sitemap.xml",
   };
 }

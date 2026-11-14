@@ -95,8 +95,8 @@ export const SERVING_AREAS_JSON_LD = [
 export function getLocalBusinessJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": ["SecuritySystemInstaller", "LocalBusiness"],
-    "@id": "https://www.broadnet.in/#localbusiness",
+    "@type": ["SecuritySystemInstaller", "SecuritySystemSupplier", "LocalBusiness"],
+    "@id": "https://broadnet.in/#localbusiness",
     "name": SITE_CONFIG.name,
     "alternateName": [
       "Broadnet",
@@ -105,9 +105,9 @@ export function getLocalBusinessJsonLd() {
       "Broadnet Fiber",
       "Broadnet Internet Services",
     ],
-    "url": "https://www.broadnet.in",
-    "logo": "https://www.broadnet.in/assets/logo.png",
-    "image": "https://www.broadnet.in/og-image.png",
+    "url": "https://broadnet.in",
+    "logo": "https://broadnet.in/assets/logo.png",
+    "image": "https://broadnet.in/og-image.png",
     "description":
       "Avadi & Chennai's authorized security systems integrator for Hikvision & CP PLUS CCTV cameras, ColorVu 24/7 full-color night vision, AcuSense AI detection, eSSL biometrics, video door phones, and high-speed fiber broadband. Established 2014 with 2-hour technician dispatch SLA.",
     "telephone": SITE_CONFIG.phones.primaryFormatted,
@@ -257,18 +257,18 @@ export function getCctvServiceJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://www.broadnet.in/security/cameras#service",
+    "@id": "https://broadnet.in/security/cameras#service",
     "name": "CCTV Camera Installation, Sales & AMC Service in Avadi & Chennai",
     "serviceType": "CCTV Camera Installation & Maintenance",
     "category": "Security System Installation",
     "description":
       "Professional CCTV camera installation, HD/4K IP surveillance, Hikvision ColorVu full-color night vision, AcuSense AI human/vehicle detection, and emergency repair with <2-hour dispatch in Avadi, Thirumullaivoyal, Ambattur, Pattabiram, Poonamallee, and across Chennai.",
     "provider": {
-      "@type": "SecuritySystemInstaller",
-      "@id": "https://www.broadnet.in/#localbusiness",
+      "@type": ["SecuritySystemInstaller", "SecuritySystemSupplier", "LocalBusiness"],
+      "@id": "https://broadnet.in/#localbusiness",
       "name": SITE_CONFIG.name,
       "telephone": SITE_CONFIG.phones.primaryFormatted,
-      "url": "https://www.broadnet.in",
+      "url": "https://broadnet.in",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": SITE_CONFIG.address.street,
@@ -292,7 +292,7 @@ export function getCctvServiceJsonLd() {
       "lowPrice": "1399",
       "highPrice": "49999",
       "offerCount": CCTV_PACKAGES.length.toString(),
-      "url": "https://www.broadnet.in/security/cameras",
+      "url": "https://broadnet.in/security/cameras",
     },
     "termsOfService":
       "2-Year Manufacturer Replacement Warranty + 1-Year Broadnet Service Warranty. <2-Hour Dispatch in Avadi.",
@@ -316,13 +316,13 @@ export function getWebSiteJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://www.broadnet.in/#website",
+    "@id": "https://broadnet.in/#website",
     "name": "Broadnet Internet Services",
-    "url": "https://www.broadnet.in",
+    "url": "https://broadnet.in",
     "description":
       "Official Hikvision & CP PLUS CCTV Camera Installation and Fiber Broadband in Avadi, Chennai.",
     "publisher": {
-      "@id": "https://www.broadnet.in/#localbusiness",
+      "@id": "https://broadnet.in/#localbusiness",
     },
     "inLanguage": ["en-IN", "ta-IN"],
   };
@@ -364,7 +364,7 @@ export function getCctvPackagesJsonLd() {
         "price": pkg.priceValue ? pkg.priceValue : 1399,
         "priceValidUntil": "2027-12-31",
         "availability": "https://schema.org/InStock",
-        "url": "https://www.broadnet.in/security/cameras",
+        "url": "https://broadnet.in/security/cameras",
         "seller": {
           "@type": "Organization",
           "name": SITE_CONFIG.name,
@@ -394,7 +394,7 @@ export function getBroadbandPlansJsonLd() {
         "price": plan.priceNum,
         "priceValidUntil": "2027-12-31",
         "availability": "https://schema.org/InStock",
-        "url": "https://www.broadnet.in/internet",
+        "url": "https://broadnet.in/internet",
         "seller": {
           "@type": "Organization",
           "name": SITE_CONFIG.name,

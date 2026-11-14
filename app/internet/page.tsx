@@ -9,7 +9,7 @@ import IctSolutions from "@/components/IctSolutions";
 import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
-  title: "High-Speed Fiber Internet & Broadband Plans",
+  title: "Fiber Broadband Internet in Avadi",
   description:
     "Explore symmetric FTTH fiber internet plans from 60 to 150 Mbps (with up to 300 Mbps optical line capacity) in Avadi, Chennai. Includes BSNL Bharat Fibre and Railwire OTT bundles.",
   keywords: [
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     "enterprise Wi-Fi Avadi",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/internet/",
+    canonical: "https://broadnet.in/internet/",
   },
   openGraph: {
-    title: "Fiber Broadband Plans in Avadi | Broadnet Internet Services",
+    title: "Fiber Broadband Plans in Avadi | Broadnet",
     description:
       "Direct private fiber network with zero reseller bottlenecks. Unlimited broadband plans from ₹499/mo with free ONT installation.",
-    url: "https://www.broadnet.in/internet/",
+    url: "https://broadnet.in/internet/",
     type: "website",
     images: [
       {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Fiber Broadband Plans in Avadi | Broadnet",
-    description: "Unlimited high-speed fiber broadband from ₹499/mo across Avadi.",
+    description: "Unlimited high-speed fiber broadband from ₹499/mo across Avadi with free installation.",
     images: ["/og-image.png"],
   },
 };
@@ -52,8 +52,8 @@ import { getBroadbandPlansJsonLd, getBreadcrumbJsonLd } from "@/lib/jsonLd";
 export default function InternetPage() {
   const jsonLd = getBroadbandPlansJsonLd();
   const breadcrumbJsonLd = getBreadcrumbJsonLd([
-    { name: "Home", url: "https://www.broadnet.in" },
-    { name: "Fiber Internet", url: "https://www.broadnet.in/internet" },
+    { name: "Home", url: "https://broadnet.in" },
+    { name: "Fiber Internet", url: "https://broadnet.in/internet" },
   ]);
 
   return (

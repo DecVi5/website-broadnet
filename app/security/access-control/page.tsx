@@ -29,7 +29,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Access Control & Door Automation",
+  title: "Access Control & Biometrics in Avadi",
   description:
     "Official eSSL biometric access control and employee time-attendance machines in Avadi, Chennai. Face recognition, fingerprint door locks on enquiry, electromagnetic latches, and 2-hour technician dispatch.",
   keywords: [
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     "office access control system Avadi",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/security/access-control/",
+    canonical: "https://broadnet.in/security/access-control/",
   },
   openGraph: {
     title: "Biometric Access Control & Attendance Systems in Avadi | Broadnet",
     description:
       "Eliminate buddy punching and secure restricted offices with certified eSSL biometric fingerprint and facial recognition systems in Avadi.",
-    url: "https://www.broadnet.in/security/access-control/",
+    url: "https://broadnet.in/security/access-control/",
     type: "website",
     images: [
       {
@@ -60,9 +60,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Biometric Access Control | Broadnet Avadi",
-    description:
-      "Official eSSL biometric access control, facial recognition, and attendance systems in Avadi.",
+    title: "Biometric Access Control in Avadi | Broadnet",
+    description: "Official eSSL biometric access control, magnetic locks, and attendance systems in Avadi.",
     images: ["/og-image.png"],
   },
 };

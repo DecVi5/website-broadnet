@@ -39,9 +39,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.broadnet.in"),
+  metadataBase: new URL("https://broadnet.in"),
   title: {
-    default: "Broadnet Internet Services | Fiber Broadband & CCTV Security in Avadi, Chennai",
+    default: "CCTV Security & Fiber Internet in Avadi | Broadnet",
     template: "%s | Broadnet",
   },
   description:
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     "CCTV installation Pattabiram",
     "CCTV Poonamallee",
   ],
-  authors: [{ name: "Broadnet Internet Services", url: "https://www.broadnet.in" }],
+  authors: [{ name: "Broadnet Internet Services", url: "https://broadnet.in" }],
   creator: "Broadnet Internet Services",
   publisher: "Broadnet Internet Services",
   formatDetection: {
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     email: true,
   },
   alternates: {
-    canonical: "https://www.broadnet.in",
+    canonical: "https://broadnet.in",
   },
   icons: {
     icon: [
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://www.broadnet.in",
+    url: "https://broadnet.in",
     siteName: "Broadnet Internet Services",
     title: "Broadnet | High-Speed Fiber Internet & CCTV Security in Avadi, Chennai",
     description:

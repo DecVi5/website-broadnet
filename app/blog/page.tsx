@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Security & Networking Knowledge Hub",
+  title: "Security & Network Guides in Chennai",
   description:
     "Expert security guides, CCTV installation tips in Avadi, biometric attendance rules, and network infrastructure advice from certified engineers at Broadnet.",
   keywords: [
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     "Hikvision ColorVu camera review",
   ],
   alternates: {
-    canonical: "https://www.broadnet.in/blog/",
+    canonical: "https://broadnet.in/blog/",
   },
   openGraph: {
-    title: "Security & Networking Knowledge Hub | Broadnet Avadi",
+    title: "Security & Network Guides in Chennai | Broadnet",
     description:
       "Expert security guides, CCTV installation tips in Avadi, biometric attendance rules, and network infrastructure advice from certified engineers.",
-    url: "https://www.broadnet.in/blog/",
+    url: "https://broadnet.in/blog/",
     type: "website",
     images: [
       {
@@ -42,9 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Broadnet Security & Networking Blog",
-    description:
-      "Expert security guides, CCTV installation tips in Avadi, and network infrastructure advice.",
+    title: "Security & Network Guides in Chennai | Broadnet",
+    description: "Expert security guides, CCTV installation tutorials, and enterprise networking insights in Chennai.",
     images: ["/og-image.png"],
   },
 };
