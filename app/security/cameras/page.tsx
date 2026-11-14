@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -24,6 +23,12 @@ import {
   Home,
   Store,
   Layers,
+  ShieldCheck,
+  Phone,
+  Sparkles,
+  BadgeCheck,
+  MapPin,
+  Clock,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -128,7 +133,6 @@ const HARDWARE_GALLERY_ITEMS = [
     title: "CP PLUS / Hikvision Dome Camera",
     category: "Indoor Surveillance",
     description: "Compact, vandal-resistant dome housing ideal for living rooms, retail aisles, and office ceilings with wide-angle coverage.",
-    imageSrc: "/assets/dome_camera_clean.webp",
     specs: ["1080p to 4K Ultra HD", "Built-in Microphone for Audio", "30m Smart Infrared Range"],
     status: "In Stock",
   },
@@ -136,7 +140,6 @@ const HARDWARE_GALLERY_ITEMS = [
     title: "Full-Color ColorVu Bullet Camera",
     category: "Outdoor Perimeter",
     description: "Heavy-duty metal bullet camera engineered for outdoor boundary walls, driveways, and gates with 24/7 vivid color night vision.",
-    imageSrc: "/assets/colorvu-night-vision.webp",
     specs: ["F1.0 Super Aperture", "IP67 Weatherproof Rating", "Active White Light Warning"],
     status: "In Stock",
   },
@@ -144,7 +147,6 @@ const HARDWARE_GALLERY_ITEMS = [
     title: "Traditional IR Night Vision",
     category: "Infrared Comparison",
     description: "Standard infrared surveillance sensor offering dependable monochrome nighttime coverage for budget-conscious properties.",
-    imageSrc: "/assets/traditional-ir-night-vision.webp",
     specs: ["Monochrome Infrared Night Mode", "Smart IR Anti-Overexposure", "Cost-Effective Security"],
     status: "Available",
   },
@@ -250,7 +252,6 @@ import {
   getCctvServiceJsonLd,
   getBreadcrumbJsonLd,
 } from "@/lib/jsonLd";
-import { MapPin, Clock, Phone, Sparkles } from "lucide-react";
 
 export default function CamerasPage() {
   const packagesJsonLd = getCctvPackagesJsonLd();
@@ -394,24 +395,106 @@ export default function CamerasPage() {
                 </div>
               </div>
 
-              {/* Right Column: Clean CCTV Hardware Showcase */}
+              {/* Right Column: Turnkey CCTV System Specification & Instant Quotation Card */}
               <div className="lg:col-span-5 flex justify-center">
-                <div className="relative w-full max-w-sm sm:max-w-md">
-                  {/* Decorative Frame */}
-                  <div className="relative bg-gradient-to-b from-white via-slate-50/50 to-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(22,20,62,0.06)] overflow-hidden flex flex-col items-center justify-center">
-                    {/* Ambient Aura Glow */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-[#EF1313]/15 via-[#4E0DBA]/10 to-transparent blur-3xl rounded-full pointer-events-none" />
+                <div className="relative w-full max-w-md">
+                  <div className="relative bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(22,20,62,0.08)] overflow-hidden ring-1 ring-slate-900/[0.04]">
+                    {/* Ambient subtle glow */}
+                    <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-[#EF1313]/10 to-[#4E0DBA]/10 blur-3xl rounded-full pointer-events-none" />
 
-                    {/* Genuine Camera Hardware Image */}
-                    <div className="relative z-10 w-full flex items-center justify-center py-4">
-                      <Image
-                        src="/assets/realistic_cctv.webp"
-                        alt="Ultra-HD 4K CCTV Camera Hardware"
-                        width={320}
-                        height={320}
-                        className="object-contain drop-shadow-[0_20px_35px_rgba(22,20,62,0.18)] hover:scale-105 transition-transform duration-500 max-h-[300px] w-auto"
-                        priority
-                      />
+                    <div className="relative z-10">
+                      {/* Top Header Badge Row */}
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#EF1313] inline-flex items-center gap-1.5">
+                          <BadgeCheck size={14} className="text-[#EF1313]" />
+                          Official Certified Partner
+                        </span>
+                        <span className="text-[11px] font-semibold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200/80 inline-flex items-center gap-1.5 shadow-2xs">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                          &lt; 2-Hour Dispatch
+                        </span>
+                      </div>
+
+                      {/* Main Card Headline */}
+                      <div className="mb-4">
+                        <h3 className="text-xl font-bold text-[#16143E] font-display">
+                          Turnkey CCTV Package Estimate
+                        </h3>
+                        <p className="text-xs text-[#16143E]/60 mt-1">
+                          Complete equipment supply, concealed conduit wiring, hard disk &amp; mobile setup across Avadi &amp; Chennai.
+                        </p>
+                      </div>
+
+                      {/* Specification & Inclusions List */}
+                      <div className="my-4 p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-slate-50 to-slate-100/70 border border-slate-200/90 space-y-2.5">
+                        <div className="flex items-center justify-between pb-2 border-b border-slate-200/70">
+                          <span className="text-xs font-bold text-[#16143E] uppercase tracking-wider">
+                            4-Camera HD / ColorVu Setup
+                          </span>
+                          <span className="text-xs font-bold text-[#EF1313] bg-red-50 border border-red-200/80 px-2.5 py-0.5 rounded-full">
+                            From ₹7,999
+                          </span>
+                        </div>
+
+                        <div className="space-y-2 text-xs text-[#16143E]/80">
+                          <div className="flex items-start gap-2.5">
+                            <CheckCircle2 size={14} className="text-[#EF1313] shrink-0 mt-0.5" />
+                            <span><strong>4x Cameras:</strong> 1080p / 4K ColorVu (Dome &amp; Bullet mix)</span>
+                          </div>
+                          <div className="flex items-start gap-2.5">
+                            <CheckCircle2 size={14} className="text-[#EF1313] shrink-0 mt-0.5" />
+                            <span><strong>Surveillance Hub:</strong> 4-Ch DVR/NVR + 1TB WD Purple / SkyHawk HDD</span>
+                          </div>
+                          <div className="flex items-start gap-2.5">
+                            <CheckCircle2 size={14} className="text-[#EF1313] shrink-0 mt-0.5" />
+                            <span><strong>Wiring Finish:</strong> 100% concealed PVC conduit &amp; waterproof boxes</span>
+                          </div>
+                          <div className="flex items-start gap-2.5">
+                            <CheckCircle2 size={14} className="text-[#EF1313] shrink-0 mt-0.5" />
+                            <span><strong>Remote App:</strong> Live Android &amp; iPhone viewing with push alerts</span>
+                          </div>
+                          <div className="flex items-start gap-2.5">
+                            <CheckCircle2 size={14} className="text-[#EF1313] shrink-0 mt-0.5" />
+                            <span><strong>Warranty:</strong> 2-Year replacement + 1-Year Broadnet service warranty</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Action CTAs */}
+                      <div className="space-y-2.5 pt-2">
+                        <a
+                          href="https://wa.me/918681888111?text=Hi%20Broadnet,%20I%20am%20looking%20for%20a%20CCTV%20Camera%20installation%20quote%20in%20Avadi.%20Please%20share%20details."
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#22c55e] hover:bg-[#16a34a] text-white font-bold text-sm transition-all shadow-md shadow-emerald-500/20 hover:shadow-lg"
+                        >
+                          <MessageCircle size={16} className="fill-white" />
+                          <span>Get Instant WhatsApp Estimate</span>
+                        </a>
+
+                        <a
+                          href="tel:+918681888111"
+                          data-copy-phone="true"
+                          title="Click to copy 86818 88111"
+                          className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-slate-50 hover:bg-slate-100 text-[#16143E] font-semibold text-xs transition-all border border-slate-200 cursor-pointer"
+                        >
+                          <Phone size={14} className="text-[#EF1313]" />
+                          <span>Avadi Dispatch Desk: <span className="font-phone font-bold tracking-wider">86818 88111</span></span>
+                        </a>
+                      </div>
+
+                      {/* Trust Micro-Bullets */}
+                      <div className="pt-3.5 mt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-[#16143E]/60">
+                        <span className="flex items-center gap-1">
+                          <CheckCircle2 size={12} className="text-emerald-500" /> Free Angle Survey
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <CheckCircle2 size={12} className="text-emerald-500" /> In-House Engineers
+                        </span>
+                        <a href="#packages" className="text-[#EF1313] font-bold hover:underline">
+                          All 4 Tiers &rarr;
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
