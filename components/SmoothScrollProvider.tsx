@@ -41,12 +41,12 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
       if (isCancelled) return;
 
       const lenis = new Lenis({
-        duration: 0.75,
+        duration: 0.52,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         orientation: "vertical",
         gestureOrientation: "vertical",
         smoothWheel: true,
-        wheelMultiplier: 1.0,
+        wheelMultiplier: 1.05,
         touchMultiplier: 1.0,
         infinite: false,
         autoRaf: false,

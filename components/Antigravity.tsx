@@ -128,11 +128,12 @@ const SIM_FRAGMENT_SHADER = `
   uniform float uRingWidth;
   uniform float uRingWidth2;
   uniform float uRingDisplacement;
+  uniform vec2 uSimRez;
 
   ${SNOISE_GLSL}
 
   void main() {
-    vec2 simTexCoords = gl_FragCoord.xy / vec2(256.0, 256.0);
+    vec2 simTexCoords = gl_FragCoord.xy / uSimRez;
     vec4 pFrame = texture2D(uPosition, simTexCoords);
 
     float scale = pFrame.z;
@@ -453,10 +454,11 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
     const isBot = isBotOrLighthouse();
     const isSmallScreen = window.innerWidth < 768;
     const isMotionReduced = prefersReducedMotion();
+    const isLowEnd = isLowEndDevice();
 
-    // Bots (Lighthouse), mobile screens, or users who requested reduced motion
+    // Bots (Lighthouse), mobile screens, low-end hardware, or users who requested reduced motion
     // get the instant lightweight CSS fallback
-    if (isBot || isSmallScreen || isMotionReduced) {
+    if (isBot || isSmallScreen || isMotionReduced || isLowEnd) {
       setIsMobile(true);
       return;
     }
@@ -477,7 +479,7 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
       if (isCancelled) return;
       let width = container.clientWidth || window.innerWidth;
       let height = container.clientHeight || 750;
-      const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.2);
 
       const ringWidth = 0.006;
       const ringWidth2 = 0.107;
@@ -485,9 +487,10 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
       const particlesScale = 0.62;
 
       // 1. Generate Poisson Disk Points across 500x500 box
-      // pMin = 8.0, pMax = 11.0 generates ~3,200 points in under 2ms (previously 90s!)
-      const rawPoints = generatePoissonPoints(500, 500, 8.0, 11.0, 10);
-      const count = Math.min(rawPoints.length, 4096);
+      // pMin = 10.0, pMax = 13.0 generates ~1,700 points with fluid 60-120fps on any GPU
+      const rawPoints = generatePoissonPoints(500, 500, 10.0, 13.0, 10);
+      const SIZE = 48;
+      const count = Math.min(rawPoints.length, SIZE * SIZE);
 
       // 2. Setup Three.js Renderer
       let renderer: THREE.WebGLRenderer;
@@ -519,8 +522,7 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
       );
       mainScene.add(raycastPlane);
 
-      // 3. Create Position DataTexture & Ping-Pong RenderTargets (64x64 = 4096 points)
-      const SIZE = 64;
+      // 3. Create Position DataTexture & Ping-Pong RenderTargets (48x48 = 2304 points)
       const texData = new Float32Array(SIZE * SIZE * 4);
       for (let t = 0; t < count; t++) {
         const n = t * 4;
@@ -567,6 +569,7 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
           uRingWidth: { value: ringWidth },
           uRingWidth2: { value: ringWidth2 },
           uRingDisplacement: { value: ringDisplacement },
+          uSimRez: { value: new THREE.Vector2(SIZE, SIZE) },
           uTime: { value: 0 },
         },
         vertexShader: SIM_VERTEX_SHADER,
@@ -634,34 +637,41 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
       const raycaster = new THREE.Raycaster();
       let isIntersecting = false;
 
+      // Zero-reflow decoupled pointer tracking
+      const cachedRect = {
+        left: 0,
+        top: 0,
+        width: width,
+        height: height,
+      };
+
+      const updateRect = () => {
+        if (!canvas) return;
+        const r = canvas.getBoundingClientRect();
+        cachedRect.left = r.left;
+        cachedRect.top = r.top;
+        cachedRect.width = r.width || width;
+        cachedRect.height = r.height || height;
+      };
+      updateRect();
+
+      let pendingX = -9999;
+      let pendingY = -9999;
+      let hasPointerInput = false;
+
       const onPointerMove = (e: PointerEvent) => {
-        const rect = canvas.getBoundingClientRect();
-        const px = e.clientX - rect.left;
-        const py = e.clientY - rect.top;
-
-        if (px < -100 || px > rect.width + 100 || py < -100 || py > rect.height + 100) {
-          isIntersecting = false;
-          return;
-        }
-
-        mouse.x = (px / rect.width) * 2 - 1;
-        mouse.y = -(py / rect.height) * 2 + 1;
-
-        raycaster.setFromCamera(mouse, camera);
-        const intersects = raycaster.intersectObject(raycastPlane);
-        if (intersects.length > 0) {
-          intersectionPoint.copy(intersects[0].point);
-          isIntersecting = true;
-        } else {
-          isIntersecting = false;
-        }
+        pendingX = e.clientX;
+        pendingY = e.clientY;
+        hasPointerInput = true;
       };
 
       const onPointerLeave = () => {
         isIntersecting = false;
+        hasPointerInput = false;
       };
 
       window.addEventListener("pointermove", onPointerMove, { passive: true });
+      window.addEventListener("scroll", updateRect, { passive: true });
       document.addEventListener("mouseleave", onPointerLeave);
       window.addEventListener("pointerleave", onPointerLeave);
 
@@ -674,6 +684,8 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
         renderer.setSize(width, height);
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
+
+        updateRect();
 
         particleScale = (width / 2000) * particlesScale * 1.35;
         renderMaterial.uniforms.uRez.value.set(width, height);
@@ -703,6 +715,29 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
         const time = getElapsed();
         const dt = Math.min(0.05, time - lastTime);
         lastTime = time;
+
+        // Process pointer input once per animation frame (no forced layout reflow)
+        if (hasPointerInput) {
+          hasPointerInput = false;
+          const px = pendingX - cachedRect.left;
+          const py = pendingY - cachedRect.top;
+
+          if (px < -100 || px > cachedRect.width + 100 || py < -100 || py > cachedRect.height + 100) {
+            isIntersecting = false;
+          } else {
+            mouse.x = (px / cachedRect.width) * 2 - 1;
+            mouse.y = -(py / cachedRect.height) * 2 + 1;
+
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObject(raycastPlane);
+            if (intersects.length > 0) {
+              intersectionPoint.copy(intersects[0].point);
+              isIntersecting = true;
+            } else {
+              isIntersecting = false;
+            }
+          }
+        }
 
         // Wandering Noise Drift
         const n = (noise.getVal(time * 0.66 + 94.234) - 0.5) * 2;
@@ -807,6 +842,7 @@ export default function Antigravity({ className = "", opacity = 0.62 }: Antigrav
       cleanupFn = () => {
         if (rafId) cancelAnimationFrame(rafId);
         window.removeEventListener("pointermove", onPointerMove);
+        window.removeEventListener("scroll", updateRect);
         document.removeEventListener("mouseleave", onPointerLeave);
         window.removeEventListener("pointerleave", onPointerLeave);
         observer.disconnect();

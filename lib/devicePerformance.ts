@@ -40,7 +40,7 @@ export function isLowEndDevice(): boolean {
   // 1. Accessibility override
   if (prefersReducedMotion()) return true;
 
-  // 2. CPU concurrency: Very low-end hardware (<= 2 cores, e.g. budget phones)
+  // 2. CPU concurrency: Low-end hardware (<= 2 cores, e.g. budget phones/low-end laptops)
   if (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) {
     return true;
   }
@@ -48,6 +48,16 @@ export function isLowEndDevice(): boolean {
   // 3. Device Memory API (Chrome/Edge/Android): devices with <= 2 GB RAM
   const navAny = navigator as unknown as { deviceMemory?: number };
   if (typeof navAny.deviceMemory === "number" && navAny.deviceMemory <= 2) {
+    return true;
+  }
+
+  // 4. Integrated low-spec combination: <= 4 cores with <= 4 GB memory
+  if (
+    navigator.hardwareConcurrency &&
+    navigator.hardwareConcurrency <= 4 &&
+    typeof navAny.deviceMemory === "number" &&
+    navAny.deviceMemory <= 4
+  ) {
     return true;
   }
 

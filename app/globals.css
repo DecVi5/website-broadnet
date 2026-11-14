@@ -145,63 +145,29 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 700 !important;
 }
 
-/* Enable custom cursor ONLY when active on desktop with precision pointer */
-@media (hover: hover) and (pointer: fine) {
-  html.has-custom-cursor body,
-  html.has-custom-cursor a,
-  html.has-custom-cursor button,
-  html.has-custom-cursor [role="button"] {
-    cursor: none;
-  }
-
-  /* Text inputs, textareas, and selects always preserve native precision cursor */
-  html.has-custom-cursor input,
-  html.has-custom-cursor textarea,
-  html.has-custom-cursor select,
-  html.has-custom-cursor [contenteditable="true"] {
-    cursor: auto !important;
-  }
-  html.has-custom-cursor input:not([type="button"]):not([type="submit"]):not([type="reset"]),
-  html.has-custom-cursor textarea {
-    cursor: text !important;
-  }
-  html.has-custom-cursor select {
-    cursor: pointer !important;
-  }
-}
-
+/* Ambient cursor follower (hardware cursor is always preserved with 0ms OS latency) */
 @media (hover: none) or (pointer: coarse) {
-  .cursor-ring,
-  .cursor-dot {
+  .cursor-ring {
     display: none !important;
   }
 }
 
-/* Custom cursor */
+/* Ambient cursor halo */
 .cursor-ring {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  margin-left: -18px;
+  margin-top: -18px;
   border-radius: 50%;
-  border: 2px solid #4E0DBA;
+  border: 1.5px solid rgba(78, 13, 186, 0.45);
   pointer-events: none;
   z-index: 99998;
   will-change: transform;
-  margin-left: -18px;
-  margin-top: -18px;
-}
-
-.cursor-dot {
-  position: fixed;
-  top: 0; left: 0;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #4E0DBA;
-  pointer-events: none;
-  z-index: 99999;
-  will-change: transform;
-  margin-left: -3px;
-  margin-top: -3px;
+  transition: border-color 0.18s ease, transform 0.1s ease-out, opacity 0.15s ease;
+  contain: layout style paint;
 }
 
 /* BroadNet Brand Scrollbar System (The "Indian Pixel" Touch) */
