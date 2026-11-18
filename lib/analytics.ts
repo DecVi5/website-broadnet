@@ -14,6 +14,8 @@ export type AnalyticsEvent =
   | "package_click"
   | "lead_click"
   | "quote_request"
+  | "explore_services_click"
+  | "check_availability_click"
   | "comparison_slider_interact"
   | "comparison_preset_click"
   | "colorvu_upgrade_click"

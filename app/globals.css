@@ -1,12 +1,37 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --indigo: #4E0DBA;
   --crimson: #EF1313;
   --obsidian: #16143E;
-  --font-display: var(--font-display, "Syne", sans-serif);
-  --font-body: var(--font-body, "DM Sans", sans-serif);
+  --font-display: var(--font-display, "Plus Jakarta Sans", sans-serif);
+  --font-body: var(--font-body, "Inter", sans-serif);
   --font-phone: var(--font-phone, "Open Sans", sans-serif);
+
+  /* Light Design Tokens */
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #FFFFFF;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --border-subtle: #E2E8F0;
+  --border-strong: #CBD5E1;
+}
+
+.dark {
+  /* Dark Design Tokens — Layered Navy / Architectural Palette */
+  --bg-primary: #080D14;
+  --bg-secondary: #0D1520;
+  --bg-surface: #121D2A;
+  --bg-card: #162333;
+  --text-primary: #F4F7FA;
+  --text-secondary: #A5B1BE;
+  --text-muted: #738295;
+  --border-subtle: #1E2E42;
+  --border-strong: rgba(255, 255, 255, 0.12);
 }
 
 .font-phone {
@@ -80,8 +105,8 @@ section[id], [id] {
 
 body {
   font-family: var(--font-body);
-  background: #FFFFFF;
-  color: #16143E;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   overflow-x: hidden;
   max-width: 100%;
   width: 100%;
@@ -326,12 +351,24 @@ html {
   box-shadow: 0 4px 24px -2px rgba(22, 20, 62, 0.04), inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
 }
 
+.dark .glass-header {
+  background: rgba(8, 13, 20, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+}
+
 .glass-header-scrolled {
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(24px) saturate(190%);
   -webkit-backdrop-filter: blur(24px) saturate(190%);
   border-bottom: 1px solid rgba(22, 20, 62, 0.08);
   box-shadow: 0 10px 32px -4px rgba(22, 20, 62, 0.08), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+}
+
+.dark .glass-header-scrolled {
+  background: rgba(13, 21, 32, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 32px -4px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
 }
 
 .glass-header-dark {
@@ -608,6 +645,20 @@ textarea.input-field-compact {
 .input-field:focus {
   border-color: #4E0DBA;
   box-shadow: 0 0 0 4px rgba(78,13,186,0.1);
+}
+
+.dark .input-field {
+  color: #F4F7FA;
+  border-color: #1E2E42;
+  background-color: #121D2A;
+}
+.dark .input-field::placeholder {
+  color: #738295;
+}
+.dark .input-field:focus {
+  border-color: #7C3AED;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.25);
+  background-color: #162333;
 }
 
 .input-field-dark {

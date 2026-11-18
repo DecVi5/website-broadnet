@@ -12,6 +12,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import BroadnetLogo from "./BroadnetLogo";
+import ThemeToggle from "./ThemeToggle";
 import { SERVICES_LIST, CONTACT_INFO } from "@/data/services";
 
 const QUICK_LINKS = [
@@ -26,7 +27,7 @@ const QUICK_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-[#120F35] via-[#16143E] to-[#0D0B24] text-white pt-16 pb-28 md:pb-14 border-t border-[#4E0DBA]/25">
+    <footer className="relative overflow-hidden bg-slate-950 dark:bg-[#080D14] text-white pt-16 pb-28 md:pb-14 border-t border-slate-800 dark:border-[#1E2E42] transition-colors duration-200">
       {/* Top subtle gradient divider line and radial glow */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4E0DBA] to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-[#EF1313]/60 via-[#4E0DBA] to-[#EF1313]/60 blur-xs" />
@@ -196,8 +197,12 @@ export default function Footer() {
             <span>© {new Date().getFullYear()} Broadnet Internet Services. All Rights Reserved.</span>
             <span className="hidden sm:inline text-white/50">·</span>
             <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-white/75 tracking-wider">
-              v2.9
+              v3.0
             </span>
+            <div className="inline-flex items-center gap-1.5 ml-2">
+              <span className="text-[11px] text-white/50">Theme:</span>
+              <ThemeToggle size="sm" />
+            </div>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-4 text-xs">
             <Link href="/cctv-landing" className="hover:text-white transition-colors">
@@ -225,7 +230,7 @@ export default function Footer() {
             </Link>
           </div>
           <div className="text-[11px] text-white/70 text-center md:text-right tracking-wide">
-            Made with{" "}
+            Designed &amp; Engineered by{" "}
             <a
               href="https://indianpixel.in"
               target="_blank"

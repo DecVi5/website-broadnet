@@ -8,7 +8,7 @@ export default function MobileStickyBar() {
   return (
     <aside
       aria-label="Quick Mobile Contact Bar"
-      className="md:hidden fixed bottom-0 left-0 right-0 z-40 px-3 py-2 bg-white/95 backdrop-blur-2xl border-t border-[#16143E]/12 shadow-[0_-8px_30px_rgba(22,20,62,0.16)]"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-40 px-3 py-2 bg-white/95 dark:bg-[#0D1520]/95 backdrop-blur-2xl border-t border-slate-200/90 dark:border-[#1E2E42] shadow-[0_-8px_30px_rgba(0,0,0,0.15)] dark:shadow-[0_-8px_30px_rgba(0,0,0,0.6)] transition-colors"
       style={{ paddingBottom: "max(0.6rem, env(safe-area-inset-bottom))" }}
     >
       <div className="max-w-md mx-auto grid grid-cols-3 gap-2">
@@ -17,14 +17,14 @@ export default function MobileStickyBar() {
           data-copy-phone="true"
           title="Call or Copy 86818 88111"
           onClick={() => trackEvent("call_click", { category: "MobileStickyBar" })}
-          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#16143E]/5 hover:bg-[#16143E]/10 border border-[#16143E]/10 text-[#16143E] active:scale-[0.95] transition-transform duration-100 text-center touch-manipulation cursor-pointer"
+          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-slate-100 dark:bg-[#121D2A] hover:bg-slate-200/80 dark:hover:bg-[#162333] border border-slate-200/80 dark:border-[#1E2E42] text-slate-900 dark:text-slate-100 active:scale-[0.95] transition-all duration-100 text-center touch-manipulation cursor-pointer"
           aria-label="Call 86818 88111 - Broadnet Direct Support"
         >
-          <Phone size={16} className="text-[#DC2626] mb-0.5" />
-          <span className="text-[11px] font-bold" style={{ fontFamily: "Syne, sans-serif" }}>
+          <Phone size={16} className="text-[#EF1313] mb-0.5" />
+          <span className="text-[11px] font-bold font-display">
             Call Now
           </span>
-          <span className="text-[9px] font-phone font-bold text-[#16143E]/70 -mt-0.5">86818 88111</span>
+          <span className="text-[9px] font-phone font-bold text-slate-500 dark:text-slate-400 -mt-0.5">86818 88111</span>
         </a>
 
         <a
@@ -32,12 +32,12 @@ export default function MobileStickyBar() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackEvent("whatsapp_click", { category: "MobileStickyBar" })}
-          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#16143E] active:scale-[0.95] transition-transform duration-100 text-center relative touch-manipulation"
+          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/35 text-emerald-800 dark:text-emerald-300 active:scale-[0.95] transition-all duration-100 text-center relative touch-manipulation"
           aria-label="WhatsApp - Chat with Broadnet"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 absolute top-1.5 right-2 animate-ping" />
           <MessageCircle size={16} className="text-[#25D366] mb-0.5" />
-          <span className="text-[11px] font-bold text-[#15803d]" style={{ fontFamily: "Syne, sans-serif" }}>
+          <span className="text-[11px] font-bold font-display">
             WhatsApp
           </span>
         </a>
@@ -54,11 +54,11 @@ export default function MobileStickyBar() {
               window.location.href = "/contact#enquiry";
             }
           }}
-          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#DC2626] hover:bg-[#b91c1c] text-white shadow-md shadow-[#DC2626]/30 active:scale-[0.95] transition-transform duration-100 text-center cursor-pointer glow-btn-crimson touch-manipulation"
+          className="flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl bg-[#EF1313] hover:bg-[#d00e0e] text-white shadow-md shadow-[#EF1313]/30 active:scale-[0.95] transition-all duration-100 text-center cursor-pointer glow-btn-crimson touch-manipulation"
           aria-label="Free Quote - Request a quotation"
         >
           <Send size={15} className="text-white mb-0.5" />
-          <span className="text-[11px] font-bold" style={{ fontFamily: "Syne, sans-serif" }}>
+          <span className="text-[11px] font-bold font-display">
             Free Quote
           </span>
         </button>

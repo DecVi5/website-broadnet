@@ -158,19 +158,19 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-hero flex flex-col items-center justify-start overflow-hidden pt-24 sm:pt-36 pb-12 sm:pb-16 bg-white text-[#16143E] scroll-mt-24"
+      className="relative min-h-hero flex flex-col items-center justify-start overflow-hidden pt-24 sm:pt-36 pb-12 sm:pb-16 bg-slate-50 dark:bg-[#080D14] text-slate-900 dark:text-[#F4F7FA] transition-colors duration-200 scroll-mt-24"
     >
       {/* Interactive Google Antigravity Concentric Ripple Canvas (Desktop only) or CSS Fallback (Mobile) */}
-      <div className="absolute inset-0 select-none overflow-hidden z-0 pointer-events-none">
+      <div className="absolute inset-0 select-none overflow-hidden z-0 pointer-events-none opacity-60 dark:opacity-40">
         {isDesktop ? <Antigravity /> : <MobileAntigravityFallback />}
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 w-full flex flex-col items-center text-center">
         {/* Live operational badge */}
-        <div className="hero-fade-in inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-900 mb-6 shadow-xs">
+        <div className="hero-fade-in inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-800 dark:text-emerald-300 dark:bg-emerald-500/15 mb-6 shadow-xs">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75 will-change-transform transform-gpu" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 will-change-transform transform-gpu" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
           </span>
           <span className="text-xs font-bold uppercase tracking-wider font-display">
             Direct Technician Dispatch · Avadi & Chennai
@@ -178,32 +178,26 @@ export default function HeroSection() {
         </div>
 
         {/* Primary Clear H1 Headline */}
-        <h1
-          className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#16143E] tracking-tight mb-5 max-w-4xl leading-[1.08]"
-          style={{ fontFamily: "Syne, sans-serif" }}
-        >
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-5 max-w-4xl leading-[1.08] text-slate-950 dark:text-white">
           {t("hero.title1")}
-          <span className="block mt-1 sm:mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#EF1313] via-[#4E0DBA] to-[#EF1313] pb-1">
+          <span className="block mt-1 sm:mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#EF1313] via-[#7C3AED] to-[#EF1313] pb-1">
             {t("hero.title2")}
           </span>
         </h1>
 
         {/* Clear Subtitle */}
-        <p
-          className="text-base sm:text-lg md:text-xl text-[#16143E]/75 max-w-2xl mb-8 leading-relaxed font-normal"
-          style={{ fontFamily: "DM Sans, sans-serif" }}
-        >
+        <p className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-[#A5B1BE] max-w-2xl mb-8 leading-relaxed font-normal">
           {t("hero.desc")}
         </p>
 
         {/* CTA Buttons */}
         <div className="hero-fade-in flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mb-6 w-full max-w-xs sm:max-w-none mx-auto">
-          {/* Primary CTA */}
+          {/* Primary CTA: Explore Our Services */}
           <button
             type="button"
             onClick={() => {
-              trackEvent("quote_request", { category: "Hero", label: "PrimaryCTA" });
-              scrollToWithPhysics("enquiry");
+              trackEvent("explore_services_click", { category: "Hero", label: "PrimaryCTA" });
+              scrollToWithPhysics("services");
             }}
             className="btn-crimson min-h-[52px] px-8 text-sm sm:text-base font-bold justify-center glow-btn-crimson group cursor-pointer shadow-lg hover:shadow-xl transition-all"
           >
@@ -211,14 +205,25 @@ export default function HeroSection() {
             <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
           </button>
 
-          {/* Secondary CTA */}
+          {/* Secondary CTA: Check Availability */}
+          <button
+            type="button"
+            onClick={() => {
+              trackEvent("check_availability_click", { category: "Hero", label: "SecondaryCTA" });
+              scrollToWithPhysics("coverage");
+            }}
+            className="min-h-[52px] px-7 rounded-full bg-slate-900 text-white dark:bg-[#121D2A] dark:text-[#F4F7FA] border border-slate-700/50 dark:border-[#1E2E42] hover:bg-slate-800 dark:hover:bg-[#162333] hover:border-slate-500 text-sm font-bold flex items-center justify-center gap-2 transition-all shadow-xs cursor-pointer"
+          >
+            <span>{t("hero.secondaryCta")}</span>
+          </button>
+
+          {/* WhatsApp Direct */}
           <a
             href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20enquire%20about%20your%20services%20and%20get%20a%20quote."
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent("whatsapp_click", { category: "Hero", label: "SecondaryCTA" })}
-            className="min-h-[52px] px-7 rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#15803d] text-sm font-bold flex items-center justify-center gap-2 transition-all shadow-xs cursor-pointer"
-            style={{ fontFamily: "Syne, sans-serif" }}
+            className="min-h-[52px] px-6 rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#15803d] dark:text-[#4ade80] text-sm font-bold flex items-center justify-center gap-2 transition-all shadow-xs cursor-pointer"
           >
             <WhatsAppIcon size={18} className="text-[#25D366]" />
             <span>
@@ -228,10 +233,10 @@ export default function HeroSection() {
         </div>
 
         {/* Reassurance line */}
-        <div className="hero-fade-in inline-flex items-center gap-2 text-xs text-[#16143E]/75 font-medium mb-8">
+        <div className="hero-fade-in inline-flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 font-medium mb-8">
           <Sparkles size={14} className="text-[#EF1313] flex-shrink-0" />
           <span>
-            <strong>Professional On-Site Inspection</strong> across Avadi & Chennai · Transparent Quotations
+            <strong className="text-slate-900 dark:text-slate-200">Professional On-Site Inspection</strong> across Avadi & Chennai · Transparent Quotations
           </span>
         </div>
       </div>
@@ -239,37 +244,34 @@ export default function HeroSection() {
       {/* Rotating Brand Certifications & Authorizations Moving Track */}
       <div className="hero-fade-in w-full mb-12 relative overflow-hidden select-none z-10">
         <div className="flex items-center justify-center gap-3 mb-4 max-w-5xl mx-auto px-4">
-          <span className="w-12 h-px bg-gradient-to-r from-transparent to-[#4E0DBA]/30" />
-          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#4E0DBA] flex items-center gap-1.5">
-            <Award size={13} className="text-[#4E0DBA]" />
+          <span className="w-12 h-px bg-gradient-to-r from-transparent to-[#4E0DBA]/40 dark:to-violet-500/30" />
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#4E0DBA] dark:text-violet-400 flex items-center gap-1.5 font-display">
+            <Award size={13} />
             Authorized Brand Partnerships & Credentials
           </span>
-          <span className="w-12 h-px bg-gradient-to-l from-transparent to-[#4E0DBA]/30" />
+          <span className="w-12 h-px bg-gradient-to-l from-transparent to-[#4E0DBA]/40 dark:to-violet-500/30" />
         </div>
 
         {/* Continuous Full-Width Corner-to-Corner Moving Stream */}
         <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-44 md:w-60 bg-gradient-to-r from-[#FAFAFE] via-[#FAFAFE]/80 to-transparent z-20" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-44 md:w-60 bg-gradient-to-l from-[#FAFAFE] via-[#FAFAFE]/80 to-transparent z-20" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-44 md:w-60 bg-gradient-to-r from-slate-50 dark:from-[#080D14] via-slate-50/80 dark:via-[#080D14]/80 to-transparent z-20" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-44 md:w-60 bg-gradient-to-l from-slate-50 dark:from-[#080D14] via-slate-50/80 dark:via-[#080D14]/80 to-transparent z-20" />
 
           <div className="animate-marquee-gpu flex gap-4.5 w-max py-2 pl-4 hover:[animation-play-state:paused]">
             {[...BRAND_CREDENTIALS, ...BRAND_CREDENTIALS].map((b, idx) => (
               <div
                 key={`${b.brand}-${idx}`}
-                className={`w-[260px] sm:w-[320px] flex-shrink-0 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-[#16143E]/10 hover:border-[#4E0DBA] shadow-xs hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 hover:rotate-0 transition-transform duration-200 text-left cursor-pointer group/card ${b.rotation} transform-gpu`}
+                className={`w-[260px] sm:w-[320px] flex-shrink-0 p-4 rounded-2xl bg-white dark:bg-[#0D1520] backdrop-blur-md border border-slate-200/90 dark:border-[#1E2E42] hover:border-[#4E0DBA] dark:hover:border-violet-500/50 shadow-xs hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 hover:rotate-0 transition-all duration-200 text-left cursor-pointer group/card ${b.rotation} transform-gpu`}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span
-                    className="text-base sm:text-lg font-bold text-[#16143E] group-hover/card:text-[#4E0DBA] transition-colors"
-                    style={{ fontFamily: "Syne, sans-serif" }}
-                  >
+                  <span className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 group-hover/card:text-[#4E0DBA] dark:group-hover/card:text-violet-400 transition-colors font-display">
                     {b.brand}
                   </span>
                   <span
                     className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider"
                     style={{
-                      backgroundColor: `${b.accent}12`,
-                      color: b.accent === "#16143E" ? "#4E0DBA" : b.accent,
+                      backgroundColor: `${b.accent}15`,
+                      color: b.accent === "#16143E" ? "#7C3AED" : b.accent,
                     }}
                   >
                     <ShieldCheck size={11} />
@@ -277,16 +279,10 @@ export default function HeroSection() {
                   </span>
                 </div>
 
-                <div
-                  className="text-xs font-bold text-[#16143E] mb-1 leading-snug"
-                  style={{ fontFamily: "Syne, sans-serif" }}
-                >
+                <div className="text-xs font-bold text-slate-800 dark:text-slate-200 mb-1 leading-snug font-display">
                   {b.cert}
                 </div>
-                <div
-                  className="text-[11px] text-[#16143E]/65 leading-tight"
-                  style={{ fontFamily: "DM Sans, sans-serif" }}
-                >
+                <div className="text-[11px] text-slate-500 dark:text-slate-400 leading-tight">
                   {b.category}
                 </div>
               </div>
@@ -304,27 +300,18 @@ export default function HeroSection() {
               key={m.label}
               className={`p-4 sm:p-5 rounded-2xl border transition-all duration-300 text-center relative overflow-hidden group cursor-pointer ${
                 tick === i
-                  ? "border-[#4E0DBA]/40 bg-gradient-to-b from-[#4E0DBA]/[0.08] to-white shadow-lg shadow-[#4E0DBA]/5 scale-[1.02]"
-                  : "border-[#16143E]/10 bg-white/90 shadow-2xs hover:border-[#4E0DBA]/30 hover:shadow-sm"
+                  ? "border-[#4E0DBA] dark:border-violet-500 bg-gradient-to-b from-[#4E0DBA]/[0.08] dark:from-[#4E0DBA]/25 to-white dark:to-[#0D1520] shadow-lg shadow-[#4E0DBA]/5 scale-[1.02]"
+                  : "border-slate-200 dark:border-[#1E2E42] bg-white dark:bg-[#0D1520] shadow-2xs hover:border-[#4E0DBA]/40 dark:hover:border-violet-500/40 hover:shadow-sm"
               }`}
               onClick={() => setTick(i)}
             >
-              <div
-                className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#16143E] mb-1 group-hover:text-[#4E0DBA] transition-colors"
-                style={{ fontFamily: "Syne, sans-serif" }}
-              >
+              <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-1 group-hover:text-[#4E0DBA] dark:group-hover:text-violet-400 transition-colors font-phone">
                 {m.value}
               </div>
-              <div
-                className="text-xs sm:text-[13px] text-[#16143E] font-bold uppercase tracking-wider mb-0.5"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
-              >
+              <div className="text-xs sm:text-[13px] text-slate-700 dark:text-slate-300 font-bold uppercase tracking-wider mb-0.5">
                 {m.label}
               </div>
-              <div
-                className="text-[11px] text-[#DC2626] font-semibold"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
-              >
+              <div className="text-[11px] text-[#DC2626] dark:text-rose-400 font-semibold">
                 {m.detail}
               </div>
             </div>
@@ -333,8 +320,8 @@ export default function HeroSection() {
       </div>
 
       {/* Subtle Scroll Indicator */}
-      <div className="mt-10 flex flex-col items-center gap-1 text-[#16143E]/70 z-20">
-        <span className="text-[10px] tracking-widest uppercase font-bold">
+      <div className="mt-10 flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 z-20">
+        <span className="text-[10px] tracking-widest uppercase font-bold font-display">
           Explore Services
         </span>
         <ChevronDown size={14} className="animate-bounce will-change-transform transform-gpu" />

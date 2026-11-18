@@ -27,7 +27,7 @@ export default function BroadnetLogo({
         height={82}
         style={{ height: "36px", width: "auto" }}
         className={`h-9 sm:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105 ${
-          isDark ? "brightness-0 invert" : ""
+          isDark ? "brightness-0 invert" : "dark:brightness-0 dark:invert"
         }`}
         priority
       />
