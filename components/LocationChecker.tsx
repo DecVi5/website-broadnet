@@ -245,7 +245,7 @@ export default function LocationChecker() {
     <section
       ref={ref}
       id="coverage"
-      className="py-20 sm:py-24 bg-slate-950 dark:bg-[#080D14] relative overflow-hidden text-white border-y border-slate-800 dark:border-[#1E2E42] transition-colors duration-200"
+      className="py-20 sm:py-24 bg-[#07091E] relative overflow-hidden text-white"
     >
       {/* Background ambient lighting */}
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#4E0DBA]/15 blur-[130px] rounded-full pointer-events-none" />
@@ -269,14 +269,17 @@ export default function LocationChecker() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-12 sm:mb-14"
         >
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#00C2FF] mb-3 font-display">
+          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#00C2FF] mb-3">
             <Wifi size={14} className="animate-pulse" />
             100+ KM Optical Fiber Network Reach
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 font-display">
-            Check Fiber Broadband Availability <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-300">in Your Area</span>
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4"
+            style={{ fontFamily: "Syne, sans-serif" }}
+          >
+            Check Fiber Broadband Availability <span className="text-gradient">in Your Area</span>
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p className="text-white/65 text-sm sm:text-base leading-relaxed">
             Broadnet operates private high-speed fiber rings across Avadi and nearby areas. Enter your locality or pincode for instant connection feasibility.
           </p>
         </motion.div>
@@ -286,7 +289,7 @@ export default function LocationChecker() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="max-w-4xl mx-auto bg-[#0D1520]/95 border border-[#1E2E42] rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl mb-12 relative"
+          className="max-w-4xl mx-auto bg-[#110E2E]/90 border border-white/12 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl mb-12 relative"
         >
           {/* Search Input Form */}
           <form onSubmit={handleSearchSubmit} className="relative mb-4">

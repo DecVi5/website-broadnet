@@ -106,26 +106,26 @@ export default function PackageCard({
             handleOpenDetails();
           }
         }}
-        className={`group cursor-pointer rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 transform-gpu relative border ${
+        className={`group cursor-pointer rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-[transform,box-shadow,border-color] duration-200 transform-gpu relative border ${
           isDark
             ? isPopular
-              ? "bg-[#162333] border-2 border-[#EF1313] shadow-xl hover:shadow-2xl shadow-[#EF1313]/20 hover:border-[#EF1313]"
-              : "bg-[#0D1520] border-[#1E2E42] hover:border-violet-500/50 shadow-md hover:shadow-xl hover:-translate-y-1"
+              ? "bg-[#16143E] border-2 border-[#EF1313] shadow-xl hover:shadow-2xl shadow-[#EF1313]/20 hover:border-[#EF1313]"
+              : "bg-[#120F2E] border-white/10 hover:border-[#4E0DBA]/50 shadow-md hover:shadow-xl hover:-translate-y-1"
             : isPopular
-              ? "bg-white dark:bg-[#0D1520] border-[#EF1313] dark:border-[#EF1313] shadow-xl hover:shadow-2xl ring-2 ring-[#EF1313]/20 hover:-translate-y-1"
-              : "bg-white dark:bg-[#0D1520] border-slate-200/90 dark:border-[#1E2E42] hover:border-[#4E0DBA]/40 dark:hover:border-violet-500/40 shadow-xs hover:shadow-xl hover:-translate-y-1"
+              ? "bg-white border-[#EF1313] shadow-xl hover:shadow-2xl ring-2 ring-[#EF1313]/20 hover:-translate-y-1"
+              : "bg-white border-[#16143E]/10 hover:border-[#4E0DBA]/40 shadow-xs hover:shadow-xl hover:-translate-y-1"
         }`}
       >
         {/* Floating Badge */}
         {pkg.badge && (
           <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
             <span
-              className={`px-3.5 py-1 rounded-full text-[11px] font-black uppercase tracking-wider shadow-sm flex items-center gap-1.5 font-display ${
+              className={`px-3.5 py-1 rounded-full text-[11px] font-black uppercase tracking-wider shadow-sm flex items-center gap-1.5 ${
                 isPopular
                   ? "bg-[#DC2626] text-white shadow-[#DC2626]/30"
                   : isDark
                     ? "bg-[#4E0DBA] text-white"
-                    : "bg-slate-900 dark:bg-[#162333] text-white border border-transparent dark:border-[#1E2E42]"
+                    : "bg-[#16143E] text-white"
               }`}
             >
               <Sparkles size={11} />
@@ -137,41 +137,89 @@ export default function PackageCard({
         <div>
           {/* Header: Name + Tagline */}
           <div className="mb-4 pt-1">
-            <h3 className="text-xl sm:text-2xl font-bold tracking-tight leading-snug group-hover:text-[#EF1313] transition-colors text-slate-900 dark:text-white font-display">
+            <h3
+              className={`text-xl sm:text-2xl font-bold tracking-tight leading-snug group-hover:text-[#EF1313] transition-colors ${
+                isDark ? "text-white" : "text-[#16143E]"
+              }`}
+              style={{ fontFamily: "Syne, sans-serif" }}
+            >
               {pkg.name}
             </h3>
-            <p className="text-xs sm:text-sm mt-1.5 leading-relaxed line-clamp-2 text-slate-600 dark:text-[#A5B1BE]">
+            <p
+              className={`text-xs sm:text-sm mt-1.5 leading-relaxed line-clamp-2 ${
+                isDark ? "text-white/65" : "text-[#16143E]/65"
+              }`}
+            >
               {pkg.tagline}
             </p>
           </div>
 
           {/* Pricing Box (Compact) */}
-          <div className="p-3.5 rounded-xl mb-4 border flex items-center justify-between bg-slate-50 dark:bg-[#121D2A] border-slate-200/80 dark:border-[#1E2E42]">
+          <div
+            className={`p-3.5 rounded-2xl mb-4 border flex items-center justify-between ${
+              isDark
+                ? "bg-white/5 border-white/10"
+                : "bg-[#F8F9FD] border-[#16143E]/6"
+            }`}
+          >
             <div>
-              <span className="text-2xl sm:text-3xl font-extrabold block text-slate-900 dark:text-white font-phone">
+              <span
+                className={`text-2xl sm:text-3xl font-extrabold block ${
+                  isDark ? "text-white" : "text-[#16143E]"
+                }`}
+                style={{ fontFamily: "Syne, sans-serif" }}
+              >
                 {pkg.price}
               </span>
-              <span className="text-[11px] font-medium block text-slate-500 dark:text-slate-400">
+              <span
+                className={`text-[11px] font-medium block ${
+                  isDark ? "text-white/60" : "text-[#16143E]/60"
+                }`}
+              >
                 {pkg.unit}
               </span>
             </div>
 
-            <span className="text-[11px] font-bold px-2.5 py-1 rounded-full border bg-[#4E0DBA]/10 dark:bg-violet-500/20 border-[#4E0DBA]/20 dark:border-violet-500/30 text-[#4E0DBA] dark:text-violet-300 font-display">
+            <span
+              className={`text-[11px] font-bold px-2.5 py-1 rounded-full border ${
+                isDark
+                  ? "bg-[#4E0DBA]/20 border-[#4E0DBA]/40 text-[#A78BFA]"
+                  : "bg-[#4E0DBA]/10 border-[#4E0DBA]/20 text-[#4E0DBA]"
+              }`}
+            >
               Turnkey
             </span>
           </div>
 
           {/* Few Key Points (Specs Pills) */}
           <div className="flex flex-wrap gap-1.5 mb-5 text-[11px] font-semibold">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-slate-100 dark:bg-[#121D2A] border-slate-200/80 dark:border-[#1E2E42] text-slate-700 dark:text-slate-300">
+            <span
+              className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border ${
+                isDark
+                  ? "bg-white/5 border-white/10 text-white/85"
+                  : "bg-[#16143E]/5 border-[#16143E]/8 text-[#16143E]/80"
+              }`}
+            >
               <Camera size={13} className="text-[#DC2626] flex-shrink-0" />
               <span>{pkg.resolution}</span>
             </span>
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-slate-100 dark:bg-[#121D2A] border-slate-200/80 dark:border-[#1E2E42] text-slate-700 dark:text-slate-300">
-              <HardDrive size={13} className="text-[#4E0DBA] dark:text-violet-400 flex-shrink-0" />
+            <span
+              className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border ${
+                isDark
+                  ? "bg-white/5 border-white/10 text-white/85"
+                  : "bg-[#16143E]/5 border-[#16143E]/8 text-[#16143E]/80"
+              }`}
+            >
+              <HardDrive size={13} className="text-[#4E0DBA] flex-shrink-0" />
               <span>{pkg.storage}</span>
             </span>
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-slate-100 dark:bg-[#121D2A] border-slate-200/80 dark:border-[#1E2E42] text-slate-700 dark:text-slate-300">
+            <span
+              className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border ${
+                isDark
+                  ? "bg-white/5 border-white/10 text-white/85"
+                  : "bg-[#16143E]/5 border-[#16143E]/8 text-[#16143E]/80"
+              }`}
+            >
               <Cpu size={13} className="text-amber-500 flex-shrink-0" />
               <span>{pkg.dvrChannels}</span>
             </span>
@@ -179,17 +227,23 @@ export default function PackageCard({
         </div>
 
         {/* Footer Actions: Enquiry Button + Quick WhatsApp */}
-        <div className="pt-3 border-t border-slate-200/80 dark:border-[#1E2E42] flex items-center gap-2">
+        <div
+          className={`pt-3 border-t flex items-center gap-2 ${
+            isDark ? "border-white/10" : "border-[#16143E]/8"
+          }`}
+        >
           <button
             type="button"
             onClick={(e) => {
               e.stopPropagation();
               handleOpenDetails();
             }}
-            className={`flex-1 min-h-[44px] py-2.5 px-4 rounded-full font-bold text-xs sm:text-[13px] flex items-center justify-center gap-2 cursor-pointer transition-transform duration-150 active:scale-[0.97] shadow-sm font-display ${
+            className={`flex-1 min-h-[44px] py-2.5 px-4 rounded-full font-bold text-xs sm:text-[13px] flex items-center justify-center gap-2 cursor-pointer transition-transform duration-150 active:scale-[0.97] shadow-sm ${
               isPopular
                 ? "btn-crimson glow-btn-crimson"
-                : "bg-slate-900 dark:bg-[#162333] hover:bg-slate-800 dark:hover:bg-[#1E2E42] text-white border border-transparent dark:border-[#1E2E42]"
+                : isDark
+                  ? "bg-white/10 hover:bg-white/20 text-white group-hover:bg-[#4E0DBA] group-hover:text-white"
+                  : "bg-[#16143E] hover:bg-[#25225E] text-white"
             }`}
           >
             <span>Enquire Details</span>

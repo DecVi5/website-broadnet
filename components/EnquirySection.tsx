@@ -473,7 +473,7 @@ export default function EnquirySection({ initialService, initialType }: EnquiryS
   })();
 
   return (
-    <section ref={ref} className="py-12 sm:py-16 bg-slate-50 dark:bg-[#080D14] border-t border-slate-200/90 dark:border-[#1E2E42] text-slate-900 dark:text-[#F4F7FA] relative overflow-hidden transition-colors duration-200">
+    <section ref={ref} className="py-8 sm:py-10 bg-white relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.015]"
         style={{
@@ -488,15 +488,15 @@ export default function EnquirySection({ initialService, initialType }: EnquiryS
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4 }}
-          className="text-center mb-6"
+          className="text-center mb-3 sm:mb-4"
         >
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#EF1313] dark:text-rose-400 font-display">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#EF1313] font-display">
             Direct Technician Dispatch · Avadi & Chennai
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 dark:text-white mt-1 mb-2 font-display">
-            Quick Enquiry &amp; Site Feasibility
+          <h2 className="text-xl sm:text-2xl font-bold text-[#16143E] mt-0.5 mb-1 font-display">
+            Quick Enquiry & Site Feasibility
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-[#A5B1BE] max-w-lg mx-auto">
+          <p className="text-xs text-[#16143E]/65 max-w-lg mx-auto">
             Get a same-day quotation and on-site survey scheduled at your convenience.
           </p>
         </motion.div>
@@ -507,10 +507,10 @@ export default function EnquirySection({ initialService, initialType }: EnquiryS
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4, delay: 0.08 }}
-          className="bg-white dark:bg-[#0D1520] border border-slate-200/90 dark:border-[#1E2E42] rounded-2xl sm:rounded-3xl shadow-xl shadow-slate-900/5 dark:shadow-black/50 overflow-hidden scroll-mt-20 transition-colors"
+          className="bg-white border border-[#16143E]/12 rounded-2xl sm:rounded-3xl shadow-xl shadow-[#16143E]/6 overflow-hidden scroll-mt-20"
         >
           {/* Toggle Pillars */}
-          <div className="flex border-b border-slate-200/80 dark:border-[#1E2E42] bg-slate-50/80 dark:bg-[#121D2A]/80">
+          <div className="flex border-b border-[#16143E]/10 bg-[#16143E]/[0.02]">
             {(["security", "internet"] as FormType[]).map((t) => (
               <button
                 key={t}
@@ -519,15 +519,15 @@ export default function EnquirySection({ initialService, initialType }: EnquiryS
                   setFormType(t);
                   setSelected([]);
                 }}
-                className={`flex-1 min-h-[46px] flex items-center justify-center gap-2 py-3 px-4 text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer font-display ${
+                className={`flex-1 min-h-[42px] flex items-center justify-center gap-2 py-2.5 px-3 text-xs sm:text-sm font-bold transition-all duration-200 ${
                   formType === t
                     ? t === "security"
-                      ? "bg-white dark:bg-[#0D1520] text-[#EF1313] dark:text-rose-400 border-b-2 border-[#EF1313] shadow-xs"
-                      : "bg-white dark:bg-[#0D1520] text-[#4E0DBA] dark:text-violet-400 border-b-2 border-[#4E0DBA] shadow-xs"
-                    : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/40 dark:hover:bg-white/5"
+                      ? "bg-white text-[#EF1313] border-b-2 border-[#EF1313] shadow-sm"
+                      : "bg-white text-[#4E0DBA] border-b-2 border-[#4E0DBA] shadow-sm"
+                    : "text-[#16143E]/55 hover:text-[#16143E] hover:bg-white/40"
                 }`}
               >
-                {t === "security" ? <Shield size={16} /> : <Wifi size={16} />}
+                {t === "security" ? <Shield size={15} /> : <Wifi size={15} />}
                 <span>{t === "security" ? "Security & ELV Systems" : "Fiber Internet & FTTH"}</span>
               </button>
             ))}

@@ -69,7 +69,7 @@ export default function TestimonialsSection() {
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
   return (
-    <section ref={ref} id="testimonials" className="py-24 bg-slate-50 dark:bg-[#080D14] relative overflow-hidden border-t border-slate-200/90 dark:border-[#1E2E42] text-slate-900 dark:text-[#F4F7FA] transition-colors duration-200">
+    <section ref={ref} id="testimonials" className="py-24 bg-white relative overflow-hidden border-t border-[#16143E]/6">
       {/* Background ambient texture */}
       <div
         className="absolute inset-0 opacity-[0.015] pointer-events-none"
@@ -80,7 +80,7 @@ export default function TestimonialsSection() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        {/* Header (Trick 2: Visual Hierarchy & Trick 4: Believable Social Proof) */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -88,33 +88,33 @@ export default function TestimonialsSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <SectionLabel>Authentic Social Proof</SectionLabel>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-950 dark:text-white tracking-tight mt-2 mb-4 font-display">
-            Trusted by Avadi's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EF1313] via-[#7C3AED] to-[#EF1313]">Community</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#16143E] tracking-tight mt-2 mb-4 font-display">
+            Trusted by Avadi's <span className="text-gradient">Community</span>
           </h2>
-          <p className="text-slate-600 dark:text-[#A5B1BE] text-base md:text-lg leading-relaxed font-body">
+          <p className="text-[#16143E]/60 text-base md:text-lg leading-relaxed font-body">
             Real deployments, real engineers, and verified experiences from property associations, health centers, and residents.
           </p>
 
           {/* Google Review Aggregation Card */}
-          <div className="mt-6 inline-flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-3 px-5 py-2.5 rounded-full bg-white dark:bg-[#0D1520] border border-slate-200/90 dark:border-[#1E2E42] shadow-sm">
+          <div className="mt-6 inline-flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-3 px-4 sm:px-5 py-2.5 rounded-2xl sm:rounded-full bg-[#16143E]/4 border border-[#16143E]/10 shadow-sm">
             <div className="flex items-center text-[#F59E0B]">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} size={15} className="fill-[#F59E0B]" />
               ))}
             </div>
-            <span className="text-sm font-bold text-slate-900 dark:text-white font-phone">4.9 out of 5</span>
-            <span className="text-xs text-slate-400">•</span>
-            <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
+            <span className="text-sm font-bold text-[#16143E]">4.9 out of 5</span>
+            <span className="text-xs text-[#16143E]/40">•</span>
+            <span className="text-xs font-semibold text-[#16143E]/70">
               500+ Verified Local Google Reviews
             </span>
-            <span className="text-xs text-slate-400">•</span>
-            <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
+            <span className="text-xs text-[#16143E]/40">•</span>
+            <span className="inline-flex items-center gap-1 text-xs font-bold text-[#25D366]">
               <CheckCircle2 size={13} /> 100% On-Site Serviced
             </span>
           </div>
         </motion.div>
 
-        {/* 3 Believable Testimonial Cards */}
+        {/* 3 Believable Testimonial Cards (Trick 5: Cognitive Fluency & Chunking) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {REVIEWS.map((rev, index) => {
             const isSecurity = rev.category === "Security";
@@ -131,56 +131,56 @@ export default function TestimonialsSection() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 whileHover={{ y: -5, transition: { duration: 0.25 } }}
-                className="bg-white dark:bg-[#0D1520] rounded-2xl p-7 border border-slate-200/90 dark:border-[#1E2E42] shadow-xl shadow-slate-900/5 dark:shadow-black/40 flex flex-col justify-between relative group hover:border-[#4E0DBA]/40 dark:hover:border-violet-500/40 transition-all duration-300"
+                className="bg-white rounded-3xl p-7 border border-[#16143E]/10 shadow-xl shadow-[#16143E]/4 flex flex-col justify-between relative group hover:border-[#4E0DBA]/35 transition-all duration-300"
               >
                 {/* Header of Card */}
                 <div>
                   <div className="flex items-start justify-between gap-3 mb-4">
                     <div className="flex items-center gap-3">
                       <div
-                        className={`w-11 h-11 rounded-xl ${rev.avatarBg} text-white flex items-center justify-center font-bold text-sm shadow-md`}
+                        className={`w-11 h-11 rounded-2xl ${rev.avatarBg} text-white flex items-center justify-center font-bold text-sm shadow-md`}
                       >
                         {rev.initials}
                       </div>
                       <div>
                         <div className="flex items-center gap-1.5">
-                          <h3 className="font-bold text-slate-900 dark:text-white text-base leading-snug font-display">
+                          <h3 className="font-bold text-[#16143E] text-base leading-snug font-display">
                             {rev.name}
                           </h3>
                           {rev.verified && (
                             <span title="Verified Client Deployment">
-                              <CheckCircle2 size={14} className="text-emerald-500" />
+                              <CheckCircle2 size={14} className="text-[#25D366]" />
                             </span>
                           )}
                         </div>
-                        <p className="text-xs text-slate-500 dark:text-slate-400 font-medium leading-tight">
+                        <p className="text-xs text-[#16143E]/55 font-medium leading-tight">
                           {rev.role}
                         </p>
                       </div>
                     </div>
-                    <Quote size={24} className="text-slate-200 dark:text-slate-800 group-hover:text-[#4E0DBA]/25 transition-colors" />
+                    <Quote size={24} className="text-[#16143E]/10 group-hover:text-[#4E0DBA]/25 transition-colors" />
                   </div>
 
                   {/* Rating Stars & Location */}
-                  <div className="flex items-center justify-between gap-2 mb-3.5 pb-3 border-b border-slate-200/80 dark:border-[#1E2E42]">
+                  <div className="flex items-center justify-between gap-2 mb-3.5 pb-3 border-b border-[#16143E]/8">
                     <div className="flex items-center text-[#F59E0B]">
                       {[...Array(rev.rating)].map((_, i) => (
                         <Star key={i} size={13} className="fill-[#F59E0B]" />
                       ))}
                     </div>
-                    <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400">
+                    <span className="text-[11px] font-semibold text-[#16143E]/50">
                       {rev.location}
                     </span>
                   </div>
 
                   {/* Quote text */}
-                  <p className="text-sm text-slate-600 dark:text-[#A5B1BE] leading-relaxed font-body italic mb-6">
+                  <p className="text-sm text-[#16143E]/75 leading-relaxed font-body italic mb-6">
                     &ldquo;{rev.quote}&rdquo;
                   </p>
                 </div>
 
                 {/* Footer of Card: Concrete Spec Tag */}
-                <div className="pt-3 border-t border-slate-200/80 dark:border-[#1E2E42] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs">
+                <div className="pt-3 border-t border-[#16143E]/8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs">
                   <span
                     className="inline-flex items-center gap-1.5 font-semibold text-[11px] px-2.5 py-1 rounded-full border max-w-full"
                     style={{
@@ -192,7 +192,7 @@ export default function TestimonialsSection() {
                     <ShieldCheck size={12} />
                     {rev.serviceTag}
                   </span>
-                  <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium whitespace-nowrap">
+                  <span className="text-[11px] text-[#16143E]/45 font-medium whitespace-nowrap">
                     {rev.date}
                   </span>
                 </div>

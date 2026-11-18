@@ -31,14 +31,12 @@ const DICTIONARY: Record<Language, Record<string, string>> = {
     "nav.freeQuote": "Free Quote",
 
     // Hero
-    "hero.badge": "Direct Technician Dispatch · Avadi & Chennai",
-    "hero.title1": "Internet That Connects.",
-    "hero.title2": "Security That Protects.",
+    "hero.badge": "Lead Division · Surveillance & Security",
+    "hero.title1": "Engineered Surveillance.",
+    "hero.title2": "Intelligent Security Systems.",
     "hero.desc":
-      "Reliable fibre broadband and intelligent security solutions for homes and businesses. Backed by professional installation, dependable support and infrastructure you can trust.",
-    "hero.primaryCta": "Explore Our Services",
-    "hero.secondaryCta": "Check Availability",
-    "hero.quoteCta": "Get Free Quote",
+      "Since 2014, our in-house engineers have kept homes, apartments, and businesses across Avadi & Chennai safely connected with genuine Hikvision & CP PLUS systems.",
+    "hero.primaryCta": "Get Free Quote",
     "hero.callCta": "Call 86818 88111",
     "hero.whatsappCta": "WhatsApp Tech Desk",
     "hero.hudLabel": "Interactive Security Illustration",
@@ -79,14 +77,12 @@ const DICTIONARY: Record<Language, Record<string, string>> = {
     "nav.freeQuote": "இலவச மதிப்பீடு",
 
     // Hero
-    "hero.badge": "தொழில்நுட்ப வல்லுநர்கள் நேரடி சேவை · ஆவடி & சென்னை",
-    "hero.title1": "இணைக்கும் அதிவேக இணையம்.",
-    "hero.title2": "பாதுகாக்கும் நம்பகமான சிசிடிவி.",
+    "hero.badge": "முதன்மை பிரிவு · சிசிடிவி & பாதுகாப்பு தீர்வுகள்",
+    "hero.title1": "நம்பகமான சிசிடிவி.",
+    "hero.title2": "பாதுகாப்பு அமைப்புகள்.",
     "hero.desc":
-      "வீடுகள் மற்றும் நிறுவனங்களுக்கான நம்பகமான ஃபைபர் பிராட்பேண்ட் மற்றும் அறிவார்ந்த பாதுகாப்பு அமைப்புகள். நேரடி நிறுவல் மற்றும் 2 மணிநேர துரித சேவை.",
-    "hero.primaryCta": "எங்கள் சேவைகளை அறிக",
-    "hero.secondaryCta": "இணைப்பு வசதியை சரிபார்க்க",
-    "hero.quoteCta": "இலவச மதிப்பீடு பெறுக",
+      "2014 முதல் ஆவடி மற்றும் சென்னை முழுவதும் நம்பகமான சிசிடிவி கண்காணிப்பு மற்றும் ஃபைபர் உள்கட்டமைப்பு சேவைகளை வழங்கி வருகிறோம்.",
+    "hero.primaryCta": "இலவச மதிப்பீடு பெறுக",
     "hero.callCta": "அழைக்க: 86818 88111",
     "hero.whatsappCta": "வாட்ஸ்அப் செய்தி",
     "hero.hudLabel": "பாதுகாப்பு மாதிரி விளக்கம்",

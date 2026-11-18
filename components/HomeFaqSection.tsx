@@ -51,7 +51,7 @@ export default function HomeFaqSection() {
   const faqJsonLd = getFaqPageJsonLd(HOME_FAQS);
 
   return (
-    <section className="py-20 sm:py-24 bg-white dark:bg-[#080D14] border-b border-slate-200/90 dark:border-[#1E2E42] text-slate-900 dark:text-[#F4F7FA] relative overflow-hidden transition-colors duration-200">
+    <section className="py-20 sm:py-24 bg-white border-b border-[#16143E]/8 relative overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
@@ -59,14 +59,17 @@ export default function HomeFaqSection() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#EF1313]/10 dark:bg-[#EF1313]/20 text-[#EF1313] dark:text-rose-400 text-xs font-bold uppercase tracking-wider mb-3 font-display">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#EF1313]/10 text-[#EF1313] text-xs font-bold uppercase tracking-wider mb-3">
             <HelpCircle size={14} />
             <span>Got Questions?</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 dark:text-white tracking-tight font-display">
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#16143E] tracking-tight"
+            style={{ fontFamily: "Syne, sans-serif" }}
+          >
             Frequently Asked Questions
           </h2>
-          <p className="text-slate-600 dark:text-[#A5B1BE] text-sm sm:text-base mt-2">
+          <p className="text-[#16143E]/70 text-sm sm:text-base mt-2">
             Clear answers about our security installations, pricing, warranties, and technician response times.
           </p>
         </div>
@@ -78,30 +81,29 @@ export default function HomeFaqSection() {
             return (
               <div
                 key={faq.q}
-                className={`rounded-2xl border overflow-hidden transition-all duration-300 ${
+                className={`rounded-2xl border bg-white overflow-hidden transition-all duration-300 ${
                   isOpen
-                    ? "bg-white dark:bg-[#0D1520] border-[#4E0DBA] dark:border-violet-500 shadow-md ring-1 ring-violet-500/20"
-                    : "bg-white dark:bg-[#0D1520] border-slate-200/90 dark:border-[#1E2E42] hover:border-[#4E0DBA]/40 dark:hover:border-violet-500/40 shadow-xs hover:shadow-sm"
+                    ? "border-[#4E0DBA]/35 shadow-md ring-1 ring-[#4E0DBA]/10"
+                    : "border-[#16143E]/10 hover:border-[#4E0DBA]/30 shadow-2xs hover:shadow-sm"
                 }`}
               >
                 <button
                   type="button"
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-white/5 transition-colors"
+                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-[#FAFAFE] transition-colors"
                   aria-expanded={isOpen}
                 >
                   <span
-                    className={`font-bold text-sm sm:text-base transition-colors duration-200 font-display ${
-                      isOpen ? "text-[#4E0DBA] dark:text-violet-400" : "text-slate-900 dark:text-white"
+                    className={`font-bold text-sm sm:text-base transition-colors duration-200 ${
+                      isOpen ? "text-[#4E0DBA]" : "text-[#16143E]"
                     }`}
+                    style={{ fontFamily: "Syne, sans-serif" }}
                   >
                     {faq.q}
                   </span>
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ${
-                      isOpen
-                        ? "bg-[#4E0DBA]/10 text-[#4E0DBA] dark:bg-violet-500/20 dark:text-violet-300"
-                        : "bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400"
+                      isOpen ? "bg-[#4E0DBA]/10 text-[#4E0DBA]" : "bg-[#16143E]/5 text-[#16143E]/60"
                     }`}
                   >
                     <ChevronDown
@@ -149,7 +151,7 @@ export default function HomeFaqSection() {
                       }}
                       className="overflow-hidden"
                     >
-                      <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-slate-600 dark:text-[#A5B1BE] leading-relaxed border-t border-slate-200/80 dark:border-[#1E2E42] pt-4 bg-slate-50/70 dark:bg-[#121D2A]/60">
+                      <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-[#16143E]/75 leading-relaxed border-t border-[#16143E]/6 pt-4 bg-[#FAFAFE]/60">
                         {faq.a}
                       </div>
                     </motion.div>
@@ -161,15 +163,15 @@ export default function HomeFaqSection() {
         </div>
 
         {/* WhatsApp Help prompt */}
-        <div className="text-center p-6 rounded-2xl bg-slate-50 dark:bg-[#0D1520] border border-slate-200/90 dark:border-[#1E2E42] flex flex-col sm:flex-row items-center justify-between gap-4 transition-colors">
-          <div className="text-left text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-            <strong className="text-slate-900 dark:text-white">Have a specific property question?</strong> Chat directly with our technical team in Avadi.
+        <div className="text-center p-6 rounded-2xl bg-[#F8F9FD] border border-[#16143E]/8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-left text-xs sm:text-sm text-[#16143E]/80">
+            <strong>Have a specific property question?</strong> Chat directly with our technical team in Avadi.
           </div>
           <a
             href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20have%20a%20question%20about%20your%20services."
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#15803d] dark:text-[#4ade80] text-xs font-bold flex items-center gap-1.5 transition-colors whitespace-nowrap cursor-pointer"
+            className="px-5 py-2.5 rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/35 text-[#15803d] text-xs font-bold flex items-center gap-1.5 transition-colors whitespace-nowrap"
           >
             <WhatsAppIcon size={15} className="text-[#25D366]" />
             <span>Chat on WhatsApp</span>

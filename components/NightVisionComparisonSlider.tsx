@@ -216,13 +216,13 @@ export default function NightVisionComparisonSlider({
   return (
     <section
       id={id}
-      className={`py-20 sm:py-28 bg-gradient-to-b from-[#080D14] via-[#0D1520] to-[#080D14] border-y border-[#1E2E42] text-white relative overflow-hidden ${className}`}
+      className={`py-20 sm:py-28 bg-gradient-to-b from-[#0B091E] via-[#120F2E] to-[#0A081D] text-white relative overflow-hidden ${className}`}
     >
       {/* Background ambient lighting */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#4E0DBA]/15 rounded-full blur-3xl pointer-events-none -z-0" />
-      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-[#EF1313]/10 rounded-full blur-3xl pointer-events-none -z-0" />
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#4E0DBA]/20 rounded-full blur-3xl pointer-events-none -z-0" />
+      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-[#EF1313]/15 rounded-full blur-3xl pointer-events-none -z-0" />
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 opacity-[0.025] pointer-events-none"
         style={{
           backgroundImage: "radial-gradient(circle, #8B5CF6 1px, transparent 1px)",
           backgroundSize: "36px 36px",
@@ -232,17 +232,20 @@ export default function NightVisionComparisonSlider({
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#EF1313]/20 via-[#4E0DBA]/25 to-[#EF1313]/20 border border-[#EF1313]/40 text-white font-bold text-xs sm:text-sm mb-4 shadow-lg shadow-[#EF1313]/10 font-display">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#EF1313]/20 via-[#4E0DBA]/25 to-[#EF1313]/20 border border-[#EF1313]/40 text-white font-bold text-xs sm:text-sm mb-4 shadow-lg shadow-[#EF1313]/10">
             <Sparkles size={14} className="text-[#EF1313] animate-pulse" />
             <span>Live Interactive Visual Comparison</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4 font-display">
+          <h2
+            className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-4"
+            style={{ fontFamily: "Syne, sans-serif" }}
+          >
             Grainy Black & White at Midnight? <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-amber-300 to-cyan-300">Or 24/7 Vivid True Color?</span>
+            <span className="text-gradient">Or 24/7 Vivid True Color?</span>
           </h2>
 
-          <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed font-body">
+          <p className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed font-body">
             Drag the slider across the live feed below to experience how BroadNet&apos;s ColorVu F1.0 super-aperture optics transform pitch-black darkness into crystal-clear, color-accurate evidence.
           </p>
 

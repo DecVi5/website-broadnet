@@ -15,17 +15,20 @@ export default function HomeFiberSection() {
   );
 
   return (
-    <section className="py-20 sm:py-24 bg-slate-50 dark:bg-[#080D14] border-b border-slate-200/90 dark:border-[#1E2E42] text-slate-900 dark:text-[#F4F7FA] relative overflow-hidden transition-colors duration-200">
+    <section className="py-20 sm:py-24 bg-gradient-to-b from-white to-[#F6F4FD] border-b border-[#16143E]/8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#4E0DBA]/10 dark:bg-violet-500/20 text-[#4E0DBA] dark:text-violet-300 text-xs font-bold uppercase tracking-wider mb-3 font-display">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#4E0DBA]/10 text-[#4E0DBA] text-xs font-bold uppercase tracking-wider mb-3">
             <Globe size={13} />
             <span>Dedicated Avadi FTTH Network</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 dark:text-white tracking-tight font-display">
-            Fiber Broadband Across Avadi &amp; Chennai
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#16143E] tracking-tight"
+            style={{ fontFamily: "Syne, sans-serif" }}
+          >
+            Fiber Broadband Across Avadi & Nearby Areas
           </h2>
-          <p className="text-slate-600 dark:text-[#A5B1BE] text-sm sm:text-base mt-2">
+          <p className="text-[#16143E]/70 text-sm sm:text-base mt-2">
             Broadnet&apos;s private 100+ km optical fiber backbone, official BSNL Bharat Fibre, and RailWire OTT packages. Symmetric speeds with zero evening throttling.
           </p>
         </div>
@@ -35,10 +38,10 @@ export default function HomeFiberSection() {
           {featuredPlans.map((plan) => (
             <div
               key={plan.id}
-              className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between border transition-all duration-300 relative ${
+              className={`rounded-3xl p-7 bg-white flex flex-col justify-between border transition-all duration-300 relative ${
                 plan.popular
-                  ? "bg-white dark:bg-[#0D1520] border-[#4E0DBA] dark:border-violet-500 shadow-xl ring-1 ring-violet-500/20"
-                  : "bg-white dark:bg-[#0D1520] border-slate-200/90 dark:border-[#1E2E42] shadow-xs hover:border-[#4E0DBA]/40 dark:hover:border-violet-500/40 hover:shadow-lg"
+                  ? "border-[#4E0DBA] shadow-xl ring-2 ring-[#4E0DBA]/20"
+                  : "border-[#16143E]/10 shadow-xs hover:shadow-lg"
               }`}
             >
               {plan.badge && (
@@ -51,46 +54,52 @@ export default function HomeFiberSection() {
 
               <div>
                 <div className="flex items-center justify-between mb-4 pt-1">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white font-display">
+                  <h3
+                    className="text-xl font-bold text-[#16143E]"
+                    style={{ fontFamily: "Syne, sans-serif" }}
+                  >
                     {plan.name}
                   </h3>
-                  <span className="px-2.5 py-1 rounded-lg bg-[#4E0DBA]/10 dark:bg-violet-500/20 text-[#4E0DBA] dark:text-violet-300 font-phone font-bold text-xs">
+                  <span className="px-2.5 py-1 rounded-lg bg-[#4E0DBA]/10 text-[#4E0DBA] font-mono font-bold text-xs">
                     {plan.speed}
                   </span>
                 </div>
 
-                <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#121D2A] border border-slate-200/80 dark:border-[#1E2E42] mb-5">
-                  <span className="text-3xl font-extrabold text-slate-900 dark:text-white font-phone">
+                <div className="p-4 rounded-2xl bg-[#F8F9FD] border border-[#16143E]/6 mb-5">
+                  <span
+                    className="text-3xl font-black text-[#16143E]"
+                    style={{ fontFamily: "Syne, sans-serif" }}
+                  >
                     {plan.price}
                   </span>
-                  <span className="text-xs text-slate-500 dark:text-slate-400 ml-1">/ month</span>
+                  <span className="text-xs text-[#16143E]/60 ml-1">/ month</span>
                 </div>
 
                 {plan.ottApps && plan.ottApps.length > 0 && (
-                  <div className="mb-4 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-800/50 text-xs text-amber-900 dark:text-amber-300 font-semibold flex items-center gap-2">
-                    <Tv size={15} className="text-amber-700 dark:text-amber-400 flex-shrink-0" />
+                  <div className="mb-4 p-3 rounded-xl bg-amber-50 border border-amber-200/80 text-xs text-amber-900 font-semibold flex items-center gap-2">
+                    <Tv size={15} className="text-amber-700 flex-shrink-0" />
                     <span>Includes: {plan.ottApps.join(", ")}</span>
                   </div>
                 )}
 
                 <div className="space-y-2 mb-6">
                   {plan.features.map((f) => (
-                    <div key={f} className="flex items-start gap-2 text-xs sm:text-[13px] text-slate-700 dark:text-slate-300">
-                      <CheckCircle2 size={14} className="text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
+                    <div key={f} className="flex items-start gap-2 text-xs sm:text-[13px] text-[#16143E]/80">
+                      <CheckCircle2 size={14} className="text-emerald-600 flex-shrink-0 mt-0.5" />
                       <span>{f}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="space-y-2 pt-2 border-t border-slate-200/80 dark:border-[#1E2E42]">
+              <div className="space-y-2 pt-2 border-t border-[#16143E]/8">
                 <button
                   type="button"
                   onClick={() => {
                     trackEvent("quote_request", { category: "FiberSection", label: plan.id });
                     scrollToWithPhysics("coverage");
                   }}
-                  className="w-full py-2.5 rounded-full bg-[#4E0DBA] hover:bg-[#3d0996] text-white text-xs font-bold transition-colors cursor-pointer text-center font-display"
+                  className="w-full py-2.5 rounded-full bg-[#4E0DBA] hover:bg-[#3d0996] text-white text-xs font-bold transition-colors cursor-pointer text-center"
                 >
                   Check Availability For This Plan
                 </button>
@@ -100,16 +109,16 @@ export default function HomeFiberSection() {
         </div>
 
         {/* Action bar linking to /internet and coverage */}
-        <div className="p-6 rounded-2xl bg-white dark:bg-[#0D1520] border border-slate-200/90 dark:border-[#1E2E42] shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4 transition-colors">
+        <div className="p-6 rounded-3xl bg-white border border-[#16143E]/10 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 text-center sm:text-left">
-            <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
               <Zap size={20} />
             </div>
             <div>
-              <div className="text-sm font-bold text-slate-900 dark:text-white font-display">
+              <div className="text-sm font-bold text-[#16143E]">
                 Free Dual-Band Gigabit ONT Router on 6-Month Advance
               </div>
-              <div className="text-xs text-slate-600 dark:text-[#A5B1BE] mt-0.5">
+              <div className="text-xs text-[#16143E]/60 mt-0.5">
                 Same-day installation by our Avadi technician team at Fire Station Road.
               </div>
             </div>
@@ -119,13 +128,13 @@ export default function HomeFiberSection() {
             <button
               type="button"
               onClick={() => scrollToWithPhysics("coverage")}
-              className="px-5 py-2.5 rounded-full border border-slate-300 dark:border-[#1E2E42] text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/5 cursor-pointer flex items-center gap-1.5 transition-colors"
+              className="px-4 py-2.5 rounded-full border border-[#16143E]/20 text-xs font-bold text-[#16143E] hover:bg-[#16143E]/5 cursor-pointer flex items-center gap-1.5"
             >
               <MapPin size={13} className="text-[#EF1313]" /> Check My Area
             </button>
             <Link
               href="/internet"
-              className="btn-crimson text-xs font-bold px-5 py-2.5 glow-btn-crimson flex items-center gap-1.5 rounded-full"
+              className="btn-crimson text-xs font-bold px-5 py-2.5 glow-btn-crimson flex items-center gap-1.5"
             >
               <span>View All Broadband Plans</span>
               <ArrowRight size={13} />

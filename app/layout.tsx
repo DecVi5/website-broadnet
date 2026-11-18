@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Inter, Open_Sans } from "next/font/google";
+import { Syne, DM_Sans, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
@@ -7,16 +7,16 @@ import MobileStickyBar from "@/components/MobileStickyBar";
 import PhoneCopyManager from "@/components/PhoneCopyManager";
 import { getLocalBusinessJsonLd, getWebSiteJsonLd } from "@/lib/jsonLd";
 import { LanguageProvider } from "@/lib/i18n";
-import { ThemeProvider } from "@/lib/theme";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+
+const syne = Syne({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-display",
   display: "swap",
 });
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-body",
@@ -136,18 +136,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const webSiteJsonLd = getWebSiteJsonLd();
 
   return (
-    <html
-      lang="en"
-      className={`dark ${plusJakartaSans.variable} ${inter.variable} ${openSans.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={`${syne.variable} ${dmSans.variable} ${openSans.variable}`}>
       <head>
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('broadnet-theme');if(t==='light'){document.documentElement.classList.remove('dark');document.documentElement.classList.add('light');document.documentElement.style.colorScheme='light';}else{document.documentElement.classList.add('dark');document.documentElement.classList.remove('light');document.documentElement.style.colorScheme='dark';}}catch(e){document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark';}})();`,
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
@@ -157,7 +148,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
         />
       </head>
-      <body className="bg-slate-50 text-slate-900 dark:bg-[#080D14] dark:text-[#F4F7FA] transition-colors duration-200">
+      <body>
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <>
             <Script
@@ -176,15 +167,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Script>
           </>
         )}
-        <ThemeProvider>
-          <LanguageProvider>
-            <SmoothScrollProvider>
-              {children}
-              <MobileStickyBar />
-              <PhoneCopyManager />
-            </SmoothScrollProvider>
-          </LanguageProvider>
-        </ThemeProvider>
+        <LanguageProvider>
+          <SmoothScrollProvider>
+            {children}
+            <MobileStickyBar />
+            <PhoneCopyManager />
+          </SmoothScrollProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -23,7 +23,6 @@ import {
   CreditCard,
 } from "lucide-react";
 import BroadnetLogo from "./BroadnetLogo";
-import ThemeToggle from "./ThemeToggle";
 import { scrollToWithPhysics } from "@/lib/scrollPhysics";
 import { trackEvent } from "@/lib/analytics";
 
@@ -138,14 +137,15 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
             </div>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden md:flex items-center gap-1 bg-slate-100/90 dark:bg-[#121D2A] p-1 rounded-full border border-slate-200/90 dark:border-[#1E2E42] backdrop-blur-md transition-colors">
+            <nav className="hidden md:flex items-center gap-1 bg-[#16143E]/[0.03] p-1 rounded-full border border-[#16143E]/8 backdrop-blur-md">
               <Link
                 href="/"
                 className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200 ${
                   isHomePage && !isServices && !isAbout
-                    ? "text-[#4E0DBA] dark:text-white bg-white dark:bg-[#162333] shadow-xs"
-                    : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5"
+                    ? "text-[#4E0DBA] bg-white shadow-xs"
+                    : "text-[#16143E]/75 hover:text-[#16143E] hover:bg-white/60"
                 }`}
+                style={{ fontFamily: "Syne, sans-serif" }}
               >
                 Home
               </Link>
@@ -160,15 +160,16 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                   type="button"
                   className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200 flex items-center gap-1.5 cursor-pointer ${
                     isServices
-                      ? "text-[#4E0DBA] dark:text-white bg-white dark:bg-[#162333] shadow-xs"
-                      : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5"
+                      ? "text-[#4E0DBA] bg-white shadow-xs"
+                      : "text-[#16143E]/75 hover:text-[#16143E] hover:bg-white/60"
                   }`}
+                  style={{ fontFamily: "Syne, sans-serif" }}
                 >
                   <span>Services</span>
                   <ChevronDown
                     size={12}
                     className={`transition-transform duration-200 ${
-                      dropdownOpen ? "rotate-180 text-[#EF1313]" : "text-slate-400 dark:text-slate-500"
+                      dropdownOpen ? "rotate-180 text-[#EF1313]" : "text-[#16143E]/50"
                     }`}
                   />
                 </button>
@@ -180,26 +181,27 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 4, scale: 0.98 }}
                       transition={{ duration: 0.15, ease: "easeOut" }}
-                      className="absolute top-full left-0 mt-2 rounded-2xl bg-white/98 dark:bg-[#0D1520] backdrop-blur-xl border border-slate-200 dark:border-[#1E2E42] shadow-2xl shadow-slate-900/10 dark:shadow-black/50 p-2 z-50 flex gap-2 before:content-[''] before:absolute before:-top-3 before:left-0 before:right-0 before:h-3"
+                      className="absolute top-full left-0 mt-2 rounded-2xl bg-white/98 backdrop-blur-xl border border-[#16143E]/10 shadow-2xl shadow-[#16143E]/10 p-2 z-50 flex gap-2 before:content-[''] before:absolute before:-top-3 before:left-0 before:right-0 before:h-3"
                     >
                       {/* Left Column: Categories */}
-                      <div className="w-56 flex flex-col gap-1 pr-1 border-r border-slate-200/80 dark:border-[#1E2E42]">
+                      <div className="w-56 flex flex-col gap-1 pr-1 border-r border-[#16143E]/8">
                         {/* 1. Security Solutions (Active / Hoverable tab) */}
                         <div
                           onMouseEnter={() => setActiveServiceTab("security")}
                           className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all duration-150 cursor-pointer ${
                             activeServiceTab === "security"
-                              ? "bg-[#4E0DBA]/[0.08] dark:bg-[#4E0DBA]/20 text-[#4E0DBA] dark:text-violet-300"
-                              : "text-slate-700 dark:text-slate-300 hover:text-[#4E0DBA] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5"
+                              ? "bg-[#4E0DBA]/[0.08] text-[#4E0DBA]"
+                              : "text-[#16143E]/80 hover:text-[#4E0DBA] hover:bg-[#16143E]/[0.04]"
                           }`}
+                          style={{ fontFamily: "Syne, sans-serif" }}
                         >
                           <div className="flex items-center gap-2.5">
-                            <div className="w-7 h-7 rounded-lg bg-[#4E0DBA]/10 text-[#4E0DBA] dark:text-violet-400 flex items-center justify-center flex-shrink-0">
+                            <div className="w-7 h-7 rounded-lg bg-[#4E0DBA]/10 text-[#4E0DBA] flex items-center justify-center flex-shrink-0">
                               <ShieldCheck size={14} />
                             </div>
                             <div className="text-left">
                               <span className="block leading-tight">Security Solutions</span>
-                              <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium block">
+                              <span className="text-[10px] text-[#16143E]/50 font-medium block">
                                 5 Systems
                               </span>
                             </div>
@@ -208,8 +210,8 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                             size={13}
                             className={`transition-transform duration-150 ${
                               activeServiceTab === "security"
-                                ? "translate-x-0.5 text-[#4E0DBA] dark:text-violet-300"
-                                : "text-slate-400 dark:text-slate-600"
+                                ? "translate-x-0.5 text-[#4E0DBA]"
+                                : "text-[#16143E]/30"
                             }`}
                           />
                         </div>
@@ -219,17 +221,18 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                           onMouseEnter={() => setActiveServiceTab("internet")}
                           className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all duration-150 cursor-pointer ${
                             activeServiceTab === "internet"
-                              ? "bg-[#EF1313]/[0.08] dark:bg-[#EF1313]/20 text-[#EF1313] dark:text-rose-400"
-                              : "text-slate-700 dark:text-slate-300 hover:text-[#EF1313] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5"
+                              ? "bg-[#EF1313]/[0.08] text-[#EF1313]"
+                              : "text-[#16143E]/80 hover:text-[#EF1313] hover:bg-[#16143E]/[0.04]"
                           }`}
+                          style={{ fontFamily: "Syne, sans-serif" }}
                         >
                           <div className="flex items-center gap-2.5">
-                            <div className="w-7 h-7 rounded-lg bg-[#EF1313]/10 text-[#EF1313] dark:text-rose-400 flex items-center justify-center flex-shrink-0">
+                            <div className="w-7 h-7 rounded-lg bg-[#EF1313]/10 text-[#EF1313] flex items-center justify-center flex-shrink-0">
                               <Wifi size={14} />
                             </div>
                             <div className="text-left">
                               <span className="block leading-tight">Internet & Networks</span>
-                              <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium block">
+                              <span className="text-[10px] text-[#16143E]/50 font-medium block">
                                 Fiber, Wi-Fi & Cabling
                               </span>
                             </div>
@@ -238,34 +241,35 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                             size={13}
                             className={`transition-transform duration-150 ${
                               activeServiceTab === "internet"
-                                ? "translate-x-0.5 text-[#EF1313] dark:text-rose-400"
-                                : "text-slate-400 dark:text-slate-600"
+                                ? "translate-x-0.5 text-[#EF1313]"
+                                : "text-[#16143E]/30"
                             }`}
                           />
                         </div>
 
-                        <div className="my-0.5 border-t border-slate-200/80 dark:border-[#1E2E42]" />
+                        <div className="my-0.5 border-t border-[#16143E]/8" />
 
                         {/* 3. Service Areas (Direct link to /service-areas) */}
                         <Link
                           href="/service-areas"
                           onClick={() => setDropdownOpen(false)}
-                          className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-300 hover:text-[#4E0DBA] dark:hover:text-white hover:bg-[#4E0DBA]/[0.06] dark:hover:bg-white/5 transition-all duration-150 group"
+                          className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold text-[#16143E]/80 hover:text-[#4E0DBA] hover:bg-[#4E0DBA]/[0.06] transition-all duration-150 group"
+                          style={{ fontFamily: "Syne, sans-serif" }}
                         >
                           <div className="flex items-center gap-2.5">
-                            <div className="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center flex-shrink-0">
+                            <div className="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
                               <MapPin size={14} />
                             </div>
                             <div className="text-left">
                               <span className="block leading-tight">Service Areas</span>
-                              <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium block">
+                              <span className="text-[10px] text-[#16143E]/50 font-medium block">
                                 Avadi & Chennai
                               </span>
                             </div>
                           </div>
                           <ArrowRight
                             size={12}
-                            className="opacity-0 -translate-x-1.5 text-emerald-600 dark:text-emerald-400 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-150"
+                            className="opacity-0 -translate-x-1 text-emerald-600 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-150"
                           />
                         </Link>
                       </div>
@@ -273,11 +277,11 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                       {/* Right Sub-Panel */}
                       {activeServiceTab === "security" && (
                         <div className="w-64 flex flex-col gap-0.5 pl-1 py-1">
-                          <div className="px-3 pb-1.5 mb-1 border-b border-slate-200/80 dark:border-[#1E2E42] flex items-center justify-between">
-                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#4E0DBA] dark:text-violet-400">
+                          <div className="px-3 pb-1.5 mb-1 border-b border-[#16143E]/6 flex items-center justify-between">
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#4E0DBA]">
                               Security Systems
                             </span>
-                            <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">
+                            <span className="text-[10px] text-[#16143E]/40 font-medium">
                               Certified Install
                             </span>
                           </div>
@@ -287,14 +291,15 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                               key={srv.id}
                               href={srv.href}
                               onClick={() => setDropdownOpen(false)}
-                              className="group flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-[#4E0DBA] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-all duration-150"
+                              className="group flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold text-[#16143E]/80 hover:text-[#4E0DBA] hover:bg-[#16143E]/[0.04] transition-all duration-150"
+                              style={{ fontFamily: "Syne, sans-serif" }}
                             >
                               <span className="transition-transform duration-150 group-hover:translate-x-1">
                                 {srv.shortTitle}
                               </span>
                               <ArrowRight
                                 size={12}
-                                className="opacity-0 -translate-x-1.5 text-[#4E0DBA] dark:text-violet-400 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-150"
+                                className="opacity-0 -translate-x-1.5 text-[#4E0DBA] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-150"
                               />
                             </Link>
                           ))}
@@ -303,11 +308,11 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
 
                       {activeServiceTab === "internet" && (
                         <div className="w-64 flex flex-col gap-0.5 pl-1 py-1">
-                          <div className="px-3 pb-1.5 mb-1 border-b border-slate-200/80 dark:border-[#1E2E42] flex items-center justify-between">
-                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#EF1313] dark:text-rose-400">
+                          <div className="px-3 pb-1.5 mb-1 border-b border-[#16143E]/6 flex items-center justify-between">
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#EF1313]">
                               Internet & Networking
                             </span>
-                            <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">
+                            <span className="text-[10px] text-[#16143E]/40 font-medium">
                               High-Speed Infrastructure
                             </span>
                           </div>
@@ -317,14 +322,15 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                               key={srv.id}
                               href={srv.href}
                               onClick={() => setDropdownOpen(false)}
-                              className="group flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-[#EF1313] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-all duration-150"
+                              className="group flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-semibold text-[#16143E]/80 hover:text-[#EF1313] hover:bg-[#16143E]/[0.04] transition-all duration-150"
+                              style={{ fontFamily: "Syne, sans-serif" }}
                             >
                               <span className="transition-transform duration-150 group-hover:translate-x-1">
                                 {srv.shortTitle}
                               </span>
                               <ArrowRight
                                 size={12}
-                                className="opacity-0 -translate-x-1.5 text-[#EF1313] dark:text-rose-400 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-150"
+                                className="opacity-0 -translate-x-1.5 text-[#EF1313] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-150"
                               />
                             </Link>
                           ))}
@@ -340,9 +346,10 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                 href="/pay-bill"
                 className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200 ${
                   isPayBill
-                    ? "text-[#4E0DBA] dark:text-white bg-white dark:bg-[#162333] shadow-xs"
-                    : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5"
+                    ? "text-[#4E0DBA] bg-white shadow-xs"
+                    : "text-[#16143E]/75 hover:text-[#16143E] hover:bg-white/60"
                 }`}
+                style={{ fontFamily: "Syne, sans-serif" }}
               >
                 Pay Bill
               </Link>
@@ -352,9 +359,10 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                 href="/projects"
                 className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200 ${
                   isProjects
-                    ? "text-[#4E0DBA] dark:text-white bg-white dark:bg-[#162333] shadow-xs"
-                    : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5"
+                    ? "text-[#4E0DBA] bg-white shadow-xs"
+                    : "text-[#16143E]/75 hover:text-[#16143E] hover:bg-white/60"
                 }`}
+                style={{ fontFamily: "Syne, sans-serif" }}
               >
                 Projects
               </Link>
@@ -364,9 +372,10 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                 href="/about"
                 className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200 ${
                   isAbout
-                    ? "text-[#4E0DBA] dark:text-white bg-white dark:bg-[#162333] shadow-xs"
-                    : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5"
+                    ? "text-[#4E0DBA] bg-white shadow-xs"
+                    : "text-[#16143E]/75 hover:text-[#16143E] hover:bg-white/60"
                 }`}
+                style={{ fontFamily: "Syne, sans-serif" }}
               >
                 About Us
               </Link>
@@ -376,23 +385,22 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                 href="/contact"
                 className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200 ${
                   isContact
-                    ? "text-[#4E0DBA] dark:text-white bg-white dark:bg-[#162333] shadow-xs"
-                    : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5"
+                    ? "text-[#4E0DBA] bg-white shadow-xs"
+                    : "text-[#16143E]/75 hover:text-[#16143E] hover:bg-white/60"
                 }`}
+                style={{ fontFamily: "Syne, sans-serif" }}
               >
                 Contact
               </Link>
             </nav>
 
             {/* Desktop Quick Actions */}
-            <div className="hidden md:flex items-center gap-2">
-              <ThemeToggle size="md" />
-
+            <div className="hidden md:flex items-center gap-2.5">
               <a
                 href="tel:+918681888111"
                 data-copy-phone="true"
                 title="Click to copy 86818 88111 to clipboard"
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-slate-800 dark:text-[#F4F7FA] hover:text-[#EF1313] hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group/hdrphone cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-[#16143E] hover:text-[#EF1313] hover:bg-[#16143E]/5 transition-colors group/hdrphone cursor-pointer"
               >
                 <Phone size={14} className="text-[#EF1313] group-hover/hdrphone:scale-110 transition-transform" />
                 <span className="font-phone font-bold tracking-wider text-[13px]">86818 88111</span>
@@ -402,7 +410,7 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                 href="https://wa.me/918681888111?text=Hello%20Broadnet%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#25D366] flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#25D366] flex items-center justify-center transition-colors"
                 aria-label="WhatsApp Broadnet"
               >
                 <WhatsAppIcon size={16} />
@@ -417,17 +425,14 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
               </Link>
             </div>
 
-            {/* Mobile Burger & Theme Button */}
-            <div className="md:hidden flex items-center gap-1.5">
-              <ThemeToggle size="sm" />
-              <button
-                onClick={() => setMobileOpen(!mobileOpen)}
-                className="p-2.5 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
-                aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              >
-                {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-              </button>
-            </div>
+            {/* Mobile Burger Button */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="md:hidden p-2.5 rounded-xl text-[#16143E] hover:bg-[#16143E]/5 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
           </div>
         </div>
 
@@ -438,28 +443,28 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white/98 dark:bg-[#0D1520] backdrop-blur-2xl border-t border-slate-200 dark:border-[#1E2E42] max-h-[85vh] overflow-y-auto px-4 py-4 shadow-2xl transition-colors"
+              className="md:hidden bg-white/98 backdrop-blur-2xl border-t border-[#16143E]/10 max-h-[85vh] overflow-y-auto custom-scrollbar-light px-4 py-4 shadow-2xl"
             >
               <div className="space-y-1.5">
                 <Link
                   href="/"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center px-4 py-2.5 rounded-xl text-sm font-bold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-white/5"
+                  className="flex items-center px-4 py-2.5 rounded-xl text-sm font-bold text-[#16143E] hover:bg-[#16143E]/5"
                 >
                   Home
                 </Link>
 
                 {/* Mobile Services Accordion */}
-                <div className="rounded-xl border border-slate-200 dark:border-[#1E2E42] overflow-hidden bg-slate-50 dark:bg-[#121D2A]/80">
+                <div className="rounded-xl border border-[#16143E]/8 overflow-hidden bg-[#FAFAFE]">
                   <div className="flex items-center justify-between pr-2">
-                    <span className="px-4 py-2.5 text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                    <span className="px-4 py-2.5 text-sm font-bold text-[#16143E] flex items-center gap-2">
                       <Camera size={16} className="text-[#EF1313]" />
                       <span>Services</span>
                     </span>
                     <button
                       type="button"
                       onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                      className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-500 dark:text-slate-400 cursor-pointer"
+                      className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#16143E]/60 cursor-pointer"
                       aria-label="Toggle services list"
                     >
                       <ChevronDown
@@ -472,37 +477,37 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                   </div>
 
                   {mobileServicesOpen && (
-                    <div className="px-2 pb-2 space-y-1.5 border-t border-slate-200 dark:border-[#1E2E42] pt-1.5">
+                    <div className="px-2 pb-2 space-y-1.5 border-t border-[#16143E]/8 pt-1.5">
                       {/* 1. Security Solutions (Sub-Accordion) */}
-                      <div className="rounded-lg border border-slate-200 dark:border-[#1E2E42] bg-white dark:bg-[#0D1520] overflow-hidden">
+                      <div className="rounded-lg border border-[#16143E]/6 bg-white overflow-hidden">
                         <button
                           type="button"
                           onClick={() => setMobileSecurityOpen(!mobileSecurityOpen)}
-                          className="w-full flex items-center justify-between px-3 py-2.5 min-h-[44px] text-xs font-bold text-slate-900 dark:text-slate-100 hover:text-[#4E0DBA] dark:hover:text-violet-400 transition-colors cursor-pointer"
+                          className="w-full flex items-center justify-between px-3 py-2.5 min-h-[44px] text-xs font-bold text-[#16143E] hover:text-[#4E0DBA] transition-colors cursor-pointer"
                         >
                           <span className="flex items-center gap-2">
-                            <ShieldCheck size={14} className="text-[#4E0DBA] dark:text-violet-400" />
+                            <ShieldCheck size={14} className="text-[#4E0DBA]" />
                             <span>Security Solutions</span>
                           </span>
                           <ChevronDown
                             size={13}
                             className={`transition-transform duration-200 ${
-                              mobileSecurityOpen ? "rotate-180 text-[#EF1313]" : "text-slate-400 dark:text-slate-500"
+                              mobileSecurityOpen ? "rotate-180 text-[#EF1313]" : "text-[#16143E]/40"
                             }`}
                           />
                         </button>
 
                         {mobileSecurityOpen && (
-                          <div className="px-2 pb-2 space-y-0.5 border-t border-slate-200 dark:border-[#1E2E42] pt-1 bg-slate-50 dark:bg-[#121D2A]/60">
+                          <div className="px-2 pb-2 space-y-0.5 border-t border-[#16143E]/6 pt-1 bg-[#FAFAFE]">
                             {SECURITY_SERVICES.map((srv) => (
                               <Link
                                 key={srv.id}
                                 href={srv.href}
                                 onClick={() => setMobileOpen(false)}
-                                className="flex items-center justify-between px-2.5 py-2.5 min-h-[44px] rounded-md text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-[#4E0DBA] dark:hover:text-white hover:bg-white dark:hover:bg-white/5 transition-all"
+                                className="flex items-center justify-between px-2.5 py-2.5 min-h-[44px] rounded-md text-xs font-semibold text-[#16143E]/80 hover:text-[#4E0DBA] hover:bg-white transition-all"
                               >
                                 <span>{srv.shortTitle}</span>
-                                <ArrowRight size={11} className="text-slate-400 dark:text-slate-500" />
+                                <ArrowRight size={11} className="text-[#16143E]/30" />
                               </Link>
                             ))}
                           </div>
@@ -510,54 +515,54 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                       </div>
 
                       {/* 2. Internet & Networking (Sub-Accordion) */}
-                      <div className="rounded-lg border border-slate-200 dark:border-[#1E2E42] bg-white dark:bg-[#0D1520] overflow-hidden">
+                      <div className="rounded-lg border border-[#16143E]/6 bg-white overflow-hidden">
                         <button
                           type="button"
                           onClick={() => setMobileInternetOpen(!mobileInternetOpen)}
-                          className="w-full flex items-center justify-between px-3 py-2.5 min-h-[44px] text-xs font-bold text-slate-900 dark:text-slate-100 hover:text-[#EF1313] dark:hover:text-rose-400 transition-colors cursor-pointer"
+                          className="w-full flex items-center justify-between px-3 py-2.5 min-h-[44px] text-xs font-bold text-[#16143E] hover:text-[#EF1313] transition-colors cursor-pointer"
                         >
                           <span className="flex items-center gap-2">
-                            <Wifi size={14} className="text-[#EF1313] dark:text-rose-400" />
+                            <Wifi size={14} className="text-[#EF1313]" />
                             <span>Internet & Networking</span>
                           </span>
                           <ChevronDown
                             size={13}
                             className={`transition-transform duration-200 ${
-                              mobileInternetOpen ? "rotate-180 text-[#EF1313]" : "text-slate-400 dark:text-slate-500"
+                              mobileInternetOpen ? "rotate-180 text-[#EF1313]" : "text-[#16143E]/40"
                             }`}
                           />
                         </button>
 
                         {mobileInternetOpen && (
-                          <div className="px-2 pb-2 space-y-0.5 border-t border-slate-200 dark:border-[#1E2E42] pt-1 bg-slate-50 dark:bg-[#121D2A]/60">
+                          <div className="px-2 pb-2 space-y-0.5 border-t border-[#16143E]/6 pt-1 bg-[#FAFAFE]">
                             {INTERNET_NETWORKING_SERVICES.map((srv) => (
                               <Link
                                 key={srv.id}
                                 href={srv.href}
                                 onClick={() => setMobileOpen(false)}
-                                className="flex items-center justify-between px-2.5 py-2.5 min-h-[44px] rounded-md text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-[#EF1313] dark:hover:text-white hover:bg-white dark:hover:bg-white/5 transition-all"
+                                className="flex items-center justify-between px-2.5 py-2.5 min-h-[44px] rounded-md text-xs font-semibold text-[#16143E]/80 hover:text-[#EF1313] hover:bg-white transition-all"
                               >
                                 <span>{srv.shortTitle}</span>
-                                <ArrowRight size={11} className="text-slate-400 dark:text-slate-500" />
+                                <ArrowRight size={11} className="text-[#16143E]/30" />
                               </Link>
                             ))}
                           </div>
                         )}
                       </div>
 
-                      <div className="my-0.5 border-t border-slate-200 dark:border-[#1E2E42]" />
+                      <div className="my-0.5 border-t border-[#16143E]/8" />
 
                       {/* 3. Service Areas (Direct Link) */}
                       <Link
                         href="/service-areas"
                         onClick={() => setMobileOpen(false)}
-                        className="flex items-center justify-between px-3 py-2.5 min-h-[44px] rounded-lg text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-[#4E0DBA] dark:hover:text-white hover:bg-white dark:hover:bg-white/5 transition-all"
+                        className="flex items-center justify-between px-3 py-2.5 min-h-[44px] rounded-lg text-xs font-bold text-[#16143E] hover:text-[#4E0DBA] hover:bg-white transition-all"
                       >
                         <span className="flex items-center gap-2">
                           <MapPin size={14} className="text-emerald-500" />
                           <span>Service Areas</span>
                         </span>
-                        <ArrowRight size={12} className="text-slate-400 dark:text-slate-500" />
+                        <ArrowRight size={12} className="text-[#16143E]/30" />
                       </Link>
                     </div>
                   )}
@@ -567,46 +572,48 @@ export default function Header({ activePage = "" }: { activePage?: string }) {
                 <Link
                   href="/pay-bill"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-bold text-[#4E0DBA] dark:text-violet-300 bg-[#4E0DBA]/[0.08] dark:bg-[#4E0DBA]/20 border border-[#4E0DBA]/15 dark:border-[#4E0DBA]/30 hover:bg-[#4E0DBA]/[0.12]"
+                  className="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-bold text-[#4E0DBA] bg-[#4E0DBA]/[0.06] border border-[#4E0DBA]/15 hover:bg-[#4E0DBA]/[0.1]"
+                  style={{ fontFamily: "Syne, sans-serif" }}
                 >
                   <span className="flex items-center gap-2">
-                    <CreditCard size={15} className="text-[#4E0DBA] dark:text-violet-400" />
+                    <CreditCard size={15} className="text-[#4E0DBA]" />
                     <span>Pay Internet Bill (3 Portals)</span>
                   </span>
-                  <ArrowRight size={14} className="text-[#4E0DBA] dark:text-violet-400" />
+                  <ArrowRight size={14} className="text-[#4E0DBA]" />
                 </Link>
 
                 {/* Mobile Projects */}
                 <Link
                   href="/projects"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-bold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-white/5"
+                  className="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-bold text-[#16143E] hover:bg-[#16143E]/5"
                 >
                   <span>Projects</span>
-                  <ArrowRight size={14} className="text-slate-400 dark:text-slate-500" />
+                  <ArrowRight size={14} className="text-[#16143E]/30" />
                 </Link>
 
                 {/* Mobile About Us Link */}
                 <Link
                   href="/about"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-bold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-white/5"
+                  className="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-bold text-[#16143E] hover:bg-[#16143E]/5"
+                  style={{ fontFamily: "Syne, sans-serif" }}
                 >
                   <span className="flex items-center gap-2">
-                    <Users size={16} className="text-[#4E0DBA] dark:text-violet-400" />
+                    <Users size={16} className="text-[#4E0DBA]" />
                     <span>About Us</span>
                   </span>
-                  <ArrowRight size={14} className="text-slate-400 dark:text-slate-500" />
+                  <ArrowRight size={14} className="text-[#16143E]/30" />
                 </Link>
               </div>
 
               {/* Mobile CTA Strip */}
-              <div className="pt-4 mt-4 border-t border-slate-200 dark:border-[#1E2E42] flex flex-col gap-2">
+              <div className="pt-4 mt-4 border-t border-[#16143E]/10 flex flex-col gap-2">
                 <a
                   href="tel:+918681888111"
                   data-copy-phone="true"
                   title="Click to copy 86818 88111"
-                  className="w-full py-2.5 rounded-xl bg-slate-900 dark:bg-[#162333] text-white text-xs font-bold flex items-center justify-center gap-2 cursor-pointer border border-transparent dark:border-[#1E2E42]"
+                  className="w-full py-2.5 rounded-xl bg-[#16143E] text-white text-xs font-bold flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Phone size={14} className="text-[#EF1313]" /> Call <span className="font-phone font-bold tracking-wider text-[13px]">86818 88111</span>
                 </a>
